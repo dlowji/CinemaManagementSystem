@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CINEMA" Class="CinemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=msi\db_server;Initial Catalog=CINEMA;Integrated Security=True" SettingsObjectName="CinemaManagementSystem.Properties.Settings" SettingsPropertyName="CINEMAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuocGia" Member="QuocGias">
+    <Type Name="QuocGia">
+      <Column Name="MaQuocGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenQuocGia" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="QuocGia_Phim" Member="Phims" ThisKey="MaQuocGia" OtherKey="MaQuocGia" Type="Phim" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phim" Member="Phims">
+    <Type Name="Phim">
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ThoiLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaQuocGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="NamPhatHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DaoDien" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Poster" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaTheLoaiPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Phim_SuatChieu" Member="SuatChieus" ThisKey="MaPhim" OtherKey="MaPhim" Type="SuatChieu" />
+      <Association Name="QuocGia_Phim" Member="QuocGia" ThisKey="MaQuocGia" OtherKey="MaQuocGia" Type="QuocGia" IsForeignKey="true" />
+      <Association Name="TheLoaiPhim_Phim" Member="TheLoaiPhim" ThisKey="MaTheLoaiPhim" OtherKey="MaTheLoaiPhim" Type="TheLoaiPhim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TheLoaiPhim" Member="TheLoaiPhims">
+    <Type Name="TheLoaiPhim">
+      <Column Name="MaTheLoaiPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTheLoaiPhim" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="TheLoaiPhim_Phim" Member="Phims" ThisKey="MaTheLoaiPhim" OtherKey="MaTheLoaiPhim" Type="Phim" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CaiDatSuatChieu" Member="CaiDatSuatChieus">
+    <Type Name="CaiDatSuatChieu">
+      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayChieu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CaiDatSuatChieu_SuatChieu" Member="SuatChieus" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="SuatChieu" />
+      <Association Name="PhongChieu_CaiDatSuatChieu" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhongChieu" Member="PhongChieus">
+    <Type Name="PhongChieu">
+      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhongChieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLuongDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongGheMoiDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PhongChieu_CaiDatSuatChieu" Member="CaiDatSuatChieus" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="CaiDatSuatChieu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuatChieu" Member="SuatChieus">
+    <Type Name="SuatChieu">
+      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaVe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiGianBatDau" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="CaiDatSuatChieu_SuatChieu" Member="CaiDatSuatChieu" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="CaiDatSuatChieu" IsForeignKey="true" />
+      <Association Name="Phim_SuatChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
