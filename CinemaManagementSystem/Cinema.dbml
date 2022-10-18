@@ -47,15 +47,6 @@
       <Association Name="PhongChieu_CaiDatSuatChieu" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PhongChieu" Member="PhongChieus">
-    <Type Name="PhongChieu">
-      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenPhongChieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SoLuongDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoLuongGheMoiDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="PhongChieu_CaiDatSuatChieu" Member="CaiDatSuatChieus" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="CaiDatSuatChieu" />
-    </Type>
-  </Table>
   <Table Name="dbo.SuatChieu" Member="SuatChieus">
     <Type Name="SuatChieu">
       <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -63,8 +54,37 @@
       <Column Name="MaPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GiaVe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ThoiGianBatDau" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="SuatChieu_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="CaiDatGhe" />
       <Association Name="CaiDatSuatChieu_SuatChieu" Member="CaiDatSuatChieu" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="CaiDatSuatChieu" IsForeignKey="true" />
       <Association Name="Phim_SuatChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ghe" Member="Ghes">
+    <Type Name="Ghe">
+      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaSoGhe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DayGhe" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Ghe_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaGhe" OtherKey="MaGhe" Type="CaiDatGhe" />
+      <Association Name="PhongChieu_Ghe" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CaiDatGhe" Member="CaiDatGhes">
+    <Type Name="CaiDatGhe">
+      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Ghe_CaiDatGhe" Member="Ghe" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ghe" IsForeignKey="true" />
+      <Association Name="SuatChieu_CaiDatGhe" Member="SuatChieu" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="SuatChieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhongChieu" Member="PhongChieus">
+    <Type Name="PhongChieu">
+      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhongChieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLuongGheNgoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PhongChieu_CaiDatSuatChieu" Member="CaiDatSuatChieus" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="CaiDatSuatChieu" />
+      <Association Name="PhongChieu_Ghe" Member="Ghes" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="Ghe" />
     </Type>
   </Table>
 </Database>

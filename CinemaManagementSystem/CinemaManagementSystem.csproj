@@ -65,11 +65,11 @@
     <Compile Include="FilmManagement\ChiTietPhim.Designer.cs">
       <DependentUpon>ChiTietPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowRoomManagement\ChiTietSuatPhim.cs">
+    <Compile Include="ShowRoomManagement\ChiTietSuatChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowRoomManagement\ChiTietSuatPhim.Designer.cs">
-      <DependentUpon>ChiTietSuatPhim.cs</DependentUpon>
+    <Compile Include="ShowRoomManagement\ChiTietSuatChieu.Designer.cs">
+      <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Cinema.designer.cs">
       <AutoGen>True</AutoGen>
@@ -230,8 +230,8 @@
     <EmbeddedResource Include="FilmManagement\ChiTietPhim.resx">
       <DependentUpon>ChiTietPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowRoomManagement\ChiTietSuatPhim.resx">
-      <DependentUpon>ChiTietSuatPhim.cs</DependentUpon>
+    <EmbeddedResource Include="ShowRoomManagement\ChiTietSuatChieu.resx">
+      <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>

@@ -45,9 +45,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbPhim = new System.Windows.Forms.ComboBox();
             this.dtpNgayChieu = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpGioBatDau = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.lbMoTaGioChieu = new System.Windows.Forms.Label();
             this.lbMoTaNgayChieu = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbTenSuatChieu = new System.Windows.Forms.TextBox();
+            this.cbbPhongChieu = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -75,6 +75,7 @@
             this.button2.TabIndex = 58;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txbGiaVeSuatChieu
             // 
@@ -85,6 +86,7 @@
             this.txbGiaVeSuatChieu.Name = "txbGiaVeSuatChieu";
             this.txbGiaVeSuatChieu.Size = new System.Drawing.Size(178, 26);
             this.txbGiaVeSuatChieu.TabIndex = 56;
+            this.txbGiaVeSuatChieu.TextChanged += new System.EventHandler(this.txbGiaVeSuatChieu_TextChanged);
             // 
             // panel9
             // 
@@ -230,14 +232,15 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Thêm suất chiếu";
             // 
-            // comboBox1
+            // cbbPhim
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(284, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(176, 31);
-            this.comboBox1.TabIndex = 61;
+            this.cbbPhim.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhim.FormattingEnabled = true;
+            this.cbbPhim.Location = new System.Drawing.Point(2, 71);
+            this.cbbPhim.Name = "cbbPhim";
+            this.cbbPhim.Size = new System.Drawing.Size(395, 31);
+            this.cbbPhim.TabIndex = 61;
+            this.cbbPhim.SelectedValueChanged += new System.EventHandler(this.cbbPhim_SelectedValueChanged);
             // 
             // dtpNgayChieu
             // 
@@ -247,16 +250,20 @@
             this.dtpNgayChieu.Name = "dtpNgayChieu";
             this.dtpNgayChieu.Size = new System.Drawing.Size(178, 30);
             this.dtpNgayChieu.TabIndex = 62;
+            this.dtpNgayChieu.ValueChanged += new System.EventHandler(this.dtpNgayChieu_ValueChanged);
             // 
-            // dateTimePicker2
+            // dtpGioBatDau
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(2, 151);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker2.TabIndex = 63;
+            this.dtpGioBatDau.CustomFormat = "HH:mm";
+            this.dtpGioBatDau.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpGioBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpGioBatDau.Location = new System.Drawing.Point(2, 151);
+            this.dtpGioBatDau.Name = "dtpGioBatDau";
+            this.dtpGioBatDau.ShowUpDown = true;
+            this.dtpGioBatDau.Size = new System.Drawing.Size(200, 30);
+            this.dtpGioBatDau.TabIndex = 63;
+            this.dtpGioBatDau.Value = new System.DateTime(2022, 10, 18, 0, 0, 0, 0);
+            this.dtpGioBatDau.ValueChanged += new System.EventHandler(this.dtpGioBatDau_ValueChanged);
             // 
             // panel5
             // 
@@ -316,9 +323,8 @@
             this.lbMoTaTenPhim.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbMoTaTenPhim.Location = new System.Drawing.Point(-1, 12);
             this.lbMoTaTenPhim.Name = "lbMoTaTenPhim";
-            this.lbMoTaTenPhim.Size = new System.Drawing.Size(179, 21);
+            this.lbMoTaTenPhim.Size = new System.Drawing.Size(0, 21);
             this.lbMoTaTenPhim.TabIndex = 41;
-            this.lbMoTaTenPhim.Text = "Nobita và đảo giấu vàng";
             // 
             // lbMoTaGiaVe
             // 
@@ -327,9 +333,8 @@
             this.lbMoTaGiaVe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbMoTaGiaVe.Location = new System.Drawing.Point(70, 136);
             this.lbMoTaGiaVe.Name = "lbMoTaGiaVe";
-            this.lbMoTaGiaVe.Size = new System.Drawing.Size(92, 21);
+            this.lbMoTaGiaVe.Size = new System.Drawing.Size(0, 21);
             this.lbMoTaGiaVe.TabIndex = 41;
-            this.lbMoTaGiaVe.Text = "45000 VND";
             // 
             // lbMoTaPhongChieu
             // 
@@ -338,9 +343,8 @@
             this.lbMoTaPhongChieu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbMoTaPhongChieu.Location = new System.Drawing.Point(96, 104);
             this.lbMoTaPhongChieu.Name = "lbMoTaPhongChieu";
-            this.lbMoTaPhongChieu.Size = new System.Drawing.Size(19, 21);
+            this.lbMoTaPhongChieu.Size = new System.Drawing.Size(0, 21);
             this.lbMoTaPhongChieu.TabIndex = 41;
-            this.lbMoTaPhongChieu.Text = "2";
             // 
             // lbMoTaGioChieu
             // 
@@ -351,7 +355,7 @@
             this.lbMoTaGioChieu.Name = "lbMoTaGioChieu";
             this.lbMoTaGioChieu.Size = new System.Drawing.Size(155, 21);
             this.lbMoTaGioChieu.TabIndex = 41;
-            this.lbMoTaGioChieu.Text = "19:30:00 -> 21:30:00";
+            this.lbMoTaGioChieu.Text = "00:00:00 -> 00:00:00";
             // 
             // lbMoTaNgayChieu
             // 
@@ -360,9 +364,8 @@
             this.lbMoTaNgayChieu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbMoTaNgayChieu.Location = new System.Drawing.Point(96, 42);
             this.lbMoTaNgayChieu.Name = "lbMoTaNgayChieu";
-            this.lbMoTaNgayChieu.Size = new System.Drawing.Size(94, 21);
+            this.lbMoTaNgayChieu.Size = new System.Drawing.Size(0, 21);
             this.lbMoTaNgayChieu.TabIndex = 41;
-            this.lbMoTaNgayChieu.Text = "30/12/2022";
             // 
             // label4
             // 
@@ -375,15 +378,15 @@
             this.label4.TabIndex = 41;
             this.label4.Text = "Ngày chiếu:";
             // 
-            // txbTenSuatChieu
+            // cbbPhongChieu
             // 
-            this.txbTenSuatChieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTenSuatChieu.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenSuatChieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.txbTenSuatChieu.Location = new System.Drawing.Point(2, 75);
-            this.txbTenSuatChieu.Name = "txbTenSuatChieu";
-            this.txbTenSuatChieu.Size = new System.Drawing.Size(400, 26);
-            this.txbTenSuatChieu.TabIndex = 56;
+            this.cbbPhongChieu.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhongChieu.FormattingEnabled = true;
+            this.cbbPhongChieu.Location = new System.Drawing.Point(284, 152);
+            this.cbbPhongChieu.Name = "cbbPhongChieu";
+            this.cbbPhongChieu.Size = new System.Drawing.Size(175, 31);
+            this.cbbPhongChieu.TabIndex = 61;
+            this.cbbPhongChieu.SelectedValueChanged += new System.EventHandler(this.cbbPhongChieu_SelectedValueChanged);
             // 
             // ThemSuatChieu
             // 
@@ -391,11 +394,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtpGioBatDau);
             this.Controls.Add(this.dtpNgayChieu);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbPhongChieu);
+            this.Controls.Add(this.cbbPhim);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txbTenSuatChieu);
             this.Controls.Add(this.txbGiaVeSuatChieu);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
@@ -441,9 +444,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbPhim;
         private System.Windows.Forms.DateTimePicker dtpNgayChieu;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpGioBatDau;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
@@ -454,6 +457,6 @@
         private System.Windows.Forms.Label lbMoTaPhongChieu;
         private System.Windows.Forms.Label lbMoTaGioChieu;
         private System.Windows.Forms.Label lbMoTaNgayChieu;
-        private System.Windows.Forms.TextBox txbTenSuatChieu;
+        private System.Windows.Forms.ComboBox cbbPhongChieu;
     }
 }
