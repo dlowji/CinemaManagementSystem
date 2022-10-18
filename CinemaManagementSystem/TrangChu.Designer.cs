@@ -131,6 +131,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnXemChiTiet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -557,6 +558,7 @@
             this.QuanLySuatChieu.Controls.Add(this.txbTimKiemSuatChieu);
             this.QuanLySuatChieu.Controls.Add(this.lbToanBo);
             this.QuanLySuatChieu.Controls.Add(this.dtpNgayChieu);
+            this.QuanLySuatChieu.Controls.Add(this.btnXemChiTiet);
             this.QuanLySuatChieu.Controls.Add(this.btnThemSuatChieu);
             this.QuanLySuatChieu.Location = new System.Drawing.Point(4, 22);
             this.QuanLySuatChieu.Name = "QuanLySuatChieu";
@@ -1299,6 +1301,20 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.Image = global::CinemaManagementSystem.Properties.Resources.plus;
+            this.btnXemChiTiet.Location = new System.Drawing.Point(521, 6);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(108, 38);
+            this.btnXemChiTiet.TabIndex = 7;
+            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.UseVisualStyleBackColor = false;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1473,5 +1489,6 @@
         private System.Windows.Forms.DataGridView dataGridView7;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnXemChiTiet;
     }
 }

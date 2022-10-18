@@ -17,7 +17,7 @@ namespace CinemaManagementSystem
         {
             InitializeComponent();
             loadPhim("");
-            loadSuatChieu("", "17/10/2022");
+            loadSuatChieu("", DateTime.Today.ToString("dd/MM/yyyy"));
             loadPhongChieu();
         }
 
@@ -116,7 +116,15 @@ namespace CinemaManagementSystem
             label.Focus();
             currentRoom = label.Text.Split(' ')[1];
             string dateString = dtpNgayChieu.Value.ToString("dd/MM/yyyy");
+
+            if (label.Text == "Toàn bộ")
+            {
+                loadSuatChieu("", dateString);
+                return;
+            }
+
             string tenPhong = label.Text.Split(' ')[1];
+            currentRoom = tenPhong;
             loadSuatChieu(tenPhong, dateString);
         }
 
@@ -292,12 +300,25 @@ namespace CinemaManagementSystem
         {
             ThemSuatChieu formThemSuatChieu = new ThemSuatChieu();
             formThemSuatChieu.ShowDialog();
+            loadSuatChieu("", DateTime.Today.ToString("dd/MM/yyyy"));
         }
 
         private void dtpNgayChieu_ValueChanged(object sender, EventArgs e)
         {
             string dateString = dtpNgayChieu.Value.ToString("dd/MM/yyyy");
             loadSuatChieu(currentRoom, dateString);
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            int maSuatChieu = Int32.Parse(dtgvSuatChieu.SelectedCells[0].OwningRow.Cells["Mã suất chiếu"].Value.ToString());
+       
+            ChiTietSuatChieu formChiTietSuatChieu = new ChiTietSuatChieu();
+            formChiTietSuatChieu.loadThongTinSuatChieu(maSuatChieu);
+            formChiTietSuatChieu.ShowDialog();
+
+            string dateString = dtpNgayChieu.Value.ToString("dd/MM/yyyy");
+            this.loadSuatChieu(currentRoom, dateString);
         }
     }
 

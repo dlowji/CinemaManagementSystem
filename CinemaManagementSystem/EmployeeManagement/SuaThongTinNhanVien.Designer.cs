@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -92,6 +92,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 1);
             this.panel1.TabIndex = 46;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(540, 1);
+            this.panel3.TabIndex = 47;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(795, 1);
+            this.panel4.TabIndex = 2;
             // 
             // panel2
             // 
@@ -200,23 +217,6 @@
             this.label9.Size = new System.Drawing.Size(93, 25);
             this.label9.TabIndex = 45;
             this.label9.Text = "Tài khoản";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 1);
-            this.panel3.TabIndex = 47;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(0, 5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(795, 1);
-            this.panel4.TabIndex = 2;
             // 
             // panel5
             // 
@@ -480,6 +480,7 @@
             this.button2.TabIndex = 87;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
