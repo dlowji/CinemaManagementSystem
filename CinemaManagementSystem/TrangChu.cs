@@ -13,12 +13,44 @@ namespace CinemaManagementSystem
     public partial class TrangChu : Form
     {
         private string currentRoom = "";
+        private List<String> thangs;
+        private List<String> nams;
         public TrangChu()
         {
             InitializeComponent();
+            thangs = new List<String>();
+            nams = new List<String>();
+            cbbTimKiemKhachHang.SelectedIndex = 0;
+            cbbThangNam.SelectedIndex = 0;
+            loadNam();
+            loadThang();
             loadPhim("");
             loadSuatChieu("", DateTime.Today.ToString("dd/MM/yyyy"));
             loadPhongChieu();
+            loadNhanVien();
+            loadKhachHang();
+        }
+
+        private void loadNam()
+        {
+            nams.Add("2021");
+            nams.Add("2022");
+        }
+
+        private void loadThang()
+        {
+            thangs.Add("Tháng 1");
+            thangs.Add("Tháng 2");
+            thangs.Add("Tháng 3");
+            thangs.Add("Tháng 4");
+            thangs.Add("Tháng 5");
+            thangs.Add("Tháng 6");
+            thangs.Add("Tháng 7");
+            thangs.Add("Tháng 8");
+            thangs.Add("Tháng 9");
+            thangs.Add("Tháng 10");
+            thangs.Add("Tháng 11");
+            thangs.Add("Tháng 12");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -129,11 +161,6 @@ namespace CinemaManagementSystem
         }
 
         private void QuanLyPhim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -319,6 +346,139 @@ namespace CinemaManagementSystem
 
             string dateString = dtpNgayChieu.Value.ToString("dd/MM/yyyy");
             this.loadSuatChieu(currentRoom, dateString);
+        }
+
+        private void txbTimKiemNhanVien_Enter(object sender, EventArgs e)
+        {
+            TextBox txb = sender as TextBox;
+
+            if (txb.Text == "Tìm kiếm")
+            {
+                txb.Text = "";
+            }
+        }
+
+        private void txbTimKiemNhanVien_Leave(object sender, EventArgs e)
+        {
+            TextBox txb = sender as TextBox;
+
+            if (txb.Text == "")
+            {
+                txb.Text = "Tìm kiếm";
+            }
+        }
+
+        private void loadNhanVien()
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from nv in db.NhanViens
+                            where nv.DaXoa == false
+                            select nv;
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Mã nhân viên", typeof(string));
+                dt.Columns.Add("Họ và tên", typeof(string));
+                dt.Columns.Add("Giới tính", typeof(string));
+                dt.Columns.Add("Ngày sinh", typeof(string));
+                dt.Columns.Add("Số điện thoại", typeof(string));
+                dt.Columns.Add("Email", typeof(string));
+                dt.Columns.Add("Chức vụ", typeof(string));
+                dt.Columns.Add("Ngày vào làm", typeof(string));
+
+                foreach (NhanVien nv in query)
+                {
+                    string gioiTinh = (bool)nv.GioiTinh ? "Nam" : "Nữ";
+                    DateTime ngaySinh = (DateTime)nv.NgaySinh;
+                    DateTime ngayVaoLam = (DateTime)nv.NgayVaoLam;
+                    dt.Rows.Add(nv.MaNhanVien, nv.Ten, gioiTinh, ngaySinh.ToString("dd/MM/yyyy"), nv.SoDienThoai, nv.Email, nv.ChucVuNhanVien.TenChucVu, ngayVaoLam.ToString("dd/MM/yyyy")); ;
+                }
+
+                dtgvNhanVien.DataSource = dt;
+                dtgvNhanVien.Columns[0].Width = 80;
+                dtgvNhanVien.Columns[1].Width = 120;
+                dtgvNhanVien.Columns[2].Width = 80;
+                dtgvNhanVien.Columns[6].Width = 80;
+
+            }
+        }
+
+        private void loadKhachHang()
+        {
+            loadCbbGiaTriThangNam();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from kh in db.KhachHangs
+                            where kh.DaXoa == false
+                            select kh;
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Mã khách hàng", typeof(string));
+                dt.Columns.Add("Tên khách hàng", typeof(string));
+                dt.Columns.Add("Số điện thoại", typeof(string));
+                dt.Columns.Add("Email", typeof(string));
+                dt.Columns.Add("Ngày đăng ký", typeof(string));
+                dt.Columns.Add("Chi tiêu trong kỳ", typeof(string));
+
+                foreach (KhachHang kh in query)
+                {
+                    DateTime ngayDangKy = (DateTime)kh.ThoiGianTao;
+                    int chiTieuTrongKy = 0;
+                    dt.Rows.Add(kh.MaKhachHang, kh.Ten, kh.SoDienThoai, kh.Email, ngayDangKy.ToString("dd/MM/yyyy"), chiTieuTrongKy.ToString());
+                }
+
+                dtgvKhachHang.DataSource = dt;
+                //dtgvKhachHang.Columns[0].Width = 80;
+                //dtgvKhachHang.Columns[1].Width = 120;
+                //dtgvKhachHang.Columns[2].Width = 80;
+
+            }
+        }
+
+        private void loadCbbGiaTriThangNam()
+        {
+            cbbGiaTriThangNam.Items.Clear();
+
+            if (cbbThangNam.SelectedItem.ToString() == "Theo năm")
+            {
+                foreach (String nam in nams)
+                {
+                    cbbGiaTriThangNam.Items.Add(nam);
+                }
+            }
+            else if (cbbThangNam.SelectedItem.ToString() == "Theo tháng")
+            {
+                foreach (String thang in thangs)
+                {
+                    cbbGiaTriThangNam.Items.Add(thang);
+                }
+            }
+        }
+
+        private void btnXemChiTietNhanVien_Click(object sender, EventArgs e)
+        {
+            string maNhanVien = dtgvNhanVien.SelectedCells[0].OwningRow.Cells["Mã nhân viên"].Value.ToString();
+            SuaThongTinNhanVien formThongTinNhanVien = new SuaThongTinNhanVien();
+            formThongTinNhanVien.loadThongTinNhanVien(maNhanVien);
+            formThongTinNhanVien.ShowDialog();
+        }
+
+        private void btnAddNhanVien_Click(object sender, EventArgs e)
+        {
+            ThemNhanVien formThemNhanVien = new ThemNhanVien();
+            formThemNhanVien.ShowDialog();
+            loadNhanVien();
+        }
+
+        private void txbTimKiemKhachHang_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbThangNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadCbbGiaTriThangNam();
         }
     }
 

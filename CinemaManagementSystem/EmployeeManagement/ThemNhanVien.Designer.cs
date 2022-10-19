@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnThemNhanVien = new System.Windows.Forms.Button();
+            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cbbChucVu = new System.Windows.Forms.ComboBox();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txbSoDienThoai = new System.Windows.Forms.TextBox();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txbTen = new System.Windows.Forms.TextBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -72,13 +72,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbTaiKhoan = new System.Windows.Forms.TextBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txbXacNhanMatKhau = new System.Windows.Forms.TextBox();
             this.panel19.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -94,105 +94,100 @@
             this.panel25.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.OrangeRed;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(595, 492);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 117;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(595, 492);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 36);
+            this.btnClose.TabIndex = 117;
+            this.btnClose.Text = "Hủy";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnThemNhanVien
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(693, 492);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 116;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnThemNhanVien.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnThemNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnThemNhanVien.Location = new System.Drawing.Point(693, 492);
+            this.btnThemNhanVien.Name = "btnThemNhanVien";
+            this.btnThemNhanVien.Size = new System.Drawing.Size(75, 36);
+            this.btnThemNhanVien.TabIndex = 116;
+            this.btnThemNhanVien.Text = "Lưu";
+            this.btnThemNhanVien.UseVisualStyleBackColor = false;
+            this.btnThemNhanVien.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dateTimePicker2
+            // dtpNgayVaoLam
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(174, 314);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(400, 25);
-            this.dateTimePicker2.TabIndex = 114;
+            this.dtpNgayVaoLam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(174, 314);
+            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(400, 25);
+            this.dtpNgayVaoLam.TabIndex = 114;
             // 
-            // dateTimePicker1
+            // dtpNgaySinh
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(174, 152);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(400, 25);
-            this.dateTimePicker1.TabIndex = 113;
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(174, 152);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(400, 25);
+            this.dtpNgaySinh.TabIndex = 113;
             // 
-            // comboBox2
+            // cbbChucVu
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.comboBox2.Location = new System.Drawing.Point(174, 270);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(400, 25);
-            this.comboBox2.TabIndex = 112;
+            this.cbbChucVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbChucVu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.cbbChucVu.FormattingEnabled = true;
+            this.cbbChucVu.Location = new System.Drawing.Point(174, 270);
+            this.cbbChucVu.Name = "cbbChucVu";
+            this.cbbChucVu.Size = new System.Drawing.Size(400, 25);
+            this.cbbChucVu.TabIndex = 112;
             // 
-            // comboBox1
+            // cbbGioiTinh
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(400, 25);
-            this.comboBox1.TabIndex = 111;
+            this.cbbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Location = new System.Drawing.Point(174, 113);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(400, 25);
+            this.cbbGioiTinh.TabIndex = 111;
             // 
-            // textBox3
+            // txbSoDienThoai
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox3.Location = new System.Drawing.Point(174, 195);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(400, 18);
-            this.textBox3.TabIndex = 110;
+            this.txbSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbSoDienThoai.Location = new System.Drawing.Point(174, 195);
+            this.txbSoDienThoai.Name = "txbSoDienThoai";
+            this.txbSoDienThoai.Size = new System.Drawing.Size(400, 18);
+            this.txbSoDienThoai.TabIndex = 110;
             // 
-            // textBox2
+            // txbEmail
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox2.Location = new System.Drawing.Point(174, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 18);
-            this.textBox2.TabIndex = 109;
+            this.txbEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbEmail.Location = new System.Drawing.Point(174, 236);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(400, 18);
+            this.txbEmail.TabIndex = 109;
             // 
-            // textBox1
+            // txbTen
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox1.Location = new System.Drawing.Point(174, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 18);
-            this.textBox1.TabIndex = 107;
+            this.txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbTen.Location = new System.Drawing.Point(174, 81);
+            this.txbTen.Name = "txbTen";
+            this.txbTen.Size = new System.Drawing.Size(400, 18);
+            this.txbTen.TabIndex = 107;
             // 
             // panel19
             // 
@@ -372,9 +367,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(47, 317);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 21);
+            this.label8.Size = new System.Drawing.Size(106, 21);
             this.label8.TabIndex = 94;
-            this.label8.Text = "Ngày bắt đầu";
+            this.label8.Text = "Ngày vào làm";
             // 
             // label7
             // 
@@ -525,15 +520,15 @@
             this.panel24.Size = new System.Drawing.Size(795, 1);
             this.panel24.TabIndex = 2;
             // 
-            // textBox5
+            // txbTaiKhoan
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox5.Location = new System.Drawing.Point(174, 389);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(400, 18);
-            this.textBox5.TabIndex = 107;
+            this.txbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbTaiKhoan.Location = new System.Drawing.Point(174, 389);
+            this.txbTaiKhoan.Name = "txbTaiKhoan";
+            this.txbTaiKhoan.Size = new System.Drawing.Size(400, 18);
+            this.txbTaiKhoan.TabIndex = 107;
             // 
             // panel21
             // 
@@ -552,15 +547,15 @@
             this.panel22.Size = new System.Drawing.Size(795, 1);
             this.panel22.TabIndex = 2;
             // 
-            // textBox4
+            // txbMatKhau
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox4.Location = new System.Drawing.Point(174, 427);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(400, 18);
-            this.textBox4.TabIndex = 107;
+            this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbMatKhau.Location = new System.Drawing.Point(174, 427);
+            this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.Size = new System.Drawing.Size(400, 18);
+            this.txbMatKhau.TabIndex = 107;
             // 
             // panel25
             // 
@@ -579,33 +574,33 @@
             this.panel26.Size = new System.Drawing.Size(795, 1);
             this.panel26.TabIndex = 2;
             // 
-            // textBox6
+            // txbXacNhanMatKhau
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.textBox6.Location = new System.Drawing.Point(174, 467);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(400, 18);
-            this.textBox6.TabIndex = 107;
+            this.txbXacNhanMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbXacNhanMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbXacNhanMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.txbXacNhanMatKhau.Location = new System.Drawing.Point(174, 467);
+            this.txbXacNhanMatKhau.Name = "txbXacNhanMatKhau";
+            this.txbXacNhanMatKhau.Size = new System.Drawing.Size(400, 18);
+            this.txbXacNhanMatKhau.TabIndex = 107;
             // 
             // ThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 532);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnThemNhanVien);
+            this.Controls.Add(this.dtpNgayVaoLam);
+            this.Controls.Add(this.dtpNgaySinh);
+            this.Controls.Add(this.cbbChucVu);
+            this.Controls.Add(this.cbbGioiTinh);
+            this.Controls.Add(this.txbSoDienThoai);
+            this.Controls.Add(this.txbEmail);
+            this.Controls.Add(this.txbXacNhanMatKhau);
+            this.Controls.Add(this.txbMatKhau);
+            this.Controls.Add(this.txbTaiKhoan);
+            this.Controls.Add(this.txbTen);
             this.Controls.Add(this.panel19);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel15);
@@ -654,15 +649,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnThemNhanVien;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.ComboBox cbbChucVu;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.TextBox txbSoDienThoai;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox txbTen;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel17;
@@ -698,12 +693,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbTaiKhoan;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbMatKhau;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txbXacNhanMatKhau;
     }
 }
