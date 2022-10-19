@@ -65,6 +65,7 @@
     <Compile Include="FilmManagement\ChiTietPhim.Designer.cs">
       <DependentUpon>ChiTietPhim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Helper.cs" />
     <Compile Include="ShowRoomManagement\ChiTietSuatChieu.cs">
       <SubType>Form</SubType>
     </Compile>

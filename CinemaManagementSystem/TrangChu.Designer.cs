@@ -64,6 +64,7 @@
             this.txbTimKiemSuatChieu = new System.Windows.Forms.TextBox();
             this.lbToanBo = new System.Windows.Forms.Label();
             this.dtpNgayChieu = new System.Windows.Forms.DateTimePicker();
+            this.btnXemChiTiet = new System.Windows.Forms.Button();
             this.btnThemSuatChieu = new System.Windows.Forms.Button();
             this.QuanLySanPham = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -72,15 +73,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.QuanLyNhanSu = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dtgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.txbTimKiemNhanVien = new System.Windows.Forms.TextBox();
+            this.btnXemChiTietNhanVien = new System.Windows.Forms.Button();
+            this.btnAddNhanVien = new System.Windows.Forms.Button();
             this.QuanLyKhachHang = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
+            this.cbbGiaTriThangNam = new System.Windows.Forms.ComboBox();
+            this.cbbThangNam = new System.Windows.Forms.ComboBox();
+            this.cbbTimKiemKhachHang = new System.Windows.Forms.ComboBox();
+            this.txbTimKiemKhachHang = new System.Windows.Forms.TextBox();
             this.ThongKe = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -131,7 +133,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnXemChiTiet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -152,9 +153,9 @@
             this.QuanLySanPham.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.QuanLyNhanSu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
             this.QuanLyKhachHang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
             this.ThongKe.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -610,6 +611,20 @@
             this.dtpNgayChieu.TabIndex = 4;
             this.dtpNgayChieu.ValueChanged += new System.EventHandler(this.dtpNgayChieu_ValueChanged);
             // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.Image = global::CinemaManagementSystem.Properties.Resources.plus;
+            this.btnXemChiTiet.Location = new System.Drawing.Point(521, 6);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(108, 38);
+            this.btnXemChiTiet.TabIndex = 7;
+            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.UseVisualStyleBackColor = false;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
             // btnThemSuatChieu
             // 
             this.btnThemSuatChieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
@@ -691,9 +706,10 @@
             // 
             // QuanLyNhanSu
             // 
-            this.QuanLyNhanSu.Controls.Add(this.dataGridView3);
-            this.QuanLyNhanSu.Controls.Add(this.textBox4);
-            this.QuanLyNhanSu.Controls.Add(this.button4);
+            this.QuanLyNhanSu.Controls.Add(this.dtgvNhanVien);
+            this.QuanLyNhanSu.Controls.Add(this.txbTimKiemNhanVien);
+            this.QuanLyNhanSu.Controls.Add(this.btnXemChiTietNhanVien);
+            this.QuanLyNhanSu.Controls.Add(this.btnAddNhanVien);
             this.QuanLyNhanSu.Location = new System.Drawing.Point(4, 22);
             this.QuanLyNhanSu.Name = "QuanLyNhanSu";
             this.QuanLyNhanSu.Size = new System.Drawing.Size(840, 531);
@@ -701,43 +717,60 @@
             this.QuanLyNhanSu.Text = "tabPage2";
             this.QuanLyNhanSu.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dtgvNhanVien
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(25, 76);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(790, 432);
-            this.dataGridView3.TabIndex = 12;
+            this.dtgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNhanVien.Location = new System.Drawing.Point(25, 76);
+            this.dtgvNhanVien.Name = "dtgvNhanVien";
+            this.dtgvNhanVien.Size = new System.Drawing.Size(790, 432);
+            this.dtgvNhanVien.TabIndex = 12;
             // 
-            // textBox4
+            // txbTimKiemNhanVien
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(8, 15);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 29);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "Tìm kiếm";
+            this.txbTimKiemNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTimKiemNhanVien.Location = new System.Drawing.Point(8, 15);
+            this.txbTimKiemNhanVien.Name = "txbTimKiemNhanVien";
+            this.txbTimKiemNhanVien.Size = new System.Drawing.Size(264, 29);
+            this.txbTimKiemNhanVien.TabIndex = 10;
+            this.txbTimKiemNhanVien.Text = "Tìm kiếm";
+            this.txbTimKiemNhanVien.Enter += new System.EventHandler(this.txbTimKiemNhanVien_Enter);
+            this.txbTimKiemNhanVien.Leave += new System.EventHandler(this.txbTimKiemNhanVien_Leave);
             // 
-            // button4
+            // btnXemChiTietNhanVien
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::CinemaManagementSystem.Properties.Resources.plus;
-            this.button4.Location = new System.Drawing.Point(299, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 38);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnXemChiTietNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.btnXemChiTietNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTietNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTietNhanVien.Image = global::CinemaManagementSystem.Properties.Resources.plus;
+            this.btnXemChiTietNhanVien.Location = new System.Drawing.Point(598, 6);
+            this.btnXemChiTietNhanVien.Name = "btnXemChiTietNhanVien";
+            this.btnXemChiTietNhanVien.Size = new System.Drawing.Size(112, 38);
+            this.btnXemChiTietNhanVien.TabIndex = 11;
+            this.btnXemChiTietNhanVien.Text = "Chỉnh sửa";
+            this.btnXemChiTietNhanVien.UseVisualStyleBackColor = false;
+            this.btnXemChiTietNhanVien.Click += new System.EventHandler(this.btnXemChiTietNhanVien_Click);
+            // 
+            // btnAddNhanVien
+            // 
+            this.btnAddNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.btnAddNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnAddNhanVien.Image = global::CinemaManagementSystem.Properties.Resources.plus;
+            this.btnAddNhanVien.Location = new System.Drawing.Point(299, 9);
+            this.btnAddNhanVien.Name = "btnAddNhanVien";
+            this.btnAddNhanVien.Size = new System.Drawing.Size(80, 38);
+            this.btnAddNhanVien.TabIndex = 11;
+            this.btnAddNhanVien.Text = "Thêm";
+            this.btnAddNhanVien.UseVisualStyleBackColor = false;
+            this.btnAddNhanVien.Click += new System.EventHandler(this.btnAddNhanVien_Click);
             // 
             // QuanLyKhachHang
             // 
-            this.QuanLyKhachHang.Controls.Add(this.dataGridView4);
-            this.QuanLyKhachHang.Controls.Add(this.comboBox3);
-            this.QuanLyKhachHang.Controls.Add(this.comboBox2);
-            this.QuanLyKhachHang.Controls.Add(this.comboBox1);
-            this.QuanLyKhachHang.Controls.Add(this.textBox5);
+            this.QuanLyKhachHang.Controls.Add(this.dtgvKhachHang);
+            this.QuanLyKhachHang.Controls.Add(this.cbbGiaTriThangNam);
+            this.QuanLyKhachHang.Controls.Add(this.cbbThangNam);
+            this.QuanLyKhachHang.Controls.Add(this.cbbTimKiemKhachHang);
+            this.QuanLyKhachHang.Controls.Add(this.txbTimKiemKhachHang);
             this.QuanLyKhachHang.Location = new System.Drawing.Point(4, 22);
             this.QuanLyKhachHang.Name = "QuanLyKhachHang";
             this.QuanLyKhachHang.Size = new System.Drawing.Size(840, 531);
@@ -745,65 +778,65 @@
             this.QuanLyKhachHang.Text = "tabPage3";
             this.QuanLyKhachHang.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dtgvKhachHang
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(22, 69);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(794, 441);
-            this.dataGridView4.TabIndex = 14;
+            this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvKhachHang.Location = new System.Drawing.Point(22, 69);
+            this.dtgvKhachHang.Name = "dtgvKhachHang";
+            this.dtgvKhachHang.Size = new System.Drawing.Size(794, 441);
+            this.dtgvKhachHang.TabIndex = 14;
             // 
-            // comboBox3
+            // cbbGiaTriThangNam
             // 
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(695, 17);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 29);
-            this.comboBox3.TabIndex = 13;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbGiaTriThangNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbGiaTriThangNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGiaTriThangNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.cbbGiaTriThangNam.FormattingEnabled = true;
+            this.cbbGiaTriThangNam.Location = new System.Drawing.Point(695, 17);
+            this.cbbGiaTriThangNam.Name = "cbbGiaTriThangNam";
+            this.cbbGiaTriThangNam.Size = new System.Drawing.Size(121, 29);
+            this.cbbGiaTriThangNam.TabIndex = 13;
             // 
-            // comboBox2
+            // cbbThangNam
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbbThangNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbThangNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbThangNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.cbbThangNam.FormattingEnabled = true;
+            this.cbbThangNam.Items.AddRange(new object[] {
             "Theo năm",
             "Theo tháng"});
-            this.comboBox2.Location = new System.Drawing.Point(524, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 29);
-            this.comboBox2.TabIndex = 13;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbThangNam.Location = new System.Drawing.Point(524, 17);
+            this.cbbThangNam.Name = "cbbThangNam";
+            this.cbbThangNam.Size = new System.Drawing.Size(121, 29);
+            this.cbbThangNam.TabIndex = 13;
+            this.cbbThangNam.SelectedIndexChanged += new System.EventHandler(this.cbbThangNam_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cbbTimKiemKhachHang
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbbTimKiemKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbTimKiemKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTimKiemKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.cbbTimKiemKhachHang.FormattingEnabled = true;
+            this.cbbTimKiemKhachHang.Items.AddRange(new object[] {
             "Mã khách hàng",
             "Tên khách hàng",
             "Số điện thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(341, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbTimKiemKhachHang.Location = new System.Drawing.Point(303, 17);
+            this.cbbTimKiemKhachHang.Name = "cbbTimKiemKhachHang";
+            this.cbbTimKiemKhachHang.Size = new System.Drawing.Size(151, 29);
+            this.cbbTimKiemKhachHang.TabIndex = 13;
             // 
-            // textBox5
+            // txbTimKiemKhachHang
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(13, 17);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(264, 29);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "Tìm kiếm";
+            this.txbTimKiemKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTimKiemKhachHang.Location = new System.Drawing.Point(13, 17);
+            this.txbTimKiemKhachHang.Name = "txbTimKiemKhachHang";
+            this.txbTimKiemKhachHang.Size = new System.Drawing.Size(264, 29);
+            this.txbTimKiemKhachHang.TabIndex = 12;
+            this.txbTimKiemKhachHang.Text = "Tìm kiếm";
+            this.txbTimKiemKhachHang.Enter += new System.EventHandler(this.txbTimKiemNhanVien_Enter);
+            this.txbTimKiemKhachHang.Leave += new System.EventHandler(this.txbTimKiemNhanVien_Leave);
             // 
             // ThongKe
             // 
@@ -1301,20 +1334,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnXemChiTiet
-            // 
-            this.btnXemChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Image = global::CinemaManagementSystem.Properties.Resources.plus;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(521, 6);
-            this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(108, 38);
-            this.btnXemChiTiet.TabIndex = 7;
-            this.btnXemChiTiet.Text = "Xem chi tiết";
-            this.btnXemChiTiet.UseVisualStyleBackColor = false;
-            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
-            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1356,10 +1375,10 @@
             this.groupBox1.ResumeLayout(false);
             this.QuanLyNhanSu.ResumeLayout(false);
             this.QuanLyNhanSu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).EndInit();
             this.QuanLyKhachHang.ResumeLayout(false);
             this.QuanLyKhachHang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
             this.ThongKe.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1433,14 +1452,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TextBox txbTimKiemNhanVien;
+        private System.Windows.Forms.Button btnAddNhanVien;
+        private System.Windows.Forms.DataGridView dtgvNhanVien;
+        private System.Windows.Forms.ComboBox cbbTimKiemKhachHang;
+        private System.Windows.Forms.TextBox txbTimKiemKhachHang;
+        private System.Windows.Forms.ComboBox cbbGiaTriThangNam;
+        private System.Windows.Forms.ComboBox cbbThangNam;
+        private System.Windows.Forms.DataGridView dtgvKhachHang;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel6;
@@ -1490,5 +1509,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnXemChiTiet;
+        private System.Windows.Forms.Button btnXemChiTietNhanVien;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaManagementSystem.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,9 +80,9 @@ namespace CinemaManagementSystem
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                TaiKhoan t = db.TaiKhoans.SingleOrDefault(taikhoan => taikhoan.TenDangNhap.Equals(username));
+                NhanVien nv = db.NhanViens.SingleOrDefault(nhanvien => nhanvien.TenTaiKhoan.Equals(username));
 
-                Boolean isExist = t != null;
+                Boolean isExist = nv != null;
 
 
                 if (!isExist)
@@ -91,7 +92,7 @@ namespace CinemaManagementSystem
                     return;
                 }
 
-                Boolean matchPassword = t.MatKhau.Equals(password);
+                Boolean matchPassword = Helper.Helper.DecodeFrom64(nv.MatKhau).Equals(password);
 
                 if (!matchPassword)
                 {

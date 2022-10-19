@@ -30,14 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbFlashMessage = new System.Windows.Forms.Label();
-            this.btnDangKy = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.llbQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.txbTenDangNhap = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -48,7 +47,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lbFlashMessage);
-            this.panel1.Controls.Add(this.btnDangKy);
             this.panel1.Controls.Add(this.btnDangNhap);
             this.panel1.Controls.Add(this.llbQuenMatKhau);
             this.panel1.Controls.Add(this.txbMatKhau);
@@ -73,20 +71,6 @@
             this.lbFlashMessage.TabIndex = 11;
             this.lbFlashMessage.Text = "Tài khoản đăng nhập không tồn tại !!";
             // 
-            // btnDangKy
-            // 
-            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.btnDangKy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangKy.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnDangKy.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(109, 273);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(100, 35);
-            this.btnDangKy.TabIndex = 7;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseVisualStyleBackColor = false;
-            // 
             // btnDangNhap
             // 
             this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
@@ -94,7 +78,7 @@
             this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnDangNhap.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(254, 273);
+            this.btnDangNhap.Location = new System.Drawing.Point(165, 272);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(100, 35);
             this.btnDangNhap.TabIndex = 7;
@@ -139,17 +123,6 @@
             this.txbTenDangNhap.Enter += new System.EventHandler(this.txbTenDangNhap_Enter);
             this.txbTenDangNhap.Leave += new System.EventHandler(this.txbTenDangNhap_Leave);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
-            this.label1.Location = new System.Drawing.Point(102, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 37);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "WELCOME BACK";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CinemaManagementSystem.Properties.Resources.password_76;
@@ -169,6 +142,17 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(110)))), ((int)(((byte)(162)))));
+            this.label1.Location = new System.Drawing.Point(102, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "WELCOME BACK";
             // 
             // pictureBox1
             // 
@@ -212,7 +196,6 @@
         private System.Windows.Forms.TextBox txbTenDangNhap;
         private System.Windows.Forms.LinkLabel llbQuenMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.Label lbFlashMessage;
     }
 }
