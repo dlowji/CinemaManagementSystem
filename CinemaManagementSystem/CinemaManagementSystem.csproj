@@ -251,6 +251,9 @@
     <EmbeddedResource Include="EmployeeManagement\SuaThongTinNhanVien.resx">
       <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Staff\MainStaffWindow.resx">
+      <DependentUpon>MainStaffWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.resx">
       <DependentUpon>MoiveScheduleWindow.cs</DependentUpon>
     </EmbeddedResource>

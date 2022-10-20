@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CINEMA_NEW.Staff.MovieScheduleWindow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace CINEMA_NEW.Staff.ShowtimePage
         public ShowtimePage()
         {
             InitializeComponent();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            MoiveScheduleWindow moive = new MoiveScheduleWindow();
+            moive.Show();
         }
     }
 }
