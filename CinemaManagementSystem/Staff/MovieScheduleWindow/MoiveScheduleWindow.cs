@@ -26,5 +26,10 @@ namespace CINEMA_NEW.Staff.MovieScheduleWindow
         {
             this.Close();
         }
+
+        public void loadThongTinPhim(int maPhim)
+        {
+
+        }
     }
 }
