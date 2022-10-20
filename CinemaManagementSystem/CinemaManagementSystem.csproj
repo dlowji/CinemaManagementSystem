@@ -47,29 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="error\Form1.cs">
+    <Compile Include="Admin\error\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="error\Form1.designer.cs">
+    <Compile Include="Admin\error\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilmManagement\ChinhSuaPhim.cs">
+    <Compile Include="Admin\FilmManagement\ChinhSuaPhim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilmManagement\ChinhSuaPhim.Designer.cs">
+    <Compile Include="Admin\FilmManagement\ChinhSuaPhim.Designer.cs">
       <DependentUpon>ChinhSuaPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilmManagement\ChiTietPhim.cs">
+    <Compile Include="Admin\FilmManagement\ChiTietPhim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilmManagement\ChiTietPhim.Designer.cs">
+    <Compile Include="Admin\FilmManagement\ChiTietPhim.Designer.cs">
       <DependentUpon>ChiTietPhim.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Helper.cs" />
-    <Compile Include="ShowRoomManagement\ChiTietSuatChieu.cs">
+    <Compile Include="Admin\ShowRoomManagement\ChiTietSuatChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowRoomManagement\ChiTietSuatChieu.Designer.cs">
+    <Compile Include="Admin\ShowRoomManagement\ChiTietSuatChieu.Designer.cs">
       <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Cinema.designer.cs">
@@ -102,10 +102,10 @@
     <Compile Include="ForgetPassword\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManagement\SuaThongTinNhanVien.cs">
+    <Compile Include="Admin\EmployeeManagement\SuaThongTinNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeManagement\SuaThongTinNhanVien.Designer.cs">
+    <Compile Include="Admin\EmployeeManagement\SuaThongTinNhanVien.Designer.cs">
       <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff\MainStaffWindow.cs">
@@ -186,34 +186,34 @@
     <Compile Include="Staff\TroubleWindow\ViewError.designer.cs">
       <DependentUpon>ViewError.cs</DependentUpon>
     </Compile>
-    <Compile Include="Voucher\ThemDotPhatHanh.cs">
+    <Compile Include="Admin\Voucher\ThemDotPhatHanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Voucher\ThemDotPhatHanh.Designer.cs">
+    <Compile Include="Admin\Voucher\ThemDotPhatHanh.Designer.cs">
       <DependentUpon>ThemDotPhatHanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManagement\ThemNhanVien.cs">
+    <Compile Include="Admin\EmployeeManagement\ThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeManagement\ThemNhanVien.Designer.cs">
+    <Compile Include="Admin\EmployeeManagement\ThemNhanVien.Designer.cs">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilmManagement\ThemPhimMoi.cs">
+    <Compile Include="Admin\FilmManagement\ThemPhimMoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilmManagement\ThemPhimMoi.Designer.cs">
+    <Compile Include="Admin\FilmManagement\ThemPhimMoi.Designer.cs">
       <DependentUpon>ThemPhimMoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowRoomManagement\ThemSuatChieu.cs">
+    <Compile Include="Admin\ShowRoomManagement\ThemSuatChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowRoomManagement\ThemSuatChieu.Designer.cs">
+    <Compile Include="Admin\ShowRoomManagement\ThemSuatChieu.Designer.cs">
       <DependentUpon>ThemSuatChieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Voucher\ThongTinDotPhatHanh.cs">
+    <Compile Include="Admin\Voucher\ThongTinDotPhatHanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Voucher\ThongTinDotPhatHanh.Designer.cs">
+    <Compile Include="Admin\Voucher\ThongTinDotPhatHanh.Designer.cs">
       <DependentUpon>ThongTinDotPhatHanh.cs</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.cs">
@@ -222,16 +222,16 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="error\Form1.resx">
+    <EmbeddedResource Include="Admin\error\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilmManagement\ChinhSuaPhim.resx">
+    <EmbeddedResource Include="Admin\FilmManagement\ChinhSuaPhim.resx">
       <DependentUpon>ChinhSuaPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilmManagement\ChiTietPhim.resx">
+    <EmbeddedResource Include="Admin\FilmManagement\ChiTietPhim.resx">
       <DependentUpon>ChiTietPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowRoomManagement\ChiTietSuatChieu.resx">
+    <EmbeddedResource Include="Admin\ShowRoomManagement\ChiTietSuatChieu.resx">
       <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\DangNhap.resx">
@@ -248,7 +248,7 @@
     <EmbeddedResource Include="ForgetPassword\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeManagement\SuaThongTinNhanVien.resx">
+    <EmbeddedResource Include="Admin\EmployeeManagement\SuaThongTinNhanVien.resx">
       <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\MainStaffWindow.resx">
@@ -290,19 +290,19 @@
     <EmbeddedResource Include="Staff\TroubleWindow\ViewError.resx">
       <DependentUpon>ViewError.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Voucher\ThemDotPhatHanh.resx">
+    <EmbeddedResource Include="Admin\Voucher\ThemDotPhatHanh.resx">
       <DependentUpon>ThemDotPhatHanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeManagement\ThemNhanVien.resx">
+    <EmbeddedResource Include="Admin\EmployeeManagement\ThemNhanVien.resx">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilmManagement\ThemPhimMoi.resx">
+    <EmbeddedResource Include="Admin\FilmManagement\ThemPhimMoi.resx">
       <DependentUpon>ThemPhimMoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowRoomManagement\ThemSuatChieu.resx">
+    <EmbeddedResource Include="Admin\ShowRoomManagement\ThemSuatChieu.resx">
       <DependentUpon>ThemSuatChieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Voucher\ThongTinDotPhatHanh.resx">
+    <EmbeddedResource Include="Admin\Voucher\ThongTinDotPhatHanh.resx">
       <DependentUpon>ThongTinDotPhatHanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
