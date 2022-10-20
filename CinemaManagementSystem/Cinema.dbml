@@ -47,18 +47,6 @@
       <Association Name="PhongChieu_CaiDatSuatChieu" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SuatChieu" Member="SuatChieus">
-    <Type Name="SuatChieu">
-      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GiaVe" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThoiGianBatDau" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Association Name="SuatChieu_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="CaiDatGhe" />
-      <Association Name="CaiDatSuatChieu_SuatChieu" Member="CaiDatSuatChieu" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="CaiDatSuatChieu" IsForeignKey="true" />
-      <Association Name="Phim_SuatChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Ghe" Member="Ghes">
     <Type Name="Ghe">
       <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -118,6 +106,18 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ThoiGianTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuatChieu" Member="SuatChieus">
+    <Type Name="SuatChieu">
+      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaVe" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="ThoiGianBatDau" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="SuatChieu_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="CaiDatGhe" />
+      <Association Name="CaiDatSuatChieu_SuatChieu" Member="CaiDatSuatChieu" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="CaiDatSuatChieu" IsForeignKey="true" />
+      <Association Name="Phim_SuatChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
