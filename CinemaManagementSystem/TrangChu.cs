@@ -170,10 +170,13 @@ namespace CinemaManagementSystem
             using (CinemaDataContext db = new CinemaDataContext()) 
             {
                 DateTime date = DateTime.ParseExact(ngayChieu, "dd/MM/yyyy", null);
+               
 
                 var query = from sc in db.SuatChieus
                             where sc.CaiDatSuatChieu.NgayChieu.Equals(date)
                             select sc;
+
+               
 
                 if (tenPhong != "")
                 {
@@ -191,7 +194,7 @@ namespace CinemaManagementSystem
 
                 foreach (SuatChieu sc in query)
                 {
-                    dt.Rows.Add(sc.MaSuatChieu, sc.Phim.TenPhim, "2D", sc.Phim.ThoiLuong, sc.ThoiGianBatDau);
+                    dt.Rows.Add(sc.MaSuatChieu, sc.Phim.TenPhim, "2D", sc.Phim.ThoiLuong.ToString(), sc.ThoiGianBatDau.ToString());
                 }
 
                 dtgvSuatChieu.DataSource = dt;

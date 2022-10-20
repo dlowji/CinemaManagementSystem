@@ -114,6 +114,12 @@
     <Compile Include="Staff\MainStaffWindow.designer.cs">
       <DependentUpon>MainStaffWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.designer.cs">
+      <DependentUpon>MoiveScheduleWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff\OrderFoodWindow\FoodPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeManagement\SuaThongTinNhanVien.resx">
       <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.resx">
+      <DependentUpon>MoiveScheduleWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\OrderFoodWindow\FoodPage.resx">
       <DependentUpon>FoodPage.cs</DependentUpon>
@@ -386,8 +395,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Staff\MovieScheduleWindow\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

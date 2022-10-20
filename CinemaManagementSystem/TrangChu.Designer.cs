@@ -603,12 +603,14 @@
             // 
             // dtpNgayChieu
             // 
+            this.dtpNgayChieu.CustomFormat = "dd-MM-yyyy";
             this.dtpNgayChieu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayChieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayChieu.Location = new System.Drawing.Point(657, 15);
+            this.dtpNgayChieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayChieu.Location = new System.Drawing.Point(682, 15);
             this.dtpNgayChieu.Name = "dtpNgayChieu";
-            this.dtpNgayChieu.Size = new System.Drawing.Size(151, 29);
+            this.dtpNgayChieu.Size = new System.Drawing.Size(126, 29);
             this.dtpNgayChieu.TabIndex = 4;
+            this.dtpNgayChieu.Value = new System.DateTime(2022, 10, 20, 0, 0, 0, 0);
             this.dtpNgayChieu.ValueChanged += new System.EventHandler(this.dtpNgayChieu_ValueChanged);
             // 
             // btnXemChiTiet

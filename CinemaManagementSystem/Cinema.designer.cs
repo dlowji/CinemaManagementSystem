@@ -45,9 +45,6 @@ namespace CinemaManagementSystem
     partial void InsertCaiDatSuatChieu(CaiDatSuatChieu instance);
     partial void UpdateCaiDatSuatChieu(CaiDatSuatChieu instance);
     partial void DeleteCaiDatSuatChieu(CaiDatSuatChieu instance);
-    partial void InsertSuatChieu(SuatChieu instance);
-    partial void UpdateSuatChieu(SuatChieu instance);
-    partial void DeleteSuatChieu(SuatChieu instance);
     partial void InsertGhe(Ghe instance);
     partial void UpdateGhe(Ghe instance);
     partial void DeleteGhe(Ghe instance);
@@ -66,6 +63,9 @@ namespace CinemaManagementSystem
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
+    partial void InsertSuatChieu(SuatChieu instance);
+    partial void UpdateSuatChieu(SuatChieu instance);
+    partial void DeleteSuatChieu(SuatChieu instance);
     #endregion
 		
 		public CinemaDataContext() : 
@@ -138,14 +138,6 @@ namespace CinemaManagementSystem
 			}
 		}
 		
-		public System.Data.Linq.Table<SuatChieu> SuatChieus
-		{
-			get
-			{
-				return this.GetTable<SuatChieu>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Ghe> Ghes
 		{
 			get
@@ -191,6 +183,14 @@ namespace CinemaManagementSystem
 			get
 			{
 				return this.GetTable<KhachHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SuatChieu> SuatChieus
+		{
+			get
+			{
+				return this.GetTable<SuatChieu>();
 			}
 		}
 	}
@@ -1097,274 +1097,6 @@ namespace CinemaManagementSystem
 		{
 			this.SendPropertyChanging();
 			entity.CaiDatSuatChieu = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SuatChieu")]
-	public partial class SuatChieu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaSuatChieu;
-		
-		private System.Nullable<int> _MaCaiDatSuatChieu;
-		
-		private System.Nullable<int> _MaPhim;
-		
-		private System.Nullable<int> _GiaVe;
-		
-		private System.Nullable<System.TimeSpan> _ThoiGianBatDau;
-		
-		private EntitySet<CaiDatGhe> _CaiDatGhes;
-		
-		private EntityRef<CaiDatSuatChieu> _CaiDatSuatChieu;
-		
-		private EntityRef<Phim> _Phim;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaSuatChieuChanging(int value);
-    partial void OnMaSuatChieuChanged();
-    partial void OnMaCaiDatSuatChieuChanging(System.Nullable<int> value);
-    partial void OnMaCaiDatSuatChieuChanged();
-    partial void OnMaPhimChanging(System.Nullable<int> value);
-    partial void OnMaPhimChanged();
-    partial void OnGiaVeChanging(System.Nullable<int> value);
-    partial void OnGiaVeChanged();
-    partial void OnThoiGianBatDauChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnThoiGianBatDauChanged();
-    #endregion
-		
-		public SuatChieu()
-		{
-			this._CaiDatGhes = new EntitySet<CaiDatGhe>(new Action<CaiDatGhe>(this.attach_CaiDatGhes), new Action<CaiDatGhe>(this.detach_CaiDatGhes));
-			this._CaiDatSuatChieu = default(EntityRef<CaiDatSuatChieu>);
-			this._Phim = default(EntityRef<Phim>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSuatChieu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaSuatChieu
-		{
-			get
-			{
-				return this._MaSuatChieu;
-			}
-			set
-			{
-				if ((this._MaSuatChieu != value))
-				{
-					this.OnMaSuatChieuChanging(value);
-					this.SendPropertyChanging();
-					this._MaSuatChieu = value;
-					this.SendPropertyChanged("MaSuatChieu");
-					this.OnMaSuatChieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCaiDatSuatChieu", DbType="Int")]
-		public System.Nullable<int> MaCaiDatSuatChieu
-		{
-			get
-			{
-				return this._MaCaiDatSuatChieu;
-			}
-			set
-			{
-				if ((this._MaCaiDatSuatChieu != value))
-				{
-					if (this._CaiDatSuatChieu.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaCaiDatSuatChieuChanging(value);
-					this.SendPropertyChanging();
-					this._MaCaiDatSuatChieu = value;
-					this.SendPropertyChanged("MaCaiDatSuatChieu");
-					this.OnMaCaiDatSuatChieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhim", DbType="Int")]
-		public System.Nullable<int> MaPhim
-		{
-			get
-			{
-				return this._MaPhim;
-			}
-			set
-			{
-				if ((this._MaPhim != value))
-				{
-					if (this._Phim.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaPhimChanging(value);
-					this.SendPropertyChanging();
-					this._MaPhim = value;
-					this.SendPropertyChanged("MaPhim");
-					this.OnMaPhimChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaVe", DbType="Int")]
-		public System.Nullable<int> GiaVe
-		{
-			get
-			{
-				return this._GiaVe;
-			}
-			set
-			{
-				if ((this._GiaVe != value))
-				{
-					this.OnGiaVeChanging(value);
-					this.SendPropertyChanging();
-					this._GiaVe = value;
-					this.SendPropertyChanged("GiaVe");
-					this.OnGiaVeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianBatDau", DbType="Time")]
-		public System.Nullable<System.TimeSpan> ThoiGianBatDau
-		{
-			get
-			{
-				return this._ThoiGianBatDau;
-			}
-			set
-			{
-				if ((this._ThoiGianBatDau != value))
-				{
-					this.OnThoiGianBatDauChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiGianBatDau = value;
-					this.SendPropertyChanged("ThoiGianBatDau");
-					this.OnThoiGianBatDauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SuatChieu_CaiDatGhe", Storage="_CaiDatGhes", ThisKey="MaSuatChieu", OtherKey="MaSuatChieu")]
-		public EntitySet<CaiDatGhe> CaiDatGhes
-		{
-			get
-			{
-				return this._CaiDatGhes;
-			}
-			set
-			{
-				this._CaiDatGhes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CaiDatSuatChieu_SuatChieu", Storage="_CaiDatSuatChieu", ThisKey="MaCaiDatSuatChieu", OtherKey="MaCaiDatSuatChieu", IsForeignKey=true)]
-		public CaiDatSuatChieu CaiDatSuatChieu
-		{
-			get
-			{
-				return this._CaiDatSuatChieu.Entity;
-			}
-			set
-			{
-				CaiDatSuatChieu previousValue = this._CaiDatSuatChieu.Entity;
-				if (((previousValue != value) 
-							|| (this._CaiDatSuatChieu.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CaiDatSuatChieu.Entity = null;
-						previousValue.SuatChieus.Remove(this);
-					}
-					this._CaiDatSuatChieu.Entity = value;
-					if ((value != null))
-					{
-						value.SuatChieus.Add(this);
-						this._MaCaiDatSuatChieu = value.MaCaiDatSuatChieu;
-					}
-					else
-					{
-						this._MaCaiDatSuatChieu = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("CaiDatSuatChieu");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phim_SuatChieu", Storage="_Phim", ThisKey="MaPhim", OtherKey="MaPhim", IsForeignKey=true)]
-		public Phim Phim
-		{
-			get
-			{
-				return this._Phim.Entity;
-			}
-			set
-			{
-				Phim previousValue = this._Phim.Entity;
-				if (((previousValue != value) 
-							|| (this._Phim.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Phim.Entity = null;
-						previousValue.SuatChieus.Remove(this);
-					}
-					this._Phim.Entity = value;
-					if ((value != null))
-					{
-						value.SuatChieus.Add(this);
-						this._MaPhim = value.MaPhim;
-					}
-					else
-					{
-						this._MaPhim = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Phim");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CaiDatGhes(CaiDatGhe entity)
-		{
-			this.SendPropertyChanging();
-			entity.SuatChieu = this;
-		}
-		
-		private void detach_CaiDatGhes(CaiDatGhe entity)
-		{
-			this.SendPropertyChanging();
-			entity.SuatChieu = null;
 		}
 	}
 	
@@ -2565,6 +2297,274 @@ namespace CinemaManagementSystem
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SuatChieu")]
+	public partial class SuatChieu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaSuatChieu;
+		
+		private System.Nullable<int> _MaCaiDatSuatChieu;
+		
+		private System.Nullable<int> _MaPhim;
+		
+		private System.Nullable<decimal> _GiaVe;
+		
+		private System.Nullable<System.TimeSpan> _ThoiGianBatDau;
+		
+		private EntitySet<CaiDatGhe> _CaiDatGhes;
+		
+		private EntityRef<CaiDatSuatChieu> _CaiDatSuatChieu;
+		
+		private EntityRef<Phim> _Phim;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaSuatChieuChanging(int value);
+    partial void OnMaSuatChieuChanged();
+    partial void OnMaCaiDatSuatChieuChanging(System.Nullable<int> value);
+    partial void OnMaCaiDatSuatChieuChanged();
+    partial void OnMaPhimChanging(System.Nullable<int> value);
+    partial void OnMaPhimChanged();
+    partial void OnGiaVeChanging(System.Nullable<decimal> value);
+    partial void OnGiaVeChanged();
+    partial void OnThoiGianBatDauChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnThoiGianBatDauChanged();
+    #endregion
+		
+		public SuatChieu()
+		{
+			this._CaiDatGhes = new EntitySet<CaiDatGhe>(new Action<CaiDatGhe>(this.attach_CaiDatGhes), new Action<CaiDatGhe>(this.detach_CaiDatGhes));
+			this._CaiDatSuatChieu = default(EntityRef<CaiDatSuatChieu>);
+			this._Phim = default(EntityRef<Phim>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSuatChieu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaSuatChieu
+		{
+			get
+			{
+				return this._MaSuatChieu;
+			}
+			set
+			{
+				if ((this._MaSuatChieu != value))
+				{
+					this.OnMaSuatChieuChanging(value);
+					this.SendPropertyChanging();
+					this._MaSuatChieu = value;
+					this.SendPropertyChanged("MaSuatChieu");
+					this.OnMaSuatChieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCaiDatSuatChieu", DbType="Int")]
+		public System.Nullable<int> MaCaiDatSuatChieu
+		{
+			get
+			{
+				return this._MaCaiDatSuatChieu;
+			}
+			set
+			{
+				if ((this._MaCaiDatSuatChieu != value))
+				{
+					if (this._CaiDatSuatChieu.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaCaiDatSuatChieuChanging(value);
+					this.SendPropertyChanging();
+					this._MaCaiDatSuatChieu = value;
+					this.SendPropertyChanged("MaCaiDatSuatChieu");
+					this.OnMaCaiDatSuatChieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhim", DbType="Int")]
+		public System.Nullable<int> MaPhim
+		{
+			get
+			{
+				return this._MaPhim;
+			}
+			set
+			{
+				if ((this._MaPhim != value))
+				{
+					if (this._Phim.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaPhimChanging(value);
+					this.SendPropertyChanging();
+					this._MaPhim = value;
+					this.SendPropertyChanged("MaPhim");
+					this.OnMaPhimChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaVe", DbType="Decimal(12,2)")]
+		public System.Nullable<decimal> GiaVe
+		{
+			get
+			{
+				return this._GiaVe;
+			}
+			set
+			{
+				if ((this._GiaVe != value))
+				{
+					this.OnGiaVeChanging(value);
+					this.SendPropertyChanging();
+					this._GiaVe = value;
+					this.SendPropertyChanged("GiaVe");
+					this.OnGiaVeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianBatDau", DbType="Time")]
+		public System.Nullable<System.TimeSpan> ThoiGianBatDau
+		{
+			get
+			{
+				return this._ThoiGianBatDau;
+			}
+			set
+			{
+				if ((this._ThoiGianBatDau != value))
+				{
+					this.OnThoiGianBatDauChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianBatDau = value;
+					this.SendPropertyChanged("ThoiGianBatDau");
+					this.OnThoiGianBatDauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SuatChieu_CaiDatGhe", Storage="_CaiDatGhes", ThisKey="MaSuatChieu", OtherKey="MaSuatChieu")]
+		public EntitySet<CaiDatGhe> CaiDatGhes
+		{
+			get
+			{
+				return this._CaiDatGhes;
+			}
+			set
+			{
+				this._CaiDatGhes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CaiDatSuatChieu_SuatChieu", Storage="_CaiDatSuatChieu", ThisKey="MaCaiDatSuatChieu", OtherKey="MaCaiDatSuatChieu", IsForeignKey=true)]
+		public CaiDatSuatChieu CaiDatSuatChieu
+		{
+			get
+			{
+				return this._CaiDatSuatChieu.Entity;
+			}
+			set
+			{
+				CaiDatSuatChieu previousValue = this._CaiDatSuatChieu.Entity;
+				if (((previousValue != value) 
+							|| (this._CaiDatSuatChieu.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CaiDatSuatChieu.Entity = null;
+						previousValue.SuatChieus.Remove(this);
+					}
+					this._CaiDatSuatChieu.Entity = value;
+					if ((value != null))
+					{
+						value.SuatChieus.Add(this);
+						this._MaCaiDatSuatChieu = value.MaCaiDatSuatChieu;
+					}
+					else
+					{
+						this._MaCaiDatSuatChieu = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("CaiDatSuatChieu");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phim_SuatChieu", Storage="_Phim", ThisKey="MaPhim", OtherKey="MaPhim", IsForeignKey=true)]
+		public Phim Phim
+		{
+			get
+			{
+				return this._Phim.Entity;
+			}
+			set
+			{
+				Phim previousValue = this._Phim.Entity;
+				if (((previousValue != value) 
+							|| (this._Phim.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Phim.Entity = null;
+						previousValue.SuatChieus.Remove(this);
+					}
+					this._Phim.Entity = value;
+					if ((value != null))
+					{
+						value.SuatChieus.Add(this);
+						this._MaPhim = value.MaPhim;
+					}
+					else
+					{
+						this._MaPhim = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Phim");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CaiDatGhes(CaiDatGhe entity)
+		{
+			this.SendPropertyChanging();
+			entity.SuatChieu = this;
+		}
+		
+		private void detach_CaiDatGhes(CaiDatGhe entity)
+		{
+			this.SendPropertyChanging();
+			entity.SuatChieu = null;
 		}
 	}
 }
