@@ -32,5 +32,36 @@ namespace CinemaManagementSystem.Properties {
                 return ((string)(this["CINEMAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=QUAN_LY_RAP_PHIM;Integrated Security=Tr" +
+            "ue")]
+        public string QUAN_LY_RAP_PHIMConnectionString {
+            get {
+                return ((string)(this["QUAN_LY_RAP_PHIMConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=TEST_NE;Integrated Security=True")]
+        public string TEST_NEConnectionString {
+            get {
+                return ((string)(this["TEST_NEConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=QUANLYRAPPHIM;Integrated Security=True")]
+        public string QUANLYRAPPHIMConnectionString {
+            get {
+                return ((string)(this["QUANLYRAPPHIMConnectionString"]));
+            }
+        }
     }
 }

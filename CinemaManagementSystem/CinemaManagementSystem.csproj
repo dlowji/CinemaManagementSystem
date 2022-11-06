@@ -47,47 +47,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\error\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\error\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ChinhSuaPhim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ChinhSuaPhim.Designer.cs">
-      <DependentUpon>ChinhSuaPhim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ChiTietPhim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ChiTietPhim.Designer.cs">
-      <DependentUpon>ChiTietPhim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Helper\Helper.cs" />
-    <Compile Include="Admin\ShowRoomManagement\ChiTietSuatChieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowRoomManagement\ChiTietSuatChieu.Designer.cs">
-      <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cinema.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cinema.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Login\DangNhap.cs">
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShowTimeController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\TicketContrller.cs" />
+    <Compile Include="View\Admin\Data\CinemaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\CinemaUC.designer.cs">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\DangNhap.Designer.cs">
+    <Compile Include="View\Admin\Data\DataForm.Designer.cs">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\FormatMovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\FormatMovieUC.designer.cs">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\GenreUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\GenreUC.designer.cs">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\MovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\MovieUC.designer.cs">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\ScreenTypeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\ScreenTypeUC.designer.cs">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\ShowTimesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\ShowTimesUC.designer.cs">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Data\TicketsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Data\TicketsUC.designer.cs">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CineplexDAO.cs" />
+    <Compile Include="DAO\StorageDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\CinemaDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\FormatMovieDAO.cs" />
+    <Compile Include="DAO\GenreDAO.cs" />
+    <Compile Include="DAO\MovieByGenreDAO.cs" />
+    <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\RevenueDAO.cs" />
+    <Compile Include="DAO\ScreenTypeDAO.cs" />
+    <Compile Include="DAO\ShowTimesDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="View\Others\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Others\frmCustomer.designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Staff\frmDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Staff\frmDashBoard.designer.cs">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Import\frmImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Import\frmImport.Designer.cs">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Staff\frmSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Staff\frmSeller.designer.cs">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Staff\frmTheatre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Staff\frmTheatre.designer.cs">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="View\Login\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgetPassword\NhapMatKhauMoi.cs">
+    <Compile Include="View\Others\MovieDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgetPassword\NhapMatKhauMoi.Designer.cs">
-      <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
+    <Compile Include="View\Others\MovieDetail.Designer.cs">
+      <DependentUpon>MovieDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,217 +173,64 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ForgetPassword\QuenMatKhau.cs">
+    <Compile Include="View\Admin\QuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgetPassword\QuenMatKhau.Designer.cs">
-      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    <Compile Include="View\Admin\QuanLy.Designer.cs">
+      <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\EmployeeManagement\SuaThongTinNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\EmployeeManagement\SuaThongTinNhanVien.Designer.cs">
-      <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\MainStaffWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\MainStaffWindow.designer.cs">
-      <DependentUpon>MainStaffWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.designer.cs">
-      <DependentUpon>MoiveScheduleWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\OrderFoodWindow\FoodPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\OrderFoodWindow\FoodPage.designer.cs">
-      <DependentUpon>FoodPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\ShowTimePage\ShowtimePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\ShowTimePage\ShowtimePage.designer.cs">
-      <DependentUpon>ShowtimePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillNoFoodPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillNoFoodPage.designer.cs">
-      <DependentUpon>TicketBillNoFoodPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillOnlyFoodPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillOnlyFoodPage.designer.cs">
-      <DependentUpon>TicketBillOnlyFoodPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TicketBill\TicketBillPage.designer.cs">
-      <DependentUpon>TicketBillPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TicketWindow\TicketBookingPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TicketWindow\TicketBookingPage.designer.cs">
-      <DependentUpon>TicketBookingPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TicketWindow\TicketWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TicketWindow\TicketWindow.designer.cs">
-      <DependentUpon>TicketWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\AddError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\AddError.designer.cs">
-      <DependentUpon>AddError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\EditError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\EditError.designer.cs">
-      <DependentUpon>EditError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\TroublePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\TroublePage.designer.cs">
-      <DependentUpon>TroublePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\ViewError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\TroubleWindow\ViewError.designer.cs">
-      <DependentUpon>ViewError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Voucher\ThemDotPhatHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\Voucher\ThemDotPhatHanh.Designer.cs">
-      <DependentUpon>ThemDotPhatHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\EmployeeManagement\ThemNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\EmployeeManagement\ThemNhanVien.Designer.cs">
-      <DependentUpon>ThemNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ThemPhimMoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\FilmManagement\ThemPhimMoi.Designer.cs">
-      <DependentUpon>ThemPhimMoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ShowRoomManagement\ThemSuatChieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowRoomManagement\ThemSuatChieu.Designer.cs">
-      <DependentUpon>ThemSuatChieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Voucher\ThongTinDotPhatHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\Voucher\ThongTinDotPhatHanh.Designer.cs">
-      <DependentUpon>ThongTinDotPhatHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TrangChu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TrangChu.Designer.cs">
-      <DependentUpon>TrangChu.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Admin\error\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\Data\CinemaUC.resx">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FilmManagement\ChinhSuaPhim.resx">
-      <DependentUpon>ChinhSuaPhim.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\Data\DataForm.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FilmManagement\ChiTietPhim.resx">
-      <DependentUpon>ChiTietPhim.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\Data\FormatMovieUC.resx">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ShowRoomManagement\ChiTietSuatChieu.resx">
-      <DependentUpon>ChiTietSuatChieu.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\Data\GenreUC.resx">
+      <DependentUpon>GenreUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\DangNhap.resx">
+    <EmbeddedResource Include="View\Admin\Data\MovieUC.resx">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Data\ScreenTypeUC.resx">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Data\ShowTimesUC.resx">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Data\TicketsUC.resx">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Others\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Staff\frmDashBoard.resx">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Import\frmImport.resx">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Staff\frmSeller.resx">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Staff\frmTheatre.resx">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetPassword\NhapMatKhauMoi.resx">
-      <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
+    <EmbeddedResource Include="View\Others\MovieDetail.resx">
+      <DependentUpon>MovieDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetPassword\QuenMatKhau.resx">
-      <DependentUpon>QuenMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\EmployeeManagement\SuaThongTinNhanVien.resx">
-      <DependentUpon>SuaThongTinNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\MainStaffWindow.resx">
-      <DependentUpon>MainStaffWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\MovieScheduleWindow\MoiveScheduleWindow.resx">
-      <DependentUpon>MoiveScheduleWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\OrderFoodWindow\FoodPage.resx">
-      <DependentUpon>FoodPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\ShowTimePage\ShowtimePage.resx">
-      <DependentUpon>ShowtimePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TicketBill\TicketBillNoFoodPage.resx">
-      <DependentUpon>TicketBillNoFoodPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TicketBill\TicketBillOnlyFoodPage.resx">
-      <DependentUpon>TicketBillOnlyFoodPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TicketBill\TicketBillPage.resx">
-      <DependentUpon>TicketBillPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TicketWindow\TicketBookingPage.resx">
-      <DependentUpon>TicketBookingPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TicketWindow\TicketWindow.resx">
-      <DependentUpon>TicketWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TroubleWindow\AddError.resx">
-      <DependentUpon>AddError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TroubleWindow\EditError.resx">
-      <DependentUpon>EditError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TroubleWindow\TroublePage.resx">
-      <DependentUpon>TroublePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\TroubleWindow\ViewError.resx">
-      <DependentUpon>ViewError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Voucher\ThemDotPhatHanh.resx">
-      <DependentUpon>ThemDotPhatHanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\EmployeeManagement\ThemNhanVien.resx">
-      <DependentUpon>ThemNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FilmManagement\ThemPhimMoi.resx">
-      <DependentUpon>ThemPhimMoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ShowRoomManagement\ThemSuatChieu.resx">
-      <DependentUpon>ThemSuatChieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Voucher\ThongTinDotPhatHanh.resx">
-      <DependentUpon>ThongTinDotPhatHanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrangChu.resx">
-      <DependentUpon>TrangChu.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\QuanLy.resx">
+      <DependentUpon>QuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Cinema.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -346,9 +270,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\suco.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thongke.png" />
@@ -397,6 +318,57 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0000_Layer-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0001_Layer-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0002_Layer-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0003_Layer-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0004_Layer-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0005_Layer-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0006_Layer-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0007_Layer-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0008_Layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolder_4896.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee-office-staff-3d735bc691173bb5-256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongke2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voucher1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
