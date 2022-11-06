@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,28 @@ namespace CinemaManagementSystem.Helper
             utf8Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
             string result = new String(decoded_char);
             return result;
+        }
+
+        public static string getTicketTypeRepresentation(int ticketType)
+        {
+            StringBuilder representString = new StringBuilder();
+            switch (ticketType)
+            {
+                case 0: 
+                    representString.Append("Vé người lớn");
+                    break;
+                case 1:
+                    representString.Append("Vé học sinh - sinh viên");
+                    break;
+                case 2:
+                    representString.Append("Vé trẻ em");
+                    break;
+                default:
+                    representString.Append("Vé không xác định");
+                    break;
+            }
+
+            return representString.ToString();
         }
     }
 }

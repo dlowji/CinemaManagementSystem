@@ -1,5 +1,4 @@
-﻿using CINEMA_NEW.Staff;
-using CINEMA_NEW.Staff.ShowtimePage;
+﻿using GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace CinemaManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ShowtimePage());
+            Application.Run(new DangNhap());
         }
     }
 }

@@ -1,123 +1,520 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CINEMA" Class="CinemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=msi\db_server;Initial Catalog=CINEMA;Integrated Security=True" SettingsObjectName="CinemaManagementSystem.Properties.Settings" SettingsPropertyName="CINEMAConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
-    <Type Name="TaiKhoan">
-      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYRAPPHIM" Class="CinemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=msi\db_server;Initial Catalog=QUANLYRAPPHIM;Integrated Security=True" SettingsObjectName="CinemaManagementSystem.Properties.Settings" SettingsPropertyName="QUANLYRAPPHIMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CapDoThanhVien" Member="CapDoThanhViens">
+    <Type Name="CapDoThanhVien">
+      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiemThuongQuayVe" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DiemThuongBapNuoc" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="CapDoThanhVien_KhachHang" Member="KhachHangs" ThisKey="id" OtherKey="idCapDoThanhVien" Type="KhachHang" />
     </Type>
   </Table>
-  <Table Name="dbo.QuocGia" Member="QuocGias">
-    <Type Name="QuocGia">
-      <Column Name="MaQuocGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenQuocGia" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="QuocGia_Phim" Member="Phims" ThisKey="MaQuocGia" OtherKey="MaQuocGia" Type="Phim" />
+  <Table Name="dbo.Ve" Member="Ves">
+    <Type Name="Ve">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LoaiVe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idLichChieu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaGheNgoi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TienBanVe" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Ve_HoaDonDatVe" Member="HoaDonDatVes" ThisKey="id" OtherKey="idVe" Type="HoaDonDatVe" />
+      <Association Name="KhachHang_Ve" Member="KhachHang" ThisKey="idKhachHang" OtherKey="id" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="LichChieu_Ve" Member="LichChieu" ThisKey="idLichChieu" OtherKey="id" Type="LichChieu" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Phim" Member="Phims">
-    <Type Name="Phim">
-      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ThoiLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaQuocGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MoTa" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
-      <Column Name="NamPhatHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DaoDien" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Poster" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="MaTheLoaiPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Phim_SuatChieu" Member="SuatChieus" ThisKey="MaPhim" OtherKey="MaPhim" Type="SuatChieu" />
-      <Association Name="QuocGia_Phim" Member="QuocGia" ThisKey="MaQuocGia" OtherKey="MaQuocGia" Type="QuocGia" IsForeignKey="true" />
-      <Association Name="TheLoaiPhim_Phim" Member="TheLoaiPhim" ThisKey="MaTheLoaiPhim" OtherKey="MaTheLoaiPhim" Type="TheLoaiPhim" IsForeignKey="true" />
+  <Table Name="dbo.CumRap" Member="CumRaps">
+    <Type Name="CumRap">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="CumRap_Rap" Member="Raps" ThisKey="id" OtherKey="idCumRap" Type="Rap" />
     </Type>
   </Table>
-  <Table Name="dbo.TheLoaiPhim" Member="TheLoaiPhims">
-    <Type Name="TheLoaiPhim">
-      <Column Name="MaTheLoaiPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenTheLoaiPhim" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="TheLoaiPhim_Phim" Member="Phims" ThisKey="MaTheLoaiPhim" OtherKey="MaTheLoaiPhim" Type="Phim" />
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idNhanVien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GiamGia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDon_HoaDonDatVe" Member="HoaDonDatVes" ThisKey="id" OtherKey="idHoaDon" Type="HoaDonDatVe" />
+      <Association Name="HoaDon_HoaDonSanPham" Member="HoaDonSanPhams" ThisKey="id" OtherKey="idHoaDon" Type="HoaDonSanPham" />
+      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="idKhachHang" OtherKey="id" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="NhanVien_HoaDon" Member="NhanVien" ThisKey="idNhanVien" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CaiDatSuatChieu" Member="CaiDatSuatChieus">
-    <Type Name="CaiDatSuatChieu">
-      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NgayChieu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CaiDatSuatChieu_SuatChieu" Member="SuatChieus" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="SuatChieu" />
-      <Association Name="PhongChieu_CaiDatSuatChieu" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
+  <Table Name="dbo.HoaDonDatVe" Member="HoaDonDatVes">
+    <Type Name="HoaDonDatVe">
+      <Column Name="idHoaDon" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="giaVe" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDon_HoaDonDatVe" Member="HoaDon" ThisKey="idHoaDon" OtherKey="id" Type="HoaDon" IsForeignKey="true" />
+      <Association Name="Ve_HoaDonDatVe" Member="Ve" ThisKey="idVe" OtherKey="id" Type="Ve" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Ghe" Member="Ghes">
-    <Type Name="Ghe">
-      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaSoGhe" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DayGhe" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Ghe_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaGhe" OtherKey="MaGhe" Type="CaiDatGhe" />
-      <Association Name="PhongChieu_Ghe" Member="PhongChieu" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="PhongChieu" IsForeignKey="true" />
+  <Table Name="dbo.HoaDonNhapHang" Member="HoaDonNhapHangs">
+    <Type Name="HoaDonNhapHang">
+      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSanPham" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaNhapHang" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idNhanVien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_HoaDonNhapHang" Member="NhanVien" ThisKey="idNhanVien" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="SanPham_HoaDonNhapHang" Member="SanPham" ThisKey="idSanPham" OtherKey="id" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CaiDatGhe" Member="CaiDatGhes">
-    <Type Name="CaiDatGhe">
-      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Ghe_CaiDatGhe" Member="Ghe" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ghe" IsForeignKey="true" />
-      <Association Name="SuatChieu_CaiDatGhe" Member="SuatChieu" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="SuatChieu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PhongChieu" Member="PhongChieus">
-    <Type Name="PhongChieu">
-      <Column Name="MaPhongChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenPhongChieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SoLuongGheNgoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="PhongChieu_CaiDatSuatChieu" Member="CaiDatSuatChieus" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="CaiDatSuatChieu" />
-      <Association Name="PhongChieu_Ghe" Member="Ghes" ThisKey="MaPhongChieu" OtherKey="MaPhongChieu" Type="Ghe" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ChucVuNhanVien" Member="ChucVuNhanViens">
-    <Type Name="ChucVuNhanVien">
-      <Column Name="MaChucVu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenChucVu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="ChucVuNhanVien_NhanVien" Member="NhanViens" ThisKey="MaChucVu" OtherKey="MaChucVu" Type="NhanVien" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NhanVien" Member="NhanViens">
-    <Type Name="NhanVien">
-      <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TenTaiKhoan" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="SoDienThoai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MaChucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="NgayVaoLam" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="ChucVuNhanVien_NhanVien" Member="ChucVuNhanVien" ThisKey="MaChucVu" OtherKey="MaChucVu" Type="ChucVuNhanVien" IsForeignKey="true" />
+  <Table Name="dbo.HoaDonSanPham" Member="HoaDonSanPhams">
+    <Type Name="HoaDonSanPham">
+      <Column Name="idHoaDon" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSanPham" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="HoaDon_HoaDonSanPham" Member="HoaDon" ThisKey="idHoaDon" OtherKey="id" Type="HoaDon" IsForeignKey="true" />
+      <Association Name="SanPham_HoaDonSanPham" Member="SanPham" ThisKey="idSanPham" OtherKey="id" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
-      <Column Name="MaKhachHang" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Ten" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="SoDienThoai" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="DaXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ThoiGianTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiemTichLuy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCapDoThanhVien" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Association Name="KhachHang_Ve" Member="Ves" ThisKey="id" OtherKey="idKhachHang" Type="Ve" />
+      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="id" OtherKey="idKhachHang" Type="HoaDon" />
+      <Association Name="CapDoThanhVien_KhachHang" Member="CapDoThanhVien" ThisKey="idCapDoThanhVien" OtherKey="id" Type="CapDoThanhVien" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SuatChieu" Member="SuatChieus">
-    <Type Name="SuatChieu">
-      <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaCaiDatSuatChieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GiaVe" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-      <Column Name="ThoiGianBatDau" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Association Name="SuatChieu_CaiDatGhe" Member="CaiDatGhes" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="CaiDatGhe" />
-      <Association Name="CaiDatSuatChieu_SuatChieu" Member="CaiDatSuatChieu" ThisKey="MaCaiDatSuatChieu" OtherKey="MaCaiDatSuatChieu" Type="CaiDatSuatChieu" IsForeignKey="true" />
-      <Association Name="Phim_SuatChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
+  <Table Name="dbo.Kho" Member="Khos">
+    <Type Name="Kho">
+      <Column Name="idSanPham" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SanPham_Kho" Member="SanPham" ThisKey="idSanPham" OtherKey="id" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KiemDuyetPhim" Member="KiemDuyetPhims">
+    <Type Name="KiemDuyetPhim">
+      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="KiemDuyetPhim_Phim" Member="Phims" ThisKey="id" OtherKey="idKiemDuyetPhim" Type="Phim" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichChieu" Member="LichChieus">
+    <Type Name="LichChieu">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ThoiGianChieu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idRap" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idPhim" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaVe" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LichChieu_Ve" Member="Ves" ThisKey="id" OtherKey="idLichChieu" Type="Ve" />
+      <Association Name="Phim_LichChieu" Member="Phim" ThisKey="idPhim" OtherKey="id" Type="Phim" IsForeignKey="true" />
+      <Association Name="Rap_LichChieu" Member="Rap" ThisKey="idRap" OtherKey="id" Type="Rap" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiRap" Member="LoaiRaps">
+    <Type Name="LoaiRap">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLoaiRap" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="LoaiRap_Rap" Member="Raps" ThisKey="id" OtherKey="idLoaiRap" Type="Rap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_HoaDon" Member="HoaDons" ThisKey="id" OtherKey="idNhanVien" Type="HoaDon" />
+      <Association Name="NhanVien_HoaDonNhapHang" Member="HoaDonNhapHangs" ThisKey="id" OtherKey="idNhanVien" Type="HoaDonNhapHang" />
+      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="id" OtherKey="idNV" Type="TaiKhoan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhanLoaiPhim" Member="PhanLoaiPhims">
+    <Type Name="PhanLoaiPhim">
+      <Column Name="idPhim" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTheLoai" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Phim_PhanLoaiPhim" Member="Phim" ThisKey="idPhim" OtherKey="id" Type="Phim" IsForeignKey="true" />
+      <Association Name="TheLoai_PhanLoaiPhim" Member="TheLoai" ThisKey="idTheLoai" OtherKey="id" Type="TheLoai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phim" Member="Phims">
+    <Type Name="Phim">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="ThoiLuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhoiChieu" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SanXuat" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DaoDien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DienVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApPhich" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="idKiemDuyetPhim" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Association Name="Phim_LichChieu" Member="LichChieus" ThisKey="id" OtherKey="idPhim" Type="LichChieu" />
+      <Association Name="Phim_PhanLoaiPhim" Member="PhanLoaiPhims" ThisKey="id" OtherKey="idPhim" Type="PhanLoaiPhim" />
+      <Association Name="KiemDuyetPhim_Phim" Member="KiemDuyetPhim" ThisKey="idKiemDuyetPhim" OtherKey="id" Type="KiemDuyetPhim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rap" Member="Raps">
+    <Type Name="Rap">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenRap" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoChoNgoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoHangGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoGheMotHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLoaiRap" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idCumRap" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Rap_LichChieu" Member="LichChieus" ThisKey="id" OtherKey="idRap" Type="LichChieu" />
+      <Association Name="CumRap_Rap" Member="CumRap" ThisKey="idCumRap" OtherKey="id" Type="CumRap" IsForeignKey="true" />
+      <Association Name="LoaiRap_Rap" Member="LoaiRap" ThisKey="idLoaiRap" OtherKey="id" Type="LoaiRap" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHienThi" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiSanPham" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="SanPham_HoaDonNhapHang" Member="HoaDonNhapHangs" ThisKey="id" OtherKey="idSanPham" Type="HoaDonNhapHang" />
+      <Association Name="SanPham_HoaDonSanPham" Member="HoaDonSanPhams" ThisKey="id" OtherKey="idSanPham" Type="HoaDonSanPham" />
+      <Association Name="SanPham_Kho" Member="Kho" ThisKey="id" OtherKey="idSanPham" Type="Kho" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idNV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="idNV" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TheLoai" Member="TheLoais">
+    <Type Name="TheLoai">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="TheLoai_PhanLoaiPhim" Member="PhanLoaiPhims" ThisKey="id" OtherKey="idTheLoai" Type="PhanLoaiPhim" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_DeleteTicketsByShowTimes" Method="USP_DeleteTicketsByShowTimes">
+    <Parameter Name="idlichChieu" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_UpdateStatusShowTimes" Method="USP_UpdateStatusShowTimes">
+    <Parameter Name="idLichChieu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetAccountList" Method="USP_GetAccountList">
+    <ElementType Name="USP_GetAccountListResult">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại tài khoản]" Member="Loại_tài_khoản" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Mã nhân viên]" Member="Mã_nhân_viên" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên nhân viên]" Member="Tên_nhân_viên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetAllListShowTimes" Method="USP_GetAllListShowTimes">
+    <ElementType Name="USP_GetAllListShowTimesResult">
+      <Column Name="[Mã lịch chiếu]" Member="Mã_lịch_chiếu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cụm Rạp]" Member="Cụm_Rạp" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại Rạp]" Member="Loại_Rạp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Thời gian chiếu]" Member="Thời_gian_chiếu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Giá vé]" Member="Giá_vé" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetCinema" Method="USP_GetCinema">
+    <ElementType Name="USP_GetCinemaResult">
+      <Column Name="[Mã rạp]" Member="Mã_rạp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên rạp]" Member="Tên_rạp" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại rạp]" Member="Loại_rạp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Cụm rạp]" Member="Cụm_rạp" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Số chỗ ngồi]" Member="Số_chỗ_ngồi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Tình trạng]" Member="Tình_trạng" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Số hàng ghế]" Member="Số_hàng_ghế" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Ghế mỗi hàng]" Member="Ghế_mỗi_hàng" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetCustomer" Method="USP_GetCustomer">
+    <ElementType Name="USP_GetCustomerResult">
+      <Column Name="[Mã khách hàng]" Member="Mã_khách_hàng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Điểm tích lũy]" Member="Điểm_tích_lũy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListGenreByMovie" Method="USP_GetListGenreByMovie">
+    <Parameter Name="idPhim" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetListGenreByMovieResult">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListShowTimesByFormatMovie" Method="USP_GetListShowTimesByFormatMovie">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_GetListShowTimesByFormatMovieResult">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenRap" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianChieu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GiaVe" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListShowTimesNotCreateTickets" Method="USP_GetListShowTimesNotCreateTickets">
+    <ElementType Name="USP_GetListShowTimesNotCreateTicketsResult">
+      <Column Name="[Mã lịch chiếu]" Member="Mã_lịch_chiếu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cụm Rạp]" Member="Cụm_Rạp" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại Rạp]" Member="Loại_Rạp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Thời gian chiếu]" Member="Thời_gian_chiếu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Giá vé]" Member="Giá_vé" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetMovie" Method="USP_GetMovie">
+    <ElementType Name="USP_GetMovieResult">
+      <Column Name="[Mã phim]" Member="Mã_phim" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Mô tả]" Member="Mô_tả" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="[Thời lượng]" Member="Thời_lượng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày khởi chiếu]" Member="Ngày_khởi_chiếu" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày kết thúc]" Member="Ngày_kết_thúc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Sản xuất]" Member="Sản_xuất" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Đạo diễn]" Member="Đạo_diễn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Năm SX]" Member="Năm_SX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Áp Phích]" Member="Áp_Phích" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetReportRevenueByMovieAndDate" Method="USP_GetReportRevenueByMovieAndDate">
+    <Parameter Name="idMovie" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="USP_GetReportRevenueByMovieAndDateResult">
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayChieu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GioChieu" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="SoVeDaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBanVe" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetRevenueByMovieAndDate" Method="USP_GetRevenueByMovieAndDate">
+    <Parameter Name="idMovie" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="USP_GetRevenueByMovieAndDateResult">
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày chiếu]" Member="Ngày_chiếu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Giờ chiếu]" Member="Giờ_chiếu" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="[Số vé đã bán]" Member="Số_vé_đã_bán" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Tiền vé]" Member="Tiền_vé" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetShowtime" Method="USP_GetShowtime">
+    <ElementType Name="USP_GetShowtimeResult">
+      <Column Name="[Mã lịch chiếu]" Member="Mã_lịch_chiếu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cụm Rạp]" Member="Cụm_Rạp" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại Rạp]" Member="Loại_Rạp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Thời gian chiếu]" Member="Thời_gian_chiếu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Giá vé]" Member="Giá_vé" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetStaff" Method="USP_GetStaff">
+    <ElementType Name="USP_GetStaffResult">
+      <Column Name="[Mã nhân viên]" Member="Mã_nhân_viên" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_InsertAccount" Method="USP_InsertAccount">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="loaiTK" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idnv" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertCinema" Method="USP_InsertCinema">
+    <Parameter Name="idCinema" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idCumRap" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tenPhong" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="idMH" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="soChoNgoi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tinhTrang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="soHangGhe" Type="System.Int32" DbType="Int" />
+    <Parameter Name="soGheMotHang" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertCustomer" Method="USP_InsertCustomer">
+    <Parameter Name="idCus" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diaChi" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="sdt" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cmnd" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertGenre" Method="USP_InsertGenre">
+    <Parameter Name="idGenre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="moTa" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertMovie" Method="USP_InsertMovie">
+    <Parameter Name="id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tenPhim" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="moTa" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="thoiLuong" Type="System.Double" DbType="Float" />
+    <Parameter Name="ngayKhoiChieu" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sanXuat" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="daoDien" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="namSX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="apPhich" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertShowtime" Method="USP_InsertShowtime">
+    <Parameter Name="id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idRap" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idPhim" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="thoiGianChieu" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="giaVe" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertStaff" Method="USP_InsertStaff">
+    <Parameter Name="idStaff" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diaChi" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="sdt" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cmnd" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertTheaterType" Method="USP_InsertTheaterType">
+    <Parameter Name="idTheaterType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertTicketByShowTimes" Method="USP_InsertTicketByShowTimes">
+    <Parameter Name="idlichChieu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="maGheNgoi" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Login" Method="USP_Login">
+    <Parameter Name="userName" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="USP_LoginResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idNV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_ResetPasswordtAccount" Method="USP_ResetPasswordtAccount">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_SearchAccount" Method="USP_SearchAccount">
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchAccountResult">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại tài khoản]" Member="Loại_tài_khoản" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Mã nhân viên]" Member="Mã_nhân_viên" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên nhân viên]" Member="Tên_nhân_viên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_SearchCustomer" Method="USP_SearchCustomer">
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchCustomerResult">
+      <Column Name="[Mã khách hàng]" Member="Mã_khách_hàng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Điểm tích lũy]" Member="Điểm_tích_lũy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_SearchProduct" Method="USP_SearchProduct">
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchProductResult">
+      <Column Name="[Mã sản phẩm]" Member="Mã_sản_phẩm" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên hiển thị]" Member="Tên_hiển_thị" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại sản phẩm]" Member="Loại_sản_phẩm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Giá tiền]" Member="Giá_tiền" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_SearchShowtimeByMovieName" Method="USP_SearchShowtimeByMovieName">
+    <Parameter Name="tenPhim" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchShowtimeByMovieNameResult">
+      <Column Name="[Mã lịch chiếu]" Member="Mã_lịch_chiếu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cụm Rạp]" Member="Cụm_Rạp" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên phim]" Member="Tên_phim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Loại Rạp]" Member="Loại_Rạp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Thời gian chiếu]" Member="Thời_gian_chiếu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Giá vé]" Member="Giá_vé" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_SearchStaff" Method="USP_SearchStaff">
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchStaffResult">
+      <Column Name="[Mã nhân viên]" Member="Mã_nhân_viên" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_UpdateAccount" Method="USP_UpdateAccount">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="loaiTK" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_UpdateMovie" Method="USP_UpdateMovie">
+    <Parameter Name="id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tenPhim" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="moTa" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="thoiLuong" Type="System.Double" DbType="Float" />
+    <Parameter Name="ngayKhoiChieu" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sanXuat" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="daoDien" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="namSX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="apPhich" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_UpdatePasswordForAccount" Method="USP_UpdatePasswordForAccount">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="newPass" Type="System.String" DbType="VarChar(1000)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_UpdateShowtime" Method="USP_UpdateShowtime">
+    <Parameter Name="id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idRap" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idPhim" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="thoiGianChieu" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="giaVe" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
