@@ -14,25 +14,34 @@ namespace GUI.DAO
 {
     public class ShowTimesDAO
     {
-        public static DataTable GetListShowTimeByFormatMovie(string formatMovieID, DateTime date)
+        public static DataTable GetListShowTimeByValues(string cinemaTypeId, string cineplexId, string movieId, DateTime date)
         {
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Mã lịch chiếu", typeof(string));
-            dt.Columns.Add("Tên phòng chiếu", typeof(string));
+            dt.Columns.Add("Tên rạp", typeof(string));
             dt.Columns.Add("Tên phim", typeof(string));
             dt.Columns.Add("Thời gian chiếu", typeof(DateTime));
-            dt.Columns.Add("Mã định dạng phim", typeof(string));
+            dt.Columns.Add("Loại rạp", typeof(string));
             dt.Columns.Add("Giá vé", typeof(decimal));
             dt.Columns.Add("Trạng thái", typeof(int));
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = db.USP_GetListShowTimesByFormatMovie(formatMovieID, date);
+                var query = from lichChieu in db.LichChieus
+                            where lichChieu.idPhim.Equals(movieId)
+                            select lichChieu;
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.id, item.TenPhong, item.TenPhim, item.ThoiGianChieu, item.idDinhDang, item.GiaVe, item.TrangThai);
+                    DateTime showTimeDate = DateTime.Parse(item.ThoiGianChieu.ToShortDateString());
+                    DateTime customDate = DateTime.Parse(date.ToShortDateString());
+                    if (!showTimeDate.Equals(customDate) || !item.Rap.LoaiRap.id.Equals(cinemaTypeId) || !item.Rap.CumRap.id.Equals(cineplexId))
+                    {
+                        continue;
+                    }
+
+                    dt.Rows.Add(item.id, item.Rap.TenRap, item.Phim.TenPhim, item.ThoiGianChieu, item.Rap.LoaiRap.TenLoaiRap, item.GiaVe, item.TrangThai);
                 }
             }
 
@@ -46,12 +55,10 @@ namespace GUI.DAO
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = from p in db.Phims
-                            join ddp in db.DinhDangPhims
-                            on p.id equals ddp.idPhim
                             join lc in db.LichChieus
-                            on ddp.id equals lc.idDinhDang
-                            join pc in db.PhongChieus
-                            on lc.idPhong equals pc.id
+                            on p.id equals lc.idPhim
+                            join pc in db.Raps
+                            on lc.idRap equals pc.id
                             orderby lc.ThoiGianChieu
                             select lc;
 
@@ -70,12 +77,10 @@ namespace GUI.DAO
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = from p in db.Phims
-                            join ddp in db.DinhDangPhims
-                            on p.id equals ddp.idPhim
                             join lc in db.LichChieus
-                            on ddp.id equals lc.idDinhDang
-                            join pc in db.PhongChieus
-                            on lc.idPhong equals pc.id
+                            on p.id equals lc.idPhim
+                            join pc in db.Raps
+                            on lc.idRap equals pc.id
                             where lc.TrangThai == 0
                             orderby lc.ThoiGianChieu
                             select lc;
@@ -109,34 +114,48 @@ namespace GUI.DAO
 		{
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã lịch chiếu", typeof(string));
-            dt.Columns.Add("Mã phòng", typeof(string));
-            dt.Columns.Add("Tên phim", typeof(string));
-            dt.Columns.Add("Màn hình", typeof(string));
             dt.Columns.Add("Thời gian chiếu", typeof(DateTime));
+            dt.Columns.Add("Tên phim", typeof(string));
+            dt.Columns.Add("Tên rạp", typeof(string));
+            dt.Columns.Add("Loại rạp", typeof(string));
+            dt.Columns.Add("Cụm rạp", typeof(string));
             dt.Columns.Add("Giá vé", typeof(decimal));
+            dt.Columns.Add("Trạng thái", typeof(string));
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                db.DeferredLoadingEnabled = false;
-
-                var query = db.USP_GetShowtime();
+                var query = from lichChieu in db.LichChieus
+                            select lichChieu;
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.Mã_lịch_chiếu, item.Mã_phòng, item.Tên_phim, item.Màn_hình, item.Thời_gian_chiếu, item.Giá_vé);
+                    string trangThai = item.TrangThai == 1 ? "Đã tạo vé" : "Chưa tạo vé";
+                    dt.Rows.Add(item.id, item.ThoiGianChieu, item.Rap.TenRap, item.Rap.LoaiRap.TenLoaiRap, item.Rap.CumRap.Ten, item.Phim.TenPhim, item.GiaVe, trangThai);
                 }
             }
 
             return dt;
 		}
 
-		public static bool InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+		public static bool InsertShowtime(string id, string cinemaID, string movieID, DateTime time, float ticketPrice)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                LichChieu lichChieu = new LichChieu
+                {
+                    id = id,
+                    ThoiGianChieu = time,
+                    idRap = cinemaID,
+                    idPhim = movieID,
+                    GiaVe = (decimal)ticketPrice,
+                    TrangThai = 0
+                };
+
+                db.LichChieus.InsertOnSubmit(lichChieu);
+
                 try
                 {
-                    db.USP_InsertShowtime(id, cinemaID, formatMovieID, time, ticketPrice);
+                    db.SubmitChanges();
                     return true;
                 }
                 catch (Exception e)
@@ -147,18 +166,26 @@ namespace GUI.DAO
             }
 		}
 
-		public static bool UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
+		public static bool UpdateShowtime(string id, string cinemaID, string movieId, DateTime time, float ticketPrice)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                var lichChieu = (from lc in db.LichChieus
+                                where lc.id.Equals(id)
+                                select lc).First();
+
+                lichChieu.ThoiGianChieu = time;
+                lichChieu.idRap = cinemaID;
+                lichChieu.idPhim = movieId;
+                lichChieu.GiaVe = (decimal)ticketPrice;
+
                 try
                 {
-                    db.USP_UpdateShowtime(id, cinemaID, formatMovieID, time, ticketPrice);
+                    db.SubmitChanges();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
@@ -182,9 +209,8 @@ namespace GUI.DAO
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
@@ -195,11 +221,13 @@ namespace GUI.DAO
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Mã lịch chiếu", typeof(string));
-            dt.Columns.Add("Mã phòng", typeof(string));
-            dt.Columns.Add("Tên phim", typeof(string));
-            dt.Columns.Add("Màn hình", typeof(string));
             dt.Columns.Add("Thời gian chiếu", typeof(DateTime));
+            dt.Columns.Add("Tên phim", typeof(string));
+            dt.Columns.Add("Tên rạp", typeof(string));
+            dt.Columns.Add("Loại rạp", typeof(string));
+            dt.Columns.Add("Cụm rạp", typeof(string));
             dt.Columns.Add("Giá vé", typeof(decimal));
+            dt.Columns.Add("Trạng thái", typeof(string));
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -207,7 +235,7 @@ namespace GUI.DAO
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.Mã_lịch_chiếu, item.Mã_phòng, item.Tên_phim, item.Màn_hình, item.Thời_gian_chiếu, item.Giá_vé);
+                    dt.Rows.Add(item.Mã_lịch_chiếu, item.Cụm_Rạp, item.Tên_phim, item.Loại_Rạp, item.Thời_gian_chiếu, item.Giá_vé);
                 }
             }
 
@@ -219,7 +247,7 @@ namespace GUI.DAO
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = (from lc in db.LichChieus
-                            where lc.PhongChieu.TenPhong.Equals(name)
+                            where lc.Rap.TenRap.Equals(name)
                             select lc);
 
                 return query.FirstOrDefault().id;
@@ -231,7 +259,7 @@ namespace GUI.DAO
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = (from lc in db.LichChieus
-                             where lc.PhongChieu.TenPhong.Equals(name)
+                             where lc.Rap.TenRap.Equals(name)
                              select lc);
 
                 return query.FirstOrDefault().TrangThai;

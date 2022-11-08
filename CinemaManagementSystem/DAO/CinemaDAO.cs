@@ -21,7 +21,30 @@ namespace GUI.DAO
             }
         }
 
-		public static Rap GetCinemaByID(string id)
+        public static LoaiRap GetCinemaTypeByCinemaID(string cinemaId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = (from rap in db.Raps
+                            where rap.id == cinemaId
+                            select rap).First();
+
+                return query.LoaiRap;
+            }
+        }
+        public static CumRap GetCineplexByCinemaID(string cinemaId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = (from rap in db.Raps
+                             where rap.id == cinemaId
+                             select rap).First();
+
+                return query.CumRap;
+            }
+        }
+
+        public static Rap GetCinemaByID(string id)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -54,58 +77,79 @@ namespace GUI.DAO
         public static DataTable GetListCinema()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("Mã phòng", typeof(string));
-            dt.Columns.Add("Tên phòng", typeof(string));
-            dt.Columns.Add("Tên màn hình", typeof(string));
+            dt.Columns.Add("Mã rạp", typeof(string));
+            dt.Columns.Add("Tên rạp", typeof(string));
             dt.Columns.Add("Số chỗ ngồi", typeof(int));
-            dt.Columns.Add("Tình trạng", typeof(int));
+            dt.Columns.Add("Tình trạng", typeof(string));
             dt.Columns.Add("Số hàng ghế", typeof(int));
             dt.Columns.Add("Ghế mỗi hàng", typeof(int));
+            dt.Columns.Add("Loại rạp", typeof(string));
+            dt.Columns.Add("Cụm rạp", typeof(string));
 
-            //using (CinemaDataContext db = new CinemaDataContext())
-            //{
-            //    var query = db.USP_GetCinema();
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from rap in db.Raps
+                            join loaiRap in db.LoaiRaps
+                            on rap.idLoaiRap equals loaiRap.id
+                            join cumRap in db.CumRaps
+                            on rap.idCumRap equals cumRap.id
+                            select new { rap };
 
-            //    foreach (var item in query)
-            //    {
-            //        dt.Rows.Add(item.Mã_phòng, item.Tên_phòng, item.Tên_màn_hình, item.Số_chỗ_ngồi, item.Tình_trạng, item.Số_hàng_ghế, item.Ghế_mỗi_hàng);
-            //    }
-            //}
+                foreach (var item in query)
+                {
+                    Rap rap = item.rap;
+                    string trangThai = rap.TinhTrang == 1 ? "Đang hoạt động" : "Không hoạt động";
+                    dt.Rows.Add(rap.id, rap.TenRap, rap.SoChoNgoi, trangThai, rap.SoHangGhe, rap.SoGheMotHang, rap.LoaiRap.TenLoaiRap, rap.CumRap.Ten);
+                }
+            }
 
             return dt;
         }
 
-        public static bool InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
+        public static bool InsertCinema(string id, string tenRap, int soChoNgoi, int tinhTrang, int soHangGhe, int soGheMotHang, string idLoaiRap, string idCumRap)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                Rap rap = new Rap
+                {
+                    id = id,
+                    TenRap = tenRap,
+                    SoChoNgoi = soChoNgoi,
+                    TinhTrang = tinhTrang,
+                    SoHangGhe = soHangGhe,
+                    SoGheMotHang = soGheMotHang,
+                    idLoaiRap = idLoaiRap,
+                    idCumRap = idCumRap
+                };
+
+                db.Raps.InsertOnSubmit(rap);
+
                 try
                 {
-                    //db.USP_InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow);
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
         }
 
-        public static bool UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
+        public static bool UpdateCinema(string id, string tenRap, int soChoNgoi, int tinhTrang, int soHangGhe, int soGheMotHang, string idLoaiRap, string idCumRap)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var pc = (from p in db.Raps
-                          where p.id.Equals(id)
-                          select p).First();
+                var rap = (from r in db.Raps
+                          where r.id.Equals(id)
+                          select r).First();
 
-                //pc.TenPhong = name;
-                //pc.idManHinh = idMH;
-                pc.SoChoNgoi = seats;
-                pc.TinhTrang = status;
-                pc.SoHangGhe = numberOfRows;
-                pc.SoGheMotHang = seatsPerRow;
+                rap.TenRap = tenRap;
+                rap.SoChoNgoi = soChoNgoi;
+                rap.TinhTrang = tinhTrang;
+                rap.SoHangGhe = soHangGhe;
+                rap.SoGheMotHang = soGheMotHang;
+                rap.idLoaiRap = idLoaiRap;
+                rap.idCumRap = idCumRap;
 
                 //ask the datacontext to save all the changes
                 try
@@ -145,15 +189,15 @@ namespace GUI.DAO
             }
         }
 
-        public static bool DeleteCinemaByScreenTypeId(string id)
+        public static bool DeleteCinemaByCinemaTypeId(string id)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                //var pc = (from p in db.Raps
-                //          where p.idManHinh.Equals(id)
-                //          select p).First();
+                var rap = (from r in db.Raps
+                          where r.idLoaiRap.Equals(id)
+                          select r).First();
 
-                //db.Raps.DeleteOnSubmit(pc);
+                db.Raps.DeleteOnSubmit(rap);
 
                 //ask the datacontext to save all the changes
                 try

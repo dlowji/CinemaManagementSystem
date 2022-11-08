@@ -172,7 +172,7 @@ namespace GUI.DAO
                             where lc.id.Equals(id)
                             select lc).First();
 
-                return query.PhongChieu.TenPhong;
+                return query.Rap.TenRap;
             }
         }
 
@@ -184,7 +184,7 @@ namespace GUI.DAO
                              where lc.id.Equals(id)
                              select lc).First();
 
-                return query.DinhDangPhim.Phim.TenPhim;
+                return query.Phim.TenPhim;
             }
         }
 

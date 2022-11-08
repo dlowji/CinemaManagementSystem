@@ -1,4 +1,5 @@
 ﻿using CinemaManagementSystem.Admin.Data;
+using CinemaManagementSystem.Controllers;
 using GUI;
 using GUI.DAO;
 using System;
@@ -41,7 +42,8 @@ namespace CinemaManagementSystem
 
         void LoadProductList()
         {
-            productList.DataSource = ProductDAO.GetListProduct();
+            DataTable products = ProductController.GetProductList();
+            productList.DataSource = products;
         }
         void AddProductBinding()
         {
@@ -58,7 +60,9 @@ namespace CinemaManagementSystem
 
         void InsertProduct(string id, string tenHienThi, int loaiSanPham, decimal giaBan)
         {
-            if (ProductDAO.InsertProduct(id, tenHienThi, loaiSanPham, giaBan))
+            bool result = ProductController.InsertProduct(id, tenHienThi, loaiSanPham, giaBan);
+
+            if (result)
             {
                 MessageBox.Show("Thêm sản phẩm thành công");
             }
@@ -80,7 +84,9 @@ namespace CinemaManagementSystem
 
         void UpdateProduct(string id, string tenHienThi, int loaiSanPham, decimal giaBan)
         {
-            if (ProductDAO.UpdateProduct(id, tenHienThi, loaiSanPham, giaBan))
+            bool result = ProductController.UpdateProduct(id, tenHienThi, loaiSanPham, giaBan);
+
+            if (result)
             {
                 MessageBox.Show("Sửa sản phẩm thành công");
             }
@@ -101,7 +107,9 @@ namespace CinemaManagementSystem
 
         void DeleteProduct(string id)
         {
-            if (ProductDAO.DeleteProduct(id))
+            bool result = ProductController.DeleteProduct(id);
+
+            if (result)
             {
                 MessageBox.Show("Xóa sản phẩm thành công");
             }
@@ -120,7 +128,8 @@ namespace CinemaManagementSystem
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
             string productName = txbSearchProduct.Text;
-            productList.DataSource = ProductDAO.SearchProductByName(productName);
+            DataTable searchProdList = ProductController.SearchProductByName(productName);
+            productList.DataSource = searchProdList;
         }
 
         private void txbSearchProduct_KeyDown(object sender, KeyEventArgs e)
@@ -142,7 +151,8 @@ namespace CinemaManagementSystem
 
         void LoadCustomerList()
         {
-            customerList.DataSource = CustomerDAO.GetListCustomer();
+            DataTable customers = CustomerController.GetCustomerList();
+            customerList.DataSource = customers;
         }
         private void btnShowCustomer_Click(object sender, EventArgs e)
         {
@@ -161,7 +171,9 @@ namespace CinemaManagementSystem
         }
         void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (CustomerDAO.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            bool result = CustomerController.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd);
+
+            if (result)
             {
                 MessageBox.Show("Thêm khách hàng thành công");
             }
@@ -184,7 +196,9 @@ namespace CinemaManagementSystem
 
         void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
         {
-            if (CustomerDAO.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point))
+            bool result = CustomerController.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point);
+
+            if (result)
             {
                 MessageBox.Show("Sửa khách hàng thành công");
             }
@@ -208,7 +222,9 @@ namespace CinemaManagementSystem
 
         void DeleteCustomer(string id)
         {
-            if (CustomerDAO.DeleteCustomer(id))
+            bool result = CustomerController.DeleteCustomer(id);
+
+            if (result)
             {
                 MessageBox.Show("Xóa khách hàng thành công");
             }
@@ -227,7 +243,8 @@ namespace CinemaManagementSystem
         private void btnSearchCus_Click(object sender, EventArgs e)
         {
             string cusName = txtSearchCus.Text;
-            customerList.DataSource = CustomerDAO.SearchCustomerByName(cusName);
+            DataTable searchCusList = CustomerController.SearchCustomerByName(cusName);
+            customerList.DataSource = searchCusList;
         }
 
         private void txtSearchCus_KeyDown(object sender, KeyEventArgs e)
@@ -250,9 +267,7 @@ namespace CinemaManagementSystem
         }
         void LoadMovieIntoCombobox(ComboBox comboBox)
         {
-            comboBox.DataSource = MovieDAO.GetListMovie();
-            comboBox.DisplayMember = "TenPhimw";
-            comboBox.ValueMember = "ID";
+            RevenueController.LoadMovieIntoComboBox(comboBox);
         }
         void LoadDateTimePickerRevenue()
         {
@@ -262,17 +277,12 @@ namespace CinemaManagementSystem
         void LoadRevenue(string idMovie, DateTime fromDate, DateTime toDate)
         {
             CultureInfo culture = new CultureInfo("vi-VN");
-            dtgvRevenue.DataSource = RevenueDAO.GetRevenue(idMovie, fromDate, toDate);
+            dtgvRevenue.DataSource = RevenueController.GetRevenue(idMovie, fromDate, toDate); ;
             txtDoanhThu.Text = GetSumRevenue().ToString("c", culture);
         }
         decimal GetSumRevenue()
         {
-            decimal sum = 0;
-            foreach (DataGridViewRow row in dtgvRevenue.Rows)
-            {
-                sum += Convert.ToDecimal(row.Cells["Tiền bán vé"].Value);
-            }
-            return sum;
+            return RevenueController.GetTotalRevenue(dtgvRevenue);
         }
 
         private void btnShowRevenue_Click(object sender, EventArgs e)
@@ -298,7 +308,8 @@ namespace CinemaManagementSystem
 
         void LoadStaffList()
         {
-            staffList.DataSource = StaffDAO.GetListStaff();
+            DataTable staffs = StaffController.GetStaffList();
+            staffList.DataSource = staffs;
         }
 
         private void btnShowStaff_Click(object sender, EventArgs e)
@@ -319,7 +330,9 @@ namespace CinemaManagementSystem
         //Thêm Staff
         void AddStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (StaffDAO.InsertStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            bool result = StaffController.InsertStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd);
+
+            if (result)
             {
                 MessageBox.Show("Thêm nhân viên thành công");
             }
@@ -343,7 +356,9 @@ namespace CinemaManagementSystem
         //Sửa Staff
         void UpdateStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (StaffDAO.UpdateStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            bool result = StaffController.UpdateStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd);
+
+            if (result)
             {
                 MessageBox.Show("Sửa nhân viên thành công");
             }
@@ -367,7 +382,9 @@ namespace CinemaManagementSystem
         //Xóa Staff
         void DeleteStaff(string id)
         {
-            if (StaffDAO.DeleteStaff(id))
+            bool result = StaffController.DeleteStaff(id);
+
+            if (result)
             {
                 MessageBox.Show("Xóa nhân viên thành công");
             }
@@ -387,7 +404,7 @@ namespace CinemaManagementSystem
         private void btnSearchStaff_Click(object sender, EventArgs e)
         {
             string staffName = txtSearchStaff.Text;
-            DataTable staffSearchList = StaffDAO.SearchStaffByName(staffName);
+            DataTable staffSearchList = StaffController.SearchStaffByName(staffName);
             staffList.DataSource = staffSearchList;
         }
 

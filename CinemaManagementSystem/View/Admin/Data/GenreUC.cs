@@ -1,5 +1,7 @@
-﻿using GUI.DAO;
+﻿using CinemaManagementSystem.Controllers;
+using GUI.DAO;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -23,7 +25,8 @@ namespace GUI.frmAdminUserControls.DataUserControl
         }
         void LoadGenreList()
         {
-            genreList.DataSource = GenreDAO.GetGenre();
+            DataTable genres = GenreController.GetDataTableGenre();
+            genreList.DataSource = genres;
         }
         void AddGenreBinding()
         {
@@ -38,7 +41,9 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void InsertGenre(string id, string name, string desc)
         {
-            if (GenreDAO.InsertGenre(id, name, desc))
+            bool result = GenreController.InsertGenre(id, name, desc);
+
+            if (result)
             {
                 MessageBox.Show("Thêm thể loại thành công");
             }
@@ -58,7 +63,9 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void UpdateGenre(string id, string name, string desc)
         {
-            if (GenreDAO.UpdateGenre(id, name, desc))
+            bool result = GenreController.UpdateGenre(id, name, desc);
+
+            if (result)
             {
                 MessageBox.Show("Sửa thể loại thành công");
             }
@@ -78,7 +85,9 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void DeleteGenre(string id)
         {
-            if (GenreDAO.DeleteGenre(id))
+            bool result = GenreController.DeleteGenre(id);
+
+            if (result)
             {
                 MessageBox.Show("Xóa thể loại thành công");
             }

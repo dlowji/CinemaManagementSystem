@@ -1,12 +1,19 @@
-﻿using System;
+﻿using GUI.DAO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CinemaManagementSystem.Controllers
 {
-    internal class ShowTimeController
+    public class ShowTimeController
     {
+        public static DataTable GetListShowTimes()
+        {
+            return ShowTimesDAO.GetListShowtime();
+        }
+
     }
 }

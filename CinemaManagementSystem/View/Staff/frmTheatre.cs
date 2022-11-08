@@ -68,7 +68,7 @@ namespace GUI
 
         private void LoadDataCinema(string cinemaName)
         {
-            PhongChieu cinema = CinemaDAO.GetCinemaByName(cinemaName);
+            Rap cinema = CinemaDAO.GetCinemaByName(cinemaName);
             int Row = cinema.SoHangGhe;
             int Column = cinema.SoGheMotHang;
             flpSeat.Size = new Size((SIZE + 20 + GAP) * Column, (SIZE + GAP) * Row);

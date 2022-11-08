@@ -1,6 +1,8 @@
 ﻿using CinemaManagementSystem;
+using CinemaManagementSystem.Controllers;
 using GUI.DAO;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,108 +21,104 @@ namespace GUI.frmAdminUserControls.DataUserControl
         {
             dtgvCinema.DataSource = cinemaList;
             LoadCinemaList();
+            LoadCinemaTypeIntoComboBox(cboCinemaType);
+            LoadCineplexIntoComboBox(cboCineplex);
             AddCinemaBinding();
         }
         void LoadCinemaList()
         {
-            cinemaList.DataSource = CinemaDAO.GetListCinema();
+            DataTable cinemas = CinemaController.GetListCinema();
+
+            cinemaList.DataSource = cinemas;
         }
         void AddCinemaBinding()
         {
-            txtCinemaID.DataBindings.Add("Text", dtgvCinema.DataSource, "Mã phòng", true, DataSourceUpdateMode.Never);
-            txtCinemaName.DataBindings.Add("Text", dtgvCinema.DataSource, "Tên phòng", true, DataSourceUpdateMode.Never);
+            txtCinemaID.DataBindings.Add("Text", dtgvCinema.DataSource, "Mã rạp", true, DataSourceUpdateMode.Never);
+            txtCinemaName.DataBindings.Add("Text", dtgvCinema.DataSource, "Tên rạp", true, DataSourceUpdateMode.Never);
             txtCinemaSeats.DataBindings.Add("Text", dtgvCinema.DataSource, "Số chỗ ngồi", true, DataSourceUpdateMode.Never);
             txtCinemaStatus.DataBindings.Add("Text", dtgvCinema.DataSource, "Tình trạng", true, DataSourceUpdateMode.Never);
             txtNumberOfRows.DataBindings.Add("Text", dtgvCinema.DataSource, "Số hàng ghế", true, DataSourceUpdateMode.Never);
             txtSeatsPerRow.DataBindings.Add("Text", dtgvCinema.DataSource, "Ghế mỗi hàng", true, DataSourceUpdateMode.Never);
-            LoadScreenTypeIntoComboBox(cboCinemaScreenType);
         }
-        void LoadScreenTypeIntoComboBox(ComboBox cbo)
+        void LoadCinemaTypeIntoComboBox(ComboBox cbo)
         {
-            cbo.DataSource = ScreenTypeDAO.GetListScreenType();
-            cbo.DisplayMember = "Name";
-            cbo.ValueMember = "ID";
+            cbo.DataSource = CinemaController.GetListCinemaType();
+            cbo.DisplayMember = "TenLoaiRap";
+            cbo.ValueMember = "id";
         }
-        private void txtCinemaID_TextChanged(object sender, EventArgs e)
-        //Use this to bind data between dtgv and cbo because cbo can't be applied DataBindings normally
+
+        void LoadCineplexIntoComboBox(ComboBox cbo)
         {
-            string screenName = (string)dtgvCinema.SelectedCells[0].OwningRow.Cells["Tên màn hình"].Value;
-            LoaiManHinh screenType = ScreenTypeDAO.GetScreenTypeByName(screenName);
-            //This is the ScreenType that we're currently selecting in dtgv
+            cbo.DataSource = CinemaController.GetListCineplex();
+            cbo.DisplayMember = "Ten";
+            cbo.ValueMember = "id";
+        }
 
-            cboCinemaScreenType.SelectedItem = screenType;
+        void InsertCinema(string id, string tenRap, int soChoNgoi, int tinhTrang, int soHangGhe, int soGheMotHang, string idLoaiRap, string idCumRap)
+        {
+            bool result = CinemaController.InsertCinema(id, tenRap, soChoNgoi, tinhTrang, soHangGhe, soGheMotHang, idLoaiRap, idCumRap);
 
-            int index = -1;
-            int i = 0;
-            foreach (LoaiManHinh item in cboCinemaScreenType.Items)
+            if (result)
             {
-                if (item.TenMH == screenType.TenMH)
-                {
-                    index = i;
-                    break;
-                }
-                i++;
-            }
-            cboCinemaScreenType.SelectedIndex = index;
-        }
-
-        void InsertCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
-        {
-            if (CinemaDAO.InsertCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
-            {
-                MessageBox.Show("Thêm phòng chiếu thành công");
+                MessageBox.Show("Thêm rạp chiếu thành công");
             }
             else
             {
-                MessageBox.Show("Thêm phòng chiếu thất bại");
+                MessageBox.Show("Thêm rạp chiếu thất bại");
             }
         }
         private void btnInsertCinema_Click(object sender, EventArgs e)
         {
             string cinemaID = txtCinemaID.Text;
             string cinemaName = txtCinemaName.Text;
-            string screenTypeID = cboCinemaScreenType.SelectedValue.ToString();
+            string cinemaTypeID = cboCinemaType.SelectedValue.ToString();
+            string cineplexID = cboCineplex.SelectedValue.ToString();
             int cinemaSeats = int.Parse(txtCinemaSeats.Text);
-            int cinemaStatus = int.Parse(txtCinemaStatus.Text);
+            int cinemaStatus = txtCinemaStatus.Text == "Đang hoạt động" ? 1 : 0;
             int numberOfRows = int.Parse(txtNumberOfRows.Text);
             int seatsPerRows = int.Parse(txtSeatsPerRow.Text);
-            InsertCinema(cinemaID, cinemaName, screenTypeID, cinemaSeats, cinemaStatus, numberOfRows, seatsPerRows);
+            InsertCinema(cinemaID, cinemaName, cinemaSeats, cinemaStatus, numberOfRows, seatsPerRows, cinemaTypeID, cineplexID);
             LoadCinemaList();
         }
 
-        void UpdateCinema(string id, string name, string idMH, int seats, int status, int numberOfRows, int seatsPerRow)
+        void UpdateCinema(string id, string tenRap, int soChoNgoi, int tinhTrang, int soHangGhe, int soGheMotHang, string idLoaiRap, string idCumRap)
         {
-            if (CinemaDAO.UpdateCinema(id, name, idMH, seats, status, numberOfRows, seatsPerRow))
+            bool result = CinemaController.UpdateCinema(id, tenRap, soChoNgoi, tinhTrang, soHangGhe, soGheMotHang, idLoaiRap, idCumRap);
+
+            if (result)
             {
-                MessageBox.Show("Sửa phòng chiếu thành công");
+                MessageBox.Show("Sửa rạp chiếu thành công");
             }
             else
             {
-                MessageBox.Show("Sửa phòng chiếu thất bại");
+                MessageBox.Show("Sửa rạp chiếu thất bại");
             }
         }
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
             string cinemaID = txtCinemaID.Text;
             string cinemaName = txtCinemaName.Text;
-            string screenTypeID = cboCinemaScreenType.SelectedValue.ToString();
+            string cinemaTypeID = cboCinemaType.SelectedValue.ToString();
+            string cineplexID = cboCineplex.SelectedValue.ToString();
             int cinemaSeats = int.Parse(txtCinemaSeats.Text);
-            int cinemaStatus = int.Parse(txtCinemaStatus.Text);
+            int cinemaStatus = txtCinemaStatus.Text == "Đang hoạt động" ? 1 : 0;
             int numberOfRows = int.Parse(txtNumberOfRows.Text);
             int seatsPerRows = int.Parse(txtSeatsPerRow.Text);
-            UpdateCinema(cinemaID, cinemaName, screenTypeID, cinemaSeats, cinemaStatus, numberOfRows, seatsPerRows);
+            UpdateCinema(cinemaID, cinemaName, cinemaSeats, cinemaStatus, numberOfRows, seatsPerRows, cinemaTypeID, cineplexID);
             LoadCinemaList();
         }
 
         void DeleteCinema(string id)
         {
-            if (CinemaDAO.DeleteCinema(id))
+            bool result = CinemaController.DeleteCinema(id);
+
+            if (result)
             {
-                MessageBox.Show("Xóa phòng chiếu thành công");
+                MessageBox.Show("Xóa rạp chiếu thành công");
             }
             else
             {
-                MessageBox.Show("Xóa phòng chiếu thất bại");
+                MessageBox.Show("Xóa rạp chiếu thất bại");
             }
         }
         private void btnDeleteCinema_Click(object sender, EventArgs e)
@@ -128,6 +126,61 @@ namespace GUI.frmAdminUserControls.DataUserControl
             string cinemaID = txtCinemaID.Text;
             DeleteCinema(cinemaID);
             LoadCinemaList();
+        }
+
+        private void txtCinemaID_TextChanged(object sender, EventArgs e)
+        {
+            string cinemaID = txtCinemaID.Text;
+            LoadCinemaTypeByCinemaId(cinemaID);
+            LoadCineplexByCinemaId(cinemaID);
+        }
+
+        private void LoadCinemaTypeByCinemaId(string cinemaId)
+        {
+            LoaiRap loaiRap = CinemaController.GetCinemaTypeByCinemaID(cinemaId);
+
+            if (loaiRap == null)
+            {
+                return;
+            }
+
+            int indexCinemaType = -1;
+            int iCinemaType = 0;
+
+            foreach (LoaiRap item in cboCinemaType.Items)
+            {
+                if (item.TenLoaiRap == loaiRap.TenLoaiRap)
+                {
+                    indexCinemaType = iCinemaType;
+                    break;
+                }
+                iCinemaType++;
+            }
+            cboCinemaType.SelectedIndex = indexCinemaType;
+        }
+
+        private void LoadCineplexByCinemaId(string cinemaId)
+        {
+            CumRap cumRap = CinemaController.GetCineplexByCinemaID(cinemaId);
+
+            if (cumRap == null)
+            {
+                return;
+            }
+
+            int indexCineplex = -1;
+            int iCineplex = 0;
+
+            foreach (CumRap item in cboCineplex.Items)
+            {
+                if (item.Ten == cumRap.Ten)
+                {
+                    indexCineplex = iCineplex;
+                    break;
+                }
+                iCineplex++;
+            }
+            cboCineplex.SelectedIndex = indexCineplex;
         }
     }
 }
