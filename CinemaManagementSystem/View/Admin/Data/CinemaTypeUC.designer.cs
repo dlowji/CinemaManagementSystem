@@ -1,6 +1,6 @@
 ﻿namespace GUI.frmAdminUserControls.DataUserControl
 {
-    partial class ScreenTypeUC
+    partial class CinemaTypeUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.btnInsertScreenType);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(925, 59);
             this.panel1.TabIndex = 2;
@@ -111,7 +111,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 59);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(925, 459);
             this.panel2.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.panel4.Controls.Add(this.panel21);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(584, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(341, 459);
             this.panel4.TabIndex = 1;
@@ -133,14 +133,14 @@
             this.panel20.Controls.Add(this.lblScreenTypeName);
             this.panel20.Location = new System.Drawing.Point(18, 95);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(293, 79);
+            this.panel20.Size = new System.Drawing.Size(200, 79);
             this.panel20.TabIndex = 4;
             // 
             // txtScreenTypeName
             // 
             this.txtScreenTypeName.Location = new System.Drawing.Point(7, 41);
             this.txtScreenTypeName.Name = "txtScreenTypeName";
-            this.txtScreenTypeName.Size = new System.Drawing.Size(197, 20);
+            this.txtScreenTypeName.Size = new System.Drawing.Size(138, 20);
             this.txtScreenTypeName.TabIndex = 1;
             // 
             // lblScreenTypeName
@@ -149,9 +149,9 @@
             this.lblScreenTypeName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblScreenTypeName.Location = new System.Drawing.Point(3, 9);
             this.lblScreenTypeName.Name = "lblScreenTypeName";
-            this.lblScreenTypeName.Size = new System.Drawing.Size(119, 19);
+            this.lblScreenTypeName.Size = new System.Drawing.Size(104, 19);
             this.lblScreenTypeName.TabIndex = 0;
-            this.lblScreenTypeName.Text = "Tên màn hình:";
+            this.lblScreenTypeName.Text = "Tên loại rạp:";
             // 
             // panel21
             // 
@@ -159,14 +159,14 @@
             this.panel21.Controls.Add(this.lblScreenTypeID);
             this.panel21.Location = new System.Drawing.Point(18, 3);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(293, 67);
+            this.panel21.Size = new System.Drawing.Size(200, 67);
             this.panel21.TabIndex = 3;
             // 
             // txtScreenTypeID
             // 
             this.txtScreenTypeID.Location = new System.Drawing.Point(7, 31);
             this.txtScreenTypeID.Name = "txtScreenTypeID";
-            this.txtScreenTypeID.Size = new System.Drawing.Size(197, 20);
+            this.txtScreenTypeID.Size = new System.Drawing.Size(138, 20);
             this.txtScreenTypeID.TabIndex = 1;
             // 
             // lblScreenTypeID
@@ -175,16 +175,16 @@
             this.lblScreenTypeID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblScreenTypeID.Location = new System.Drawing.Point(3, 9);
             this.lblScreenTypeID.Name = "lblScreenTypeID";
-            this.lblScreenTypeID.Size = new System.Drawing.Size(143, 19);
+            this.lblScreenTypeID.Size = new System.Drawing.Size(97, 19);
             this.lblScreenTypeID.TabIndex = 0;
-            this.lblScreenTypeID.Text = "Mã loại màn hình:";
+            this.lblScreenTypeID.Text = "Mã loại rạp:";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvScreenType);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(584, 459);
             this.panel3.TabIndex = 0;
@@ -202,14 +202,14 @@
             this.dtgvScreenType.Size = new System.Drawing.Size(584, 459);
             this.dtgvScreenType.TabIndex = 1;
             // 
-            // ScreenTypeUC
+            // CinemaTypeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "ScreenTypeUC";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "CinemaTypeUC";
             this.Size = new System.Drawing.Size(925, 518);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

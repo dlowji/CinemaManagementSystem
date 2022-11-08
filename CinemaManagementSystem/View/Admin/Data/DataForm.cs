@@ -24,7 +24,7 @@ namespace CinemaManagementSystem.Admin.Data
             SidePanel.Height = btnScreenTypeUC.Height;
             SidePanel.Top = btnScreenTypeUC.Top;
             pnData.Controls.Clear();
-            ScreenTypeUC screenType = new ScreenTypeUC();
+            CinemaTypeUC screenType = new CinemaTypeUC();
             screenType.Dock = DockStyle.Fill;
             pnData.Controls.Add(screenType);
         }
@@ -61,12 +61,12 @@ namespace CinemaManagementSystem.Admin.Data
 
         private void btnFormatMovieUC_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = btnFormatMovieUC.Height;
-            SidePanel.Top = btnFormatMovieUC.Top;
-            pnData.Controls.Clear();
-            FormatMovieUC formatMovieUc = new FormatMovieUC();
-            formatMovieUc.Dock = DockStyle.Fill;
-            pnData.Controls.Add(formatMovieUc);
+            //    SidePanel.Height = btnFormatMovieUC.Height;
+            //    SidePanel.Top = btnFormatMovieUC.Top;
+            //    pnData.Controls.Clear();
+            //    FormatMovieUC formatMovieUc = new FormatMovieUC();
+            //    formatMovieUc.Dock = DockStyle.Fill;
+            //    pnData.Controls.Add(formatMovieUc);
         }
 
         private void btnShowTimesUC_Click(object sender, EventArgs e)

@@ -38,14 +38,14 @@ namespace GUI.frmAdminUserControls.DataUserControl
         }
         void LoadScreenIDIntoCombobox(ComboBox comboBox)
         {
-            comboBox.DataSource = ScreenTypeDAO.GetListScreenType();
-            comboBox.DisplayMember = "ID";
-            comboBox.ValueMember = "ID";
+            //comboBox.DataSource = CinemaTypeDAO.GetListScreenType();
+            //comboBox.DisplayMember = "ID";
+            //comboBox.ValueMember = "ID";
         }
         private void cboFormat_ScreenID_SelectedValueChanged(object sender, EventArgs e)
         {
-            LoaiManHinh screenTypeSelected = cboFormat_ScreenID.SelectedItem as LoaiManHinh;
-            txtFormat_ScreenName.Text = screenTypeSelected.TenMH;
+            //LoaiManHinh screenTypeSelected = cboFormat_ScreenID.SelectedItem as LoaiManHinh;
+            //txtFormat_ScreenName.Text = screenTypeSelected.TenMH;
         }
         void LoadFormatMovieList()
         {
@@ -82,7 +82,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
 
             string screenName = (string)dtgvFormat.SelectedCells[0].OwningRow.Cells["Tên MH"].Value;
-            LoaiManHinh screenTypeSelecting = ScreenTypeDAO.GetScreenTypeByName(screenName);
+            LoaiRap screenTypeSelecting = CinemaTypeDAO.GetScreenTypeByName(screenName);
             //This is the ScreenType that we're currently selecting in dtgv
 
             if (screenTypeSelecting == null)
@@ -92,9 +92,9 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
             int indexScreen = -1;
             int iScreen = 0;
-            foreach (LoaiManHinh item in cboFormat_ScreenID.Items)
+            foreach (LoaiRap item in cboFormat_ScreenID.Items)
             {
-                if (item.TenMH == screenTypeSelecting.TenMH)
+                if (item.TenLoaiRap == screenTypeSelecting.TenLoaiRap)
                 {
                     indexScreen = iScreen;
                     break;

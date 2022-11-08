@@ -13,35 +13,54 @@ namespace GUI.DAO
     {
         private CineplexDAO() { }
 
-        public static List<CumRap> GetListCineplexByFormatMovie(string formatMovieID, DateTime date)
+        public static List<CumRap> GetListCineplex()
         {
-            List<CumRap> listCineplex = new List<CumRap>();
+            List<CumRap> cineplexs = new List<CumRap> ();
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = from p in db.Phims
-                            join d in db.DinhDangPhims
-                            on p.id equals d.idPhim
-                            join l in db.LichChieus
-                            on d.id equals l.idDinhDang
-                            join pc in db.PhongChieus
-                            on l.idPhong equals pc.id
-                            where d.id.Equals(formatMovieID)
-                            orderby l.ThoiGianChieu
-                            select l;
+                var query = from cr in db.CumRaps
+                            select cr;
 
                 foreach (var item in query)
                 {
-                    DateTime time = item.ThoiGianChieu;
-                    if (DateTime.Parse(time.ToShortDateString()) == date)
-                    {
-                        listCineplex.Add(item.PhongChieu.CumRap);  
-                    }
+                    cineplexs.Add(item);
                 }
-
             }
 
-            return listCineplex;
+            return cineplexs;
+        }
+
+        public static List<CumRap> GetListCineplexByCinemaTypeID(string cinemaTypeID, string movieId, DateTime date)
+        {
+            List<CumRap> cineplexs = new List<CumRap>();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from lc in db.LichChieus
+                            where lc.idPhim.Equals(movieId)
+                            select lc;
+
+                foreach (var item in query)
+                {
+                    DateTime showTimeDate = DateTime.Parse(item.ThoiGianChieu.ToShortDateString());
+                    DateTime customDate = DateTime.Parse(date.ToShortDateString());
+
+                    if (!item.Rap.idLoaiRap.Equals(cinemaTypeID) || !showTimeDate.Equals(customDate))
+                    {
+                        continue;
+                    }
+
+                    if (cineplexs.Contains(item.Rap.CumRap))
+                    {
+                        continue;
+                    }
+
+                    cineplexs.Add(item.Rap.CumRap);
+                }
+            }
+
+            return cineplexs;
         }
     }
 }

@@ -1,14 +1,15 @@
-﻿using GUI.DAO;
+﻿using CinemaManagementSystem.Controllers;
+using GUI.DAO;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI.frmAdminUserControls.DataUserControl
 {
-    public partial class ScreenTypeUC : UserControl
+    public partial class CinemaTypeUC : UserControl
     {
         BindingSource screenTypeList = new BindingSource();
-        public ScreenTypeUC()
+        public CinemaTypeUC()
         {
             InitializeComponent();
             LoadScreenType();
@@ -21,12 +22,12 @@ namespace GUI.frmAdminUserControls.DataUserControl
         }
         void LoadScreenTypeList()
         {
-            screenTypeList.DataSource = ScreenTypeDAO.GetScreenType();
+            screenTypeList.DataSource = CinemaController.GetCinemaTypeDataTable();
         }
         void AddScreenTypeBinding()
         {
-            txtScreenTypeID.DataBindings.Add("Text", dtgvScreenType.DataSource, "Mã loại màn hình", true, DataSourceUpdateMode.Never);
-            txtScreenTypeName.DataBindings.Add("Text", dtgvScreenType.DataSource, "Tên màn hình", true, DataSourceUpdateMode.Never);
+            txtScreenTypeID.DataBindings.Add("Text", dtgvScreenType.DataSource, "Mã loại rạp", true, DataSourceUpdateMode.Never);
+            txtScreenTypeName.DataBindings.Add("Text", dtgvScreenType.DataSource, "Tên loại rạp", true, DataSourceUpdateMode.Never);
         }
         private void btnShowScreenType_Click(object sender, EventArgs e)
         {
@@ -35,13 +36,15 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void InsertScreenType(string id, string name)
         {
-            if (ScreenTypeDAO.InsertScreenType(id, name))
+            bool result = CinemaController.InsertCinemaType(id, name);
+
+            if (result)
             {
-                MessageBox.Show("Thêm loại màn hình thành công");
+                MessageBox.Show("Thêm loại rạp thành công");
             }
             else
             {
-                MessageBox.Show("Thêm loại màn hình thất bại");
+                MessageBox.Show("Thêm loại rạp thất bại");
             }
         }
         private void btnInsertScreenType_Click(object sender, EventArgs e)
@@ -54,13 +57,15 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void UpdateScreenType(string id, string name)
         {
-            if (ScreenTypeDAO.UpdateScreenType(id, name))
+            bool result = CinemaController.UpdateCinemaType(id, name);
+
+            if (result)
             {
-                MessageBox.Show("Sửa loại màn hình thành công");
+                MessageBox.Show("Sửa loại rạp thành công");
             }
             else
             {
-                MessageBox.Show("Sửa loại màn hình thất bại");
+                MessageBox.Show("Sửa loại rạp thất bại");
             }
         }
         private void btnUpdateScreenType_Click(object sender, EventArgs e)
@@ -73,13 +78,15 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         void DeleteScreenType(string id)
         {
-            if (ScreenTypeDAO.DeleteScreenType(id))
+            bool result = CinemaController.DeleteCinemaType(id);
+
+            if (result)
             {
-                MessageBox.Show("Xóa loại màn hình thành công");
+                MessageBox.Show("Xóa loại rạp thành công");
             }
             else
             {
-                MessageBox.Show("Xóa loại màn hình thất bại");
+                MessageBox.Show("Xóa loại rạp thất bại");
             }
         }
         private void btnDeleteScreenType_Click(object sender, EventArgs e)

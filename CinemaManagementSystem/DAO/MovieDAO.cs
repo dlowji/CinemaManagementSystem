@@ -112,24 +112,32 @@ namespace GUI.DAO
             dt.Columns.Add("Ngày kết thúc", typeof(DateTime));
             dt.Columns.Add("Sản xuất", typeof(string));
             dt.Columns.Add("Đạo diễn", typeof(string));
+            dt.Columns.Add("Diễn viên", typeof(string));
             dt.Columns.Add("Năm SX", typeof(int));
             dt.Columns.Add("Poster", typeof(Image));
-
+            dt.Columns.Add("Kiểm duyệt", typeof(string));
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = db.USP_GetMovie();
+                var query = from phim in db.Phims
+                            join kdp in db.KiemDuyetPhims
+                            on phim.idKiemDuyetPhim equals kdp.id
+                            select new
+                            {
+                                phim,
+                            };
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.Mã_phim, item.Tên_phim, item.Mô_tả, item.Thời_lượng, item.Ngày_khởi_chiếu, item.Ngày_kết_thúc, item.Sản_xuất, item.Đạo_diễn, item.Năm_SX, item.Áp_Phích);
+                    Phim phim = item.phim;
+                    dt.Rows.Add(phim.id, phim.TenPhim, phim.MoTa, phim.ThoiLuong, phim.NgayKhoiChieu, phim.NgayKetThuc, phim.SanXuat, phim.DaoDien, phim.DienVien, phim.NamSX, phim.ApPhich, phim.KiemDuyetPhim.Ten);
                 }
             }
 
             return dt;
         }
 
-        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -143,8 +151,10 @@ namespace GUI.DAO
                     NgayKetThuc = endDate,
                     SanXuat = productor,
                     DaoDien = director,
+                    DienVien = actors,
                     NamSX = year,
-                    ApPhich = image
+                    ApPhich = image,
+                    idKiemDuyetPhim = idKiemDuyetPhim
                 };
 
                 db.Phims.InsertOnSubmit(p);
@@ -162,7 +172,7 @@ namespace GUI.DAO
             }
         }
 
-        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -185,12 +195,6 @@ namespace GUI.DAO
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query2 = from ddp in db.DinhDangPhims
-                        where ddp.idPhim.Equals(id)
-                        select ddp;
-
-                db.DinhDangPhims.DeleteAllOnSubmit(query2);
-
                 var query = from p in db.Phims
                             where p.id.Equals(id)
                             select p;
@@ -220,6 +224,24 @@ namespace GUI.DAO
 
                 return query.FirstOrDefault();
             }
+        }
+
+        public static List<KiemDuyetPhim> GetCensorShipList()
+        {
+            List<KiemDuyetPhim> list = new List<KiemDuyetPhim> ();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from kdp in db.KiemDuyetPhims
+                            select kdp;
+
+                foreach (var item in query)
+                {
+                    list.Add(item);
+                }
+            }
+
+            return list; 
         }
     }
 }

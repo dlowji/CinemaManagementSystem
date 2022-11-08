@@ -27,7 +27,7 @@ namespace GUI.DAO
             return genreList;
         }
 
-        public static DataTable GetGenre()
+        public static DataTable GetDataTableGenre()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã thể loại", typeof(string));

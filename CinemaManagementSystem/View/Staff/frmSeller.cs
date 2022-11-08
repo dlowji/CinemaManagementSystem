@@ -1,4 +1,5 @@
 ﻿using CinemaManagementSystem;
+using CinemaManagementSystem.Controllers;
 using GUI.DAO;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ namespace GUI
         {
             cboFilmName.DataSource = MovieDAO.GetListPlayingMovieByDate(date);
             cboFilmName.DisplayMember = "TenPhim";
+            cboFilmName.ValueMember = "id";
             groupBox1.Text = "Phim đang chiếu:";
         }
 
@@ -43,6 +45,7 @@ namespace GUI
         {
             cboFilmName.DataSource = MovieDAO.GetListComingSoonMovieByDate(date);
             cboFilmName.DisplayMember = "TenPhim";
+            cboFilmName.ValueMember = "id";
             groupBox1.Text = "Phim sắp chiếu:";
         }
 
@@ -72,14 +75,16 @@ namespace GUI
             if (cbbCineplex.SelectedIndex != -1)
             {
                 lvLichChieu.Items.Clear();
-                DinhDangPhim format = cboFormatFilm.SelectedItem as DinhDangPhim;
-                LoadListShowTimeByFilm(format.id);
+                LoadListShowTimeByFilm();
             }
         }
 
-        private void LoadListShowTimeByFilm(string formatMovieID)
+        private void LoadListShowTimeByFilm()
         {
-            DataTable data = ShowTimesDAO.GetListShowTimeByFormatMovie(formatMovieID, dtpThoiGian.Value);
+            string cinemaTypeId = cboFormatFilm.SelectedValue.ToString();
+            string cineplexId = cbbCineplex.SelectedValue.ToString();
+            string movieId = cboFilmName.SelectedValue.ToString();
+            DataTable data = ShowTimesDAO.GetListShowTimeByValues(cinemaTypeId, cineplexId, movieId, dtpThoiGian.Value);
             if (data == null) return;
             foreach (DataRow row in data.Rows)
             {
@@ -157,8 +162,8 @@ namespace GUI
         public void buyTicket()
         {
             enableDate();
-            loadFormatFilm();
             enableFormatFilm();
+            loadFormatFilm();
         }
 
         private void enableDate()
@@ -173,22 +178,26 @@ namespace GUI
 
         private void enableCineplex()
         {
-            loadCineplex();
             cbbCineplex.Enabled = true;
+            loadCineplex();
         }
 
         private void loadFormatFilm()
         {
             Phim movie = cboFilmName.SelectedItem as Phim;
-            cboFormatFilm.DataSource = FormatMovieDAO.GetListFormatMovieByMovie(movie.id);
-            cboFormatFilm.DisplayMember = "idLoaiManHinh";
+            cboFormatFilm.DataSource = CinemaController.GetListCinemaType();
+            cboFormatFilm.DisplayMember = "TenLoaiRap";
+            cboFormatFilm.ValueMember = "id";
         }
 
         private void loadCineplex()
         {
-            DinhDangPhim format = cboFormatFilm.SelectedItem as DinhDangPhim;
-            cbbCineplex.DataSource = CineplexDAO.GetListCineplexByFormatMovie(format.id, DateTime.Parse(dtpThoiGian.Value.ToShortDateString()));
+            string cinemaTypeID = cboFormatFilm.SelectedValue.ToString();
+            string movieID = cboFilmName.SelectedValue.ToString();
+
+            cbbCineplex.DataSource = CinemaController.GetListCineplexByCinemaTypeID(cinemaTypeID, movieID, dtpThoiGian.Value);
             cbbCineplex.DisplayMember = "Ten";
+            cbbCineplex.ValueMember = "id";
         }
     }
 }

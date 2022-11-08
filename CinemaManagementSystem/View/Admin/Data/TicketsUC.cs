@@ -75,7 +75,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         void AutoCreateTicketsByShowTimesId(string showTimesId)
         {
             int result = 0;
-            PhongChieu cinema = CinemaDAO.GetCinemaByName(TicketDAO.getCinemaNameByShowTimesId(showTimesId));
+            Rap cinema = CinemaDAO.GetCinemaByName(TicketDAO.getCinemaNameByShowTimesId(showTimesId));
             int Row = cinema.SoHangGhe;
             int Column = cinema.SoGheMotHang;
             for (int i = 0; i < Row; i++)
@@ -160,7 +160,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
         private void DeleteTicketsByShowTimesId(string showTimesId)
         {
-            PhongChieu cinema = CinemaDAO.GetCinemaByName(TicketDAO.getCinemaNameByShowTimesId(showTimesId));
+            Rap cinema = CinemaDAO.GetCinemaByName(TicketDAO.getCinemaNameByShowTimesId(showTimesId));
             int Row = cinema.SoHangGhe;
             int Column = cinema.SoGheMotHang;
             int result = TicketDAO.DeleteTicketsByShowTimes(showTimesId);

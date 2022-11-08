@@ -52,10 +52,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cinema.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RevenueController.cs" />
     <Compile Include="Controllers\ShowTimeController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\TicketContrller.cs" />
@@ -89,11 +92,11 @@
     <Compile Include="View\Admin\Data\MovieUC.designer.cs">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\ScreenTypeUC.cs">
+    <Compile Include="View\Admin\Data\CinemaTypeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\ScreenTypeUC.designer.cs">
-      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    <Compile Include="View\Admin\Data\CinemaTypeUC.designer.cs">
+      <DependentUpon>CinemaTypeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Data\ShowTimesUC.cs">
       <SubType>UserControl</SubType>
@@ -119,7 +122,7 @@
     <Compile Include="DAO\MovieByGenreDAO.cs" />
     <Compile Include="DAO\MovieDAO.cs" />
     <Compile Include="DAO\RevenueDAO.cs" />
-    <Compile Include="DAO\ScreenTypeDAO.cs" />
+    <Compile Include="DAO\CinemaTypeDAO.cs" />
     <Compile Include="DAO\ShowTimesDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
@@ -194,8 +197,8 @@
     <EmbeddedResource Include="View\Admin\Data\MovieUC.resx">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\ScreenTypeUC.resx">
-      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin\Data\CinemaTypeUC.resx">
+      <DependentUpon>CinemaTypeUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Data\ShowTimesUC.resx">
       <DependentUpon>ShowTimesUC.cs</DependentUpon>

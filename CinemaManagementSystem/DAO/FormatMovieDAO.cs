@@ -12,20 +12,20 @@ namespace GUI.DAO
 {
     public class FormatMovieDAO
     {
-        public static List<DinhDangPhim> GetListFormatMovieByMovie(string movieID)
+        public static List<Object> GetListFormatMovieByMovie(string movieID)
         {
-            List<DinhDangPhim> listFormat = new List<DinhDangPhim>();
+            List<Object> listFormat = new List<Object>();
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = from ddp in db.DinhDangPhims
-                            where ddp.idPhim.Equals(movieID)
-                            select ddp;
+                //var query = from ddp in db.DinhDangPhims
+                //            where ddp.idPhim.Equals(movieID)
+                //            select ddp;
                 
-                foreach (var item in query)
-                {
-                    listFormat.Add(item);
-                }
+                //foreach (var item in query)
+                //{
+                //    listFormat.Add(item);
+                //}
             }
 
             return listFormat;
@@ -37,22 +37,22 @@ namespace GUI.DAO
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = from ddp in db.DinhDangPhims
-                            join mh in db.LoaiManHinhs
-                            on ddp.idLoaiManHinh equals mh.id
-                            where ddp.idPhim.Equals(movieID)
-                            select new
-                            {
-                                id = ddp.id,
-                                idPhim = ddp.idPhim,
-                                idLoaiManHinh = ddp.idLoaiManHinh,
-                                tenMH = ddp.LoaiManHinh.TenMH
-                            };
+                //var query = from ddp in db.DinhDangPhims
+                //            join mh in db.LoaiManHinhs
+                //            on ddp.idLoaiManHinh equals mh.id
+                //            where ddp.idPhim.Equals(movieID)
+                //            select new
+                //            {
+                //                id = ddp.id,
+                //                idPhim = ddp.idPhim,
+                //                idLoaiManHinh = ddp.idLoaiManHinh,
+                //                tenMH = ddp.LoaiManHinh.TenMH
+                //            };
 
-                foreach (var item in query)
-                {
-                    listFormat.Add(item);
-                }
+                //foreach (var item in query)
+                //{
+                //    listFormat.Add(item);
+                //}
             }
 
             return listFormat;
@@ -66,81 +66,82 @@ namespace GUI.DAO
             dt.Columns.Add("Tên phim", typeof(string));
             dt.Columns.Add("Tên màn hình", typeof(string));
 
-            using (CinemaDataContext db = new CinemaDataContext())
-            {
-                var query = from p in db.Phims
-                            join ddp in db.DinhDangPhims
-                            on p.id equals ddp.idPhim
-                            join mh in db.LoaiManHinhs
-                            on ddp.idLoaiManHinh equals mh.id
-                            where p.id.Equals(movieID) && mh.id.Equals(screenTypeID)
-                            select new
-                            {
-                                MaDinhDangPhim = ddp.id,
-                                TenPhim = p.TenPhim,
-                                TenManHinh = mh.TenMH
-                            };
+            //using (CinemaDataContext db = new CinemaDataContext())
+            //{
+            //    var query = from p in db.Phims
+            //                join ddp in db.DinhDangPhims
+            //                on p.id equals ddp.idPhim
+            //                join mh in db.LoaiManHinhs
+            //                on ddp.idLoaiManHinh equals mh.id
+            //                where p.id.Equals(movieID) && mh.id.Equals(screenTypeID)
+            //                select new
+            //                {
+            //                    MaDinhDangPhim = ddp.id,
+            //                    TenPhim = p.TenPhim,
+            //                    TenManHinh = mh.TenMH
+            //                };
 
-                foreach (var item in query)
-                {
-                    dt.Rows.Add(item.MaDinhDangPhim, item.TenPhim, item.TenManHinh);
-                }
-            }
+            //    foreach (var item in query)
+            //    {
+            //        dt.Rows.Add(item.MaDinhDangPhim, item.TenPhim, item.TenManHinh);
+            //    }
+            //}
 
             return dt;
         }
 
-		public static DinhDangPhim GetFormatMovieByName(string movieName, string screenTypeName)
+		public static Object GetFormatMovieByName(string movieName, string screenTypeName)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = (from p in db.Phims
-                            join ddp in db.DinhDangPhims
-                            on p.id equals ddp.idPhim
-                            join mh in db.LoaiManHinhs
-                            on ddp.idLoaiManHinh equals mh.id
-                            where p.TenPhim.Equals(movieName) && mh.TenMH.Equals(screenTypeName)
-                            select new
-                            {
-                                MaDinhDangPhim = ddp.id,
-                                MaPhim = p.id,
-                                MaManHinh = mh.id,
-                            });
+                //var query = (from p in db.Phims
+                //            join ddp in db.DinhDangPhims
+                //            on p.id equals ddp.idPhim
+                //            join mh in db.LoaiManHinhs
+                //            on ddp.idLoaiManHinh equals mh.id
+                //            where p.TenPhim.Equals(movieName) && mh.TenMH.Equals(screenTypeName)
+                //            select new
+                //            {
+                //                MaDinhDangPhim = ddp.id,
+                //                MaPhim = p.id,
+                //                MaManHinh = mh.id,
+                //            });
 
-                foreach (var item in query)
-                {
-                    DinhDangPhim movie = new DinhDangPhim();
-                    movie.id = item.MaDinhDangPhim;
-                    movie.idPhim = item.MaPhim;
-                    movie.idLoaiManHinh = item.MaManHinh;
+                //foreach (var item in query)
+                //{
+                //    DinhDangPhim movie = new DinhDangPhim();
+                //    movie.id = item.MaDinhDangPhim;
+                //    movie.idPhim = item.MaPhim;
+                //    movie.idLoaiManHinh = item.MaManHinh;
 
-                    return movie;
-                }
+                //    return movie;
+                //}
 
                 return null;
             }
         }
 
-		public static List<DinhDangPhim> GetFormatMovie()
+		public static List<Object> GetFormatMovie()
 		{
-			List<DinhDangPhim> formatMovieList = new List<DinhDangPhim>();
+            //List<DinhDangPhim> formatMovieList = new List<DinhDangPhim>();
 
-            using (CinemaDataContext db = new CinemaDataContext())
-            {
-                var query = from p in db.Phims
-                            join ddp in db.DinhDangPhims
-                            on p.id equals ddp.idPhim
-                            join mh in db.LoaiManHinhs
-                            on ddp.idLoaiManHinh equals mh.id
-                            select ddp;
+            //         using (CinemaDataContext db = new CinemaDataContext())
+            //         {
+            //             var query = from p in db.Phims
+            //                         join ddp in db.DinhDangPhims
+            //                         on p.id equals ddp.idPhim
+            //                         join mh in db.LoaiManHinhs
+            //                         on ddp.idLoaiManHinh equals mh.id
+            //                         select ddp;
 
-                foreach (var item in query)
-                {
-                    formatMovieList.Add(item);
-                }
-            }
-     
-			return formatMovieList;
+            //             foreach (var item in query)
+            //             {
+            //                 formatMovieList.Add(item);
+            //             }
+            //         }
+
+            //return formatMovieList;
+            return null;
 		}
 
         public static DataTable GetListFormatMovie()
@@ -153,15 +154,15 @@ namespace GUI.DAO
             dt.Columns.Add("Mã MH", typeof(string));
             dt.Columns.Add("Tên Mh", typeof(string));
 
-            using (CinemaDataContext db = new CinemaDataContext())
-            {
-                var query = db.USP_GetListFormatMovie();
+            //using (CinemaDataContext db = new CinemaDataContext())
+            //{
+            //    var query = db.USP_GetListFormatMovie();
 
-                foreach (var item in query)
-                {
-                    dt.Rows.Add(item.Mã_định_dạng, item.Mã_phim, item.Tên_phim, item.Mã_MH, item.Tên_MH);
-                }
-            }
+            //    foreach (var item in query)
+            //    {
+            //        dt.Rows.Add(item.Mã_định_dạng, item.Mã_phim, item.Tên_phim, item.Mã_MH, item.Tên_MH);
+            //    }
+            //}
 
             return dt;
         }
@@ -172,7 +173,7 @@ namespace GUI.DAO
             {
                 try
                 {
-                    db.USP_InsertFormatMovie(id, idMovie, idScreen);
+                    //db.USP_InsertFormatMovie(id, idMovie, idScreen);
                     return true;
                 }
                 catch (Exception e)
@@ -187,12 +188,12 @@ namespace GUI.DAO
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var ddp = (from d in db.DinhDangPhims
-                            where d.id.Equals(id)
-                            select d).First();
+                //    var ddp = (from d in db.DinhDangPhims
+                //                where d.id.Equals(id)
+                //                select d).First();
 
-                ddp.idPhim = idMovie;
-                ddp.idLoaiManHinh = idScreen;
+                //    ddp.idPhim = idMovie;
+                //    ddp.idLoaiManHinh = idScreen;
 
                 //ask the datacontext to save all the changes
                 try
@@ -212,17 +213,17 @@ namespace GUI.DAO
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var lc = (from l in db.LichChieus
-                          where l.idDinhDang.Equals(id)
-                          select l).First();
+                //var lc = (from l in db.LichChieus
+                //          where l.idDinhDang.Equals(id)
+                //          select l).First();
 
-                db.LichChieus.DeleteOnSubmit(lc);
+                //db.LichChieus.DeleteOnSubmit(lc);
 
-                var ddp = (from d in db.DinhDangPhims
-                           where d.id.Equals(id)
-                           select d).First();
+                //var ddp = (from d in db.DinhDangPhims
+                //           where d.id.Equals(id)
+                //           select d).First();
 
-                db.DinhDangPhims.DeleteOnSubmit(ddp);
+                //db.DinhDangPhims.DeleteOnSubmit(ddp);
 
                 //ask the datacontext to save all the changes
                 try
@@ -243,24 +244,27 @@ namespace GUI.DAO
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = (from ddp in db.DinhDangPhims
-                            where ddp.id.Equals(id)
-                            select ddp).First();
+                //var query = (from ddp in db.DinhDangPhims
+                //            where ddp.id.Equals(id)
+                //            select ddp).First();
 
-                return query.Phim.TenPhim; 
+                //return query.Phim.TenPhim; 
             }
+            return null;
         }
 
         public static string getScreenTypeNameByFormatMovieId(string id)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = (from ddp in db.DinhDangPhims
-                             where ddp.id.Equals(id)
-                             select ddp).First();
+                //var query = (from ddp in db.DinhDangPhims
+                //             where ddp.id.Equals(id)
+                //             select ddp).First();
 
-                return query.LoaiManHinh.TenMH;
+                //return query.LoaiManHinh.TenMH;
             }
+
+            return null;
         }
     }
 }

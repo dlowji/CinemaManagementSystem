@@ -1,7 +1,9 @@
 ﻿using CinemaManagementSystem;
+using CinemaManagementSystem.Controllers;
 using GUI.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,7 +28,8 @@ namespace GUI.frmAdminUserControls.DataUserControl
         }
         void LoadMovieList()
         {
-            movieList.DataSource = MovieDAO.GetMovie();
+            DataTable movies = MovieController.GetMovie();
+            movieList.DataSource = movies;
         }
         private void btnShowMovie_Click(object sender, EventArgs e)
         {
@@ -42,9 +45,18 @@ namespace GUI.frmAdminUserControls.DataUserControl
             dtmMovieEnd.DataBindings.Add("Value", dtgvMovie.DataSource, "Ngày kết thúc", true, DataSourceUpdateMode.Never);
             txtMovieProductor.DataBindings.Add("Text", dtgvMovie.DataSource, "Sản xuất", true, DataSourceUpdateMode.Never);
             txtMovieDirector.DataBindings.Add("Text", dtgvMovie.DataSource, "Đạo diễn", true, DataSourceUpdateMode.Never);
+            txbActors.DataBindings.Add("Text", dtgvMovie.DataSource, "Diễn viên", true, DataSourceUpdateMode.Never);
             txtMovieYear.DataBindings.Add("Text", dtgvMovie.DataSource, "Năm SX", true, DataSourceUpdateMode.Never);
             LoadGenreIntoCheckedList(clbMovieGenre);
+            LoadCensorShipIntoComboBox(cboKiemDuyet);
         }
+        void LoadCensorShipIntoComboBox(ComboBox cbo)
+        {
+            cbo.DataSource = MovieController.GetListCensorShip();
+            cbo.DisplayMember = "Ten";
+            cbo.ValueMember = "id";
+        }
+
         void LoadGenreIntoCheckedList(CheckedListBox checkedList)
         {
             List<TheLoai> genreList = GenreDAO.GetListGenre();
@@ -84,9 +96,11 @@ namespace GUI.frmAdminUserControls.DataUserControl
                 picFilm.Image = MovieDAO.byteArrayToImage(movie.ApPhich.ToArray());
         }
 
-        void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
         {
-            if (MovieDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
+            bool result = MovieController.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+
+            if (result)
             {
                 MessageBox.Show("Thêm phim thành công");
             }
@@ -130,6 +144,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         private void btnAddMovie_Click(object sender, EventArgs e)
         {
             string movieID = txtMovieID.Text;
+            string censorShipID = cboKiemDuyet.SelectedValue.ToString();
             string movieName = txtMovieName.Text;
             string movieDesc = txtMovieDesc.Text;
             float movieLength = float.Parse(txtMovieLength.Text);
@@ -137,20 +152,23 @@ namespace GUI.frmAdminUserControls.DataUserControl
             DateTime endDate = dtmMovieEnd.Value;
             string productor = txtMovieProductor.Text;
             string director = txtMovieDirector.Text;
+            string actors = txbActors.Text;
             int year = int.Parse(txtMovieYear.Text);
             if (picFilm.Image == null)
             {
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDAO.imageToByteArray(picFilm.Image));
+            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, MovieDAO.imageToByteArray(picFilm.Image), censorShipID);
             InsertMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }
 
-        void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
+        void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
         {
-            if (MovieDAO.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
+            bool result = MovieController.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+
+            if (result)
             {
                 MessageBox.Show("Sửa phim thành công");
             }
@@ -171,6 +189,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
             string movieID = txtMovieID.Text;
+            string censorShipID = cboKiemDuyet.SelectedValue.ToString();
             string movieName = txtMovieName.Text;
             string movieDesc = txtMovieDesc.Text;
             float movieLength = float.Parse(txtMovieLength.Text);
@@ -178,13 +197,14 @@ namespace GUI.frmAdminUserControls.DataUserControl
             DateTime endDate = dtmMovieEnd.Value;
             string productor = txtMovieProductor.Text;
             string director = txtMovieDirector.Text;
+            string actors = txbActors.Text;
             int year = int.Parse(txtMovieYear.Text);
             if (picFilm.Image == null)
             {
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, year, MovieDAO.imageToByteArray(picFilm.Image));
+            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, MovieDAO.imageToByteArray(picFilm.Image), censorShipID);
             UpdateMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }

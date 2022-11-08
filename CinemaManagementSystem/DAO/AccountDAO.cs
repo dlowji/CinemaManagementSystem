@@ -126,7 +126,7 @@ namespace GUI.DAO
                     db.USP_InsertAccount(username, accountType, staffID);
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return false;
                 }
@@ -142,9 +142,8 @@ namespace GUI.DAO
                     db.USP_UpdateAccount(username, accountType);
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
@@ -168,9 +167,8 @@ namespace GUI.DAO
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
