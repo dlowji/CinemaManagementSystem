@@ -28,6 +28,29 @@ namespace GUI.DAO
             return cinemaTypeList;
         }
 
+        public static List<LoaiRap> GetListCinemaTypeByMovie(string movieId)
+        {
+            List<LoaiRap> cinemaTypeList = new List<LoaiRap>();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from lc in db.LichChieus
+                            where lc.idPhim.Equals(movieId)
+                            select lc;
+
+                foreach (LichChieu lc in query)
+                {
+                    if (cinemaTypeList.Contains(lc.Rap.LoaiRap))
+                    {
+                        continue;
+                    }
+
+                    cinemaTypeList.Add(lc.Rap.LoaiRap);
+                }
+            }
+            return cinemaTypeList;
+        }
+
         public static DataTable GetCinemaType()
         {
             DataTable dt = new DataTable();

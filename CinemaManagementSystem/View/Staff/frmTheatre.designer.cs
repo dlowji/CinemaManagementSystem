@@ -177,7 +177,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(527, 9);
+            this.lblTime.Location = new System.Drawing.Point(639, 9);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(43, 20);
             this.lblTime.TabIndex = 2;

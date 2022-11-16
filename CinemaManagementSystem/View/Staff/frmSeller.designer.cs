@@ -166,7 +166,8 @@
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(289, 26);
             this.dtpThoiGian.TabIndex = 6;
-            this.dtpThoiGian.Value = new System.DateTime(2018, 4, 15, 10, 8, 45, 0);
+            this.dtpThoiGian.Value = new System.DateTime(2022, 11, 10, 0, 0, 0, 0);
+            this.dtpThoiGian.ValueChanged += new System.EventHandler(this.dtpThoiGian_ValueChanged_1);
             // 
             // label4
             // 

@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem.Admin.Data;
 using CinemaManagementSystem.Controllers;
+using CinemaManagementSystem.Helper;
 using GUI;
 using GUI.DAO;
 using System;
@@ -20,6 +21,9 @@ namespace CinemaManagementSystem
         BindingSource customerList = new BindingSource();
         BindingSource staffList = new BindingSource();
         BindingSource productList = new BindingSource();
+        BindingSource importReceiptList = new BindingSource();
+        BindingSource ticketReceiptList = new BindingSource();
+
         string staffId;
 
         public QuanLy(string staffId)
@@ -29,6 +33,8 @@ namespace CinemaManagementSystem
             LoadStaff();
             LoadCustomer();
             LoadProduct();
+            LoadImportReceipt();
+            LoadTicketReceipt();
             this.staffId = staffId;
         }
 
@@ -419,6 +425,40 @@ namespace CinemaManagementSystem
 
         //end staff
 
+        //begin history
+
+        //begin import
+        void LoadImportReceipt()
+        {
+            dtgvImportReceipt.DataSource = importReceiptList;
+            LoadImportReceiptList();
+        }
+
+        void LoadImportReceiptList()
+        {
+            DataTable receipts = ReceiptController.GetImportReceiptList();
+            importReceiptList.DataSource = receipts;
+        }
+
+        //end import
+
+        //begin ticketReceipt
+        void LoadTicketReceipt()
+        {
+            dtgvTicketReceipt.DataSource = ticketReceiptList;
+            LoadTicketReceiptList();
+        }
+
+        void LoadTicketReceiptList()
+        {
+            DataTable receipts = ReceiptController.GetTicketReceiptList();
+            ticketReceiptList.DataSource = receipts;
+        }
+
+        //end ticket receipt
+
+        //end history
+
         private void txbTimKiemNhanVien_Enter(object sender, EventArgs e)
         {
             TextBox txb = sender as TextBox;
@@ -486,6 +526,23 @@ namespace CinemaManagementSystem
             frmImport frm = new frmImport(staffId);
             frm.Show();
             LoadProductList();
+        }
+
+        private void QuanLy_Load(object sender, EventArgs e)
+        {
+            List<Control> allControls = Helper.Helper.GetAllControls(this);
+            allControls.ForEach(k => k.Font = new System.Drawing.Font("Verdana", 11));
+            allControls.ForEach(k => k.ForeColor = ColorTranslator.FromHtml("#000006"));
+        }
+
+        private void btnExportImportReceipt_Click(object sender, EventArgs e)
+        {
+            Helper.Helper.Export2Excel(dtgvImportReceipt);
+        }
+
+        private void btnExportTicketReceipt_Click(object sender, EventArgs e)
+        {
+            Helper.Helper.Export2Excel(dtgvTicketReceipt);
         }
     }
 

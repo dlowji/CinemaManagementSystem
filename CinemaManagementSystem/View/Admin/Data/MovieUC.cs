@@ -1,10 +1,13 @@
 ﻿using CinemaManagementSystem;
 using CinemaManagementSystem.Controllers;
+using CinemaManagementSystem.Helper;
 using GUI.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,10 +16,17 @@ namespace GUI.frmAdminUserControls.DataUserControl
     public partial class MovieUC : UserControl
     {
         BindingSource movieList = new BindingSource();
+        private string workingDirectory;
+        private string projectDirectory;
+        private string fileName;
+        private string sourcePath;
+        private string targetPath;
 
         public MovieUC()
         {
             InitializeComponent();
+            workingDirectory = Environment.CurrentDirectory;
+            projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
             LoadMovie();
         }
 
@@ -89,16 +99,23 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
             Phim movie = MovieDAO.GetMovieByID(txtMovieID.Text);
 
-            if (movie == null)
-                return;
+            if (picFilm.Image != null)
+            {
+                picFilm.Image.Dispose();
+                picFilm.Image = null;
+           
+            }
 
             if (movie.ApPhich != null)
-                picFilm.Image = MovieDAO.byteArrayToImage(movie.ApPhich.ToArray());
+            {
+                picFilm.Image = Image.FromFile(projectDirectory + movie.ApPhich);
+                picFilm.ImageLocation = projectDirectory + movie.ApPhich;
+            }
         }
 
-        void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
-            bool result = MovieController.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+            bool result = MovieController.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, imagePath, idKiemDuyetPhim);
 
             if (result)
             {
@@ -133,6 +150,13 @@ namespace GUI.frmAdminUserControls.DataUserControl
                 {
                     filePathImage = openFile.FileName;
                     picFilm.Image = Image.FromFile(filePathImage.ToString());
+
+                    sourcePath = Path.GetDirectoryName(openFile.FileName);
+                    fileName = Path.GetFileName(openFile.FileName);
+                    targetPath = projectDirectory + "/Images";
+
+                    string sourceFile = Path.Combine(sourcePath, fileName);
+                    picFilm.ImageLocation = sourceFile;
                 }
             }
             catch (Exception)
@@ -159,14 +183,26 @@ namespace GUI.frmAdminUserControls.DataUserControl
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, MovieDAO.imageToByteArray(picFilm.Image), censorShipID);
+
+            bool copyResult = Helper.FileCopy(fileName, sourcePath, targetPath);
+
+            if (!copyResult)
+            {
+                MessageBox.Show("Thêm phim thất bại");
+                return;
+            }
+
+            string imagePath = picFilm.ImageLocation;
+            string storedPath = "/Images/" + Path.GetFileName(imagePath);
+
+            InsertMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, storedPath, censorShipID);
             InsertMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }
 
-        void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
-            bool result = MovieController.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+            bool result = MovieController.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, imagePath, idKiemDuyetPhim);
 
             if (result)
             {
@@ -204,7 +240,19 @@ namespace GUI.frmAdminUserControls.DataUserControl
                 MessageBox.Show("Mời bạn thêm hình ảnh cho phim trước");
                 return;
             }
-            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, MovieDAO.imageToByteArray(picFilm.Image), censorShipID);
+
+            bool copyResult = Helper.FileCopy(fileName, sourcePath, targetPath);
+
+            if (!copyResult)
+            {
+                MessageBox.Show("Thêm phim thất bại");
+                return;
+            }
+
+            string imagePath = picFilm.ImageLocation;
+            string storedPath = "/Images/" + Path.GetFileName(imagePath);
+
+            UpdateMovie(movieID, movieName, movieDesc, movieLength, startDate, endDate, productor, director, actors, year, storedPath, censorShipID);
             UpdateMovie_Genre(movieID, clbMovieGenre);
             LoadMovieList();
         }

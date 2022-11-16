@@ -25,18 +25,19 @@ namespace CinemaManagementSystem.Controllers
             return MovieDAO.GetCensorShipList();
         }
 
-        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
-            return MovieDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+            return MovieDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, imagePath, idKiemDuyetPhim);
         }
 
-        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year,string imagePath, string idKiemDuyetPhim)
         {
-            return MovieDAO.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, image, idKiemDuyetPhim);
+            return MovieDAO.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, imagePath, idKiemDuyetPhim);
         }
 
         public static bool DeleteMovie(string id)
         {
+            MovieByGenreDAO.DeleteMovie_GenreByMovieID(id);
             return MovieDAO.DeleteMovie(id);
         }
     }

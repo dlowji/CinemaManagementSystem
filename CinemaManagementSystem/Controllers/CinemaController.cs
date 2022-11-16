@@ -17,6 +17,11 @@ namespace CinemaManagementSystem.Controllers
             return cinemas;
         }
 
+        public static List<LoaiRap> GetListCinemaTypeByMovie(string movieId)
+        {
+            return CinemaTypeDAO.GetListCinemaTypeByMovie(movieId); 
+        }
+
         public static LoaiRap GetCinemaTypeByID(string cinemaTypeId)
         {
             return CinemaTypeDAO.GetCinemaTypeByID(cinemaTypeId);

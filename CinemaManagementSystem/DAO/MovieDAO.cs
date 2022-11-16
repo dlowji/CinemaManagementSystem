@@ -130,14 +130,22 @@ namespace GUI.DAO
                 foreach (var item in query)
                 {
                     Phim phim = item.phim;
-                    dt.Rows.Add(phim.id, phim.TenPhim, phim.MoTa, phim.ThoiLuong, phim.NgayKhoiChieu, phim.NgayKetThuc, phim.SanXuat, phim.DaoDien, phim.DienVien, phim.NamSX, phim.ApPhich, phim.KiemDuyetPhim.Ten);
+                    Image obj = null;
+                    string workingDirectory = Environment.CurrentDirectory;
+                    string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+                    if (phim.ApPhich != null)
+                    {
+                        obj = Image.FromFile(projectDirectory + phim.ApPhich);
+                    }
+                  
+                    dt.Rows.Add(phim.id, phim.TenPhim, phim.MoTa, phim.ThoiLuong, phim.NgayKhoiChieu, phim.NgayKetThuc, phim.SanXuat, phim.DaoDien, phim.DienVien, phim.NamSX, obj, phim.KiemDuyetPhim.Ten);
                 }
             }
 
             return dt;
         }
 
-        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -153,7 +161,7 @@ namespace GUI.DAO
                     DaoDien = director,
                     DienVien = actors,
                     NamSX = year,
-                    ApPhich = image,
+                    ApPhich = imagePath,
                     idKiemDuyetPhim = idKiemDuyetPhim
                 };
 
@@ -172,13 +180,29 @@ namespace GUI.DAO
             }
         }
 
-        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, byte[] image, string idKiemDuyetPhim)
+        public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                var phim = (from p in db.Phims
+                           where p.id.Equals(id)
+                           select p).First();
+
+                phim.TenPhim = name;
+                phim.MoTa = desc;
+                phim.ThoiLuong = length;
+                phim.NgayKhoiChieu = startDate;
+                phim.NgayKetThuc = endDate;
+                phim.SanXuat = productor;
+                phim.DaoDien = director;
+                phim.DienVien = actors;
+                phim.NamSX = year;
+                phim.ApPhich = imagePath;
+                phim.idKiemDuyetPhim = idKiemDuyetPhim;
+
                 try
                 {
-                    db.USP_UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image);
+                    db.SubmitChanges();
                     return true;
                 }
                 catch (Exception e)
@@ -191,8 +215,6 @@ namespace GUI.DAO
 
         public static bool DeleteMovie(string id)
         {
-			MovieByGenreDAO.DeleteMovie_GenreByMovieID(id);
-
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = from p in db.Phims

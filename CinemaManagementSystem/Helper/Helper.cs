@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CinemaManagementSystem.Helper
 {
@@ -56,6 +58,79 @@ namespace CinemaManagementSystem.Helper
             }
 
             return representString.ToString();
+        }
+
+
+        public static List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+                else
+                    list.Add(c);
+            }
+
+            return list;
+        }
+        public static List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
+
+        public static void Export2Excel(DataGridView dtgv)
+        {
+            dtgv.SelectAll();
+            DataObject copyData = dtgv.GetClipboardContent();
+
+            if (copyData != null)
+            {
+                Clipboard.SetDataObject(copyData);
+            }
+
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            xlapp.Visible = true;
+
+            Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+
+            object miseddata = System.Reflection.Missing.Value;
+
+            xlwbook = xlapp.Workbooks.Add(miseddata);
+
+            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
+
+            xlr.Select();
+
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+        }
+
+        public static bool FileCopy(string fileName, string sourcePath, string targetPath)
+        {
+            // Use Path class to manipulate file and directory paths.
+            string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
+            string destFile = System.IO.Path.Combine(targetPath, fileName);
+
+            // To copy a folder's contents to a new location:
+            // Create a new target folder.
+            // If the directory already exists, this method does not create a new directory.
+            System.IO.Directory.CreateDirectory(targetPath);
+
+            // To copy a file to another location and
+            // overwrite the destination file if it already exists.
+            try
+            {
+                System.IO.File.Copy(sourceFile, destFile, true);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            } 
         }
     }
 }
