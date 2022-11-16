@@ -19,18 +19,11 @@ namespace GUI
             dtpThoiGian.Enabled = false;
             cboFormatFilm.Enabled = false;
             cbbCineplex.Enabled = false;
-            btnBuyticket.Enabled = false;
         }
 
         private void frmSeller_Load(object sender, EventArgs e)
         {
             timer1.Start();
-        }
-
-        private void LoadMovie(DateTime date)
-        {
-            cboFilmName.DataSource = MovieDAO.GetListMovieByDate(date);
-            cboFilmName.DisplayMember = "TenPhim";
         }
 
         public void LoadPlayingMovie(DateTime date)
@@ -53,9 +46,10 @@ namespace GUI
         {
             if (cboFilmName.SelectedIndex != -1)
             {
-                cboFormatFilm.DataSource = null;
+                dtpThoiGian.Enabled = false;
+                cboFormatFilm.Enabled = false;
+                cbbCineplex.Enabled = false;
                 lvLichChieu.Items.Clear();
-                loadFormatFilm();
             }
         }
 
@@ -63,9 +57,6 @@ namespace GUI
         {
             if (cboFormatFilm.SelectedIndex != -1)
             {
-                //lvLichChieu.Items.Clear();
-                //DinhDangPhim format = cboFormatFilm.SelectedItem as DinhDangPhim;
-                //LoadListShowTimeByFilm(format.id);
                 enableCineplex();
             }
         }
@@ -76,6 +67,12 @@ namespace GUI
             {
                 lvLichChieu.Items.Clear();
                 LoadListShowTimeByFilm();
+            }
+            else
+            {
+                cbbCineplex.SelectedItem = null;
+                cbbCineplex.SelectedText = "--Hiện tại không có cụm rạp phù hợp--";
+                lvLichChieu.Items.Clear();
             }
         }
 
@@ -157,6 +154,7 @@ namespace GUI
 
         private void btnBuyticket_Click(object sender, EventArgs e)
         {
+            buyTicket();
         }
 
         public void buyTicket()
@@ -185,9 +183,17 @@ namespace GUI
         private void loadFormatFilm()
         {
             Phim movie = cboFilmName.SelectedItem as Phim;
-            cboFormatFilm.DataSource = CinemaController.GetListCinemaType();
+
+            List<LoaiRap> cinemaTypeList = CinemaController.GetListCinemaTypeByMovie(movie.id);
+            cboFormatFilm.DataSource = cinemaTypeList;
             cboFormatFilm.DisplayMember = "TenLoaiRap";
             cboFormatFilm.ValueMember = "id";
+
+            if (cinemaTypeList.Count() == 0)
+            {
+                cboFormatFilm.SelectedItem = null;
+                cboFormatFilm.SelectedText = "--Hiện tại không có loại rạp phù hợp--";
+            }
         }
 
         private void loadCineplex()
@@ -195,9 +201,22 @@ namespace GUI
             string cinemaTypeID = cboFormatFilm.SelectedValue.ToString();
             string movieID = cboFilmName.SelectedValue.ToString();
 
-            cbbCineplex.DataSource = CinemaController.GetListCineplexByCinemaTypeID(cinemaTypeID, movieID, dtpThoiGian.Value);
+            List<CumRap> cineplexList = CinemaController.GetListCineplexByCinemaTypeID(cinemaTypeID, movieID, dtpThoiGian.Value);
+            cbbCineplex.DataSource = cineplexList;
             cbbCineplex.DisplayMember = "Ten";
             cbbCineplex.ValueMember = "id";
+
+            if (cineplexList.Count() == 0)
+            {
+                cbbCineplex.SelectedItem = null;
+                cbbCineplex.SelectedText = "--Hiện tại không có cụm rạp phù hợp--";
+                lvLichChieu.Items.Clear();
+            }
+        }
+
+        private void dtpThoiGian_ValueChanged_1(object sender, EventArgs e)
+        {
+            loadFormatFilm();
         }
     }
 }

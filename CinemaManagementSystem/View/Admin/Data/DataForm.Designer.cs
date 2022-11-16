@@ -188,6 +188,7 @@
             // 
             // pnData
             // 
+            this.pnData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnData.Location = new System.Drawing.Point(209, 2);
             this.pnData.Margin = new System.Windows.Forms.Padding(2);

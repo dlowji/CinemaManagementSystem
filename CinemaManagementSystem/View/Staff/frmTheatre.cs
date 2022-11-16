@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;//thư viện thay đổi vùng/quốc gia
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -44,14 +45,17 @@ namespace GUI
         private void frmTheatre_Load(object sender, EventArgs e)
         {
             ticketPrice = Times.GiaVe;
-            MessageBox.Show(ticketPrice.ToString());
 
             lblInformation.Text = "CGV Hung Vuong | " + TicketDAO.getCinemaNameByShowTimesId(Times.id) + " | " + TicketDAO.getMovieNameByShowTimesId(Times.id);
             lblTime.Text = Times.ThoiGianChieu.ToShortDateString() + " | "
                 + Times.ThoiGianChieu.ToShortTimeString() + " - "
                 + Times.ThoiGianChieu.AddMinutes(Movie.ThoiLuong).ToShortTimeString();
             if (Movie.ApPhich != null)
-                picFilm.Image = MovieDAO.byteArrayToImage(Movie.ApPhich.ToArray());
+            {
+                string workingDirectory = Environment.CurrentDirectory;
+                string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+                picFilm.Image = Image.FromFile("");
+            }
 
             rdoAdult.Checked = true;
             chkCustomer.Enabled = false;

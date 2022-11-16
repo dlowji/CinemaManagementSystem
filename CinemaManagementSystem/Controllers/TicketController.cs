@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaManagementSystem.Controllers
 {
-    internal class TicketContrller
+    internal class TicketController
     {
     }
 }
