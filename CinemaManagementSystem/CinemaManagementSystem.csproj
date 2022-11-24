@@ -135,11 +135,23 @@
     <Compile Include="DAO\ShowTimesDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="View\Login\DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Others\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Others\frmCustomer.designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Others\PaymentProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Others\PaymentProcess.designer.cs">
+      <DependentUpon>PaymentProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Staff\frmDashBoard.cs">
       <SubType>Form</SubType>
@@ -218,8 +230,14 @@
     <EmbeddedResource Include="View\Admin\Data\TicketsUC.resx">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Others\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Others\PaymentProcess.resx">
+      <DependentUpon>PaymentProcess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Staff\frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
@@ -413,6 +431,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\birthday.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -144,7 +144,8 @@ namespace GUI
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            MovieDetail frm = new MovieDetail();
+            Phim movie = cboFilmName.SelectedItem as Phim;
+            MovieDetail frm = new MovieDetail(movie);
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {

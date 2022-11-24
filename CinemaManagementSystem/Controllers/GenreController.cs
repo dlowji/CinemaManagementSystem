@@ -17,6 +17,11 @@ namespace CinemaManagementSystem.Controllers
             return genres;
         }
 
+        public static List<TheLoai> GetListGenreByMovieId(string movieId)
+        {
+            return MovieByGenreDAO.GetListGenreByMovieID(movieId);
+        }
+
         public static bool InsertGenre(string id, string name, string desc)
         {
             return GenreDAO.InsertGenre(id, name, desc);

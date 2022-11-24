@@ -117,13 +117,24 @@ namespace GUI.DAO
             }
 		}
 
-		public static bool InsertAccount(string username, int accountType, string staffID)
+		public static bool InsertAccount(string username, string password, int accountType, string staffID)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                string hashPass = PasswordEncryption(password);
+                TaiKhoan acc = new TaiKhoan
+                {
+                    UserName = username,
+                    Pass = hashPass,
+                    LoaiTK = accountType,
+                    idNV = staffID
+                };
+
+                db.TaiKhoans.InsertOnSubmit(acc);
+
                 try
                 {
-                    db.USP_InsertAccount(username, accountType, staffID);
+                    db.SubmitChanges();
                     return true;
                 }
                 catch (Exception)

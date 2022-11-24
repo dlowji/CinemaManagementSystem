@@ -1,4 +1,5 @@
-﻿using GUI;
+﻿using CinemaManagementSystem.View.Login;
+using GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace CinemaManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chart());
+            Application.Run(new DangKy());
         }
     }
 }

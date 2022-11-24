@@ -87,7 +87,7 @@
             this.flpSeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.flpSeat.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpSeat.Location = new System.Drawing.Point(-77, 114);
+            this.flpSeat.Location = new System.Drawing.Point(-58, 114);
             this.flpSeat.Name = "flpSeat";
             this.flpSeat.Size = new System.Drawing.Size(800, 376);
             this.flpSeat.TabIndex = 0;
@@ -171,7 +171,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(884, 34);
+            this.panel4.Size = new System.Drawing.Size(923, 34);
             this.panel4.TabIndex = 5;
             // 
             // lblTime
@@ -199,7 +199,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 505);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(884, 244);
+            this.panel5.Size = new System.Drawing.Size(923, 244);
             this.panel5.TabIndex = 6;
             // 
             // panel7
@@ -211,7 +211,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(882, 242);
+            this.panel7.Size = new System.Drawing.Size(921, 242);
             this.panel7.TabIndex = 17;
             // 
             // groupBox2
@@ -221,7 +221,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(343, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(117, 240);
+            this.groupBox2.Size = new System.Drawing.Size(156, 240);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thành Viên:";
@@ -435,7 +435,7 @@
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblDiscount);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(460, 0);
+            this.panel6.Location = new System.Drawing.Point(499, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(420, 240);
             this.panel6.TabIndex = 14;
@@ -546,7 +546,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(884, 749);
+            this.ClientSize = new System.Drawing.Size(923, 749);
             this.Controls.Add(this.picFilm);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);

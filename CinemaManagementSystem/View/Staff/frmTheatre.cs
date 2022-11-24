@@ -54,7 +54,7 @@ namespace GUI
             {
                 string workingDirectory = Environment.CurrentDirectory;
                 string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-                picFilm.Image = Image.FromFile("");
+                picFilm.Image = Image.FromFile(projectDirectory + Movie.ApPhich);
             }
 
             rdoAdult.Checked = true;
