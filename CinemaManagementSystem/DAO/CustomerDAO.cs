@@ -64,9 +64,23 @@ namespace GUI.DAO
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                KhachHang cus = new KhachHang
+                {
+                    id = id,
+                    HoTen = hoTen,
+                    NgaySinh = ngaySinh,
+                    DiaChi = diaChi,
+                    SDT = sdt,
+                    CMND = cmnd,
+                    DiemTichLuy = 0,
+                    idCapDoThanhVien = "LV01"
+                };
+
+                db.KhachHangs.InsertOnSubmit(cus);
+
                 try
                 {
-                    db.USP_InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd);
+                    db.SubmitChanges();
                     return true;
                 }
                 catch (Exception e)

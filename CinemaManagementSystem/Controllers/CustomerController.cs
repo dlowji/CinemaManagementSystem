@@ -18,6 +18,13 @@ namespace CinemaManagementSystem.Controllers
             return customers;
         }
 
+        public static bool InsertMember(string username, string password, string id, string name, DateTime birthday, string address, string phone, int cmnd)
+        {
+            AccountDAO.InsertAccount(username, password, 3, "NV01");
+            CustomerDAO.InsertCustomer(id, name, birthday, address, phone, cmnd);
+            return true;
+        }
+
         public static bool InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
             return CustomerDAO.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd);

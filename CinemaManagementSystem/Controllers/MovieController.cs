@@ -25,6 +25,11 @@ namespace CinemaManagementSystem.Controllers
             return MovieDAO.GetCensorShipList();
         }
 
+        public static KiemDuyetPhim GetMovieCensorShipByMovieId(string movieId)
+        {
+            return MovieDAO.GetCensorShipByMovieId(movieId);
+        }
+
         public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, string actors, int year, string imagePath, string idKiemDuyetPhim)
         {
             return MovieDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, actors, year, imagePath, idKiemDuyetPhim);

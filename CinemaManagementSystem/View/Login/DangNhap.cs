@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem.Controllers;
 using CinemaManagementSystem.Helper;
+using CinemaManagementSystem.View.Login;
 using GUI;
 using GUI.DAO;
 using System;
@@ -82,7 +83,7 @@ namespace CinemaManagementSystem
                     frm.ShowDialog();
                     this.Show();
                 }
-                else if (loginAccount.LoaiTK == 2) //staff
+                else if (loginAccount.LoaiTK == 2 || loginAccount.LoaiTK == 3) //staff
                 {
                     frmDashBoard frm = new frmDashBoard(loginAccount);
                     this.Hide();
@@ -99,6 +100,13 @@ namespace CinemaManagementSystem
                 MessageBox.Show("KẾT NỐI THẤT BẠI", "THÔNG BÁO");
             }
             btnDangNhap.Enabled = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DangKy frm = new DangKy();
+            frm.Show();
+            Hide();
         }
     }
 }

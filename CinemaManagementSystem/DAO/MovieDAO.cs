@@ -265,5 +265,18 @@ namespace GUI.DAO
 
             return list; 
         }
+
+        public static KiemDuyetPhim GetCensorShipByMovieId(string movieId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = (from phim in db.Phims
+                            where phim.id.Equals(movieId)
+                            select phim).First();
+
+                return query.KiemDuyetPhim;
+            }
+
+        }
     }
 }
