@@ -433,6 +433,7 @@
             this.btnAddStaff.TabIndex = 28;
             this.btnAddStaff.Text = "Thêm";
             this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // btnSearchStaff
             // 
@@ -471,6 +472,7 @@
             this.btnUpdateStaff.TabIndex = 27;
             this.btnUpdateStaff.Text = "Sửa";
             this.btnUpdateStaff.UseVisualStyleBackColor = true;
+            this.btnUpdateStaff.Click += new System.EventHandler(this.btnUpdateStaff_Click);
             // 
             // grpStaff
             // 

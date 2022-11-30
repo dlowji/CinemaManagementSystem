@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.llbQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.txbTenDangNhap = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -55,10 +55,24 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(322, 26);
+            this.panel1.Location = new System.Drawing.Point(380, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(443, 326);
+            this.panel1.Size = new System.Drawing.Size(385, 368);
             this.panel1.TabIndex = 1;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
+            this.linkLabel1.Location = new System.Drawing.Point(111, 247);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(152, 18);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Chưa có tài khoản?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnDangNhap
             // 
@@ -67,7 +81,7 @@
             this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnDangNhap.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(156, 272);
+            this.btnDangNhap.Location = new System.Drawing.Point(133, 299);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(118, 35);
             this.btnDangNhap.TabIndex = 7;
@@ -81,7 +95,7 @@
             this.llbQuenMatKhau.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbQuenMatKhau.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llbQuenMatKhau.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
-            this.llbQuenMatKhau.Location = new System.Drawing.Point(131, 203);
+            this.llbQuenMatKhau.Location = new System.Drawing.Point(111, 217);
             this.llbQuenMatKhau.Name = "llbQuenMatKhau";
             this.llbQuenMatKhau.Size = new System.Drawing.Size(131, 18);
             this.llbQuenMatKhau.TabIndex = 6;
@@ -93,7 +107,7 @@
             // 
             this.txbMatKhau.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.txbMatKhau.Location = new System.Drawing.Point(134, 161);
+            this.txbMatKhau.Location = new System.Drawing.Point(105, 169);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(207, 26);
             this.txbMatKhau.TabIndex = 2;
@@ -105,7 +119,7 @@
             // 
             this.txbTenDangNhap.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.txbTenDangNhap.Location = new System.Drawing.Point(134, 116);
+            this.txbTenDangNhap.Location = new System.Drawing.Point(105, 124);
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(207, 26);
             this.txbTenDangNhap.TabIndex = 1;
@@ -113,10 +127,21 @@
             this.txbTenDangNhap.Enter += new System.EventHandler(this.txbTenDangNhap_Enter);
             this.txbTenDangNhap.Leave += new System.EventHandler(this.txbTenDangNhap_Leave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
+            this.label1.Location = new System.Drawing.Point(69, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "WELCOME BACK";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CinemaManagementSystem.Properties.Resources.password_76;
-            this.pictureBox3.Location = new System.Drawing.Point(109, 161);
+            this.pictureBox3.Location = new System.Drawing.Point(80, 169);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(19, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,48 +151,22 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CinemaManagementSystem.Properties.Resources.user_icon_150670;
-            this.pictureBox2.Location = new System.Drawing.Point(109, 116);
+            this.pictureBox2.Location = new System.Drawing.Point(80, 124);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(102, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "WELCOME BACK";
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::CinemaManagementSystem.Properties.Resources.MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3__V1_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Image = global::CinemaManagementSystem.Properties.Resources.cgv2;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(295, 375);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(380, 368);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
-            this.linkLabel1.Location = new System.Drawing.Point(131, 233);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(152, 18);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Chưa có tài khoản?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // DangNhap
             // 

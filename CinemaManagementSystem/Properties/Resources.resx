@@ -178,8 +178,8 @@
   <data name="Untitled-2_0005_Layer-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-2_0005_Layer-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quanlyphim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quanlyphim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="address" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\address.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quanlynhansu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quanlynhansu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +187,8 @@
   <data name="Untitled-2_0001_Layer-8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-2_0001_Layer-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openfolder_4896" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openfolder_4896.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quanlyphim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quanlyphim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="employee-office-staff-3d735bc691173bb5-256x256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employee-office-staff-3d735bc691173bb5-256x256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,6 +198,12 @@
   </data>
   <data name="password-76" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password-76.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="openfolder_4896" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\openfolder_4896.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cmnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cmnd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thongke2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thongke2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,13 +226,16 @@
   <data name="quanlynhansu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quanlynhansu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cgv2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cgv4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Untitled-2_0003_Layer-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-2_0003_Layer-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="voucher1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voucher1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="address" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\address.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cmnd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cmnd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

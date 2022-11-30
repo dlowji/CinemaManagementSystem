@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cinema.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -71,6 +72,18 @@
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
+    <Compile Include="NhapMatKhauMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapMatKhauMoi.designer.cs">
+      <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Data\CinemaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +218,12 @@
     </Compile>
     <EmbeddedResource Include="Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapMatKhauMoi.resx">
+      <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Data\CinemaUC.resx">
       <DependentUpon>CinemaUC.cs</DependentUpon>
@@ -443,6 +462,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cgv4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmnd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmnd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

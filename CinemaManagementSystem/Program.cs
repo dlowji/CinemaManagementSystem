@@ -18,7 +18,7 @@ namespace CinemaManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangKy());
+            Application.Run(new DangNhap());
         }
     }
 }
