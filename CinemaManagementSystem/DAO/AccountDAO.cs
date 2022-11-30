@@ -51,23 +51,37 @@ namespace GUI.DAO
 
         }
 
-        public static bool UpdatePasswordForAccount(string userName, string passWord, string newPassWord)
+        public static bool UpdatePasswordForAccount(string userName, string newPassWord)
         {
-
-            string oldPass = PasswordEncryption(passWord);
             string newPass = PasswordEncryption(newPassWord);
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                var accounts = from acc in db.TaiKhoans
+                              where acc.UserName.Equals(userName)
+                              select acc;
+
+                int counter = accounts.Count();
+
+                if (counter == 0)
+                {
+                    return false;
+                }
+                else if (counter == 1)
+                {
+                    TaiKhoan tk = accounts.First();
+                    tk.Pass = newPass;
+                }
+
                 try
                 {
-                    db.USP_UpdatePasswordForAccount(userName, oldPass, newPass);
+                    db.SubmitChanges();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
                     return false;
+                    throw;
                 }
             }
         }

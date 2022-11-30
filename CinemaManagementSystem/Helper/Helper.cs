@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CinemaManagementSystem.Helper
 {
@@ -107,6 +110,57 @@ namespace CinemaManagementSystem.Helper
 
             xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
 
+        }
+
+        public static string generateRandomCode(int length)
+        {
+            string code = "";
+            Random rd = new Random();
+
+            for (int i = 0; i < length; i++)
+            {
+                code += rd.Next(0, 10).ToString();
+            }
+
+            return code;
+        }
+
+        public static bool sendMail(string email, string code)
+        {
+            var from = new MailAddress("paimoncinema@gmail.com");
+            var to = new MailAddress(email);
+
+            var subject = "Lấy lại mật khẩu đăng nhập";
+            var body = "<h3 style='color: rgb(235, 44, 34);'>Paimon Cinema</h3><p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu Dlowji App của bạn.</p><p>Nhập mã đặt lại mật khẩu sau đây:</p>" + code + "<p>Nếu bạn không yêu cầu mật khẩu mới, vui lòng bỏ qua tin nhắn này.</p>";
+
+            string username = "7fb8aeeca5eda3";
+            string password = "9bbf94a6d618fa";
+
+            string host = "smtp.mailtrap.io";
+            int port = 2525;
+
+            var client = new SmtpClient(host, port)
+            {
+                Credentials = new NetworkCredential(username, password),
+                EnableSsl = true
+            };
+
+            var mail = new MailMessage();
+            mail.Subject = subject;
+            mail.From = from;
+            mail.To.Add(to);
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            try
+            {
+                client.Send(mail);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static bool FileCopy(string fileName, string sourcePath, string targetPath)

@@ -13,6 +13,7 @@ namespace CinemaManagementSystem.View.Login
 {
     public partial class DangKy : Form
     {
+        private bool isChange = false;
         public DangKy()
         {
             InitializeComponent();
@@ -120,15 +121,40 @@ namespace CinemaManagementSystem.View.Login
             string confirm = txbXacNhanMK.Text;
             string phone = txbSoDienThoai.Text;
             string address = txbAddress.Text;
-            DateTime birthday = dtpBirthday.Value;
             string cmnd = txbCMND.Text;
 
-            if (cusName == null || cusName == "" || email == null || email == "" || password == null || password == "" || confirm == null || confirm == "" || phone == null || phone == "" || address == null || address == "")
+            var requiredControls = new[]
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cần thiết");
+                txbTenKhachHang,
+                txbEmail,
+                txbMatKhau,
+                txbXacNhanMK,
+                txbSoDienThoai,
+                txbAddress,
+            };
+
+            //validate
+            foreach (var control in requiredControls.Where(c => String.IsNullOrWhiteSpace(c.Text)))
+            {
+                MessageBox.Show("Thông tin yêu cầu không được để trống hoặc chứa khoảng trắng", "Error");
+                return;
             }
 
-            bool result = CustomerController.InsertMember(email, password, "KH69", cusName, birthday, address, phone, Int32.Parse(cmnd));
+            if (!password.Equals(confirm))
+            {
+                MessageBox.Show("Xác nhận mật khẩu không trùng khớp", "Error");
+                return;
+            }
+
+            DateTime birthday = dtpBirthday.Value;
+
+            int certificate = -1;
+            if (!String.IsNullOrEmpty(cmnd))
+            {
+                certificate = Convert.ToInt32(cmnd);
+            }
+
+            bool result = CustomerController.InsertMember(email, password, null, cusName, birthday, address, phone, certificate);
 
             if (result)
             {
@@ -177,6 +203,11 @@ namespace CinemaManagementSystem.View.Login
                 txbCMND.Text = "CMND";
                 txbCMND.ForeColor = Color.FromArgb(170, 170, 170);
             }
+        }
+
+        private void dtpBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            isChange = true;
         }
     }
 }

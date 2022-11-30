@@ -31,6 +31,7 @@ namespace CinemaManagementSystem
             if (txbTenDangNhap.Text == "Tên đăng nhập") 
             {
                 txbTenDangNhap.Text = "";
+                txbTenDangNhap.ForeColor = Color.Black;
             }
         }
 
@@ -39,6 +40,7 @@ namespace CinemaManagementSystem
             if (txbTenDangNhap.Text == "") 
             {
                 txbTenDangNhap.Text = "Tên đăng nhập";
+                txbTenDangNhap.ForeColor = Color.FromArgb(170, 170, 170);
             }
         }
 
@@ -48,6 +50,7 @@ namespace CinemaManagementSystem
             {
                 txbMatKhau.Text = "";
                 txbMatKhau.PasswordChar = '*';
+                txbMatKhau.ForeColor = Color.Black;
             }
         }
 
@@ -57,14 +60,15 @@ namespace CinemaManagementSystem
             {
                 txbMatKhau.Text = "Mật khẩu";
                 txbMatKhau.PasswordChar = '\0';
+                txbMatKhau.ForeColor = Color.FromArgb(170, 170, 170);
             }
         }
 
         private void llbQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //QuenMatKhau formQuenMatKhau = new QuenMatKhau();
-            //this.Hide();
-            //formQuenMatKhau.Show();
+            QuenMatKhau frm = new QuenMatKhau();
+            this.Hide();
+            frm.Show();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
