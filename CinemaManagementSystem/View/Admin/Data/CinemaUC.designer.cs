@@ -34,6 +34,9 @@
             this.btnDeleteCinema = new System.Windows.Forms.Button();
             this.btnInsertCinema = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cboCineplex = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cboCinemaType = new System.Windows.Forms.ComboBox();
             this.lblScreenType = new System.Windows.Forms.Label();
@@ -57,11 +60,9 @@
             this.lblCinemaID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvCinema = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboCineplex = new System.Windows.Forms.ComboBox();
             this.panel33.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -71,7 +72,6 @@
             this.panel32.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCinema)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel33
@@ -138,10 +138,39 @@
             this.panel2.Controls.Add(this.panel32);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(755, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(333, 466);
             this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cboCineplex);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(13, 355);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(309, 44);
+            this.panel3.TabIndex = 10;
+            // 
+            // cboCineplex
+            // 
+            this.cboCineplex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCineplex.FormattingEnabled = true;
+            this.cboCineplex.Location = new System.Drawing.Point(121, 9);
+            this.cboCineplex.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCineplex.Name = "cboCineplex";
+            this.cboCineplex.Size = new System.Drawing.Size(185, 21);
+            this.cboCineplex.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cụm rạp:";
             // 
             // panel6
             // 
@@ -156,10 +185,10 @@
             // 
             this.cboCinemaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCinemaType.FormattingEnabled = true;
-            this.cboCinemaType.Location = new System.Drawing.Point(132, 9);
-            this.cboCinemaType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCinemaType.Location = new System.Drawing.Point(121, 9);
+            this.cboCinemaType.Margin = new System.Windows.Forms.Padding(2);
             this.cboCinemaType.Name = "cboCinemaType";
-            this.cboCinemaType.Size = new System.Drawing.Size(162, 21);
+            this.cboCinemaType.Size = new System.Drawing.Size(185, 21);
             this.cboCinemaType.TabIndex = 1;
             // 
             // lblScreenType
@@ -183,9 +212,9 @@
             // 
             // txtSeatsPerRow
             // 
-            this.txtSeatsPerRow.Location = new System.Drawing.Point(132, 9);
+            this.txtSeatsPerRow.Location = new System.Drawing.Point(121, 8);
             this.txtSeatsPerRow.Name = "txtSeatsPerRow";
-            this.txtSeatsPerRow.Size = new System.Drawing.Size(162, 20);
+            this.txtSeatsPerRow.Size = new System.Drawing.Size(185, 20);
             this.txtSeatsPerRow.TabIndex = 1;
             // 
             // lblSeatsPerRow
@@ -209,9 +238,9 @@
             // 
             // txtNumberOfRows
             // 
-            this.txtNumberOfRows.Location = new System.Drawing.Point(132, 11);
+            this.txtNumberOfRows.Location = new System.Drawing.Point(121, 10);
             this.txtNumberOfRows.Name = "txtNumberOfRows";
-            this.txtNumberOfRows.Size = new System.Drawing.Size(162, 20);
+            this.txtNumberOfRows.Size = new System.Drawing.Size(185, 20);
             this.txtNumberOfRows.TabIndex = 1;
             // 
             // lblNumberOfRows
@@ -235,9 +264,9 @@
             // 
             // txtCinemaStatus
             // 
-            this.txtCinemaStatus.Location = new System.Drawing.Point(132, 11);
+            this.txtCinemaStatus.Location = new System.Drawing.Point(121, 10);
             this.txtCinemaStatus.Name = "txtCinemaStatus";
-            this.txtCinemaStatus.Size = new System.Drawing.Size(162, 20);
+            this.txtCinemaStatus.Size = new System.Drawing.Size(185, 20);
             this.txtCinemaStatus.TabIndex = 1;
             // 
             // lblCinemaStatus
@@ -261,9 +290,9 @@
             // 
             // txtCinemaSeats
             // 
-            this.txtCinemaSeats.Location = new System.Drawing.Point(132, 11);
+            this.txtCinemaSeats.Location = new System.Drawing.Point(121, 10);
             this.txtCinemaSeats.Name = "txtCinemaSeats";
-            this.txtCinemaSeats.Size = new System.Drawing.Size(162, 20);
+            this.txtCinemaSeats.Size = new System.Drawing.Size(185, 20);
             this.txtCinemaSeats.TabIndex = 1;
             // 
             // lblCinemaSeats
@@ -287,9 +316,9 @@
             // 
             // txtCinemaName
             // 
-            this.txtCinemaName.Location = new System.Drawing.Point(132, 11);
+            this.txtCinemaName.Location = new System.Drawing.Point(121, 10);
             this.txtCinemaName.Name = "txtCinemaName";
-            this.txtCinemaName.Size = new System.Drawing.Size(162, 20);
+            this.txtCinemaName.Size = new System.Drawing.Size(185, 20);
             this.txtCinemaName.TabIndex = 1;
             // 
             // lblCinemaName
@@ -313,9 +342,9 @@
             // 
             // txtCinemaID
             // 
-            this.txtCinemaID.Location = new System.Drawing.Point(132, 13);
+            this.txtCinemaID.Location = new System.Drawing.Point(121, 11);
             this.txtCinemaID.Name = "txtCinemaID";
-            this.txtCinemaID.Size = new System.Drawing.Size(163, 20);
+            this.txtCinemaID.Size = new System.Drawing.Size(185, 20);
             this.txtCinemaID.TabIndex = 1;
             this.txtCinemaID.TextChanged += new System.EventHandler(this.txtCinemaID_TextChanged);
             // 
@@ -335,7 +364,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 52);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 466);
             this.panel1.TabIndex = 11;
@@ -353,46 +382,19 @@
             this.dtgvCinema.Size = new System.Drawing.Size(755, 466);
             this.dtgvCinema.TabIndex = 1;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.cboCineplex);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(13, 355);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(309, 44);
-            this.panel3.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cụm rạp:";
-            // 
-            // cboCineplex
-            // 
-            this.cboCineplex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCineplex.FormattingEnabled = true;
-            this.cboCineplex.Location = new System.Drawing.Point(132, 10);
-            this.cboCineplex.Margin = new System.Windows.Forms.Padding(2);
-            this.cboCineplex.Name = "cboCineplex";
-            this.cboCineplex.Size = new System.Drawing.Size(162, 21);
-            this.cboCineplex.TabIndex = 2;
-            // 
             // CinemaUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel33);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CinemaUC";
             this.Size = new System.Drawing.Size(1088, 518);
             this.panel33.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -409,8 +411,6 @@
             this.panel32.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCinema)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

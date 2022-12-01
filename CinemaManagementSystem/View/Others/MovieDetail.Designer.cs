@@ -49,8 +49,8 @@
             this.lbRated = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.lbActors = new System.Windows.Forms.Label();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -247,19 +247,6 @@
             this.panel3.Size = new System.Drawing.Size(776, 139);
             this.panel3.TabIndex = 7;
             // 
-            // button2
-            // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(683, 251);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Đặt vé";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // lbActors
             // 
             this.lbActors.AutoSize = true;
@@ -270,12 +257,26 @@
             this.lbActors.TabIndex = 6;
             this.lbActors.Text = "Tenoch Huerta, Martin Freeman, Lupita Nyong\'o";
             // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
+            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnDangNhap.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
+            this.btnDangNhap.Location = new System.Drawing.Point(697, 260);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(91, 35);
+            this.btnDangNhap.TabIndex = 9;
+            this.btnDangNhap.Text = "Đặt vé";
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            // 
             // MovieDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lbGenres);
@@ -329,7 +330,7 @@
         private System.Windows.Forms.Label lbRated;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbActors;
+        private System.Windows.Forms.Button btnDangNhap;
     }
 }

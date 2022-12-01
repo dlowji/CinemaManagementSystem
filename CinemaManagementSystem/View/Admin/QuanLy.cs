@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem.Admin.Data;
 using CinemaManagementSystem.Controllers;
+using CinemaManagementSystem.View.Others;
 using CinemaManagementSystem.Helper;
 using GUI;
 using GUI.DAO;
@@ -23,6 +24,7 @@ namespace CinemaManagementSystem
         BindingSource productList = new BindingSource();
         BindingSource importReceiptList = new BindingSource();
         BindingSource ticketReceiptList = new BindingSource();
+        BindingSource voucherReleaseList = new BindingSource();
 
         string staffId;
 
@@ -35,6 +37,7 @@ namespace CinemaManagementSystem
             LoadProduct();
             LoadImportReceipt();
             LoadTicketReceipt();
+            LoadVoucherRelease();
             this.staffId = staffId;
         }
 
@@ -459,6 +462,21 @@ namespace CinemaManagementSystem
 
         //end history
 
+        //begin voucher
+        private void LoadVoucherRelease()
+        {
+            dtgvVoucherRelease.DataSource = voucherReleaseList;
+            LoadVoucherReleaseList();
+        }
+
+        private void LoadVoucherReleaseList()
+        {
+            DataTable voucherReleaseDataTable = VoucherController.GetDataTableOfVoucherRelease();
+            voucherReleaseList.DataSource = voucherReleaseDataTable;
+        }
+
+        //end voucher
+
         private void txbTimKiemNhanVien_Enter(object sender, EventArgs e)
         {
             TextBox txb = sender as TextBox;
@@ -543,6 +561,11 @@ namespace CinemaManagementSystem
         private void btnExportTicketReceipt_Click(object sender, EventArgs e)
         {
             Helper.Helper.Export2Excel(dtgvTicketReceipt);
+        }
+
+        private void btnAddVoucherRelease_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

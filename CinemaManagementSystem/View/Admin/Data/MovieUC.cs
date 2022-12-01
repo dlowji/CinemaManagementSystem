@@ -27,6 +27,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
             InitializeComponent();
             workingDirectory = Environment.CurrentDirectory;
             projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            Helper.configStyle(this);
             LoadMovie();
         }
 

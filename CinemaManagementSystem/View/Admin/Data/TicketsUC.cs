@@ -15,6 +15,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         public TicketsUC()
         {
             InitializeComponent();
+            Helper.configStyle(this);
             LoadAllListShowTimes();
         }
         void LoadAllListShowTimes()

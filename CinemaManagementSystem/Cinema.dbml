@@ -4,18 +4,18 @@
     <Type Name="CapDoThanhVien">
       <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Ten" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DiemThuongQuayVe" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="DiemThuongBapNuoc" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DiemThuongQuayVe" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DiemThuongBapNuoc" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Association Name="CapDoThanhVien_KhachHang" Member="KhachHangs" ThisKey="id" OtherKey="idCapDoThanhVien" Type="KhachHang" />
     </Type>
   </Table>
   <Table Name="dbo.Voucher" Member="Vouchers">
     <Type Name="Voucher">
-      <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Code" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="idPhatHanh" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="KhachHang_Voucher" Member="KhachHang" ThisKey="idKhachHang" OtherKey="id" Type="KhachHang" IsForeignKey="true" />
       <Association Name="PhatHanhVoucher_Voucher" Member="PhatHanhVoucher" ThisKey="idPhatHanh" OtherKey="id" Type="PhatHanhVoucher" IsForeignKey="true" />
     </Type>
@@ -163,8 +163,10 @@
     <Type Name="PhatHanhVoucher">
       <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenDotPhatHanh" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MenhGia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NhomHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="PhatHanhVoucher_Voucher" Member="Vouchers" ThisKey="id" OtherKey="idPhatHanh" Type="Voucher" />
     </Type>
@@ -216,6 +218,15 @@
       <Association Name="NhaCungCap_SanPham" Member="NhaCungCap" ThisKey="idNhaCungCap" OtherKey="id" Type="NhaCungCap" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idNV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="idNV" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TheLoai" Member="TheLoais">
     <Type Name="TheLoai">
       <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -236,15 +247,6 @@
       <Association Name="Ve_HoaDonDatVe" Member="HoaDonDatVes" ThisKey="id" OtherKey="idVe" Type="HoaDonDatVe" />
       <Association Name="KhachHang_Ve" Member="KhachHang" ThisKey="idKhachHang" OtherKey="id" Type="KhachHang" IsForeignKey="true" />
       <Association Name="LichChieu_Ve" Member="LichChieu" ThisKey="idLichChieu" OtherKey="id" Type="LichChieu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
-    <Type Name="TaiKhoan">
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Pass" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idNV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="idNV" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.USP_DeleteTicketsByShowTimes" Method="USP_DeleteTicketsByShowTimes">
@@ -452,7 +454,7 @@
       <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Pass" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
       <Column Name="LoaiTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idNV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idNV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.USP_ResetPasswordtAccount" Method="USP_ResetPasswordtAccount">

@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem;
 using CinemaManagementSystem.Controllers;
+using CinemaManagementSystem.Helper;
 using GUI.DAO;
 using System;
 using System.Collections;
@@ -16,6 +17,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         public ShowTimesUC()
         {
             InitializeComponent();
+            Helper.configStyle(this);
             LoadShowtime();
         }
 

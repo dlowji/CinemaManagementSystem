@@ -1,8 +1,11 @@
 ﻿using CinemaManagementSystem;
 using CinemaManagementSystem.Controllers;
+using CinemaManagementSystem.Helper;
 using GUI.DAO;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -14,6 +17,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         public CinemaUC()
         {
             InitializeComponent();
+            Helper.configStyle(this);
             LoadCinema();
         }
 

@@ -134,20 +134,8 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.QuanLyVoucher = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnAddVoucherRelease = new System.Windows.Forms.Button();
+            this.dtgvVoucherRelease = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -173,11 +161,7 @@
             this.tpHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).BeginInit();
             this.QuanLyVoucher.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,7 +347,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.pictureBox11);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -409,7 +393,7 @@
             // 
             // QuanLyNhanSu
             // 
-            this.QuanLyNhanSu.BackColor = System.Drawing.Color.Transparent;
+            this.QuanLyNhanSu.BackColor = System.Drawing.Color.White;
             this.QuanLyNhanSu.Controls.Add(this.btnAddStaff);
             this.QuanLyNhanSu.Controls.Add(this.btnSearchStaff);
             this.QuanLyNhanSu.Controls.Add(this.txtSearchStaff);
@@ -426,10 +410,10 @@
             // 
             // btnAddStaff
             // 
-            this.btnAddStaff.Location = new System.Drawing.Point(354, 158);
+            this.btnAddStaff.Location = new System.Drawing.Point(157, 168);
             this.btnAddStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(68, 26);
+            this.btnAddStaff.Size = new System.Drawing.Size(66, 28);
             this.btnAddStaff.TabIndex = 28;
             this.btnAddStaff.Text = "Thêm";
             this.btnAddStaff.UseVisualStyleBackColor = true;
@@ -438,37 +422,38 @@
             // btnSearchStaff
             // 
             this.btnSearchStaff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchStaff.Location = new System.Drawing.Point(754, 161);
+            this.btnSearchStaff.Location = new System.Drawing.Point(691, 168);
             this.btnSearchStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStaff.Name = "btnSearchStaff";
-            this.btnSearchStaff.Size = new System.Drawing.Size(20, 21);
+            this.btnSearchStaff.Size = new System.Drawing.Size(82, 28);
             this.btnSearchStaff.TabIndex = 30;
+            this.btnSearchStaff.Text = "Tìm kiếm";
             this.btnSearchStaff.UseVisualStyleBackColor = true;
             // 
             // txtSearchStaff
             // 
-            this.txtSearchStaff.Location = new System.Drawing.Point(650, 163);
+            this.txtSearchStaff.Location = new System.Drawing.Point(485, 173);
             this.txtSearchStaff.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchStaff.Name = "txtSearchStaff";
-            this.txtSearchStaff.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchStaff.Size = new System.Drawing.Size(193, 20);
             this.txtSearchStaff.TabIndex = 29;
             // 
             // btnDeleteStaff
             // 
-            this.btnDeleteStaff.Location = new System.Drawing.Point(540, 158);
+            this.btnDeleteStaff.Location = new System.Drawing.Point(337, 168);
             this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(68, 26);
+            this.btnDeleteStaff.Size = new System.Drawing.Size(66, 28);
             this.btnDeleteStaff.TabIndex = 26;
             this.btnDeleteStaff.Text = "Xóa";
             this.btnDeleteStaff.UseVisualStyleBackColor = true;
             // 
             // btnUpdateStaff
             // 
-            this.btnUpdateStaff.Location = new System.Drawing.Point(448, 158);
+            this.btnUpdateStaff.Location = new System.Drawing.Point(247, 168);
             this.btnUpdateStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateStaff.Name = "btnUpdateStaff";
-            this.btnUpdateStaff.Size = new System.Drawing.Size(68, 26);
+            this.btnUpdateStaff.Size = new System.Drawing.Size(66, 28);
             this.btnUpdateStaff.TabIndex = 27;
             this.btnUpdateStaff.Text = "Sửa";
             this.btnUpdateStaff.UseVisualStyleBackColor = true;
@@ -494,7 +479,7 @@
             this.grpStaff.Margin = new System.Windows.Forms.Padding(2);
             this.grpStaff.Name = "grpStaff";
             this.grpStaff.Padding = new System.Windows.Forms.Padding(2);
-            this.grpStaff.Size = new System.Drawing.Size(540, 118);
+            this.grpStaff.Size = new System.Drawing.Size(706, 118);
             this.grpStaff.TabIndex = 31;
             this.grpStaff.TabStop = false;
             this.grpStaff.Text = "Thông tin nhân viên";
@@ -513,26 +498,26 @@
             // txtStaffId
             // 
             this.txtStaffId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffId.Location = new System.Drawing.Point(112, 26);
+            this.txtStaffId.Location = new System.Drawing.Point(112, 25);
             this.txtStaffId.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffId.Name = "txtStaffId";
-            this.txtStaffId.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffId.Size = new System.Drawing.Size(188, 26);
             this.txtStaffId.TabIndex = 2;
             // 
             // txtStaffAddress
             // 
             this.txtStaffAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffAddress.Location = new System.Drawing.Point(377, 29);
+            this.txtStaffAddress.Location = new System.Drawing.Point(456, 25);
             this.txtStaffAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffAddress.Name = "txtStaffAddress";
-            this.txtStaffAddress.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffAddress.Size = new System.Drawing.Size(176, 26);
             this.txtStaffAddress.TabIndex = 2;
             // 
             // lblStaffINumber
             // 
             this.lblStaffINumber.AutoSize = true;
             this.lblStaffINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffINumber.Location = new System.Drawing.Point(306, 88);
+            this.lblStaffINumber.Location = new System.Drawing.Point(385, 88);
             this.lblStaffINumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStaffINumber.Name = "lblStaffINumber";
             this.lblStaffINumber.Size = new System.Drawing.Size(65, 19);
@@ -542,10 +527,10 @@
             // txtStaffName
             // 
             this.txtStaffName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffName.Location = new System.Drawing.Point(112, 58);
+            this.txtStaffName.Location = new System.Drawing.Point(112, 55);
             this.txtStaffName.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffName.Name = "txtStaffName";
-            this.txtStaffName.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffName.Size = new System.Drawing.Size(188, 26);
             this.txtStaffName.TabIndex = 2;
             // 
             // lblStaffBirth
@@ -562,17 +547,17 @@
             // txtStaffPhone
             // 
             this.txtStaffPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffPhone.Location = new System.Drawing.Point(377, 58);
+            this.txtStaffPhone.Location = new System.Drawing.Point(456, 55);
             this.txtStaffPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffPhone.Name = "txtStaffPhone";
-            this.txtStaffPhone.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffPhone.Size = new System.Drawing.Size(176, 26);
             this.txtStaffPhone.TabIndex = 2;
             // 
             // lblStaffPhone
             // 
             this.lblStaffPhone.AutoSize = true;
             this.lblStaffPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffPhone.Location = new System.Drawing.Point(306, 61);
+            this.lblStaffPhone.Location = new System.Drawing.Point(385, 60);
             this.lblStaffPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStaffPhone.Name = "lblStaffPhone";
             this.lblStaffPhone.Size = new System.Drawing.Size(56, 19);
@@ -582,17 +567,17 @@
             // txtStaffBirth
             // 
             this.txtStaffBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffBirth.Location = new System.Drawing.Point(112, 86);
+            this.txtStaffBirth.Location = new System.Drawing.Point(112, 85);
             this.txtStaffBirth.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffBirth.Name = "txtStaffBirth";
-            this.txtStaffBirth.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffBirth.Size = new System.Drawing.Size(188, 26);
             this.txtStaffBirth.TabIndex = 2;
             // 
             // lblStaffAddress
             // 
             this.lblStaffAddress.AutoSize = true;
             this.lblStaffAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffAddress.Location = new System.Drawing.Point(306, 32);
+            this.lblStaffAddress.Location = new System.Drawing.Point(385, 32);
             this.lblStaffAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStaffAddress.Name = "lblStaffAddress";
             this.lblStaffAddress.Size = new System.Drawing.Size(61, 19);
@@ -602,17 +587,17 @@
             // txtStaffINumber
             // 
             this.txtStaffINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffINumber.Location = new System.Drawing.Point(377, 88);
+            this.txtStaffINumber.Location = new System.Drawing.Point(456, 85);
             this.txtStaffINumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffINumber.Name = "txtStaffINumber";
-            this.txtStaffINumber.Size = new System.Drawing.Size(144, 26);
+            this.txtStaffINumber.Size = new System.Drawing.Size(176, 26);
             this.txtStaffINumber.TabIndex = 2;
             // 
             // lblStaffName
             // 
             this.lblStaffName.AutoSize = true;
             this.lblStaffName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName.Location = new System.Drawing.Point(18, 61);
+            this.lblStaffName.Location = new System.Drawing.Point(18, 60);
             this.lblStaffName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStaffName.Name = "lblStaffName";
             this.lblStaffName.Size = new System.Drawing.Size(59, 19);
@@ -621,7 +606,7 @@
             // 
             // btnShowStaff
             // 
-            this.btnShowStaff.Location = new System.Drawing.Point(67, 156);
+            this.btnShowStaff.Location = new System.Drawing.Point(67, 168);
             this.btnShowStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowStaff.Name = "btnShowStaff";
             this.btnShowStaff.Size = new System.Drawing.Size(66, 28);
@@ -635,14 +620,15 @@
             this.dtgvStaff.AllowUserToDeleteRows = false;
             this.dtgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvStaff.Location = new System.Drawing.Point(67, 190);
+            this.dtgvStaff.Location = new System.Drawing.Point(67, 211);
             this.dtgvStaff.Name = "dtgvStaff";
             this.dtgvStaff.ReadOnly = true;
-            this.dtgvStaff.Size = new System.Drawing.Size(706, 305);
+            this.dtgvStaff.Size = new System.Drawing.Size(706, 284);
             this.dtgvStaff.TabIndex = 24;
             // 
             // QuanLyKhachHang
             // 
+            this.QuanLyKhachHang.BackColor = System.Drawing.Color.White;
             this.QuanLyKhachHang.Controls.Add(this.btnSearchCus);
             this.QuanLyKhachHang.Controls.Add(this.txtSearchCus);
             this.QuanLyKhachHang.Controls.Add(this.btnDeleteCustomer);
@@ -656,53 +642,52 @@
             this.QuanLyKhachHang.Size = new System.Drawing.Size(840, 531);
             this.QuanLyKhachHang.TabIndex = 4;
             this.QuanLyKhachHang.Text = "Khách hàng";
-            this.QuanLyKhachHang.UseVisualStyleBackColor = true;
             // 
             // btnSearchCus
             // 
             this.btnSearchCus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchCus.Location = new System.Drawing.Point(764, 166);
+            this.btnSearchCus.Location = new System.Drawing.Point(691, 168);
             this.btnSearchCus.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchCus.Name = "btnSearchCus";
-            this.btnSearchCus.Size = new System.Drawing.Size(69, 21);
+            this.btnSearchCus.Size = new System.Drawing.Size(66, 28);
             this.btnSearchCus.TabIndex = 29;
             this.btnSearchCus.Text = "Tìm kiếm";
             this.btnSearchCus.UseVisualStyleBackColor = true;
             // 
             // txtSearchCus
             // 
-            this.txtSearchCus.Location = new System.Drawing.Point(660, 165);
+            this.txtSearchCus.Location = new System.Drawing.Point(485, 173);
             this.txtSearchCus.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchCus.Size = new System.Drawing.Size(193, 20);
             this.txtSearchCus.TabIndex = 28;
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(515, 160);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(337, 168);
             this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(68, 26);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(66, 28);
             this.btnDeleteCustomer.TabIndex = 25;
             this.btnDeleteCustomer.Text = "Xóa";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             // 
             // btnUpdateCustomer
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(424, 160);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(247, 168);
             this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(68, 26);
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(66, 28);
             this.btnUpdateCustomer.TabIndex = 26;
             this.btnUpdateCustomer.Text = "Sửa";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(330, 160);
+            this.btnAddCustomer.Location = new System.Drawing.Point(157, 168);
             this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(68, 26);
+            this.btnAddCustomer.Size = new System.Drawing.Size(66, 28);
             this.btnAddCustomer.TabIndex = 27;
             this.btnAddCustomer.Text = "Thêm";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
@@ -729,7 +714,7 @@
             this.grpCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.grpCustomer.Name = "grpCustomer";
             this.grpCustomer.Padding = new System.Windows.Forms.Padding(2);
-            this.grpCustomer.Size = new System.Drawing.Size(728, 118);
+            this.grpCustomer.Size = new System.Drawing.Size(739, 118);
             this.grpCustomer.TabIndex = 24;
             this.grpCustomer.TabStop = false;
             this.grpCustomer.Text = "Thông tin khách hàng";
@@ -737,7 +722,7 @@
             // nudPoint
             // 
             this.nudPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPoint.Location = new System.Drawing.Point(658, 26);
+            this.nudPoint.Location = new System.Drawing.Point(660, 29);
             this.nudPoint.Margin = new System.Windows.Forms.Padding(2);
             this.nudPoint.Maximum = new decimal(new int[] {
             1000,
@@ -822,7 +807,7 @@
             // 
             this.lblCusPhone.AutoSize = true;
             this.lblCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusPhone.Location = new System.Drawing.Point(307, 61);
+            this.lblCusPhone.Location = new System.Drawing.Point(307, 60);
             this.lblCusPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusPhone.Name = "lblCusPhone";
             this.lblCusPhone.Size = new System.Drawing.Size(56, 19);
@@ -833,7 +818,7 @@
             // 
             this.lblCusPoint.AutoSize = true;
             this.lblCusPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusPoint.Location = new System.Drawing.Point(554, 30);
+            this.lblCusPoint.Location = new System.Drawing.Point(554, 32);
             this.lblCusPoint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusPoint.Name = "lblCusPoint";
             this.lblCusPoint.Size = new System.Drawing.Size(102, 19);
@@ -873,7 +858,7 @@
             // 
             this.lblCusName.AutoSize = true;
             this.lblCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCusName.Location = new System.Drawing.Point(18, 61);
+            this.lblCusName.Location = new System.Drawing.Point(18, 60);
             this.lblCusName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(59, 19);
@@ -882,10 +867,10 @@
             // 
             // btnShowCustomer
             // 
-            this.btnShowCustomer.Location = new System.Drawing.Point(58, 160);
+            this.btnShowCustomer.Location = new System.Drawing.Point(67, 168);
             this.btnShowCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowCustomer.Name = "btnShowCustomer";
-            this.btnShowCustomer.Size = new System.Drawing.Size(68, 26);
+            this.btnShowCustomer.Size = new System.Drawing.Size(66, 28);
             this.btnShowCustomer.TabIndex = 23;
             this.btnShowCustomer.Text = "Xem";
             this.btnShowCustomer.UseVisualStyleBackColor = true;
@@ -897,16 +882,17 @@
             this.dtgvCustomer.AllowUserToDeleteRows = false;
             this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCustomer.Location = new System.Drawing.Point(56, 191);
+            this.dtgvCustomer.Location = new System.Drawing.Point(67, 211);
             this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvCustomer.Name = "dtgvCustomer";
             this.dtgvCustomer.ReadOnly = true;
             this.dtgvCustomer.RowTemplate.Height = 24;
-            this.dtgvCustomer.Size = new System.Drawing.Size(728, 302);
+            this.dtgvCustomer.Size = new System.Drawing.Size(728, 284);
             this.dtgvCustomer.TabIndex = 22;
             // 
             // QuanLyDoanhThu
             // 
+            this.QuanLyDoanhThu.BackColor = System.Drawing.Color.White;
             this.QuanLyDoanhThu.Controls.Add(this.lblSelectMovie);
             this.QuanLyDoanhThu.Controls.Add(this.lblTongDoanhThu);
             this.QuanLyDoanhThu.Controls.Add(this.txtDoanhThu);
@@ -923,7 +909,6 @@
             this.QuanLyDoanhThu.Size = new System.Drawing.Size(840, 531);
             this.QuanLyDoanhThu.TabIndex = 5;
             this.QuanLyDoanhThu.Text = "Doanh thu";
-            this.QuanLyDoanhThu.UseVisualStyleBackColor = true;
             // 
             // lblSelectMovie
             // 
@@ -961,7 +946,7 @@
             // lblDenNgay
             // 
             this.lblDenNgay.AutoSize = true;
-            this.lblDenNgay.Location = new System.Drawing.Point(222, 76);
+            this.lblDenNgay.Location = new System.Drawing.Point(273, 76);
             this.lblDenNgay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDenNgay.Name = "lblDenNgay";
             this.lblDenNgay.Size = new System.Drawing.Size(56, 13);
@@ -994,7 +979,7 @@
             // btnReportRevenue
             // 
             this.btnReportRevenue.AutoSize = true;
-            this.btnReportRevenue.Location = new System.Drawing.Point(479, 72);
+            this.btnReportRevenue.Location = new System.Drawing.Point(717, 69);
             this.btnReportRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportRevenue.Name = "btnReportRevenue";
             this.btnReportRevenue.Size = new System.Drawing.Size(69, 26);
@@ -1005,7 +990,7 @@
             // btnShowRevenue
             // 
             this.btnShowRevenue.AutoSize = true;
-            this.btnShowRevenue.Location = new System.Drawing.Point(393, 72);
+            this.btnShowRevenue.Location = new System.Drawing.Point(605, 69);
             this.btnShowRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowRevenue.Name = "btnShowRevenue";
             this.btnShowRevenue.Size = new System.Drawing.Size(73, 26);
@@ -1026,7 +1011,7 @@
             // dtmToDate
             // 
             this.dtmToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmToDate.Location = new System.Drawing.Point(281, 73);
+            this.dtmToDate.Location = new System.Drawing.Point(374, 72);
             this.dtmToDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtmToDate.Name = "dtmToDate";
             this.dtmToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1036,7 +1021,7 @@
             // dtmFromDate
             // 
             this.dtmFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmFromDate.Location = new System.Drawing.Point(85, 73);
+            this.dtmFromDate.Location = new System.Drawing.Point(116, 72);
             this.dtmFromDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtmFromDate.Name = "dtmFromDate";
             this.dtmFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1045,6 +1030,7 @@
             // 
             // QuanLySuCo
             // 
+            this.QuanLySuCo.BackColor = System.Drawing.Color.White;
             this.QuanLySuCo.Controls.Add(this.btnSearchProduct);
             this.QuanLySuCo.Controls.Add(this.txbSearchProduct);
             this.QuanLySuCo.Controls.Add(this.btnDeleteProduct);
@@ -1059,7 +1045,6 @@
             this.QuanLySuCo.Size = new System.Drawing.Size(840, 531);
             this.QuanLySuCo.TabIndex = 6;
             this.QuanLySuCo.Text = "Sản phẩm";
-            this.QuanLySuCo.UseVisualStyleBackColor = true;
             // 
             // btnSearchProduct
             // 
@@ -1303,6 +1288,7 @@
             // 
             // tpNhapKho
             // 
+            this.tpNhapKho.BackColor = System.Drawing.Color.White;
             this.tpNhapKho.Controls.Add(this.dtgvImportReceipt);
             this.tpNhapKho.Controls.Add(this.comboBox1);
             this.tpNhapKho.Controls.Add(this.comboBox2);
@@ -1314,7 +1300,6 @@
             this.tpNhapKho.Size = new System.Drawing.Size(826, 499);
             this.tpNhapKho.TabIndex = 0;
             this.tpNhapKho.Text = "Nhập kho";
-            this.tpNhapKho.UseVisualStyleBackColor = true;
             // 
             // dtgvImportReceipt
             // 
@@ -1379,6 +1364,7 @@
             // 
             // tpHoaDon
             // 
+            this.tpHoaDon.BackColor = System.Drawing.Color.White;
             this.tpHoaDon.Controls.Add(this.dtgvTicketReceipt);
             this.tpHoaDon.Controls.Add(this.btnExportTicketReceipt);
             this.tpHoaDon.Controls.Add(this.comboBox3);
@@ -1391,7 +1377,6 @@
             this.tpHoaDon.Size = new System.Drawing.Size(826, 499);
             this.tpHoaDon.TabIndex = 1;
             this.tpHoaDon.Text = "Hóa đơn";
-            this.tpHoaDon.UseVisualStyleBackColor = true;
             // 
             // dtgvTicketReceipt
             // 
@@ -1446,146 +1431,39 @@
             // 
             // QuanLyVoucher
             // 
-            this.QuanLyVoucher.Controls.Add(this.tabControl3);
+            this.QuanLyVoucher.BackColor = System.Drawing.Color.White;
+            this.QuanLyVoucher.Controls.Add(this.btnAddVoucherRelease);
+            this.QuanLyVoucher.Controls.Add(this.dtgvVoucherRelease);
             this.QuanLyVoucher.Location = new System.Drawing.Point(4, 22);
             this.QuanLyVoucher.Name = "QuanLyVoucher";
             this.QuanLyVoucher.Size = new System.Drawing.Size(840, 531);
             this.QuanLyVoucher.TabIndex = 8;
             this.QuanLyVoucher.Text = "Voucher";
-            this.QuanLyVoucher.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // btnAddVoucherRelease
             // 
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tabPage6);
-            this.tabControl3.Location = new System.Drawing.Point(3, 3);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(834, 525);
-            this.tabControl3.TabIndex = 1;
+            this.btnAddVoucherRelease.Location = new System.Drawing.Point(56, 70);
+            this.btnAddVoucherRelease.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddVoucherRelease.Name = "btnAddVoucherRelease";
+            this.btnAddVoucherRelease.Size = new System.Drawing.Size(66, 28);
+            this.btnAddVoucherRelease.TabIndex = 28;
+            this.btnAddVoucherRelease.Text = "Thêm";
+            this.btnAddVoucherRelease.UseVisualStyleBackColor = true;
+            this.btnAddVoucherRelease.Click += new System.EventHandler(this.btnAddVoucherRelease_Click);
             // 
-            // tabPage3
+            // dtgvVoucherRelease
             // 
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Controls.Add(this.comboBox6);
-            this.tabPage3.Controls.Add(this.comboBox7);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(826, 499);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Nhập kho";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(21, 77);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(788, 402);
-            this.dataGridView3.TabIndex = 13;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(465, 19);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 12;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(307, 19);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 21);
-            this.comboBox7.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(6, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(264, 29);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Tìm kiếm";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(723, 17);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(97, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Xuất file Excel";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.dataGridView4);
-            this.tabPage6.Controls.Add(this.button9);
-            this.tabPage6.Controls.Add(this.comboBox8);
-            this.tabPage6.Controls.Add(this.comboBox9);
-            this.tabPage6.Controls.Add(this.comboBox10);
-            this.tabPage6.Controls.Add(this.textBox4);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(826, 499);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "Hóa đơn";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(17, 67);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(788, 415);
-            this.dataGridView4.TabIndex = 17;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(736, 17);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(84, 23);
-            this.button9.TabIndex = 16;
-            this.button9.Text = "Xuất file Excel";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(530, 19);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
-            this.comboBox8.TabIndex = 15;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(403, 19);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 15;
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(276, 19);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 21);
-            this.comboBox10.TabIndex = 14;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(6, 13);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 29);
-            this.textBox4.TabIndex = 13;
-            this.textBox4.Text = "Tìm kiếm";
+            this.dtgvVoucherRelease.AllowUserToAddRows = false;
+            this.dtgvVoucherRelease.AllowUserToDeleteRows = false;
+            this.dtgvVoucherRelease.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvVoucherRelease.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvVoucherRelease.Location = new System.Drawing.Point(56, 123);
+            this.dtgvVoucherRelease.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvVoucherRelease.Name = "dtgvVoucherRelease";
+            this.dtgvVoucherRelease.ReadOnly = true;
+            this.dtgvVoucherRelease.RowTemplate.Height = 24;
+            this.dtgvVoucherRelease.Size = new System.Drawing.Size(728, 284);
+            this.dtgvVoucherRelease.TabIndex = 23;
             // 
             // pictureBox1
             // 
@@ -1646,13 +1524,7 @@
             this.tpHoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).EndInit();
             this.QuanLyVoucher.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1748,20 +1620,6 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TabPage QuanLyVoucher;
-        private System.Windows.Forms.TabControl tabControl3;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnSearchProduct;
         private System.Windows.Forms.TextBox txbSearchProduct;
         private System.Windows.Forms.Button btnDeleteProduct;
@@ -1781,5 +1639,7 @@
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.DataGridView dtgvVoucherRelease;
+        private System.Windows.Forms.Button btnAddVoucherRelease;
     }
 }
