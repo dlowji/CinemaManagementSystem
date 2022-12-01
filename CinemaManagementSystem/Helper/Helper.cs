@@ -82,6 +82,13 @@ namespace CinemaManagementSystem.Helper
             return GetAllControls(container, new List<Control>());
         }
 
+        public static void configStyle(Control container)
+        {
+            List<Control> allControls = GetAllControls(container);
+            allControls.ForEach(k => k.Font = new Font("Verdana", 11));
+            allControls.ForEach(k => k.ForeColor = ColorTranslator.FromHtml("#000006"));
+        }
+
         public static void Export2Excel(DataGridView dtgv)
         {
             dtgv.SelectAll();

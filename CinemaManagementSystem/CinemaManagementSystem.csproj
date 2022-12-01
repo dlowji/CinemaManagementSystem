@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cinema.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\VoucherController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Controllers\ShowTimeController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
     <Compile Include="NhapMatKhauMoi.cs">
       <SubType>Form</SubType>
@@ -159,6 +161,12 @@
     </Compile>
     <Compile Include="View\Others\frmCustomer.designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewVoucherRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewVoucherRelease.Designer.cs">
+      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Others\PaymentProcess.cs">
       <SubType>Form</SubType>
@@ -254,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Others\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewVoucherRelease.resx">
+      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Others\PaymentProcess.resx">
       <DependentUpon>PaymentProcess.cs</DependentUpon>

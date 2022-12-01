@@ -71,7 +71,7 @@
             // 
             this.btnTicketsUC.FlatAppearance.BorderSize = 0;
             this.btnTicketsUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicketsUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicketsUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicketsUC.ForeColor = System.Drawing.Color.White;
             this.btnTicketsUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0008_Layer;
             this.btnTicketsUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,7 +88,7 @@
             // 
             this.btnShowTimesUC.FlatAppearance.BorderSize = 0;
             this.btnShowTimesUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowTimesUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowTimesUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowTimesUC.ForeColor = System.Drawing.Color.White;
             this.btnShowTimesUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0002_Layer_7;
             this.btnShowTimesUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,7 +105,7 @@
             // 
             this.btnFormatMovieUC.FlatAppearance.BorderSize = 0;
             this.btnFormatMovieUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormatMovieUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormatMovieUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFormatMovieUC.ForeColor = System.Drawing.Color.White;
             this.btnFormatMovieUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0004_Layer_5;
             this.btnFormatMovieUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,7 +122,7 @@
             // 
             this.btnMovieUC.FlatAppearance.BorderSize = 0;
             this.btnMovieUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovieUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovieUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMovieUC.ForeColor = System.Drawing.Color.White;
             this.btnMovieUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0005_Layer_4;
             this.btnMovieUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,7 +139,7 @@
             // 
             this.btnGenreUC.FlatAppearance.BorderSize = 0;
             this.btnGenreUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenreUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenreUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenreUC.ForeColor = System.Drawing.Color.White;
             this.btnGenreUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0003_Layer_6;
             this.btnGenreUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,7 +156,7 @@
             // 
             this.btnCinemaUC.FlatAppearance.BorderSize = 0;
             this.btnCinemaUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCinemaUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCinemaUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCinemaUC.ForeColor = System.Drawing.Color.White;
             this.btnCinemaUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0007_Layer_2;
             this.btnCinemaUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             // 
             this.btnScreenTypeUC.FlatAppearance.BorderSize = 0;
             this.btnScreenTypeUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScreenTypeUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScreenTypeUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScreenTypeUC.ForeColor = System.Drawing.Color.White;
             this.btnScreenTypeUC.Image = global::CinemaManagementSystem.Properties.Resources.Untitled_2_0001_Layer_8;
             this.btnScreenTypeUC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

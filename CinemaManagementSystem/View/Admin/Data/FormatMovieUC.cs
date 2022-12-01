@@ -1,6 +1,9 @@
 ﻿using CinemaManagementSystem;
+using CinemaManagementSystem.Helper;
 using GUI.DAO;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,7 +16,15 @@ namespace GUI.frmAdminUserControls.DataUserControl
         public FormatMovieUC()
         {
             InitializeComponent();
+            configStyle();
             LoadFormatMovie();
+        }
+
+        private void configStyle()
+        {
+            List<Control> allControls = Helper.GetAllControls(this);
+            allControls.ForEach(k => k.Font = new Font("Verdana", 11));
+            allControls.ForEach(k => k.ForeColor = ColorTranslator.FromHtml("#000006"));
         }
 
         void LoadFormatMovie()
