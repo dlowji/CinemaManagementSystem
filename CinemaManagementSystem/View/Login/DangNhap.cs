@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem.Controllers;
 using CinemaManagementSystem.Helper;
+using CinemaManagementSystem.View.Customer;
 using CinemaManagementSystem.View.Login;
 using GUI;
 using GUI.DAO;
@@ -89,10 +90,9 @@ namespace CinemaManagementSystem
                 }
                 else if (loginAccount.LoaiTK == 2 || loginAccount.LoaiTK == 3) //staff
                 {
-                    frmDashBoard frm = new frmDashBoard(loginAccount);
+                    GiaoDienChonPhim frm = new GiaoDienChonPhim(loginAccount.idNV);
                     this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
+                    frm.Show();
                 }
             }
             else if (result == 0)

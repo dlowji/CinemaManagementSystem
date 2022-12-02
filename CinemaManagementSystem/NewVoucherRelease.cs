@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CinemaManagementSystem.View.Others
 {
-    public partial class form : Form
+    public partial class NewVoucherRelease : Form
     {
-        public form()
+        public NewVoucherRelease()
         {
             InitializeComponent();
         }

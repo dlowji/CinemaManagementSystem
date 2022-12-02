@@ -551,6 +551,23 @@ namespace CinemaManagementSystem
             List<Control> allControls = Helper.Helper.GetAllControls(this);
             allControls.ForEach(k => k.Font = new System.Drawing.Font("Verdana", 11));
             allControls.ForEach(k => k.ForeColor = ColorTranslator.FromHtml("#000006"));
+
+            var controls = new[]
+            {
+                btnDataUC,
+                btnCustomerUC,
+                btnStaffUC,
+                btnHistoryUC,
+                btnProductUC,
+                btnRevenueUC,
+                btnVoucherUC,
+            };
+
+            foreach (var item in controls)
+            {
+                item.ForeColor = Color.White;
+                item.Font = new Font(item.Font, FontStyle.Bold);
+            }
         }
 
         private void btnExportImportReceipt_Click(object sender, EventArgs e)
@@ -565,7 +582,8 @@ namespace CinemaManagementSystem
 
         private void btnAddVoucherRelease_Click(object sender, EventArgs e)
         {
-            
+            NewVoucherRelease frm = new NewVoucherRelease();
+            frm.Show();
         }
     }
 

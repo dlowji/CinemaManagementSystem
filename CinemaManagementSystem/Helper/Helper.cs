@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Globalization;
 
 namespace CinemaManagementSystem.Helper
 {
@@ -77,6 +78,8 @@ namespace CinemaManagementSystem.Helper
 
             return list;
         }
+
+
         public static List<Control> GetAllControls(Control container)
         {
             return GetAllControls(container, new List<Control>());
@@ -138,7 +141,7 @@ namespace CinemaManagementSystem.Helper
             var to = new MailAddress(email);
 
             var subject = "Lấy lại mật khẩu đăng nhập";
-            var body = "<h3 style='color: rgb(235, 44, 34);'>Paimon Cinema</h3><p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu Dlowji App của bạn.</p><p>Nhập mã đặt lại mật khẩu sau đây:</p>" + code + "<p>Nếu bạn không yêu cầu mật khẩu mới, vui lòng bỏ qua tin nhắn này.</p>";
+            var body = "<h3 style='color: rgb(235, 44, 34);'>Paimon Cinema</h3><p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu Paimon App của bạn.</p><p>Nhập mã đặt lại mật khẩu sau đây:</p>" + code + "<p>Nếu bạn không yêu cầu mật khẩu mới, vui lòng bỏ qua tin nhắn này.</p>";
 
             string username = "7fb8aeeca5eda3";
             string password = "9bbf94a6d618fa";
@@ -157,6 +160,44 @@ namespace CinemaManagementSystem.Helper
             mail.From = from;
             mail.To.Add(to);
             mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            try
+            {
+                client.Send(mail);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool sendMailForVouchers(string email, List<string> vouchers)
+        {
+            var from = new MailAddress("paimoncinema@gmail.com");
+            var to = new MailAddress(email);
+
+            var subject = "Tri ân khách hàng";
+            StringBuilder body = new StringBuilder();
+
+            string username = "7fb8aeeca5eda3";
+            string password = "9bbf94a6d618fa";
+
+            string host = "smtp.mailtrap.io";
+            int port = 2525;
+
+            var client = new SmtpClient(host, port)
+            {
+                Credentials = new NetworkCredential(username, password),
+                EnableSsl = true
+            };
+
+            var mail = new MailMessage();
+            mail.Subject = subject;
+            mail.From = from;
+            mail.To.Add(to);
+            mail.Body = body.ToString();
             mail.IsBodyHtml = true;
 
             try
@@ -192,6 +233,50 @@ namespace CinemaManagementSystem.Helper
             {
                 return false;
             } 
+        }
+
+        public static (string, List<string>) GetListCode(int quantity, int length, string firstChars, string lastChars)
+        {
+            List<string> ListCode = new List<string>();
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            int randomLength = length - firstChars.Length - lastChars.Length;
+            if (randomLength <= 0)
+            {
+                return ("Độ dài của voucher phải lớn hơn độ dài chuỗi kí tự đầu + độ dài chuỗi kí tự cuối", null);
+            }
+            if (randomLength < 4)
+            {
+                return ($"Độ dài của voucher phải lớn hơn độ dài chuỗi kí tự đầu + độ dài chuỗi kí tự cuối + 4 ", null);
+            }
+            for (int i = 0; i < quantity; i++)
+            {
+
+                var stringChars = new char[randomLength];
+                for (int j = 0; j < stringChars.Length; j++)
+                {
+                    stringChars[j] = chars[random.Next(chars.Length)];
+                }
+                string newCode = new String(stringChars);
+                var isExist = ListCode.Any(code => code == newCode);
+                if (isExist)
+                {
+                    i--;
+                    continue;
+                }
+                ListCode.Add(firstChars + newCode + lastChars);
+            }
+
+            return (null, ListCode);
+        }
+        public static string FormatVNMoney(decimal money)
+        {
+            if (money == 0)
+            {
+                return "0 ₫";
+            }
+            return String.Format(CultureInfo.InvariantCulture,
+                                "{0:#,#} ₫", money);
         }
     }
 }

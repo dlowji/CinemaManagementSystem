@@ -24,16 +24,16 @@ namespace GUI
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            frmSeller frm = new frmSeller(loginAccount.idNV);
-            frm.LoadPlayingMovie(DateTime.Now);
-            frm.Show();
+            //frmSeller frm = new frmSeller(loginAccount.idNV);
+            //frm.LoadPlayingMovie(DateTime.Now);
+            //frm.Show();
         }
 
         private void btnSeller_Click(object sender, EventArgs e)
         {
-            frmSeller frm = new frmSeller(loginAccount.idNV);
-            frm.LoadComingSoonMovie(DateTime.Now);
-            frm.Show();
+            //frmSeller frm = new frmSeller(loginAccount.idNV);
+            //frm.LoadComingSoonMovie(DateTime.Now);
+            //frm.Show();
         }
     }
 }

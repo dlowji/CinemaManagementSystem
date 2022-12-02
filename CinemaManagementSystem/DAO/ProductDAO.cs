@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,62 @@ namespace GUI.DAO
             }
 
             return dt;
+        }
+
+        public static List<Kho> GetProducts()
+        {
+            List<Kho> storages = new List<Kho>();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from sp in db.SanPhams
+                            join storage in db.Khos
+                            on sp.id equals storage.idSanPham
+                            select storage;
+
+                foreach (var item in query)
+                {
+                    storages.Add(item);
+                }
+            }
+
+            return storages;
+        }
+
+        public static SanPham GetProductById(string productId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var product = from p in db.SanPhams
+                              where p.id.Equals(productId)
+                              select p;
+
+                return product.First();
+            }
+        }
+
+        public static Kho GetProductInStorageById(string productId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var storage = from s in db.Khos
+                              where s.idSanPham.Equals(productId)
+                              select s;
+
+                return storage.First();
+            }
+        }
+
+        public static NhaCungCap GetSupplierByProductId(string productId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var product = from p in db.SanPhams
+                              where p.id.Equals(productId)
+                              select p;
+
+                return product.First().NhaCungCap;
+            }
         }
 
         public static bool InsertProduct(string id, string tenHienThi, int loaiSanPham, decimal giaBan)

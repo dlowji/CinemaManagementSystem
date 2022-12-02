@@ -1,4 +1,5 @@
-﻿using CinemaManagementSystem.View.Login;
+﻿using CinemaManagementSystem.View.Customer;
+using CinemaManagementSystem.View.Login;
 using GUI;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace CinemaManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new GiaoDienChonPhim(""));
         }
     }
 }

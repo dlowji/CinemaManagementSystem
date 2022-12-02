@@ -55,5 +55,6 @@ namespace CinemaManagementSystem
             KiemDuyetPhim censor = MovieController.GetMovieCensorShipByMovieId(movie.id);
             lbRated.Text = censor.Ten + " - " + censor.MoTa;
         }
+
     }
 }

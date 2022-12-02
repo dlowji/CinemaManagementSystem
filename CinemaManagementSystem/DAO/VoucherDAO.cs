@@ -48,6 +48,108 @@ namespace GUI.DAO
             return voucherList;
         }
 
+        public static bool SaveVoucher(string code, string voucherReleaseId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                Voucher voucher = new Voucher
+                {
+                    Code = code,
+                    idPhatHanh = voucherReleaseId,
+                    TrangThai = false
+                };
+
+                db.Vouchers.InsertOnSubmit(voucher);
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool SaveVouchers(List<string> vouchers, string voucherReleaseId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                foreach (var item in vouchers)
+                {
+                    Voucher voucher = new Voucher
+                    {
+                        Code = item,
+                        idPhatHanh = voucherReleaseId,
+                        TrangThai = false
+                    };
+
+                    db.Vouchers.InsertOnSubmit(voucher);
+                }
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool ActiveVoucher(int voucherId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from v in db.Vouchers
+                              where v.id == voucherId
+                              select v;
+
+                Voucher voucher = query.FirstOrDefault();
+
+                voucher.TrangThai = true;
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool DeleteVoucher(int voucherId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from v in db.Vouchers
+                            where v.id == voucherId
+                            select v;
+
+                Voucher voucher = query.FirstOrDefault();
+
+                db.Vouchers.DeleteOnSubmit(voucher);
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            
+        }
+
         public static bool SaveVoucherRelease(string id, string name, DateTime startDate, DateTime endDate, decimal price, decimal minPrice, int productType, bool status)
         {
             using (CinemaDataContext db = new CinemaDataContext())

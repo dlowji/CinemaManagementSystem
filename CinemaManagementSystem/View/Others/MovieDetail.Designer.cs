@@ -50,7 +50,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbActors = new System.Windows.Forms.Label();
-            this.btnDangNhap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +88,7 @@
             this.pbPoster.Location = new System.Drawing.Point(12, 79);
             this.pbPoster.Name = "pbPoster";
             this.pbPoster.Size = new System.Drawing.Size(124, 177);
+            this.pbPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPoster.TabIndex = 3;
             this.pbPoster.TabStop = false;
             // 
@@ -173,9 +173,9 @@
             // lbDesc
             // 
             this.lbDesc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDesc.Location = new System.Drawing.Point(19, 21);
+            this.lbDesc.Location = new System.Drawing.Point(19, 11);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(738, 100);
+            this.lbDesc.Size = new System.Drawing.Size(738, 132);
             this.lbDesc.TabIndex = 6;
             this.lbDesc.Text = resources.GetString("lbDesc.Text");
             // 
@@ -242,9 +242,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.lbDesc);
-            this.panel3.Location = new System.Drawing.Point(12, 301);
+            this.panel3.Location = new System.Drawing.Point(12, 284);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(776, 139);
+            this.panel3.Size = new System.Drawing.Size(776, 156);
             this.panel3.TabIndex = 7;
             // 
             // lbActors
@@ -257,26 +257,11 @@
             this.lbActors.TabIndex = 6;
             this.lbActors.Text = "Tenoch Huerta, Martin Freeman, Lupita Nyong\'o";
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
-            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnDangNhap.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(697, 260);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(91, 35);
-            this.btnDangNhap.TabIndex = 9;
-            this.btnDangNhap.Text = "Đặt vé";
-            this.btnDangNhap.UseVisualStyleBackColor = false;
-            // 
             // MovieDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lbGenres);
@@ -331,6 +316,5 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbActors;
-        private System.Windows.Forms.Button btnDangNhap;
     }
 }
