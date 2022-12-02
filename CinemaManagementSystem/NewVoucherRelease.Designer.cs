@@ -1,6 +1,6 @@
 ﻿namespace CinemaManagementSystem.View.Others
 {
-    partial class form
+    partial class NewVoucherRelease
     {
         /// <summary>
         /// Required designer variable.
@@ -47,8 +47,8 @@
             this.dtmToDate = new System.Windows.Forms.DateTimePicker();
             this.dtmFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rdbtnActive = new System.Windows.Forms.RadioButton();
             this.rdbtnUnApply = new System.Windows.Forms.RadioButton();
+            this.rdbtnActive = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,7 +217,7 @@
             // 
             this.dtmToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmToDate.Location = new System.Drawing.Point(340, 322);
-            this.dtmToDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmToDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtmToDate.Name = "dtmToDate";
             this.dtmToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmToDate.Size = new System.Drawing.Size(102, 20);
@@ -227,7 +227,7 @@
             // 
             this.dtmFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmFromDate.Location = new System.Drawing.Point(175, 324);
-            this.dtmFromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmFromDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtmFromDate.Name = "dtmFromDate";
             this.dtmFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtmFromDate.Size = new System.Drawing.Size(102, 20);
@@ -242,6 +242,18 @@
             this.panel2.Size = new System.Drawing.Size(293, 33);
             this.panel2.TabIndex = 51;
             // 
+            // rdbtnUnApply
+            // 
+            this.rdbtnUnApply.AutoSize = true;
+            this.rdbtnUnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtnUnApply.Location = new System.Drawing.Point(148, 8);
+            this.rdbtnUnApply.Name = "rdbtnUnApply";
+            this.rdbtnUnApply.Size = new System.Drawing.Size(117, 22);
+            this.rdbtnUnApply.TabIndex = 53;
+            this.rdbtnUnApply.TabStop = true;
+            this.rdbtnUnApply.Text = "Chưa áp dụng";
+            this.rdbtnUnApply.UseVisualStyleBackColor = true;
+            // 
             // rdbtnActive
             // 
             this.rdbtnActive.AutoSize = true;
@@ -255,19 +267,7 @@
             this.rdbtnActive.Text = "Kích hoạt";
             this.rdbtnActive.UseVisualStyleBackColor = true;
             // 
-            // rdbtnUnApply
-            // 
-            this.rdbtnUnApply.AutoSize = true;
-            this.rdbtnUnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtnUnApply.Location = new System.Drawing.Point(148, 8);
-            this.rdbtnUnApply.Name = "rdbtnUnApply";
-            this.rdbtnUnApply.Size = new System.Drawing.Size(117, 22);
-            this.rdbtnUnApply.TabIndex = 53;
-            this.rdbtnUnApply.TabStop = true;
-            this.rdbtnUnApply.Text = "Chưa áp dụng";
-            this.rdbtnUnApply.UseVisualStyleBackColor = true;
-            // 
-            // form
+            // NewVoucherRelease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "form";
+            this.Name = "NewVoucherRelease";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewVoucherRelease";
             this.panel2.ResumeLayout(false);

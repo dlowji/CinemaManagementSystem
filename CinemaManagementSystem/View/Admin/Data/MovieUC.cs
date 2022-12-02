@@ -6,9 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI.frmAdminUserControls.DataUserControl
@@ -27,7 +25,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
             InitializeComponent();
             workingDirectory = Environment.CurrentDirectory;
             projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-            Helper.configStyle(this);
+            //Helper.configStyle(this);
             LoadMovie();
         }
 

@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnDataUC = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnRevenueUC = new System.Windows.Forms.Button();
-            this.btnCustomerUC = new System.Windows.Forms.Button();
-            this.btnStaffUC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tcQuanLy = new System.Windows.Forms.TabControl();
             this.QuanLyNhanSu = new System.Windows.Forms.TabPage();
             this.btnAddStaff = new System.Windows.Forms.Button();
@@ -136,10 +127,17 @@
             this.QuanLyVoucher = new System.Windows.Forms.TabPage();
             this.btnAddVoucherRelease = new System.Windows.Forms.Button();
             this.dtgvVoucherRelease = new System.Windows.Forms.DataGridView();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnVoucherUC = new System.Windows.Forms.Button();
+            this.btnHistoryUC = new System.Windows.Forms.Button();
+            this.btnDataUC = new System.Windows.Forms.Button();
+            this.btnProductUC = new System.Windows.Forms.Button();
+            this.btnRevenueUC = new System.Windows.Forms.Button();
+            this.btnCustomerUC = new System.Windows.Forms.Button();
+            this.btnStaffUC = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tcQuanLy.SuspendLayout();
             this.QuanLyNhanSu.SuspendLayout();
             this.grpStaff.SuspendLayout();
@@ -162,16 +160,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).BeginInit();
             this.QuanLyVoucher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnVoucherUC);
+            this.panel1.Controls.Add(this.btnHistoryUC);
             this.panel1.Controls.Add(this.btnDataUC);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnProductUC);
             this.panel1.Controls.Add(this.btnRevenueUC);
             this.panel1.Controls.Add(this.btnCustomerUC);
             this.panel1.Controls.Add(this.btnStaffUC);
@@ -180,160 +179,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 611);
             this.panel1.TabIndex = 0;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Symbol", 8.25F);
-            this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Image = global::CinemaManagementSystem.Properties.Resources.voucher1;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button8.Location = new System.Drawing.Point(1, 516);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(181, 87);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Voucher";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Image = global::CinemaManagementSystem.Properties.Resources.thongke2;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.Location = new System.Drawing.Point(1, 429);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(181, 87);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Lịch sử";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnDataUC
-            // 
-            this.btnDataUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.btnDataUC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDataUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.btnDataUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnDataUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnDataUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDataUC.Image = global::CinemaManagementSystem.Properties.Resources.openfolder_4896;
-            this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDataUC.Location = new System.Drawing.Point(1, 1);
-            this.btnDataUC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDataUC.Name = "btnDataUC";
-            this.btnDataUC.Size = new System.Drawing.Size(181, 87);
-            this.btnDataUC.TabIndex = 6;
-            this.btnDataUC.Text = "Quản lý dữ liệu";
-            this.btnDataUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnDataUC.UseVisualStyleBackColor = false;
-            this.btnDataUC.Click += new System.EventHandler(this.btnDataUC_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(1, 342);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 87);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Sản phẩm";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnRevenueUC
-            // 
-            this.btnRevenueUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.btnRevenueUC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRevenueUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.btnRevenueUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnRevenueUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnRevenueUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenueUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRevenueUC.Image = global::CinemaManagementSystem.Properties.Resources.pie_chart;
-            this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRevenueUC.Location = new System.Drawing.Point(1, 258);
-            this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRevenueUC.Name = "btnRevenueUC";
-            this.btnRevenueUC.Size = new System.Drawing.Size(181, 87);
-            this.btnRevenueUC.TabIndex = 9;
-            this.btnRevenueUC.Text = "Doanh Thu";
-            this.btnRevenueUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnRevenueUC.UseVisualStyleBackColor = false;
-            this.btnRevenueUC.Click += new System.EventHandler(this.btnRevenueUC_Click);
-            // 
-            // btnCustomerUC
-            // 
-            this.btnCustomerUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.btnCustomerUC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomerUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.btnCustomerUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnCustomerUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnCustomerUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCustomerUC.Image = global::CinemaManagementSystem.Properties.Resources.people_2_512;
-            this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCustomerUC.Location = new System.Drawing.Point(1, 174);
-            this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCustomerUC.Name = "btnCustomerUC";
-            this.btnCustomerUC.Size = new System.Drawing.Size(181, 87);
-            this.btnCustomerUC.TabIndex = 8;
-            this.btnCustomerUC.Text = "Khách Hàng";
-            this.btnCustomerUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCustomerUC.UseVisualStyleBackColor = false;
-            this.btnCustomerUC.Click += new System.EventHandler(this.btnCustomerUC_Click);
-            // 
-            // btnStaffUC
-            // 
-            this.btnStaffUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.btnStaffUC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStaffUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.btnStaffUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnStaffUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
-            this.btnStaffUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStaffUC.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnStaffUC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStaffUC.Image = global::CinemaManagementSystem.Properties.Resources.employee_office_staff_3d735bc691173bb5_256x256;
-            this.btnStaffUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnStaffUC.Location = new System.Drawing.Point(1, 87);
-            this.btnStaffUC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStaffUC.Name = "btnStaffUC";
-            this.btnStaffUC.Size = new System.Drawing.Size(181, 87);
-            this.btnStaffUC.TabIndex = 7;
-            this.btnStaffUC.Text = "Nhân Viên";
-            this.btnStaffUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnStaffUC.UseVisualStyleBackColor = false;
-            this.btnStaffUC.Click += new System.EventHandler(this.btnStaffUC_Click);
             // 
             // label1
             // 
@@ -365,17 +210,6 @@
             this.label11.Size = new System.Drawing.Size(70, 17);
             this.label11.TabIndex = 1;
             this.label11.Text = "Võ Tấn Lợi";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox11.Image = global::CinemaManagementSystem.Properties.Resources.user_logo;
-            this.pictureBox11.Location = new System.Drawing.Point(798, 4);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
             // 
             // tcQuanLy
             // 
@@ -1465,6 +1299,17 @@
             this.dtgvVoucherRelease.Size = new System.Drawing.Size(728, 284);
             this.dtgvVoucherRelease.TabIndex = 23;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox11.Image = global::CinemaManagementSystem.Properties.Resources.user_logo;
+            this.pictureBox11.Location = new System.Drawing.Point(798, 4);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CinemaManagementSystem.Properties.Resources.user_logo;
@@ -1474,6 +1319,160 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnVoucherUC
+            // 
+            this.btnVoucherUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnVoucherUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoucherUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnVoucherUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnVoucherUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnVoucherUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoucherUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoucherUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVoucherUC.Image = global::CinemaManagementSystem.Properties.Resources.voucher2;
+            this.btnVoucherUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnVoucherUC.Location = new System.Drawing.Point(1, 517);
+            this.btnVoucherUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVoucherUC.Name = "btnVoucherUC";
+            this.btnVoucherUC.Size = new System.Drawing.Size(181, 87);
+            this.btnVoucherUC.TabIndex = 12;
+            this.btnVoucherUC.Text = "Voucher";
+            this.btnVoucherUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnVoucherUC.UseVisualStyleBackColor = false;
+            this.btnVoucherUC.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnHistoryUC
+            // 
+            this.btnHistoryUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnHistoryUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHistoryUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnHistoryUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnHistoryUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnHistoryUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistoryUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistoryUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnHistoryUC.Image = global::CinemaManagementSystem.Properties.Resources.history;
+            this.btnHistoryUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnHistoryUC.Location = new System.Drawing.Point(1, 431);
+            this.btnHistoryUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistoryUC.Name = "btnHistoryUC";
+            this.btnHistoryUC.Size = new System.Drawing.Size(181, 87);
+            this.btnHistoryUC.TabIndex = 11;
+            this.btnHistoryUC.Text = "Lịch sử";
+            this.btnHistoryUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnHistoryUC.UseVisualStyleBackColor = false;
+            this.btnHistoryUC.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnDataUC
+            // 
+            this.btnDataUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnDataUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDataUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnDataUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnDataUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnDataUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDataUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDataUC.Image = global::CinemaManagementSystem.Properties.Resources.document;
+            this.btnDataUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnDataUC.Location = new System.Drawing.Point(1, 1);
+            this.btnDataUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDataUC.Name = "btnDataUC";
+            this.btnDataUC.Size = new System.Drawing.Size(181, 87);
+            this.btnDataUC.TabIndex = 6;
+            this.btnDataUC.Text = "Quản lý dữ liệu";
+            this.btnDataUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnDataUC.UseVisualStyleBackColor = false;
+            this.btnDataUC.Click += new System.EventHandler(this.btnDataUC_Click);
+            // 
+            // btnProductUC
+            // 
+            this.btnProductUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnProductUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnProductUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnProductUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnProductUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnProductUC.Image = global::CinemaManagementSystem.Properties.Resources.product;
+            this.btnProductUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnProductUC.Location = new System.Drawing.Point(1, 345);
+            this.btnProductUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProductUC.Name = "btnProductUC";
+            this.btnProductUC.Size = new System.Drawing.Size(181, 87);
+            this.btnProductUC.TabIndex = 10;
+            this.btnProductUC.Text = "Sản phẩm";
+            this.btnProductUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnProductUC.UseVisualStyleBackColor = false;
+            this.btnProductUC.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnRevenueUC
+            // 
+            this.btnRevenueUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnRevenueUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRevenueUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnRevenueUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnRevenueUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnRevenueUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevenueUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenueUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRevenueUC.Image = global::CinemaManagementSystem.Properties.Resources.revenue;
+            this.btnRevenueUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnRevenueUC.Location = new System.Drawing.Point(1, 259);
+            this.btnRevenueUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRevenueUC.Name = "btnRevenueUC";
+            this.btnRevenueUC.Size = new System.Drawing.Size(181, 87);
+            this.btnRevenueUC.TabIndex = 9;
+            this.btnRevenueUC.Text = "Doanh Thu";
+            this.btnRevenueUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnRevenueUC.UseVisualStyleBackColor = false;
+            this.btnRevenueUC.Click += new System.EventHandler(this.btnRevenueUC_Click);
+            // 
+            // btnCustomerUC
+            // 
+            this.btnCustomerUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnCustomerUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomerUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnCustomerUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnCustomerUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnCustomerUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCustomerUC.Image = global::CinemaManagementSystem.Properties.Resources.employees;
+            this.btnCustomerUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnCustomerUC.Location = new System.Drawing.Point(1, 173);
+            this.btnCustomerUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomerUC.Name = "btnCustomerUC";
+            this.btnCustomerUC.Size = new System.Drawing.Size(181, 87);
+            this.btnCustomerUC.TabIndex = 8;
+            this.btnCustomerUC.Text = "Khách Hàng";
+            this.btnCustomerUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCustomerUC.UseVisualStyleBackColor = false;
+            this.btnCustomerUC.Click += new System.EventHandler(this.btnCustomerUC_Click);
+            // 
+            // btnStaffUC
+            // 
+            this.btnStaffUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btnStaffUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStaffUC.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+            this.btnStaffUC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnStaffUC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(61)))), ((int)(((byte)(70)))));
+            this.btnStaffUC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaffUC.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaffUC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStaffUC.Image = global::CinemaManagementSystem.Properties.Resources.customer;
+            this.btnStaffUC.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnStaffUC.Location = new System.Drawing.Point(1, 87);
+            this.btnStaffUC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStaffUC.Name = "btnStaffUC";
+            this.btnStaffUC.Size = new System.Drawing.Size(181, 87);
+            this.btnStaffUC.TabIndex = 7;
+            this.btnStaffUC.Text = "Nhân Viên";
+            this.btnStaffUC.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnStaffUC.UseVisualStyleBackColor = false;
+            this.btnStaffUC.Click += new System.EventHandler(this.btnStaffUC_Click);
             // 
             // QuanLy
             // 
@@ -1493,7 +1492,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tcQuanLy.ResumeLayout(false);
             this.QuanLyNhanSu.ResumeLayout(false);
             this.QuanLyNhanSu.PerformLayout();
@@ -1525,6 +1523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).EndInit();
             this.QuanLyVoucher.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1599,9 +1598,9 @@
         private System.Windows.Forms.DateTimePicker dtmToDate;
         private System.Windows.Forms.DateTimePicker dtmFromDate;
         private System.Windows.Forms.Button btnDataUC;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVoucherUC;
+        private System.Windows.Forms.Button btnHistoryUC;
+        private System.Windows.Forms.Button btnProductUC;
         private System.Windows.Forms.Button btnRevenueUC;
         private System.Windows.Forms.Button btnCustomerUC;
         private System.Windows.Forms.Button btnStaffUC;

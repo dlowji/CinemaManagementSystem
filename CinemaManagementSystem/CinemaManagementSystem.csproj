@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,18 @@
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
+    <Compile Include="FoodAndDrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodAndDrink.Designer.cs">
+      <DependentUpon>FoodAndDrink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewVoucherRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewVoucherRelease.Designer.cs">
+      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhapMatKhauMoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,30 @@
     <Compile Include="DAO\ShowTimesDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="View\Customer\FoodDrinkUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\FoodDrinkUC.Designer.cs">
+      <DependentUpon>FoodDrinkUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\GiaoDienChonPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Customer\GiaoDienChonPhim.Designer.cs">
+      <DependentUpon>GiaoDienChonPhim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\MovieViewUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\MovieViewUC.Designer.cs">
+      <DependentUpon>MovieViewUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\BillUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\BillUC.Designer.cs">
+      <DependentUpon>BillUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login\DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,12 +203,6 @@
     </Compile>
     <Compile Include="View\Others\frmCustomer.designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewVoucherRelease.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewVoucherRelease.Designer.cs">
-      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Others\PaymentProcess.cs">
       <SubType>Form</SubType>
@@ -224,8 +260,17 @@
     <Compile Include="View\Admin\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodAndDrink.resx">
+      <DependentUpon>FoodAndDrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewVoucherRelease.resx">
+      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapMatKhauMoi.resx">
       <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
@@ -257,14 +302,23 @@
     <EmbeddedResource Include="View\Admin\Data\TicketsUC.resx">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\BillUC.resx">
+      <DependentUpon>BillUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\FoodDrinkUC.resx">
+      <DependentUpon>FoodDrinkUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\GiaoDienChonPhim.resx">
+      <DependentUpon>GiaoDienChonPhim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\MovieViewUC.resx">
+      <DependentUpon>MovieViewUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Others\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewVoucherRelease.resx">
-      <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Others\PaymentProcess.resx">
       <DependentUpon>PaymentProcess.cs</DependentUpon>
@@ -500,6 +554,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cmnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_view_film_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_view_film_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food_and_drink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film-reel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voucher2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

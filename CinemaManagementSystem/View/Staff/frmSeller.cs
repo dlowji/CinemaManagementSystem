@@ -11,11 +11,14 @@ namespace GUI
 {
     public partial class frmSeller : Form
     {
-        string staffId;
-        public frmSeller(string staffId)
+        private string staffId;
+        private List<Phim> movies = new List<Phim>();
+        public frmSeller(string staffId, Phim movie)
         {
             InitializeComponent();
             this.staffId = staffId;
+            this.movies.Clear();
+            this.movies.Add(movie);
             dtpThoiGian.Enabled = false;
             cboFormatFilm.Enabled = false;
             cbbCineplex.Enabled = false;
@@ -24,23 +27,24 @@ namespace GUI
         private void frmSeller_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            LoadPlayingMovie();
         }
 
-        public void LoadPlayingMovie(DateTime date)
+        public void LoadPlayingMovie()
         {
-            cboFilmName.DataSource = MovieDAO.GetListPlayingMovieByDate(date);
+            cboFilmName.DataSource = movies;
             cboFilmName.DisplayMember = "TenPhim";
             cboFilmName.ValueMember = "id";
             groupBox1.Text = "Phim đang chiếu:";
         }
 
-        public void LoadComingSoonMovie(DateTime date)
-        {
-            cboFilmName.DataSource = MovieDAO.GetListComingSoonMovieByDate(date);
-            cboFilmName.DisplayMember = "TenPhim";
-            cboFilmName.ValueMember = "id";
-            groupBox1.Text = "Phim sắp chiếu:";
-        }
+        //public void LoadComingSoonMovie(DateTime date)
+        //{
+        //    cboFilmName.DataSource = MovieDAO.GetListComingSoonMovieByDate(date);
+        //    cboFilmName.DisplayMember = "TenPhim";
+        //    cboFilmName.ValueMember = "id";
+        //    groupBox1.Text = "Phim sắp chiếu:";
+        //}
 
         private void cboFilmName_SelectedIndexChanged(object sender, EventArgs e)
         {
