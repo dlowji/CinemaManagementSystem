@@ -31,6 +31,18 @@ namespace GUI.DAO
             return cineplexs;
         }
 
+        public static CumRap GetCineplexById(string cineplexId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from c in db.CumRaps
+                            where c.id.Equals(cineplexId)
+                            select c;
+
+                return query.FirstOrDefault();
+            }
+        }
+
         public static List<CumRap> GetListCineplexByCinemaTypeID(string cinemaTypeID, string movieId, DateTime date)
         {
             List<CumRap> cineplexs = new List<CumRap>();

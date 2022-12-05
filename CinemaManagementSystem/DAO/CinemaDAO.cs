@@ -38,9 +38,9 @@ namespace GUI.DAO
             {
                 var query = (from rap in db.Raps
                              where rap.id == cinemaId
-                             select rap).First();
+                             select rap);
 
-                return query.CumRap;
+                return query.First().CumRap;
             }
         }
 

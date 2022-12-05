@@ -15,5 +15,20 @@ namespace CinemaManagementSystem.Controllers
             return ShowTimesDAO.GetListShowtime();
         }
 
+        public static LichChieu GetShowTimeById(string showTimesId)
+        {
+            List<LichChieu> showTimesList = ShowTimesDAO.GetAllListShowTimes();
+
+            foreach (var item in showTimesList)
+            {
+                if (item.id.Equals(showTimesId))
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

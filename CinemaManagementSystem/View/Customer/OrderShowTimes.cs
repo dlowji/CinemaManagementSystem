@@ -1,32 +1,36 @@
-﻿using CinemaManagementSystem;
-using CinemaManagementSystem.Controllers;
-using CinemaManagementSystem.View.Customer;
+﻿using CinemaManagementSystem.Controllers;
 using GUI.DAO;
+using GUI.frmAdminUserControls.DataUserControl;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace GUI
+namespace CinemaManagementSystem.View.Customer
 {
-    public partial class frmSeller : Form
+    public partial class OrderShowTimes : UserControl
     {
         private string staffId;
         private List<Phim> movies = new List<Phim>();
-        public frmSeller(string staffId, Phim movie)
+        private Panel test;
+        public OrderShowTimes(string staffId, Phim movie, Panel test)
         {
             InitializeComponent();
             this.staffId = staffId;
+            this.test = test;
             this.movies.Clear();
             this.movies.Add(movie);
             dtpThoiGian.Enabled = false;
             cboFormatFilm.Enabled = false;
             cbbCineplex.Enabled = false;
         }
-
-        private void frmSeller_Load(object sender, EventArgs e)
+        private void OrderShowTimes_Load(object sender, EventArgs e)
         {
             timer1.Start();
             LoadPlayingMovie();
@@ -136,10 +140,12 @@ namespace GUI
                 LichChieu showTimes = lvLichChieu.SelectedItems[0].Tag as LichChieu;
                 Phim movie = cboFilmName.SelectedItem as Phim;
 
-                GiaoDienChonPhim frm = new GiaoDienChonPhim("");
-                frm.test(showTimes, movie, "");
+                test.Controls.Clear();
+                OrderSeat orderSeatUC = new OrderSeat(showTimes, movie, "", test);
+                orderSeatUC.Dock = DockStyle.Fill;
+                test.Controls.Clear();
+                test.Controls.Add(orderSeatUC);
                 this.Hide();
-                frm.ShowDialog();
                 this.OnLoad(null);
                 this.Show();
             }

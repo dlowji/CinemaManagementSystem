@@ -86,6 +86,7 @@
     <Compile Include="FoodAndDrink.Designer.cs">
       <DependentUpon>FoodAndDrink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Support.cs" />
     <Compile Include="NewVoucherRelease.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +192,18 @@
     </Compile>
     <Compile Include="View\Customer\BillUC.Designer.cs">
       <DependentUpon>BillUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\OrderSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\OrderSeat.Designer.cs">
+      <DependentUpon>OrderSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\OrderShowTimes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\OrderShowTimes.Designer.cs">
+      <DependentUpon>OrderShowTimes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login\DangKy.cs">
       <SubType>Form</SubType>
@@ -313,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Customer\MovieViewUC.resx">
       <DependentUpon>MovieViewUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\OrderSeat.resx">
+      <DependentUpon>OrderSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\OrderShowTimes.resx">
+      <DependentUpon>OrderShowTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
@@ -596,6 +615,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

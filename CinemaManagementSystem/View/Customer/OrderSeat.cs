@@ -1,17 +1,24 @@
-﻿using CinemaManagementSystem;
+﻿using CinemaManagementSystem.Controllers;
 using GUI.DAO;
+using GUI.frmAdminUserControls.DataUserControl;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.Globalization;//thư viện thay đổi vùng/quốc gia
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace CinemaManagementSystem.View.Customer
 {
-    public partial class frmTheatre : Form
+    public partial class OrderSeat : UserControl
     {
+        private Panel homepage;
+
         string staffId;
         int SIZE = 30;//Size của ghế
         int GAP = 7;//Khoảng cách giữa các ghế
@@ -32,44 +39,14 @@ namespace GUI
 
         LichChieu Times;
         Phim Movie;
-
-        public frmTheatre(LichChieu showTimes, Phim movie, string staffId)
+        public OrderSeat(LichChieu showTimes, Phim movie, string staffId, Panel homepage)
         {
             InitializeComponent();
-
-            Times = showTimes;
+            Times = ShowTimeController.GetShowTimeById(showTimes.id);
             Movie = movie;
             this.staffId = staffId;
+            this.homepage = homepage;
         }
-
-        private void frmTheatre_Load(object sender, EventArgs e)
-        {
-            ticketPrice = Times.GiaVe;
-
-            lblInformation.Text = "CGV Hung Vuong | " + TicketDAO.getCinemaNameByShowTimesId(Times.id) + " | " + TicketDAO.getMovieNameByShowTimesId(Times.id);
-            lblTime.Text = Times.ThoiGianChieu.ToShortDateString() + " | "
-                + Times.ThoiGianChieu.ToShortTimeString() + " - "
-                + Times.ThoiGianChieu.AddMinutes(Movie.ThoiLuong).ToShortTimeString();
-            if (Movie.ApPhich != null)
-            {
-                string workingDirectory = Environment.CurrentDirectory;
-                string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-                picFilm.Image = Image.FromFile(projectDirectory + Movie.ApPhich);
-            }
-
-            //rdoAdult.Checked = true;
-            //chkCustomer.Enabled = false;
-            //grpLoaiVe.Enabled = false;
-
-            LoadDataCinema(TicketDAO.getCinemaNameByShowTimesId(Times.id));
-
-            ShowOrHideLablePoint();
-
-            listSeat = TicketDAO.GetListTicketsByShowTimes(Times.id);
-
-            LoadSeats(listSeat);
-        }
-
         private void LoadDataCinema(string cinemaName)
         {
             Rap cinema = CinemaDAO.GetCinemaByName(cinemaName);
@@ -230,34 +207,34 @@ namespace GUI
             if (result == DialogResult.OK)
             {
                 int ret = 0;
-     //           if (chkCustomer.Checked == true)
-     //           {
-     //               HoaDon bill = BillDAO.InsertTicketBill(customer.id, staffId, discount, total);
-     //               foreach (Button btn in listSeatSelected)
-     //               {
-     //                   Ve ticket = btn.Tag as Ve;
+                //           if (chkCustomer.Checked == true)
+                //           {
+                //               HoaDon bill = BillDAO.InsertTicketBill(customer.id, staffId, discount, total);
+                //               foreach (Button btn in listSeatSelected)
+                //               {
+                //                   Ve ticket = btn.Tag as Ve;
 
-     //                   ret += TicketDAO.BuyTicket(ticket.id.ToString(), (int)ticket.LoaiVe, customer.id, (decimal)ticket.TienBanVe);
-     //                   BillDAO.InsertTicketBillDetail(bill, ticket);
-     //               }
-					//customer.DiemTichLuy += plusPoint;
-					//CustomerDAO.UpdatePointCustomer(customer.id, (int)customer.DiemTichLuy);
-     //           }
-     //           else
-     //           {
-     //               HoaDon bill = BillDAO.InsertTicketBill(null, staffId, discount, total);
-     //               foreach (Button btn in listSeatSelected)
-     //               {
-     //                   Ve ticket = btn.Tag as Ve;
+                //                   ret += TicketDAO.BuyTicket(ticket.id.ToString(), (int)ticket.LoaiVe, customer.id, (decimal)ticket.TienBanVe);
+                //                   BillDAO.InsertTicketBillDetail(bill, ticket);
+                //               }
+                //customer.DiemTichLuy += plusPoint;
+                //CustomerDAO.UpdatePointCustomer(customer.id, (int)customer.DiemTichLuy);
+                //           }
+                //           else
+                //           {
+                //               HoaDon bill = BillDAO.InsertTicketBill(null, staffId, discount, total);
+                //               foreach (Button btn in listSeatSelected)
+                //               {
+                //                   Ve ticket = btn.Tag as Ve;
 
-     //                   ret += TicketDAO.BuyTicket(ticket.id.ToString(), (int)ticket.LoaiVe, (decimal)ticket.TienBanVe);
-     //                   BillDAO.InsertTicketBillDetail(bill, ticket);
-     //               }
-     //           }
-     //           if (ret == listSeatSelected.Count)
-     //           {
-     //               MessageBox.Show("Bạn đã mua vé thành công!");
-     //           }
+                //                   ret += TicketDAO.BuyTicket(ticket.id.ToString(), (int)ticket.LoaiVe, (decimal)ticket.TienBanVe);
+                //                   BillDAO.InsertTicketBillDetail(bill, ticket);
+                //               }
+                //           }
+                //           if (ret == listSeatSelected.Count)
+                //           {
+                //               MessageBox.Show("Bạn đã mua vé thành công!");
+                //           }
             }
             RestoreDefault();
             this.OnLoad(new EventArgs());
@@ -388,6 +365,44 @@ namespace GUI
             //        LoadBill();
             //    }
             //}
+        }
+
+        private void OrderSeat_Load(object sender, EventArgs e)
+        {
+            ticketPrice = Times.GiaVe;
+            CumRap cineplex = CinemaController.GetCineplexByCinemaID(Times.idRap);
+
+            lblInformation.Text = cineplex.Ten + " | " + TicketDAO.getCinemaNameByShowTimesId(Times.id) + " | " + TicketDAO.getMovieNameByShowTimesId(Times.id);
+            lblTime.Text = Times.ThoiGianChieu.ToShortDateString() + " | "
+                + Times.ThoiGianChieu.ToShortTimeString() + " - "
+                + Times.ThoiGianChieu.AddMinutes(Movie.ThoiLuong).ToShortTimeString();
+            if (Movie.ApPhich != null)
+            {
+                string workingDirectory = Environment.CurrentDirectory;
+                string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+                picFilm.Image = Image.FromFile(projectDirectory + Movie.ApPhich);
+            }
+
+            //rdoAdult.Checked = true;
+            //chkCustomer.Enabled = false;
+            //grpLoaiVe.Enabled = false;
+
+            LoadDataCinema(TicketDAO.getCinemaNameByShowTimesId(Times.id));
+
+            ShowOrHideLablePoint();
+
+            listSeat = TicketDAO.GetListTicketsByShowTimes(Times.id);
+
+            LoadSeats(listSeat);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            FoodDrinkUC foodDrinkUC = new FoodDrinkUC("", listSeatSelected, Times, Movie, total, homepage);
+            foodDrinkUC.Dock = DockStyle.Fill;
+
+            homepage.Controls.Clear();
+            homepage.Controls.Add(foodDrinkUC);
         }
     }
 }

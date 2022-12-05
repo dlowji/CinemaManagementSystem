@@ -48,6 +48,40 @@ namespace CinemaManagementSystem.Controllers
             return products;
         }
 
+        public static List<SanPham> GetFoodsForView()
+        {
+            List<SanPham> products = new List<SanPham>();
+
+            foreach (var item in ProductDAO.GetProducts())
+            {
+                SanPham product = ProductDAO.GetProductById(item.idSanPham);
+
+                if (product.LoaiSanPham == 1)
+                {
+                    products.Add(product);
+                }
+            }
+
+            return products;
+        }
+
+        public static List<SanPham> GetDrinksForView()
+        {
+            List<SanPham> products = new List<SanPham>();
+
+            foreach (var item in ProductDAO.GetProducts())
+            {
+                SanPham product = ProductDAO.GetProductById(item.idSanPham);
+
+                if (product.LoaiSanPham == 2)
+                {
+                    products.Add(product);
+                }
+            }
+
+            return products;
+        }
+
         public static int GetQuantityOfProduct(string productId)
         {
             Kho storage = ProductDAO.GetProductInStorageById(productId);
