@@ -1,13 +1,13 @@
-﻿namespace GUI
+﻿namespace CinemaManagementSystem.View.Customer
 {
-    partial class frmSeller
+    partial class OrderShowTimes
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,19 +20,18 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeller));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.labelX = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbCineplex = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,54 +43,51 @@
             this.btnDetail = new System.Windows.Forms.Button();
             this.cboFilmName = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lvLichChieu = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.labelX);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1027, 72);
-            this.panel2.TabIndex = 9;
+            this.panel1.Controls.Add(this.labelX);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1043, 72);
+            this.panel1.TabIndex = 0;
             // 
             // labelX
             // 
             this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.ForeColor = System.Drawing.Color.Blue;
-            this.labelX.Location = new System.Drawing.Point(0, 0);
+            this.labelX.Location = new System.Drawing.Point(8, 0);
             this.labelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(1027, 72);
-            this.labelX.TabIndex = 0;
+            this.labelX.TabIndex = 1;
             this.labelX.Text = "Lịch Chiếu Phim";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 72);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(319, 506);
-            this.panel3.TabIndex = 15;
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(319, 545);
+            this.panel2.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -105,13 +101,14 @@
             this.groupBox1.Controls.Add(this.btnDetail);
             this.groupBox1.Controls.Add(this.cboFilmName);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Size = new System.Drawing.Size(319, 506);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phim đang chiếu";
             // 
@@ -121,7 +118,7 @@
             this.cbbCineplex.Location = new System.Drawing.Point(11, 273);
             this.cbbCineplex.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbbCineplex.Name = "cbbCineplex";
-            this.cbbCineplex.Size = new System.Drawing.Size(289, 28);
+            this.cbbCineplex.Size = new System.Drawing.Size(289, 26);
             this.cbbCineplex.TabIndex = 11;
             this.cbbCineplex.SelectedIndexChanged += new System.EventHandler(this.cbbCineplex_SelectedIndexChanged);
             // 
@@ -131,7 +128,7 @@
             this.label2.Location = new System.Drawing.Point(11, 245);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(88, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "Cụm Rạp:";
             // 
@@ -141,7 +138,7 @@
             this.cboFormatFilm.Location = new System.Drawing.Point(11, 195);
             this.cboFormatFilm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboFormatFilm.Name = "cboFormatFilm";
-            this.cboFormatFilm.Size = new System.Drawing.Size(289, 28);
+            this.cboFormatFilm.Size = new System.Drawing.Size(289, 26);
             this.cboFormatFilm.TabIndex = 9;
             this.cboFormatFilm.SelectedIndexChanged += new System.EventHandler(this.cboFormatFilm_SelectedIndexChanged);
             // 
@@ -151,7 +148,7 @@
             this.label1.Location = new System.Drawing.Point(11, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Suất Chiếu:";
             // 
@@ -162,7 +159,7 @@
             this.dtpThoiGian.Location = new System.Drawing.Point(11, 126);
             this.dtpThoiGian.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpThoiGian.Name = "dtpThoiGian";
-            this.dtpThoiGian.Size = new System.Drawing.Size(289, 26);
+            this.dtpThoiGian.Size = new System.Drawing.Size(289, 27);
             this.dtpThoiGian.TabIndex = 6;
             this.dtpThoiGian.Value = new System.DateTime(2022, 11, 10, 0, 0, 0, 0);
             this.dtpThoiGian.ValueChanged += new System.EventHandler(this.dtpThoiGian_ValueChanged_1);
@@ -173,7 +170,7 @@
             this.label4.Location = new System.Drawing.Point(11, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.Size = new System.Drawing.Size(93, 18);
             this.label4.TabIndex = 7;
             this.label4.Text = "Thời Gian:";
             // 
@@ -181,7 +178,7 @@
             // 
             this.btnBuyticket.Location = new System.Drawing.Point(211, 343);
             this.btnBuyticket.Name = "btnBuyticket";
-            this.btnBuyticket.Size = new System.Drawing.Size(75, 32);
+            this.btnBuyticket.Size = new System.Drawing.Size(89, 32);
             this.btnBuyticket.TabIndex = 5;
             this.btnBuyticket.Text = "Đặt vé";
             this.btnBuyticket.UseVisualStyleBackColor = true;
@@ -189,9 +186,9 @@
             // 
             // btnDetail
             // 
-            this.btnDetail.Location = new System.Drawing.Point(28, 343);
+            this.btnDetail.Location = new System.Drawing.Point(15, 343);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(75, 32);
+            this.btnDetail.Size = new System.Drawing.Size(103, 32);
             this.btnDetail.TabIndex = 5;
             this.btnDetail.Text = "Chi tiết";
             this.btnDetail.UseVisualStyleBackColor = true;
@@ -203,7 +200,7 @@
             this.cboFilmName.Location = new System.Drawing.Point(11, 58);
             this.cboFilmName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboFilmName.Name = "cboFilmName";
-            this.cboFilmName.Size = new System.Drawing.Size(289, 28);
+            this.cboFilmName.Size = new System.Drawing.Size(289, 26);
             this.cboFilmName.TabIndex = 4;
             this.cboFilmName.SelectedIndexChanged += new System.EventHandler(this.cboFilmName_SelectedIndexChanged);
             // 
@@ -213,29 +210,18 @@
             this.label6.Location = new System.Drawing.Point(7, 35);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 4;
             this.label6.Text = "Phim:";
             // 
-            // panel4
+            // panel3
             // 
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(319, 72);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(708, 506);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lvLichChieu);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(708, 506);
-            this.panel5.TabIndex = 15;
+            this.panel3.Controls.Add(this.lvLichChieu);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(319, 72);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(724, 545);
+            this.panel3.TabIndex = 2;
             // 
             // lvLichChieu
             // 
@@ -245,15 +231,14 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader2});
+            this.lvLichChieu.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvLichChieu.FullRowSelect = true;
             this.lvLichChieu.HideSelection = false;
-            this.lvLichChieu.LargeImageList = this.imageList1;
-            this.lvLichChieu.Location = new System.Drawing.Point(-2, 0);
+            this.lvLichChieu.Location = new System.Drawing.Point(2, 1);
             this.lvLichChieu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lvLichChieu.Name = "lvLichChieu";
             this.lvLichChieu.Size = new System.Drawing.Size(708, 506);
-            this.lvLichChieu.SmallImageList = this.imageList1;
-            this.lvLichChieu.TabIndex = 0;
+            this.lvLichChieu.TabIndex = 1;
             this.lvLichChieu.UseCompatibleStateImageBehavior = false;
             this.lvLichChieu.View = System.Windows.Forms.View.Details;
             this.lvLichChieu.Click += new System.EventHandler(this.lvLichChieu_Click);
@@ -283,69 +268,48 @@
             this.columnHeader2.Text = "Tình Trạng";
             this.columnHeader2.Width = 150;
             // 
-            // imageList1
+            // OrderShowTimes
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "green-icon.png");
-            this.imageList1.Images.SetKeyName(1, "yellow_icon.png");
-            this.imageList1.Images.SetKeyName(2, "red-icon.png");
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 30000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // frmSeller
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1027, 578);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "frmSeller";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lịch Chiếu Phim";
-            this.Load += new System.EventHandler(this.frmSeller_Load);
+            this.Controls.Add(this.panel1);
+            this.Name = "OrderShowTimes";
+            this.Size = new System.Drawing.Size(1043, 617);
+            this.Load += new System.EventHandler(this.OrderShowTimes_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboFilmName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ListView lvLichChieu;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnBuyticket;
-        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.ComboBox cbbCineplex;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboFormatFilm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpThoiGian;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbbCineplex;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBuyticket;
+        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.ComboBox cboFilmName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListView lvLichChieu;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label labelX;
+        private System.Windows.Forms.Timer timer1;
     }
 }

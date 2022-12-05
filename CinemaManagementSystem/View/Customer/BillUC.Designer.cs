@@ -28,37 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.pnProduct = new System.Windows.Forms.Panel();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
+            this.lbAfterDiscount = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lbDiscount = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lbFee = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lbTotalTicketPrice = new System.Windows.Forms.Label();
+            this.lbMovieName = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lbTicketPrice = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.lbCinema = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lbSeats = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lbCineplex = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,57 +74,61 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel6.SuspendLayout();
+            this.lbtotalProductPrice = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pnProduct.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel6
+            // pnProduct
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label30);
-            this.panel6.Controls.Add(this.label31);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.label32);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label33);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.panel10);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.panel11);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(599, 37);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(275, 518);
-            this.panel6.TabIndex = 11;
+            this.pnProduct.AutoScroll = true;
+            this.pnProduct.BackColor = System.Drawing.Color.White;
+            this.pnProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnProduct.Controls.Add(this.panel12);
+            this.pnProduct.Controls.Add(this.lbtotalProductPrice);
+            this.pnProduct.Controls.Add(this.lbTotalPrice);
+            this.pnProduct.Controls.Add(this.lbAfterDiscount);
+            this.pnProduct.Controls.Add(this.label18);
+            this.pnProduct.Controls.Add(this.lbDiscount);
+            this.pnProduct.Controls.Add(this.label19);
+            this.pnProduct.Controls.Add(this.lbFee);
+            this.pnProduct.Controls.Add(this.label20);
+            this.pnProduct.Controls.Add(this.label21);
+            this.pnProduct.Controls.Add(this.label17);
+            this.pnProduct.Controls.Add(this.panel10);
+            this.pnProduct.Controls.Add(this.label16);
+            this.pnProduct.Controls.Add(this.panel11);
+            this.pnProduct.Location = new System.Drawing.Point(707, 37);
+            this.pnProduct.Name = "pnProduct";
+            this.pnProduct.Size = new System.Drawing.Size(275, 518);
+            this.pnProduct.TabIndex = 11;
             // 
-            // label30
+            // lbTotalPrice
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label30.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(110, 367);
-            this.label30.Name = "label30";
-            this.label30.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label30.Size = new System.Drawing.Size(160, 23);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Mission impossible";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbTotalPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.Location = new System.Drawing.Point(110, 367);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbTotalPrice.Size = new System.Drawing.Size(160, 23);
+            this.lbTotalPrice.TabIndex = 13;
+            this.lbTotalPrice.Text = "Mission impossible";
+            this.lbTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label31
+            // lbAfterDiscount
             // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label31.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label31.Location = new System.Drawing.Point(139, 475);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(128, 18);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "Paimon Cinema";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbAfterDiscount.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbAfterDiscount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAfterDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbAfterDiscount.Location = new System.Drawing.Point(139, 475);
+            this.lbAfterDiscount.Name = "lbAfterDiscount";
+            this.lbAfterDiscount.Size = new System.Drawing.Size(128, 18);
+            this.lbAfterDiscount.TabIndex = 10;
+            this.lbAfterDiscount.Text = "Paimon Cinema";
+            this.lbAfterDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label18
             // 
@@ -138,17 +141,17 @@
             this.label18.TabIndex = 10;
             this.label18.Text = "Sau khuyến mãi";
             // 
-            // label32
+            // lbDiscount
             // 
-            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label32.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label32.Location = new System.Drawing.Point(107, 435);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(160, 18);
-            this.label32.TabIndex = 11;
-            this.label32.Text = "21:00 - 23:30";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDiscount.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbDiscount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbDiscount.Location = new System.Drawing.Point(107, 435);
+            this.lbDiscount.Name = "lbDiscount";
+            this.lbDiscount.Size = new System.Drawing.Size(160, 18);
+            this.lbDiscount.TabIndex = 11;
+            this.lbDiscount.Text = "21:00 - 23:30";
+            this.lbDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label19
             // 
@@ -161,18 +164,18 @@
             this.label19.TabIndex = 11;
             this.label19.Text = "Tổng tiền";
             // 
-            // label33
+            // lbFee
             // 
-            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label33.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label33.Location = new System.Drawing.Point(96, 403);
-            this.label33.Name = "label33";
-            this.label33.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label33.Size = new System.Drawing.Size(171, 18);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "25/12/2022";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbFee.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbFee.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbFee.Location = new System.Drawing.Point(110, 403);
+            this.lbFee.Name = "lbFee";
+            this.lbFee.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbFee.Size = new System.Drawing.Size(157, 18);
+            this.lbFee.TabIndex = 12;
+            this.lbFee.Text = "25/12/2022";
+            this.lbFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label20
             // 
@@ -201,7 +204,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label17.Location = new System.Drawing.Point(6, 334);
+            this.label17.Location = new System.Drawing.Point(6, 333);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(45, 18);
             this.label17.TabIndex = 9;
@@ -234,67 +237,59 @@
             this.panel11.Size = new System.Drawing.Size(264, 1);
             this.panel11.TabIndex = 7;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.Location = new System.Drawing.Point(0, 36);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(275, 1);
-            this.panel7.TabIndex = 4;
-            // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label29);
-            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.lbTotalTicketPrice);
+            this.panel4.Controls.Add(this.lbMovieName);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel8);
-            this.panel4.Controls.Add(this.label28);
+            this.panel4.Controls.Add(this.lbTicketPrice);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label27);
+            this.panel4.Controls.Add(this.lbCinema);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label26);
+            this.panel4.Controls.Add(this.lbSeats);
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label25);
+            this.panel4.Controls.Add(this.lbCineplex);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label24);
+            this.panel4.Controls.Add(this.lbTime);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label23);
+            this.panel4.Controls.Add(this.lbDate);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(325, 37);
+            this.panel4.Location = new System.Drawing.Point(433, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(275, 518);
             this.panel4.TabIndex = 10;
             // 
-            // label29
+            // lbTotalTicketPrice
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label29.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label29.Location = new System.Drawing.Point(64, 334);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(200, 18);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "45, 000 đ";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTotalTicketPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbTotalTicketPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalTicketPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbTotalTicketPrice.Location = new System.Drawing.Point(64, 334);
+            this.lbTotalTicketPrice.Name = "lbTotalTicketPrice";
+            this.lbTotalTicketPrice.Size = new System.Drawing.Size(200, 18);
+            this.lbTotalTicketPrice.TabIndex = 9;
+            this.lbTotalTicketPrice.Text = "45, 000 đ";
+            this.lbTotalTicketPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label22
+            // lbMovieName
             // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label22.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(43, 51);
-            this.label22.Name = "label22";
-            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label22.Size = new System.Drawing.Size(221, 23);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "Mission impossible";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMovieName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbMovieName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMovieName.Location = new System.Drawing.Point(43, 51);
+            this.lbMovieName.Name = "lbMovieName";
+            this.lbMovieName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbMovieName.Size = new System.Drawing.Size(221, 23);
+            this.lbMovieName.TabIndex = 8;
+            this.lbMovieName.Text = "Mission impossible";
+            this.lbMovieName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -323,17 +318,17 @@
             this.panel8.Size = new System.Drawing.Size(264, 1);
             this.panel8.TabIndex = 5;
             // 
-            // label28
+            // lbTicketPrice
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label28.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label28.Location = new System.Drawing.Point(64, 279);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(200, 18);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "45, 000 đ";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTicketPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbTicketPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTicketPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbTicketPrice.Location = new System.Drawing.Point(64, 279);
+            this.lbTicketPrice.Name = "lbTicketPrice";
+            this.lbTicketPrice.Size = new System.Drawing.Size(200, 18);
+            this.lbTicketPrice.TabIndex = 1;
+            this.lbTicketPrice.Text = "45, 000 đ";
+            this.lbTicketPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label14
             // 
@@ -346,17 +341,17 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Giá vé";
             // 
-            // label27
+            // lbCinema
             // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label27.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label27.Location = new System.Drawing.Point(45, 172);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(219, 18);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Paimon Cinema";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbCinema.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbCinema.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCinema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbCinema.Location = new System.Drawing.Point(45, 172);
+            this.lbCinema.Name = "lbCinema";
+            this.lbCinema.Size = new System.Drawing.Size(219, 18);
+            this.lbCinema.TabIndex = 1;
+            this.lbCinema.Text = "Paimon Cinema";
+            this.lbCinema.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -369,17 +364,17 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Rạp";
             // 
-            // label26
+            // lbSeats
             // 
-            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label26.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label26.Location = new System.Drawing.Point(46, 241);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(218, 18);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "F8, F7";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSeats.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbSeats.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSeats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbSeats.Location = new System.Drawing.Point(46, 241);
+            this.lbSeats.Name = "lbSeats";
+            this.lbSeats.Size = new System.Drawing.Size(218, 18);
+            this.lbSeats.TabIndex = 1;
+            this.lbSeats.Text = "F8, F7";
+            this.lbSeats.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label13
             // 
@@ -392,17 +387,17 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Ghế";
             // 
-            // label25
+            // lbCineplex
             // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label25.Location = new System.Drawing.Point(81, 207);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(183, 18);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "CGV Hùng Vương";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbCineplex.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbCineplex.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCineplex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbCineplex.Location = new System.Drawing.Point(81, 207);
+            this.lbCineplex.Name = "lbCineplex";
+            this.lbCineplex.Size = new System.Drawing.Size(183, 18);
+            this.lbCineplex.TabIndex = 1;
+            this.lbCineplex.Text = "CGV Hùng Vương";
+            this.lbCineplex.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -415,17 +410,17 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Cụm rạp";
             // 
-            // label24
+            // lbTime
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label24.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label24.Location = new System.Drawing.Point(87, 130);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(177, 18);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "21:00 - 23:30";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbTime.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbTime.Location = new System.Drawing.Point(87, 130);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(177, 18);
+            this.lbTime.TabIndex = 1;
+            this.lbTime.Text = "21:00 - 23:30";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
@@ -438,18 +433,18 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Giờ chiếu";
             // 
-            // label23
+            // lbDate
             // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label23.Location = new System.Drawing.Point(88, 93);
-            this.label23.Name = "label23";
-            this.label23.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label23.Size = new System.Drawing.Size(176, 18);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "25/12/2022";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbDate.Location = new System.Drawing.Point(88, 93);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbDate.Size = new System.Drawing.Size(176, 18);
+            this.lbDate.TabIndex = 1;
+            this.lbDate.Text = "25/12/2022";
+            this.lbDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -514,7 +509,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(106, 101);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 20);
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 6;
             // 
             // checkBox1
@@ -608,7 +603,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(26, 37);
             this.panel1.Name = "panel1";
@@ -620,24 +615,45 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(263, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "THANH TOÁN HÓA ĐƠN";
             // 
+            // lbtotalProductPrice
+            // 
+            this.lbtotalProductPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbtotalProductPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotalProductPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.lbtotalProductPrice.Location = new System.Drawing.Point(67, 334);
+            this.lbtotalProductPrice.Name = "lbtotalProductPrice";
+            this.lbtotalProductPrice.Size = new System.Drawing.Size(200, 18);
+            this.lbtotalProductPrice.TabIndex = 14;
+            this.lbtotalProductPrice.Text = "45, 000 đ";
+            this.lbtotalProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel12.Location = new System.Drawing.Point(6, 35);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(264, 1);
+            this.panel12.TabIndex = 15;
+            // 
             // BillUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.pnProduct);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "BillUC";
-            this.Size = new System.Drawing.Size(901, 593);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.Size = new System.Drawing.Size(1048, 578);
+            this.Load += new System.EventHandler(this.BillUC_Load);
+            this.pnProduct.ResumeLayout(false);
+            this.pnProduct.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -650,37 +666,36 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel pnProduct;
+        private System.Windows.Forms.Label lbTotalPrice;
+        private System.Windows.Forms.Label lbAfterDiscount;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lbDiscount;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lbFee;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lbTotalTicketPrice;
+        private System.Windows.Forms.Label lbMovieName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lbTicketPrice;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lbCinema;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lbSeats;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lbCineplex;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -697,5 +712,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbtotalProductPrice;
+        private System.Windows.Forms.Panel panel12;
     }
 }

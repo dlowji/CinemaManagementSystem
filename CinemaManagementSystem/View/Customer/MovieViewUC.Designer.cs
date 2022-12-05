@@ -88,12 +88,12 @@
             this.flpMovies.AllowDrop = true;
             this.flpMovies.AutoScroll = true;
             this.flpMovies.BackColor = System.Drawing.Color.White;
-            this.flpMovies.Location = new System.Drawing.Point(36, 109);
+            this.flpMovies.Location = new System.Drawing.Point(18, 108);
             this.flpMovies.Name = "flpMovies";
-            this.flpMovies.Size = new System.Drawing.Size(673, 377);
+            this.flpMovies.Size = new System.Drawing.Size(1013, 445);
             this.flpMovies.TabIndex = 10;
             // 
-            // Movie
+            // MovieViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,8 +103,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
-            this.Name = "Movie";
-            this.Size = new System.Drawing.Size(757, 503);
+            this.Name = "MovieViewUC";
+            this.Size = new System.Drawing.Size(1048, 578);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

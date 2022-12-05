@@ -15,14 +15,17 @@ namespace CinemaManagementSystem.View.Customer
 {
     public partial class MovieViewUC : UserControl
     {
+
         List<Phim> movies = new List<Phim>();
         private string staffId;
         private string workingDirectory;
         private string projectDirectory;
+        private Panel test;
 
-        public MovieViewUC(string staffId)
+        public MovieViewUC(Panel test, string staffId)
         {
             InitializeComponent();
+            this.test = test;
             workingDirectory = Environment.CurrentDirectory;
             projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
             LoadMovies();
@@ -85,8 +88,10 @@ namespace CinemaManagementSystem.View.Customer
         {
             FlowLayoutPanel flp = sender as FlowLayoutPanel;
             Phim movie = flp.Tag as Phim;
-            frmSeller frm = new frmSeller(staffId, movie);
-            frm.Show();
+            OrderShowTimes showTimeUC = new OrderShowTimes("", movie, test);
+            test.Controls.Clear();
+            showTimeUC.Dock = DockStyle.Fill;
+            test.Controls.Add(showTimeUC);
 
         }
 
