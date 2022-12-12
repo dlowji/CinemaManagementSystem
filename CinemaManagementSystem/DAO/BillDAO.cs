@@ -56,7 +56,7 @@ namespace GUI.DAO
             }
         }
 
-        public static HoaDon InsertTicketBill(string customerId, string staffId, decimal discount, decimal totalPrice)
+        public static HoaDon InsertTicketBill(string customerId, string staffId, decimal discount, decimal totalPrice, bool isOnline)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -83,6 +83,7 @@ namespace GUI.DAO
                     idNhanVien = staffId,
                     GiamGia = discount,
                     TongTien = totalPrice,
+                    TrucTuyen = isOnline,
                     CreatedAt = DateTime.Now,
                 };
 

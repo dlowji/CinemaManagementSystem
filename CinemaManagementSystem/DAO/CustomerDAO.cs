@@ -1,7 +1,9 @@
 ﻿using CinemaManagementSystem;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -9,11 +11,23 @@ namespace GUI.DAO
 {
     public class CustomerDAO
     {
+
+        public static List<CapDoThanhVien> GetLevels()
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from level in db.CapDoThanhViens
+                            select level;
+
+                return query.ToList();
+            }
+        }
         public static DataTable GetCustomerMember(string customerID, string name)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã khách hàng", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Ngày sinh", typeof(DateTime));
             dt.Columns.Add("Địa chỉ", typeof(string));
             dt.Columns.Add("SĐT", typeof(string));
@@ -28,7 +42,12 @@ namespace GUI.DAO
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.id, item.HoTen, item.NgaySinh, item.DiaChi, item.SDT, item.CMND, item.DiemTichLuy);
+                    if (item.id.Equals("KH00"))
+                    {
+                        continue;
+                    }
+
+                    dt.Rows.Add(item.id, item.HoTen, item.Email, item.NgaySinh, item.DiaChi, item.SDT, item.CMND, item.DiemTichLuy);
                 }
             }
 
@@ -40,6 +59,7 @@ namespace GUI.DAO
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã khách hàng", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Ngày sinh", typeof(DateTime));
             dt.Columns.Add("Địa chỉ", typeof(string));
             dt.Columns.Add("SĐT", typeof(string));
@@ -53,21 +73,45 @@ namespace GUI.DAO
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.id, item.HoTen, item.NgaySinh, item.DiaChi, item.SDT, item.CMND, item.DiemTichLuy);
+                    if (item.id.Equals("KH00"))
+                    {
+                        continue;
+                    }
+                    dt.Rows.Add(item.id, item.HoTen, item.Email, item.NgaySinh, item.DiaChi, item.SDT, item.CMND, item.DiemTichLuy);
                 }
             }
 
             return dt;
         }
 
-        public static bool InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        public static KhachHang InsertCustomer(string id, string hoTen, string email, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
+                StringBuilder customId = new StringBuilder("KH");
+
+                if (id is null)
+                {
+                    var query = from c in db.KhachHangs
+                                select c;
+
+                    int count = query.Count();
+
+                    if (count + 1 < 10)
+                    {
+                        customId.Append("0").Append((count + 1).ToString());
+                    }
+                    else
+                    {
+                        customId.Append((count + 1).ToString());
+                    }
+                }
+
                 KhachHang cus = new KhachHang
                 {
-                    id = id,
+                    id = id is null ? customId.ToString() : id,
                     HoTen = hoTen,
+                    Email = email,
                     NgaySinh = ngaySinh,
                     DiaChi = diaChi,
                     SDT = sdt,
@@ -81,17 +125,16 @@ namespace GUI.DAO
                 try
                 {
                     db.SubmitChanges();
-                    return true;
+                    return cus;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.Message);
-                    return false;
+                    return null;
                 }
             }
         }
 
-        public static bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
+        public static bool UpdateCustomer(string id, string hoTen, string email, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -100,6 +143,7 @@ namespace GUI.DAO
                           select k).First();
 
                 kh.HoTen = hoTen;
+                kh.Email = email;
                 kh.NgaySinh = ngaySinh;
                 kh.DiaChi = diaChi;
                 kh.SDT = sdt;
@@ -168,11 +212,30 @@ namespace GUI.DAO
             }
         }
 
+        public static List<KhachHang> GetCustomers()
+        {
+            List<KhachHang> customerList = new List<KhachHang>();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var customers = from c in db.KhachHangs
+                                select c;
+
+                foreach (var item in customers)
+                {
+                    customerList.Add(item);
+                }
+            }
+
+            return customerList;
+        }
+
         public static DataTable SearchCustomerByName(string name)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã khách hàng", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
+            //dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Ngày sinh", typeof(DateTime));
             dt.Columns.Add("Địa chỉ", typeof(string));
             dt.Columns.Add("SĐT", typeof(string));
