@@ -63,5 +63,25 @@ namespace CinemaManagementSystem.Properties {
                 return ((string)(this["QUANLYRAPPHIMConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=CINEMAB;Integrated Security=True")]
+        public string CINEMABConnectionString {
+            get {
+                return ((string)(this["CINEMABConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=CINEMAF;Integrated Security=True")]
+        public string CINEMAFConnectionString {
+            get {
+                return ((string)(this["CINEMAFConnectionString"]));
+            }
+        }
     }
 }

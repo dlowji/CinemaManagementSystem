@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
-    </Compile>
     <Compile Include="Chart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,13 +59,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cinema.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\VoucherController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RevenueController.cs" />
@@ -80,12 +74,6 @@
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
-    <Compile Include="FoodAndDrink.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FoodAndDrink.Designer.cs">
-      <DependentUpon>FoodAndDrink.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\Support.cs" />
     <Compile Include="NewVoucherRelease.cs">
       <SubType>Form</SubType>
@@ -93,64 +81,70 @@
     <Compile Include="NewVoucherRelease.Designer.cs">
       <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhapMatKhauMoi.cs">
+    <Compile Include="Views\Customer\Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhapMatKhauMoi.designer.cs">
+    <Compile Include="Views\Customer\Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\NhapMatKhauMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login\NhapMatKhauMoi.designer.cs">
       <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuenMatKhau.cs">
+    <Compile Include="Views\Login\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuenMatKhau.designer.cs">
+    <Compile Include="Views\Login\QuenMatKhau.designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\CinemaUC.cs">
+    <Compile Include="Views\Admin\Data\CinemaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\CinemaUC.designer.cs">
+    <Compile Include="Views\Admin\Data\CinemaUC.designer.cs">
       <DependentUpon>CinemaUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\DataForm.cs">
+    <Compile Include="Views\Admin\Data\DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\DataForm.Designer.cs">
+    <Compile Include="Views\Admin\Data\DataForm.Designer.cs">
       <DependentUpon>DataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\FormatMovieUC.cs">
+    <Compile Include="Views\Admin\Data\FormatMovieUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\FormatMovieUC.designer.cs">
+    <Compile Include="Views\Admin\Data\FormatMovieUC.designer.cs">
       <DependentUpon>FormatMovieUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\GenreUC.cs">
+    <Compile Include="Views\Admin\Data\GenreUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\GenreUC.designer.cs">
+    <Compile Include="Views\Admin\Data\GenreUC.designer.cs">
       <DependentUpon>GenreUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\MovieUC.cs">
+    <Compile Include="Views\Admin\Data\MovieUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\MovieUC.designer.cs">
+    <Compile Include="Views\Admin\Data\MovieUC.designer.cs">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\CinemaTypeUC.cs">
+    <Compile Include="Views\Admin\Data\CinemaTypeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\CinemaTypeUC.designer.cs">
+    <Compile Include="Views\Admin\Data\CinemaTypeUC.designer.cs">
       <DependentUpon>CinemaTypeUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\ShowTimesUC.cs">
+    <Compile Include="Views\Admin\Data\ShowTimesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\ShowTimesUC.designer.cs">
+    <Compile Include="Views\Admin\Data\ShowTimesUC.designer.cs">
       <DependentUpon>ShowTimesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Data\TicketsUC.cs">
+    <Compile Include="Views\Admin\Data\TicketsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Admin\Data\TicketsUC.designer.cs">
+    <Compile Include="Views\Admin\Data\TicketsUC.designer.cs">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\CineplexDAO.cs" />
@@ -169,195 +163,246 @@
     <Compile Include="DAO\ShowTimesDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
-    <Compile Include="View\Customer\FoodDrinkUC.cs">
+    <Compile Include="Views\Staff\BillUCForStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Customer\FoodDrinkUC.Designer.cs">
+    <Compile Include="Views\Staff\BillUCForStaff.Designer.cs">
+      <DependentUpon>BillUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\FoodDrinkUCForStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\FoodDrinkUCForStaff.Designer.cs">
+      <DependentUpon>FoodDrinkUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\FoodDrinkUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\FoodDrinkUC.Designer.cs">
       <DependentUpon>FoodDrinkUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Customer\GiaoDienChonPhim.cs">
+    <Compile Include="Views\Staff\MovieViewUCForStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\MovieViewUCForStaff.Designer.cs">
+      <DependentUpon>MovieViewUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\OrderSeatUCForStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\OrderSeatUCForStaff.Designer.cs">
+      <DependentUpon>OrderSeatUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\OrderShowTimesUCForStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\OrderShowTimesUCForStaff.Designer.cs">
+      <DependentUpon>OrderShowTimesUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\SelectingMovieUCForStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Customer\GiaoDienChonPhim.Designer.cs">
+    <Compile Include="Views\Staff\SelectingMovieUCForStaff.Designer.cs">
+      <DependentUpon>SelectingMovieUCForStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\GiaoDienChonPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\GiaoDienChonPhim.Designer.cs">
       <DependentUpon>GiaoDienChonPhim.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Customer\MovieViewUC.cs">
+    <Compile Include="Views\Customer\MovieViewUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Customer\MovieViewUC.Designer.cs">
+    <Compile Include="Views\Customer\MovieViewUC.Designer.cs">
       <DependentUpon>MovieViewUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Customer\BillUC.cs">
+    <Compile Include="Views\Customer\BillUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Customer\BillUC.Designer.cs">
+    <Compile Include="Views\Customer\BillUC.Designer.cs">
       <DependentUpon>BillUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Customer\OrderSeat.cs">
+    <Compile Include="Views\Customer\OrderSeat.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Customer\OrderSeat.Designer.cs">
+    <Compile Include="Views\Customer\OrderSeat.Designer.cs">
       <DependentUpon>OrderSeat.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Customer\OrderShowTimes.cs">
+    <Compile Include="Views\Customer\OrderShowTimes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Customer\OrderShowTimes.Designer.cs">
+    <Compile Include="Views\Customer\OrderShowTimes.Designer.cs">
       <DependentUpon>OrderShowTimes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Login\DangKy.cs">
+    <Compile Include="Views\Login\DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Login\DangKy.Designer.cs">
+    <Compile Include="Views\Login\DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Others\frmCustomer.cs">
+    <Compile Include="Views\Others\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Others\frmCustomer.designer.cs">
+    <Compile Include="Views\Others\frmCustomer.designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Others\PaymentProcess.cs">
+    <Compile Include="Views\Others\PaymentProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Others\PaymentProcess.designer.cs">
+    <Compile Include="Views\Others\PaymentProcess.designer.cs">
       <DependentUpon>PaymentProcess.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\frmDashBoard.cs">
+    <Compile Include="Views\Staff\frmDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\frmDashBoard.designer.cs">
+    <Compile Include="Views\Staff\frmDashBoard.designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Import\frmImport.cs">
+    <Compile Include="Views\Admin\Import\frmImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Admin\Import\frmImport.Designer.cs">
+    <Compile Include="Views\Admin\Import\frmImport.Designer.cs">
       <DependentUpon>frmImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\frmSeller.cs">
+    <Compile Include="Views\Staff\frmSeller.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\frmSeller.designer.cs">
+    <Compile Include="Views\Staff\frmSeller.designer.cs">
       <DependentUpon>frmSeller.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\frmTheatre.cs">
+    <Compile Include="Views\Staff\frmTheatre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\frmTheatre.designer.cs">
+    <Compile Include="Views\Staff\frmTheatre.designer.cs">
       <DependentUpon>frmTheatre.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Helper.cs" />
-    <Compile Include="View\Login\DangNhap.cs">
+    <Compile Include="Views\Login\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Login\DangNhap.Designer.cs">
+    <Compile Include="Views\Login\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Others\MovieDetail.cs">
+    <Compile Include="Views\Others\MovieDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Others\MovieDetail.Designer.cs">
+    <Compile Include="Views\Others\MovieDetail.Designer.cs">
       <DependentUpon>MovieDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="App_Start\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\QuanLy.cs">
+    <Compile Include="Views\Admin\QuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Admin\QuanLy.Designer.cs">
+    <Compile Include="Views\Admin\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FoodAndDrink.resx">
-      <DependentUpon>FoodAndDrink.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewVoucherRelease.resx">
       <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhapMatKhauMoi.resx">
+    <EmbeddedResource Include="Views\Customer\Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\NhapMatKhauMoi.resx">
       <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuenMatKhau.resx">
+    <EmbeddedResource Include="Views\Login\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\CinemaUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\CinemaUC.resx">
       <DependentUpon>CinemaUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\DataForm.resx">
+    <EmbeddedResource Include="Views\Admin\Data\DataForm.resx">
       <DependentUpon>DataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\FormatMovieUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\FormatMovieUC.resx">
       <DependentUpon>FormatMovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\GenreUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\GenreUC.resx">
       <DependentUpon>GenreUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\MovieUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\MovieUC.resx">
       <DependentUpon>MovieUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\CinemaTypeUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\CinemaTypeUC.resx">
       <DependentUpon>CinemaTypeUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\ShowTimesUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\ShowTimesUC.resx">
       <DependentUpon>ShowTimesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Data\TicketsUC.resx">
+    <EmbeddedResource Include="Views\Admin\Data\TicketsUC.resx">
       <DependentUpon>TicketsUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\BillUC.resx">
+    <EmbeddedResource Include="Views\Staff\BillUCForStaff.resx">
+      <DependentUpon>BillUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\BillUC.resx">
       <DependentUpon>BillUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\FoodDrinkUC.resx">
+    <EmbeddedResource Include="Views\Staff\FoodDrinkUCForStaff.resx">
+      <DependentUpon>FoodDrinkUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\FoodDrinkUC.resx">
       <DependentUpon>FoodDrinkUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\GiaoDienChonPhim.resx">
+    <EmbeddedResource Include="Views\Staff\MovieViewUCForStaff.resx">
+      <DependentUpon>MovieViewUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Staff\OrderSeatUCForStaff.resx">
+      <DependentUpon>OrderSeatUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Staff\OrderShowTimesUCForStaff.resx">
+      <DependentUpon>OrderShowTimesUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Staff\SelectingMovieUCForStaff.resx">
+      <DependentUpon>SelectingMovieUCForStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\GiaoDienChonPhim.resx">
       <DependentUpon>GiaoDienChonPhim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\MovieViewUC.resx">
+    <EmbeddedResource Include="Views\Customer\MovieViewUC.resx">
       <DependentUpon>MovieViewUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\OrderSeat.resx">
+    <EmbeddedResource Include="Views\Customer\OrderSeat.resx">
       <DependentUpon>OrderSeat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Customer\OrderShowTimes.resx">
+    <EmbeddedResource Include="Views\Customer\OrderShowTimes.resx">
       <DependentUpon>OrderShowTimes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Login\DangKy.resx">
+    <EmbeddedResource Include="Views\Login\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Others\frmCustomer.resx">
+    <EmbeddedResource Include="Views\Others\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Others\PaymentProcess.resx">
+    <EmbeddedResource Include="Views\Others\PaymentProcess.resx">
       <DependentUpon>PaymentProcess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\frmDashBoard.resx">
+    <EmbeddedResource Include="Views\Staff\frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\Import\frmImport.resx">
+    <EmbeddedResource Include="Views\Admin\Import\frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\frmSeller.resx">
+    <EmbeddedResource Include="Views\Staff\frmSeller.resx">
       <DependentUpon>frmSeller.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\frmTheatre.resx">
+    <EmbeddedResource Include="Views\Staff\frmTheatre.resx">
       <DependentUpon>frmTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Login\DangNhap.resx">
+    <EmbeddedResource Include="Views\Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Others\MovieDetail.resx">
+    <EmbeddedResource Include="Views\Others\MovieDetail.resx">
       <DependentUpon>MovieDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -365,7 +410,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\QuanLy.resx">
+    <EmbeddedResource Include="Views\Admin\QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Cinema.dbml">
@@ -621,6 +666,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mastercard-logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\momo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zalopay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

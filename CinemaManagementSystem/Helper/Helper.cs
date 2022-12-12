@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace CinemaManagementSystem.Helper
 {
@@ -42,7 +43,7 @@ namespace CinemaManagementSystem.Helper
             return result;
         }
 
-        public static string getTicketTypeRepresentation(int ticketType)
+        public static string GetTicketTypeRepresentation(int ticketType)
         {
             StringBuilder representString = new StringBuilder();
             switch (ticketType)
@@ -79,13 +80,23 @@ namespace CinemaManagementSystem.Helper
             return list;
         }
 
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"(84|0[3|5|7|8|9])+([0-9]{8})\b").Success;
+        }
+
+        public static bool CompareStrings(string first, string second)
+        {
+            return first.Equals(second);
+        }
+
 
         public static List<Control> GetAllControls(Control container)
         {
             return GetAllControls(container, new List<Control>());
         }
 
-        public static void configStyle(Control container)
+        public static void ConfigStyle(Control container)
         {
             List<Control> allControls = GetAllControls(container);
             allControls.ForEach(k => k.Font = new Font("Verdana", 11));
@@ -122,7 +133,7 @@ namespace CinemaManagementSystem.Helper
 
         }
 
-        public static string generateRandomCode(int length)
+        public static string GenerateRandomCode(int length)
         {
             string code = "";
             Random rd = new Random();
@@ -135,7 +146,7 @@ namespace CinemaManagementSystem.Helper
             return code;
         }
 
-        public static bool sendMail(string email, string code)
+        public static bool SendMail(string email, string code)
         {
             var from = new MailAddress("paimoncinema@gmail.com");
             var to = new MailAddress(email);
@@ -173,7 +184,7 @@ namespace CinemaManagementSystem.Helper
             }
         }
 
-        public static bool sendMailForVouchers(string email, List<string> vouchers)
+        public static bool SendMailForVouchers(string email, List<string> vouchers)
         {
             var from = new MailAddress("paimoncinema@gmail.com");
             var to = new MailAddress(email);
@@ -277,6 +288,52 @@ namespace CinemaManagementSystem.Helper
             }
             return String.Format(CultureInfo.InvariantCulture,
                                 "{0:#,#} ₫", money);
+        }
+
+        public static bool ValidateValidFields(TextBox[] requiredControls)
+        {
+            //validate
+            foreach (var control in requiredControls.Where(c => String.IsNullOrWhiteSpace(c.Text)))
+            {
+                return false;
+            }
+
+            foreach (var control in requiredControls.Where(c => c.Text.Contains(" ")))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static int GetQuarter(DateTime date)
+        {
+            if (date.Month >= 4 && date.Month <= 6)
+                return 1;
+            else if (date.Month >= 7 && date.Month <= 9)
+                return 2;
+            else if (date.Month >= 10 && date.Month <= 12)
+                return 3;
+            else
+                return 4;
         }
     }
 }

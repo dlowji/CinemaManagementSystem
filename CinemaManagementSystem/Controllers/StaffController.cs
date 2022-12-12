@@ -40,5 +40,10 @@ namespace CinemaManagementSystem.Controllers
             return searchStaffList;
         }
 
+        public static NhanVien GetStaffById(string staffId)
+        {
+            return StaffDAO.GetStaffByID(staffId);
+        }
+
     }
 }

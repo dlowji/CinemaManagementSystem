@@ -123,6 +123,16 @@ namespace CinemaManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap credit_card {
+            get {
+                object obj = ResourceManager.GetObject("credit-card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
@@ -233,6 +243,26 @@ namespace CinemaManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mastercard_logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("Mastercard-logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap momo {
+            get {
+                object obj = ResourceManager.GetObject("momo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3__V1_ {
             get {
                 object obj = ResourceManager.GetObject("MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3." +
@@ -314,9 +344,29 @@ namespace CinemaManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_red {
+            get {
+                object obj = ResourceManager.GetObject("plus_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus1 {
             get {
                 object obj = ResourceManager.GetObject("plus1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printticket {
+            get {
+                object obj = ResourceManager.GetObject("printticket", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -417,6 +467,16 @@ namespace CinemaManagementSystem.Properties {
         internal static System.Drawing.Bitmap suco {
             get {
                 object obj = ResourceManager.GetObject("suco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telephone {
+            get {
+                object obj = ResourceManager.GetObject("telephone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -574,6 +634,16 @@ namespace CinemaManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap visa {
+            get {
+                object obj = ResourceManager.GetObject("visa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap voucher {
             get {
                 object obj = ResourceManager.GetObject("voucher", resourceCulture);
@@ -597,6 +667,16 @@ namespace CinemaManagementSystem.Properties {
         internal static System.Drawing.Bitmap voucher2 {
             get {
                 object obj = ResourceManager.GetObject("voucher2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zalopay {
+            get {
+                object obj = ResourceManager.GetObject("zalopay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

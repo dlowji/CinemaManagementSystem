@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;//thư viện để mã hóa mật khẩu
@@ -12,49 +13,26 @@ namespace GUI.DAO
     {
         private AccountDAO() { }
 
-        private static string PasswordEncryption(string password)
+        public static List<TaiKhoan> GetAccounts()
         {
-            //tính năng bảo mật cho việc đăng nhập
-            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);//chuyển qua mảng kiểu byte từ một chuỗi
-            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
-            //tạo ra bảng has(bảng băm) chứa các mảng byte
-            //từ mật khẩu được mã hóa thành mảng băm
-
-            string hasPass = "";
-
-            foreach (byte item in hasData)
-            {
-                hasPass += item;
-            }
-
-            //tính năng mã hóa nâng cao bằng việc đảo ngược mật khẩu
-            char[] arr = hasPass.ToCharArray();
-            Array.Reverse(arr);
-            return new string(arr);
-        }
-
-        public static int Login(string userName, string passWord)
-        {
-            string pass = PasswordEncryption(passWord);
+            List<TaiKhoan> accounts = new List<TaiKhoan>();
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var result = db.USP_Login(userName, pass).ToList();
+                var query = from acc in db.TaiKhoans
+                            select acc;
 
-                if (result == null)
-                    return -1;
-                else if (result.Count > 0)
-                    return 1;
-                else
-                    return 0;
+                foreach (var item in query)
+                {
+                    accounts.Add(item);
+                }
             }
 
+            return accounts;
         }
 
-        public static bool UpdatePasswordForAccount(string userName, string newPassWord)
+        public static bool UpdatePasswordForAccount(string userName, string newPassword)
         {
-            string newPass = PasswordEncryption(newPassWord);
-
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var accounts = from acc in db.TaiKhoans
@@ -70,7 +48,7 @@ namespace GUI.DAO
                 else if (counter == 1)
                 {
                     TaiKhoan tk = accounts.First();
-                    tk.Pass = newPass;
+                    tk.Pass = newPassword;
                 }
 
                 try
@@ -131,17 +109,17 @@ namespace GUI.DAO
             }
 		}
 
-		public static bool InsertAccount(string username, string password, int accountType, string staffID)
+		public static bool InsertAccount(string username, string password, int accountType, string staffID, string cusId)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                string hashPass = PasswordEncryption(password);
                 TaiKhoan acc = new TaiKhoan
                 {
                     UserName = username,
-                    Pass = hashPass,
+                    Pass = password,
                     LoaiTK = accountType,
-                    idNV = staffID
+                    idNV = staffID,
+                    idKH = cusId,
                 };
 
                 db.TaiKhoans.InsertOnSubmit(acc);

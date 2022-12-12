@@ -100,6 +100,18 @@ namespace GUI.DAO
             }
         }
 
+        public static NhaCungCap GetSupplierById(string supplierId)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var supplier = from s in db.NhaCungCaps
+                              where s.id.Equals(supplierId)
+                              select s;
+
+                return supplier.First();
+            }
+        }
+
         public static bool InsertProduct(string id, string tenHienThi, int loaiSanPham, decimal giaBan)
         {
             using (CinemaDataContext db = new CinemaDataContext())

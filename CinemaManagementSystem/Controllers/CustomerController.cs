@@ -11,6 +11,11 @@ namespace CinemaManagementSystem.Controllers
 {
     public class CustomerController
     {
+
+        public static bool UpdateMemberPoint(string cusId, int point)
+        {
+            return CustomerDAO.UpdatePointCustomer(cusId, point);
+        }
         public static DataTable GetCustomerList()
         {
             DataTable customers = CustomerDAO.GetListCustomer();
@@ -18,21 +23,74 @@ namespace CinemaManagementSystem.Controllers
             return customers;
         }
 
-        public static bool InsertMember(string username, string password, string id, string name, DateTime birthday, string address, string phone, int cmnd)
+        public static KhachHang GetCustomerByPhone(string phone)
         {
-            AccountDAO.InsertAccount(username, password, 3, "NV01");
-            CustomerDAO.InsertCustomer(id, name, birthday, address, phone, cmnd);
-            return true;
+            List<KhachHang> customerList = CustomerDAO.GetCustomers();
+
+            foreach (var item in customerList)
+            {
+                if (item.SDT.Equals(phone))
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
-        public static bool InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        public static KhachHang GetCustomerByCeritificate(int certificate)
         {
-            return CustomerDAO.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd);
+            List<KhachHang> customerList = CustomerDAO.GetCustomers();
+
+            foreach (var item in customerList)
+            {
+                if (item.CMND == certificate)
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
-        public static bool UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
+        public static KhachHang GetCustomerById(string cusId)
         {
-            return CustomerDAO.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point);
+            List<KhachHang> customerList = CustomerDAO.GetCustomers();
+
+            foreach (var item in customerList)
+            {
+                if (item.id.Equals(cusId))
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        public static CapDoThanhVien GetMemberLevelById(string levelId)
+        {
+            List<CapDoThanhVien> levels = CustomerDAO.GetLevels();
+
+            foreach (var item in levels)
+            {
+                if (item.id.Equals(levelId))
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        public static bool InsertCustomer(string id, string hoTen, string email, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
+        {
+            return CustomerDAO.InsertCustomer(id, hoTen, email, ngaySinh, diaChi, sdt, cmnd) != null;
+        }
+
+        public static bool UpdateCustomer(string id, string hoTen, string email, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
+        {
+            return CustomerDAO.UpdateCustomer(id, hoTen, email, ngaySinh, diaChi, sdt, cmnd, point);
         }
 
         public static bool DeleteCustomer(string id)

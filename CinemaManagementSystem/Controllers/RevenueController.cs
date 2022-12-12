@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace CinemaManagementSystem.Controllers
@@ -16,7 +17,7 @@ namespace CinemaManagementSystem.Controllers
     {
         public static void LoadMovieIntoComboBox(ComboBox cbb)
         {
-            cbb.DataSource = MovieController.findAll();
+            cbb.DataSource = MovieController.GetMovies();
             cbb.DisplayMember = "TenPhim";
             cbb.ValueMember = "ID";
         }
@@ -38,7 +39,53 @@ namespace CinemaManagementSystem.Controllers
             return sum;
         }
 
-        public static decimal GetTotalTicketPriceByMonth(int month)
+        public static decimal GetTotalTicketPriceByDurationOfTime(int fromHour, int toHour, DateTime date)
+        {
+            decimal totalPrice = 0;
+
+            TimeSpan ts = new TimeSpan(fromHour, 0, 0);
+            TimeSpan timeSpan = new TimeSpan(toHour - 1, 59, 59);
+
+            DateTime start = date.Date + ts;
+            DateTime end = date.Date + timeSpan;
+
+            List<HoaDon> receipts = ReceiptDAO.GetTicketReceipts();
+
+            foreach (HoaDon receipt in receipts)
+            {
+                if (DateTime.Compare(receipt.CreatedAt, start) >= 0 && DateTime.Compare(receipt.CreatedAt, end) <= 0)
+                {
+                    totalPrice += (receipt.TongTien);
+                }
+            }
+
+            return totalPrice;
+        }
+
+        public static decimal GetTotalImportPriceByDurationOfTime(int fromHour, int toHour, DateTime date)
+        {
+            decimal totalPrice = 0;
+
+            TimeSpan ts = new TimeSpan(fromHour, 0, 0);
+            TimeSpan timeSpan = new TimeSpan(toHour - 1, 59, 59);
+
+            DateTime start = date.Date + ts;
+            DateTime end = date.Date + timeSpan;
+
+            List<HoaDonNhapHang> receipts = ReceiptDAO.GetImportReceipts();
+
+            foreach (HoaDonNhapHang receipt in receipts)
+            {
+                if (DateTime.Compare(receipt.CreatedAt, start) >= 0 && DateTime.Compare(receipt.CreatedAt, end) <= 0)
+                {
+                    totalPrice += (decimal)receipt.TongTien;
+                }
+            }
+
+            return totalPrice;
+        }
+
+        public static decimal GetTotalTicketPriceByQuarter(int quarter, int year)
         {
             decimal totalPrice = 0;
 
@@ -46,7 +93,7 @@ namespace CinemaManagementSystem.Controllers
 
             foreach (HoaDon receipt in receipts)
             {
-                if (receipt.CreatedAt.Month == month)
+                if(Helper.Helper.GetQuarter(receipt.CreatedAt) == quarter && receipt.CreatedAt.Year == year)
                 {
                     totalPrice += receipt.TongTien;
                 }
@@ -55,26 +102,55 @@ namespace CinemaManagementSystem.Controllers
             return totalPrice;
         }
 
-        public static DataTable Test()
+        public static decimal GetTotalImportPriceByQuarter(int quarter, int year)
         {
-            int month = 12;
+            decimal totalPrice = 0;
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Month", typeof(string));
-            dt.Columns.Add("Total Price", typeof(decimal));
+            List<HoaDonNhapHang> receipts = ReceiptDAO.GetImportReceipts();
 
-            for (int i = 1; i <= month; i++)
+            foreach (HoaDonNhapHang receipt in receipts)
             {
-                string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(i);
-                //decimal totalPrice = GetTotalTicketPriceByMonth(i);
-
-                //string monthName = "Month" + i.ToString();
-                decimal totalPrice = i * 2;
-
-                dt.Rows.Add(monthName, totalPrice);
+                if (Helper.Helper.GetQuarter(receipt.CreatedAt) == quarter && receipt.CreatedAt.Year == year)
+                {
+                    totalPrice += (decimal)receipt.TongTien;
+                }
             }
 
-            return dt;
+            return totalPrice;
+        }
+
+        public static decimal GetTotalTicketPriceByMonth(int month, int year)
+        {
+            decimal totalPrice = 0;
+
+            List<HoaDon> receipts = ReceiptDAO.GetTicketReceipts();
+
+            foreach (HoaDon receipt in receipts)
+            {
+                if (receipt.CreatedAt.Month == month && receipt.CreatedAt.Year == year)
+                {
+                    totalPrice += receipt.TongTien;
+                }
+            }
+
+            return totalPrice;
+        }
+
+        public static decimal GetTotalImportPriceByMonth(int month, int year)
+        {
+            decimal totalPrice = 0;
+
+            List<HoaDonNhapHang> receipts = ReceiptDAO.GetImportReceipts();
+
+            foreach (HoaDonNhapHang receipt in receipts)
+            {
+                if (receipt.CreatedAt.Month == month && receipt.CreatedAt.Year == year)
+                {
+                    totalPrice += (decimal)receipt.TongTien;
+                }
+            }
+
+            return totalPrice;
         }
     }
 }

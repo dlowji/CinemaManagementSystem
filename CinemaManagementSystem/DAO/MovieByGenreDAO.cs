@@ -31,6 +31,24 @@ namespace GUI.DAO
             return genreList;
         }
 
+        public static List<PhanLoaiPhim> GetMovieGenres()
+        {
+            List<PhanLoaiPhim> movie_genres = new List<PhanLoaiPhim>();
+
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from plp in db.PhanLoaiPhims
+                            select plp;
+
+                foreach (var item in query)
+                {
+                    movie_genres.Add(item);
+                }
+            }
+
+            return movie_genres;
+        }
+
         public static void InsertMovie_Genre(string movieID, List<TheLoai> genreList)
         {
             using (CinemaDataContext db = new CinemaDataContext())

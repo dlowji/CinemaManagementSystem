@@ -10,9 +10,105 @@ namespace CinemaManagementSystem.Controllers
 {
     public class MovieController
     {
-        public static List<Phim> findAll()
+        public static List<Phim> GetMovies()
         {
             return MovieDAO.GetListMovie();
+        }
+
+        public static List<Phim> FindAll(DateTime dateTime)
+        {
+            List<Phim> movies = new List<Phim>();
+
+            foreach (var item in MovieDAO.GetListMovie())
+            {
+                if (DateTime.Compare(item.NgayKhoiChieu, dateTime) <= 0 && DateTime.Compare(dateTime, item.NgayKetThuc) <= 0)
+                {
+                    movies.Add(item);
+                }
+            }
+
+            return movies;
+        }
+
+        public static Phim FindById(string movieId)
+        {
+            return MovieDAO.GetMovieByID(movieId);
+        }
+
+        public static List<Phim> FindByGenre(string genreId, DateTime dateTime)
+        {
+
+            if (genreId.Equals("TL00"))
+            {
+                return FindAll(dateTime);
+            }
+
+            TheLoai genre = new TheLoai();
+            List<Phim> movies = new List<Phim>();
+            List<PhanLoaiPhim> movies_genres = MovieByGenreDAO.GetMovieGenres();
+
+            foreach (var item in GenreDAO.GetListGenre())
+            {
+                if (item.id.Equals(genreId))
+                {
+                    genre = item;
+                    break;
+                }
+            }
+
+            foreach (var item in movies_genres)
+            {
+                if (item.idTheLoai.Equals(genre.id))
+                {
+                    Phim movie = FindById(item.idPhim);
+
+                    if (DateTime.Compare(movie.NgayKhoiChieu, dateTime) <= 0 && DateTime.Compare(dateTime, movie.NgayKetThuc) <= 0)
+                    {
+                        movies.Add(movie);
+                    }
+                }
+            }
+
+            return movies;
+        }
+
+        public static List<Phim> FindByGenre(string movieName, string genreId, DateTime dateTime)
+        {
+            if (genreId.Equals("TL00"))
+            {
+                return FindAll(dateTime);
+            }
+
+            TheLoai genre = new TheLoai();
+            List<Phim> movies = new List<Phim>();
+            List<PhanLoaiPhim> movies_genres = MovieByGenreDAO.GetMovieGenres();
+
+            foreach (var item in GenreDAO.GetListGenre())
+            {
+                if (item.id.Equals(genreId))
+                {
+                    genre = item;
+                    break;
+                }
+            }
+
+            foreach (var item in movies_genres)
+            {
+                if (item.idTheLoai.Equals(genre.id))
+                {
+                    Phim movie = FindById(item.idPhim);
+
+                    if (DateTime.Compare(movie.NgayKhoiChieu, dateTime) <= 0 && DateTime.Compare(dateTime, movie.NgayKetThuc) <= 0)
+                    {
+                        if (movie.TenPhim.Contains(movieName))
+                        {
+                            movies.Add(movie);
+                        }
+                    }
+                }
+            }
+
+            return movies;
         }
 
         public static DataTable GetMovie()
