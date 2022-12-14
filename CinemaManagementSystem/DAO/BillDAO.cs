@@ -94,8 +94,9 @@ namespace GUI.DAO
                     db.SubmitChanges();
                     return bill;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return null;
                 }
 

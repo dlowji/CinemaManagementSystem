@@ -111,7 +111,7 @@
             this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnNext.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(892, 455);
+            this.btnNext.Location = new System.Drawing.Point(906, 495);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(118, 35);
             this.btnNext.TabIndex = 10;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.flpSeat);
             this.Controls.Add(this.panel4);
             this.Name = "OrderSeat";
-            this.Size = new System.Drawing.Size(1142, 493);
+            this.Size = new System.Drawing.Size(1142, 533);
             this.Load += new System.EventHandler(this.OrderSeat_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

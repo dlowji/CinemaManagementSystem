@@ -25,14 +25,12 @@ namespace CinemaManagementSystem
         {
             cbbProductList.DataSource = ProductDAO.GetListProduct();
             cbbProductList.DisplayMember = "Tên hiển thị";
+            cbbProductList.ValueMember = "id";
         }
 
         private void btnCofirm_Click(object sender, EventArgs e)
         {
-            DataRowView drv = ((DataRowView)cbbProductList.SelectedItem);
-            DataRow dr = drv.Row;
-
-            string productId = dr["Mã sản phẩm"].ToString();
+            string productId = cbbProductList.SelectedValue.ToString();
             decimal importPrice = Decimal.Parse(txbImportPrice.Text);
             int quantity = Int32.Parse(txbQuantity.Text);
 

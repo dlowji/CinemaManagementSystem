@@ -211,7 +211,7 @@ namespace CinemaManagementSystem.View.Customer
                     return;
                 }
 
-                result = BillController.Payment(selectedSeats, member.id, staffId, discount, totalTicketPrice + totalProductPrice, false);
+                result = BillController.Payment(selectedSeats, member.id, staffId, discount,totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, false);
             }
 
             if (result)

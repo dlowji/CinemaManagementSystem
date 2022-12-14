@@ -31,7 +31,7 @@ namespace CinemaManagementSystem.Controllers
                 NhaCungCap supplier = ProductDAO.GetSupplierById(item.idNhaCungCap);
                 NhanVien staff = StaffController.GetStaffById(item.idNhanVien);
  
-                dt.Rows.Add(item.id, product.TenHienThi, item.GiaNhapHang, item.SoLuong, item.TongTien, staff.HoTen, supplier.Ten, item.CreatedAt.ToString());
+                dt.Rows.Add(item.id, product.TenHienThi, item.GiaNhapHang, item.SoLuong, item.TongTien, staff.HoTen, supplier.Ten, item.CreatedAt);
             }
 
             return dt;
@@ -57,7 +57,9 @@ namespace CinemaManagementSystem.Controllers
                 KhachHang cus = CustomerController.GetCustomerById(item.idKhachHang);
                 NhanVien staff = StaffController.GetStaffById(item.idNhanVien);
 
-                dt.Rows.Add(item.id, cus.HoTen, item, staff.HoTen, item.TongTien, item.GiamGia, afterDiscountPrice, item.CreatedAt);
+                string staffName = staff is null ? "" : staff.HoTen;
+
+                dt.Rows.Add(item.id, cus.HoTen, staffName, item.TongTien, item.GiamGia, afterDiscountPrice, item.CreatedAt, (bool)item.TrucTuyen);
             }
 
             return dt;

@@ -65,6 +65,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txbName = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.lbVoucher = new System.Windows.Forms.Label();
@@ -75,14 +77,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbName = new System.Windows.Forms.TextBox();
-            this.txbEmail = new System.Windows.Forms.TextBox();
-            this.txbVoucher = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nud = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pnProduct.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud)).BeginInit();
             this.SuspendLayout();
             // 
             // pnProduct
@@ -514,8 +515,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.txbVoucher);
+            this.panel3.Controls.Add(this.checkBox1);
+            this.panel3.Controls.Add(this.nud);
             this.panel3.Controls.Add(this.txbEmail);
             this.panel3.Controls.Add(this.txbName);
             this.panel3.Controls.Add(this.txbPhone);
@@ -531,12 +532,33 @@
             this.panel3.Size = new System.Drawing.Size(329, 425);
             this.panel3.TabIndex = 9;
             // 
+            // txbEmail
+            // 
+            this.txbEmail.Enabled = false;
+            this.txbEmail.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEmail.Location = new System.Drawing.Point(127, 165);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(191, 26);
+            this.txbEmail.TabIndex = 15;
+            this.txbEmail.Visible = false;
+            // 
+            // txbName
+            // 
+            this.txbName.Enabled = false;
+            this.txbName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbName.Location = new System.Drawing.Point(127, 130);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(191, 26);
+            this.txbName.TabIndex = 12;
+            this.txbName.Visible = false;
+            // 
             // txbPhone
             // 
+            this.txbPhone.Enabled = false;
             this.txbPhone.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPhone.Location = new System.Drawing.Point(106, 95);
+            this.txbPhone.Location = new System.Drawing.Point(127, 95);
             this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(161, 26);
+            this.txbPhone.Size = new System.Drawing.Size(191, 26);
             this.txbPhone.TabIndex = 6;
             // 
             // btnLuu
@@ -546,11 +568,11 @@
             this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnLuu.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(209, 380);
+            this.btnLuu.Location = new System.Drawing.Point(203, 380);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(109, 35);
+            this.btnLuu.Size = new System.Drawing.Size(115, 35);
             this.btnLuu.TabIndex = 14;
-            this.btnLuu.Text = "Thanh toán";
+            this.btnLuu.Text = "Tiếp theo";
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -561,9 +583,9 @@
             this.lbVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.lbVoucher.Location = new System.Drawing.Point(11, 208);
             this.lbVoucher.Name = "lbVoucher";
-            this.lbVoucher.Size = new System.Drawing.Size(75, 18);
+            this.lbVoucher.Size = new System.Drawing.Size(110, 18);
             this.lbVoucher.TabIndex = 1;
-            this.lbVoucher.Text = "Voucher:";
+            this.lbVoucher.Text = "Điểm tích lũy:";
             this.lbVoucher.Visible = false;
             // 
             // lbEmail
@@ -641,42 +663,27 @@
             this.label1.Text = "THANH TOÁN HÓA ĐƠN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbName
+            // nud
             // 
-            this.txbName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(106, 130);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(161, 26);
-            this.txbName.TabIndex = 12;
-            this.txbName.Visible = false;
+            this.nud.Enabled = false;
+            this.nud.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud.Location = new System.Drawing.Point(127, 200);
+            this.nud.Name = "nud";
+            this.nud.Size = new System.Drawing.Size(191, 26);
+            this.nud.TabIndex = 16;
+            this.nud.ValueChanged += new System.EventHandler(this.nud_ValueChanged);
             // 
-            // txbEmail
+            // checkBox1
             // 
-            this.txbEmail.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(106, 165);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(161, 26);
-            this.txbEmail.TabIndex = 15;
-            this.txbEmail.Visible = false;
-            // 
-            // txbVoucher
-            // 
-            this.txbVoucher.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbVoucher.Location = new System.Drawing.Point(106, 200);
-            this.txbVoucher.Name = "txbVoucher";
-            this.txbVoucher.Size = new System.Drawing.Size(161, 26);
-            this.txbVoucher.TabIndex = 16;
-            this.txbVoucher.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::CinemaManagementSystem.Properties.Resources.plus_red;
-            this.button1.Location = new System.Drawing.Point(279, 197);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 32);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(8, 250);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(186, 22);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Sử dụng điểm tích lũy";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // BillUC
             // 
@@ -696,6 +703,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -749,9 +757,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbtotalProductPrice;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox txbVoucher;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.TextBox txbName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown nud;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

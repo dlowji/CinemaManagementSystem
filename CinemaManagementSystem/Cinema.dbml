@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CINEMAF" Class="CinemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=msi\db_server;Initial Catalog=CINEMAF;Integrated Security=True" SettingsObjectName="CinemaManagementSystem.Properties.Settings" SettingsPropertyName="CINEMAFConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CINEMAC" Class="CinemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=msi\db_server;Initial Catalog=CINEMAC;Integrated Security=True" SettingsObjectName="CinemaManagementSystem.Properties.Settings" SettingsPropertyName="CINEMACConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CapDoThanhVien" Member="CapDoThanhViens">
     <Type Name="CapDoThanhVien">
       <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -31,8 +31,8 @@
   <Table Name="dbo.HoaDon" Member="HoaDons">
     <Type Name="HoaDon">
       <Column Name="id" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="idNhanVien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idKhachHang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idNhanVien" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="GiamGia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="TrucTuyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
@@ -255,13 +255,13 @@
       <Association Name="LichChieu_Ve" Member="LichChieu" ThisKey="idLichChieu" OtherKey="id" Type="LichChieu" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.USP_DeleteTicketsByShowTimes" Method="USP_DeleteTicketsByShowTimes">
+    <Parameter Name="idlichChieu" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.USP_UpdateStatusShowTimes" Method="USP_UpdateStatusShowTimes">
     <Parameter Name="idLichChieu" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="status" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.USP_DeleteTicketsByShowTimes" Method="USP_DeleteTicketsByShowTimes">
-    <Parameter Name="idlichChieu" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.USP_GetAccountList" Method="USP_GetAccountList">
@@ -477,18 +477,6 @@
       <Column Name="[Tên nhân viên]" Member="Tên_nhân_viên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.USP_SearchCustomer" Method="USP_SearchCustomer">
-    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="USP_SearchCustomerResult">
-      <Column Name="[Mã khách hàng]" Member="Mã_khách_hàng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="[Điểm tích lũy]" Member="Điểm_tích_lũy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.USP_SearchProduct" Method="USP_SearchProduct">
     <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
     <ElementType Name="USP_SearchProductResult">
@@ -538,5 +526,18 @@
     <Parameter Name="thoiGianChieu" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="giaVe" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_SearchCustomer" Method="USP_SearchCustomer">
+    <Parameter Name="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_SearchCustomerResult">
+      <Column Name="[Mã khách hàng]" Member="Mã_khách_hàng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Điểm tích lũy]" Member="Điểm_tích_lũy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

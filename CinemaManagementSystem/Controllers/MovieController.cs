@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CinemaManagementSystem.Controllers
 {
@@ -35,9 +36,16 @@ namespace CinemaManagementSystem.Controllers
             return MovieDAO.GetMovieByID(movieId);
         }
 
+        public static Phim GetMovieByShowTime(string showTimeId)
+        {
+            LichChieu showTime = ShowTimeController.GetShowTimeById(showTimeId);
+            Phim movie = MovieDAO.GetMovieByID(showTime.idPhim);
+
+            return movie;
+        }
+
         public static List<Phim> FindByGenre(string genreId, DateTime dateTime)
         {
-
             if (genreId.Equals("TL00"))
             {
                 return FindAll(dateTime);
@@ -76,9 +84,19 @@ namespace CinemaManagementSystem.Controllers
         {
             if (genreId.Equals("TL00"))
             {
-                return FindAll(dateTime);
-            }
+                List<Phim> searchMovies = new List<Phim>();
+                foreach (var item in MovieController.FindAll(dateTime))
+                {
 
+                    if (item.TenPhim.Contains(movieName.Trim().ToUpper()))
+                    {
+                        searchMovies.Add(item);
+                    }
+                }
+
+                return searchMovies;
+            }
+            
             TheLoai genre = new TheLoai();
             List<Phim> movies = new List<Phim>();
             List<PhanLoaiPhim> movies_genres = MovieByGenreDAO.GetMovieGenres();
@@ -91,7 +109,7 @@ namespace CinemaManagementSystem.Controllers
                     break;
                 }
             }
-
+            MessageBox.Show(movieName);
             foreach (var item in movies_genres)
             {
                 if (item.idTheLoai.Equals(genre.id))

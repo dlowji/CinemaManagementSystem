@@ -72,8 +72,6 @@ namespace CinemaManagementSystem
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            btnDangNhap.Enabled = false;
-
             var requiredControls = new[]
             {
                 txbTenDangNhap,
@@ -100,27 +98,28 @@ namespace CinemaManagementSystem
                 {
                     QuanLy frm = new QuanLy(loginAccount.idNV);
                     this.Hide();
-                    frm.Show();
+                    frm.ShowDialog();
+                    this.Show();
                 }
                 else if (loginAccount.LoaiTK == 2) //staff
                 {
                     SelectingMovieUCForStaff frm = new SelectingMovieUCForStaff(loginAccount.idNV);
                     this.Hide();
-                    frm.Show();
+                    frm.ShowDialog();
+                    Show();
                 }
                 else if (loginAccount.LoaiTK == 3) // cus
                 {
                     GiaoDienChonPhim frm = new GiaoDienChonPhim(loginAccount.idKH);
                     this.Hide();
-                    frm.Show();
+                    frm.ShowDialog();
+                    Show();
                 }
             }
             else
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "Thông báo");
             }
-
-            btnDangNhap.Enabled = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

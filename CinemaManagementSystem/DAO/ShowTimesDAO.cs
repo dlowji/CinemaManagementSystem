@@ -137,7 +137,7 @@ namespace GUI.DAO
             return dt;
 		}
 
-		public static bool InsertShowtime(string id, string cinemaID, string movieID, DateTime time, float ticketPrice)
+		public static bool InsertShowtime(string id, string cinemaID, string movieID, DateTime time, decimal ticketPrice)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -147,7 +147,7 @@ namespace GUI.DAO
                     ThoiGianChieu = time,
                     idRap = cinemaID,
                     idPhim = movieID,
-                    GiaVe = (decimal)ticketPrice,
+                    GiaVe = ticketPrice,
                     TrangThai = 0
                 };
 
@@ -166,7 +166,7 @@ namespace GUI.DAO
             }
 		}
 
-		public static bool UpdateShowtime(string id, string cinemaID, string movieId, DateTime time, float ticketPrice)
+		public static bool UpdateShowtime(string id, string cinemaID, string movieId, DateTime time, decimal ticketPrice)
 		{
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -177,7 +177,7 @@ namespace GUI.DAO
                 lichChieu.ThoiGianChieu = time;
                 lichChieu.idRap = cinemaID;
                 lichChieu.idPhim = movieId;
-                lichChieu.GiaVe = (decimal)ticketPrice;
+                lichChieu.GiaVe = ticketPrice;
 
                 try
                 {

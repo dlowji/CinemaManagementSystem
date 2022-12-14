@@ -240,8 +240,9 @@ namespace CinemaManagementSystem.Helper
                 System.IO.File.Copy(sourceFile, destFile, true);
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 return false;
             } 
         }

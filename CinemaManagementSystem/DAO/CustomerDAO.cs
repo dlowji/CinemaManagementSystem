@@ -235,7 +235,7 @@ namespace GUI.DAO
             DataTable dt = new DataTable();
             dt.Columns.Add("Mã khách hàng", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
-            //dt.Columns.Add("Email", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Ngày sinh", typeof(DateTime));
             dt.Columns.Add("Địa chỉ", typeof(string));
             dt.Columns.Add("SĐT", typeof(string));
@@ -248,7 +248,7 @@ namespace GUI.DAO
 
                 foreach (var item in query)
                 {
-                    dt.Rows.Add(item.Mã_khách_hàng, item.Họ_tên, item.Ngày_sinh, item.Địa_chỉ, item.SĐT, item.CMND, item.Điểm_tích_lũy);
+                    dt.Rows.Add(item.Mã_khách_hàng, item.Họ_tên, item.Email, item.Ngày_sinh, item.Địa_chỉ, item.SĐT, item.CMND, item.Điểm_tích_lũy);
                 }
             }
 

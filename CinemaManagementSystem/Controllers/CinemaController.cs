@@ -17,6 +17,11 @@ namespace CinemaManagementSystem.Controllers
             return cinemas;
         }
 
+        public static List<Rap> GetCinemas()
+        {
+            return CinemaDAO.GetCinemas();
+        }
+
         public static Rap GetCinemaById(string cinemaID)
         {
             return CinemaDAO.GetCinemaByID(cinemaID);

@@ -13,9 +13,7 @@ namespace GUI.DAO
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
-                var query = from hddv in db.HoaDonDatVes
-                            join hd in db.HoaDons
-                            on hddv.idHoaDon equals hd.id
+                var query = from hd in db.HoaDons
                             select hd;
 
                 return query.ToList();

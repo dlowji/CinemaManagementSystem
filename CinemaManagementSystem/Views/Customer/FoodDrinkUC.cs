@@ -154,7 +154,7 @@ namespace CinemaManagementSystem.View.Customer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            BillUC billUC = new BillUC(selectedSeat, supports, showTimes, movie, totalTicketPrice, customerId);
+            BillUC billUC = new BillUC(selectedSeat, supports, showTimes, movie, totalTicketPrice, customerId, homepage);
             billUC.Dock = DockStyle.Fill;
 
             homepage.Controls.Clear();
@@ -221,6 +221,7 @@ namespace CinemaManagementSystem.View.Customer
             if (nud.Value > quantity)
             {
                 MessageBox.Show("Số lượng sản phẩm không có đủ", "Cảnh báo");
+                nud.Value = quantity;
                 return;
             }
 

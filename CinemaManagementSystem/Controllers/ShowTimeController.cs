@@ -30,5 +30,20 @@ namespace CinemaManagementSystem.Controllers
             return null;
         }
 
+        public static bool InsertShowTime(string id, string cinemaId, string movieId, decimal ticketPrice, DateTime time)
+        {
+            return ShowTimesDAO.InsertShowtime(id, cinemaId, movieId, time, ticketPrice);
+        }
+
+        public static bool UpdateShowTime(string id, string cinemaId, string movieId, decimal ticketPrice, DateTime time)
+        {
+            return ShowTimesDAO.UpdateShowtime(id, cinemaId, movieId, time, ticketPrice);
+        }
+
+        public static bool DeleteShowTime(string id)
+        {
+            return ShowTimesDAO.DeleteShowtime(id);
+        }
+
     }
 }

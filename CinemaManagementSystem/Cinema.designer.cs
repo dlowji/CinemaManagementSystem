@@ -22,7 +22,7 @@ namespace CinemaManagementSystem
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CINEMAF")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CINEMAC")]
 	public partial class CinemaDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -99,7 +99,7 @@ namespace CinemaManagementSystem
     #endregion
 		
 		public CinemaDataContext() : 
-				base(global::CinemaManagementSystem.Properties.Settings.Default.CINEMAFConnectionString, mappingSource)
+				base(global::CinemaManagementSystem.Properties.Settings.Default.CINEMACConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -304,17 +304,17 @@ namespace CinemaManagementSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_UpdateStatusShowTimes")]
-		public int USP_UpdateStatusShowTimes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string idLichChieu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLichChieu, status);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_DeleteTicketsByShowTimes")]
 		public int USP_DeleteTicketsByShowTimes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string idlichChieu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idlichChieu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_UpdateStatusShowTimes")]
+		public int USP_UpdateStatusShowTimes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string idLichChieu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLichChieu, status);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -479,13 +479,6 @@ namespace CinemaManagementSystem
 			return ((ISingleResult<USP_SearchAccountResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_SearchCustomer")]
-		public ISingleResult<USP_SearchCustomerResult> USP_SearchCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string hoTen)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hoTen);
-			return ((ISingleResult<USP_SearchCustomerResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_SearchProduct")]
 		public ISingleResult<USP_SearchProductResult> USP_SearchProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string ten)
 		{
@@ -526,6 +519,13 @@ namespace CinemaManagementSystem
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, idRap, idPhim, thoiGianChieu, giaVe);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_SearchCustomer")]
+		public ISingleResult<USP_SearchCustomerResult> USP_SearchCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string hoTen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hoTen);
+			return ((ISingleResult<USP_SearchCustomerResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1146,7 +1146,7 @@ namespace CinemaManagementSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idKhachHang", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idKhachHang", DbType="VarChar(50)")]
 		public string idKhachHang
 		{
 			get
@@ -1170,7 +1170,7 @@ namespace CinemaManagementSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idNhanVien", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idNhanVien", DbType="VarChar(50)")]
 		public string idNhanVien
 		{
 			get
@@ -7490,140 +7490,6 @@ namespace CinemaManagementSystem
 		}
 	}
 	
-	public partial class USP_SearchCustomerResult
-	{
-		
-		private string _Mã_khách_hàng;
-		
-		private string _Họ_tên;
-		
-		private System.DateTime _Ngày_sinh;
-		
-		private string _Địa_chỉ;
-		
-		private string _SĐT;
-		
-		private int _CMND;
-		
-		private System.Nullable<int> _Điểm_tích_lũy;
-		
-		public USP_SearchCustomerResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã khách hàng]", Storage="_Mã_khách_hàng", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Mã_khách_hàng
-		{
-			get
-			{
-				return this._Mã_khách_hàng;
-			}
-			set
-			{
-				if ((this._Mã_khách_hàng != value))
-				{
-					this._Mã_khách_hàng = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Họ tên]", Storage="_Họ_tên", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Họ_tên
-		{
-			get
-			{
-				return this._Họ_tên;
-			}
-			set
-			{
-				if ((this._Họ_tên != value))
-				{
-					this._Họ_tên = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Ngày sinh]", Storage="_Ngày_sinh", DbType="Date NOT NULL")]
-		public System.DateTime Ngày_sinh
-		{
-			get
-			{
-				return this._Ngày_sinh;
-			}
-			set
-			{
-				if ((this._Ngày_sinh != value))
-				{
-					this._Ngày_sinh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Địa chỉ]", Storage="_Địa_chỉ", DbType="NVarChar(100)")]
-		public string Địa_chỉ
-		{
-			get
-			{
-				return this._Địa_chỉ;
-			}
-			set
-			{
-				if ((this._Địa_chỉ != value))
-				{
-					this._Địa_chỉ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SĐT", DbType="VarChar(100)")]
-		public string SĐT
-		{
-			get
-			{
-				return this._SĐT;
-			}
-			set
-			{
-				if ((this._SĐT != value))
-				{
-					this._SĐT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Int NOT NULL")]
-		public int CMND
-		{
-			get
-			{
-				return this._CMND;
-			}
-			set
-			{
-				if ((this._CMND != value))
-				{
-					this._CMND = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Điểm tích lũy]", Storage="_Điểm_tích_lũy", DbType="Int")]
-		public System.Nullable<int> Điểm_tích_lũy
-		{
-			get
-			{
-				return this._Điểm_tích_lũy;
-			}
-			set
-			{
-				if ((this._Điểm_tích_lũy != value))
-				{
-					this._Điểm_tích_lũy = value;
-				}
-			}
-		}
-	}
-	
 	public partial class USP_SearchProductResult
 	{
 		
@@ -7931,6 +7797,158 @@ namespace CinemaManagementSystem
 				if ((this._CMND != value))
 				{
 					this._CMND = value;
+				}
+			}
+		}
+	}
+	
+	public partial class USP_SearchCustomerResult
+	{
+		
+		private string _Mã_khách_hàng;
+		
+		private string _Họ_tên;
+		
+		private string _Email;
+		
+		private System.DateTime _Ngày_sinh;
+		
+		private string _Địa_chỉ;
+		
+		private string _SĐT;
+		
+		private int _CMND;
+		
+		private System.Nullable<int> _Điểm_tích_lũy;
+		
+		public USP_SearchCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã khách hàng]", Storage="_Mã_khách_hàng", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Mã_khách_hàng
+		{
+			get
+			{
+				return this._Mã_khách_hàng;
+			}
+			set
+			{
+				if ((this._Mã_khách_hàng != value))
+				{
+					this._Mã_khách_hàng = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Họ tên]", Storage="_Họ_tên", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Họ_tên
+		{
+			get
+			{
+				return this._Họ_tên;
+			}
+			set
+			{
+				if ((this._Họ_tên != value))
+				{
+					this._Họ_tên = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Ngày sinh]", Storage="_Ngày_sinh", DbType="Date NOT NULL")]
+		public System.DateTime Ngày_sinh
+		{
+			get
+			{
+				return this._Ngày_sinh;
+			}
+			set
+			{
+				if ((this._Ngày_sinh != value))
+				{
+					this._Ngày_sinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Địa chỉ]", Storage="_Địa_chỉ", DbType="NVarChar(100)")]
+		public string Địa_chỉ
+		{
+			get
+			{
+				return this._Địa_chỉ;
+			}
+			set
+			{
+				if ((this._Địa_chỉ != value))
+				{
+					this._Địa_chỉ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SĐT", DbType="VarChar(100)")]
+		public string SĐT
+		{
+			get
+			{
+				return this._SĐT;
+			}
+			set
+			{
+				if ((this._SĐT != value))
+				{
+					this._SĐT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Int NOT NULL")]
+		public int CMND
+		{
+			get
+			{
+				return this._CMND;
+			}
+			set
+			{
+				if ((this._CMND != value))
+				{
+					this._CMND = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Điểm tích lũy]", Storage="_Điểm_tích_lũy", DbType="Int")]
+		public System.Nullable<int> Điểm_tích_lũy
+		{
+			get
+			{
+				return this._Điểm_tích_lũy;
+			}
+			set
+			{
+				if ((this._Điểm_tích_lũy != value))
+				{
+					this._Điểm_tích_lũy = value;
 				}
 			}
 		}

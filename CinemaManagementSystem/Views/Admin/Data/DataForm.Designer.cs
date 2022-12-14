@@ -30,15 +30,14 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.SidePanel = new System.Windows.Forms.Panel();
-            this.pnData = new System.Windows.Forms.Panel();
             this.btnTicketsUC = new System.Windows.Forms.Button();
             this.btnShowTimesUC = new System.Windows.Forms.Button();
             this.btnMovieUC = new System.Windows.Forms.Button();
             this.btnGenreUC = new System.Windows.Forms.Button();
             this.btnCinemaUC = new System.Windows.Forms.Button();
             this.btnScreenTypeUC = new System.Windows.Forms.Button();
+            this.pnData = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.pnData.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 499);
+            this.panel1.Size = new System.Drawing.Size(209, 501);
             this.panel1.TabIndex = 1;
             // 
             // SidePanel
@@ -65,17 +64,6 @@
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 54);
             this.SidePanel.TabIndex = 5;
-            // 
-            // pnData
-            // 
-            this.pnData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnData.Controls.Add(this.panel1);
-            this.pnData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnData.Location = new System.Drawing.Point(0, 2);
-            this.pnData.Margin = new System.Windows.Forms.Padding(2);
-            this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(1007, 499);
-            this.pnData.TabIndex = 2;
             // 
             // btnTicketsUC
             // 
@@ -179,17 +167,26 @@
             this.btnScreenTypeUC.UseVisualStyleBackColor = true;
             this.btnScreenTypeUC.Click += new System.EventHandler(this.btnScreenTypeUC_Click);
             // 
+            // pnData
+            // 
+            this.pnData.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnData.Location = new System.Drawing.Point(213, 0);
+            this.pnData.Margin = new System.Windows.Forms.Padding(2);
+            this.pnData.Name = "pnData";
+            this.pnData.Size = new System.Drawing.Size(794, 501);
+            this.pnData.TabIndex = 2;
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 501);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnData);
             this.Name = "DataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DataForm";
             this.panel1.ResumeLayout(false);
-            this.pnData.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

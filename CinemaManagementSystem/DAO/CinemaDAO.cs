@@ -9,6 +9,17 @@ namespace GUI.DAO
 {
     public class CinemaDAO
     {
+
+        public static List<Rap> GetCinemas()
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = from rap in db.Raps
+                            select rap;
+
+                return query.ToList();
+            }
+        }
         public static Rap GetCinemaByName(string cinemaName)
         {
             using (CinemaDataContext db = new CinemaDataContext())
