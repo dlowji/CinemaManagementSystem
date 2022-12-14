@@ -44,19 +44,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dtmShowtimeDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.cboMovies = new System.Windows.Forms.ComboBox();
             this.cboCineplex = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboCinemaType = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cboCinema = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMovieName_Showtime = new System.Windows.Forms.TextBox();
             this.txtTicketPrice_Showtime = new System.Windows.Forms.TextBox();
             this.txtShowtimeID = new System.Windows.Forms.TextBox();
             this.toolTipCinema = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cboCinemaType = new System.Windows.Forms.ComboBox();
             this.panel54.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvShowtime)).BeginInit();
@@ -167,6 +167,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.cboMovies);
             this.panel2.Controls.Add(this.cboCineplex);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cboCinemaType);
@@ -176,7 +177,6 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtMovieName_Showtime);
             this.panel2.Controls.Add(this.txtTicketPrice_Showtime);
             this.panel2.Controls.Add(this.txtShowtimeID);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -248,9 +248,21 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Ngày:";
             // 
+            // cboMovies
+            // 
+            this.cboMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMovies.FormattingEnabled = true;
+            this.cboMovies.Location = new System.Drawing.Point(121, 131);
+            this.cboMovies.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMovies.Name = "cboMovies";
+            this.cboMovies.Size = new System.Drawing.Size(163, 21);
+            this.cboMovies.TabIndex = 26;
+            this.cboMovies.SelectedIndexChanged += new System.EventHandler(this.cboFormatID_Showtime_SelectedIndexChanged);
+            // 
             // cboCineplex
             // 
             this.cboCineplex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCineplex.Enabled = false;
             this.cboCineplex.FormattingEnabled = true;
             this.cboCineplex.Location = new System.Drawing.Point(120, 101);
             this.cboCineplex.Margin = new System.Windows.Forms.Padding(2);
@@ -258,6 +270,39 @@
             this.cboCineplex.Size = new System.Drawing.Size(163, 21);
             this.cboCineplex.TabIndex = 26;
             this.cboCineplex.SelectedIndexChanged += new System.EventHandler(this.cboFormatID_Showtime_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 103);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 19);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Cụm rạp:";
+            // 
+            // cboCinemaType
+            // 
+            this.cboCinemaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCinemaType.Enabled = false;
+            this.cboCinemaType.FormattingEnabled = true;
+            this.cboCinemaType.Location = new System.Drawing.Point(120, 69);
+            this.cboCinemaType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCinemaType.Name = "cboCinemaType";
+            this.cboCinemaType.Size = new System.Drawing.Size(163, 21);
+            this.cboCinemaType.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 71);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 19);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Loại rạp:";
             // 
             // cboCinema
             // 
@@ -268,6 +313,7 @@
             this.cboCinema.Name = "cboCinema";
             this.cboCinema.Size = new System.Drawing.Size(163, 21);
             this.cboCinema.TabIndex = 27;
+            this.cboCinema.SelectedValueChanged += new System.EventHandler(this.cboCinema_SelectedValueChanged);
             // 
             // label2
             // 
@@ -313,15 +359,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Mã lịch chiếu:";
             // 
-            // txtMovieName_Showtime
-            // 
-            this.txtMovieName_Showtime.Location = new System.Drawing.Point(120, 132);
-            this.txtMovieName_Showtime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMovieName_Showtime.Name = "txtMovieName_Showtime";
-            this.txtMovieName_Showtime.ReadOnly = true;
-            this.txtMovieName_Showtime.Size = new System.Drawing.Size(163, 20);
-            this.txtMovieName_Showtime.TabIndex = 17;
-            // 
             // txtTicketPrice_Showtime
             // 
             this.txtTicketPrice_Showtime.Location = new System.Drawing.Point(120, 284);
@@ -344,38 +381,6 @@
             this.toolTipCinema.AutoPopDelay = 5000;
             this.toolTipCinema.InitialDelay = 100;
             this.toolTipCinema.ReshowDelay = 100;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 103);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 19);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Cụm rạp:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 71);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 19);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Loại rạp:";
-            // 
-            // cboCinemaType
-            // 
-            this.cboCinemaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCinemaType.FormattingEnabled = true;
-            this.cboCinemaType.Location = new System.Drawing.Point(120, 69);
-            this.cboCinemaType.Margin = new System.Windows.Forms.Padding(2);
-            this.cboCinemaType.Name = "cboCinemaType";
-            this.cboCinemaType.Size = new System.Drawing.Size(163, 21);
-            this.cboCinemaType.TabIndex = 27;
             // 
             // ShowTimesUC
             // 
@@ -420,7 +425,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMovieName_Showtime;
         private System.Windows.Forms.TextBox txtTicketPrice_Showtime;
         private System.Windows.Forms.TextBox txtShowtimeID;
         private System.Windows.Forms.DataGridView dtgvShowtime;
@@ -428,5 +432,6 @@
 		private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCinemaType;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboMovies;
     }
 }

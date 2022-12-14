@@ -2,311 +2,311 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 27.875" name="Cinema">
   <DataContextMoniker Name="/CinemaDataContext" />
   <nestedChildShapes>
-    <classShape Id="684dc1d7-c3e1-4bd8-baee-1cf80cf79f7c" absoluteBounds="0.75, 8.125, 2, 1.5785953776041666">
+    <classShape Id="2844643b-691b-4124-bc85-98bf6a1630a7" absoluteBounds="0.75, 8.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaDataContext/CapDoThanhVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="ffc9fbff-9d49-4799-a117-e58a308ef7d6" absoluteBounds="0.765, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f7cf61a-7b2b-47e7-8298-de49f0acd4b0" absoluteBounds="0.765, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3024fa00-d19f-454d-9051-798a2248f933" absoluteBounds="6.25, 8, 2, 1.7708968098958326">
+    <classShape Id="9337d0b6-3749-44c1-81a6-fc0c15adda46" absoluteBounds="6.25, 8, 2, 1.7708968098958326">
       <DataClassMoniker Name="/CinemaDataContext/Voucher" />
       <nestedChildShapes>
-        <elementListCompartment Id="61a0a54e-9a2c-428b-b7a0-00ef220ec94e" absoluteBounds="6.265, 8.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d7915b95-3da0-4477-a0b0-48d52c496cb4" absoluteBounds="6.265, 8.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6154ed66-d7ad-4c18-828e-9cfd3e486590" absoluteBounds="1, 16.25, 2, 1.3862939453124987">
+    <classShape Id="c449c848-636a-4b6c-af92-88dca2283ce9" absoluteBounds="1, 16.25, 2, 1.3862939453124987">
       <DataClassMoniker Name="/CinemaDataContext/CumRap" />
       <nestedChildShapes>
-        <elementListCompartment Id="aced0425-939e-4ac5-8189-91c1b748829e" absoluteBounds="1.0150000000000001, 16.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="09fa64f5-3c3c-438a-8cd2-1cb53db8f63c" absoluteBounds="1.0150000000000001, 16.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1e193da0-df11-4a38-9911-483200fa65f0" absoluteBounds="6.25, 10.875, 2, 2.1554996744791666">
+    <classShape Id="c79dceb8-ad9a-4db1-b447-9749de947c44" absoluteBounds="6.25, 10.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaDataContext/HoaDon" />
       <nestedChildShapes>
-        <elementListCompartment Id="a8ecb09e-c1c7-4b6b-b55c-3bb7219d6983" absoluteBounds="6.265, 11.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f1f2e76e-48ba-441d-9e67-60a8e5ab0e1c" absoluteBounds="6.265, 11.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5dcef194-ac94-4b06-842f-d15d44048547" absoluteBounds="12, 9.75, 2, 1.3862939453124987">
+    <classShape Id="cb9615e9-c15e-4710-acc9-abcea7a790bd" absoluteBounds="12, 9.75, 2, 1.3862939453124987">
       <DataClassMoniker Name="/CinemaDataContext/HoaDonDatVe" />
       <nestedChildShapes>
-        <elementListCompartment Id="c0a08781-0a95-4f13-a3be-84ca1ea47981" absoluteBounds="12.015, 10.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="64612ccc-a868-4ebd-b1eb-2ce89e9834d5" absoluteBounds="12.015, 10.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="baaf5f5e-3ff4-4392-a61a-b6d526614abb" absoluteBounds="10, 14.25, 2, 2.3478011067708326">
+    <classShape Id="ca4f1275-8a54-400b-83f4-90f904540aab" absoluteBounds="10, 14.25, 2, 2.3478011067708326">
       <DataClassMoniker Name="/CinemaDataContext/HoaDonNhapHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="8ef1c431-b722-48fc-a51b-97e9757d9f43" absoluteBounds="10.015, 14.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c762e2d6-26e4-4338-9183-67398b098af7" absoluteBounds="10.015, 14.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d3e2df03-4de3-4a31-a884-64a768b26808" absoluteBounds="9, 11.125, 2, 1.5785953776041666">
+    <classShape Id="17d15c0b-f3e9-4ed5-b532-b9808d018ac6" absoluteBounds="9, 11.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaDataContext/HoaDonSanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="46860aaf-548f-4e1a-a9fb-f328d1e9f17f" absoluteBounds="9.015, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="be6c38ac-ac59-4fa8-aead-183d6f1f47b4" absoluteBounds="9.015, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" absoluteBounds="3.5, 7.625, 2, 2.5401025390625005">
+    <classShape Id="c2861bea-3bef-40b1-b7eb-94e68d754119" absoluteBounds="3.5, 7.625, 2, 2.5401025390625005">
       <DataClassMoniker Name="/CinemaDataContext/KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="8b0825af-f76e-4b6a-9c61-8190afd02745" absoluteBounds="3.515, 8.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bbc5e196-b4e2-4e0b-bd1e-7eb455b71e7d" absoluteBounds="3.515, 8.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1afebbdc-f798-46b3-a424-cf0c979ab930" absoluteBounds="9, 23.375, 2, 1.1939925130208309">
+    <classShape Id="b67ce1c4-4de1-4f5b-9b47-f1c23d65e61a" absoluteBounds="9, 23.375, 2, 1.1939925130208309">
       <DataClassMoniker Name="/CinemaDataContext/Kho" />
       <nestedChildShapes>
-        <elementListCompartment Id="de445a9a-de8a-464a-b90e-dac5a3b23ec3" absoluteBounds="9.015, 23.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8acdf5e3-75b2-450a-8126-f6b3ff50a3c5" absoluteBounds="9.015, 23.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b4969e28-e173-4efb-9e6b-9b303515888f" absoluteBounds="1, 19.25, 2, 1.3862939453125023">
+    <classShape Id="f39a1cd0-2980-4e5e-80fa-1be9a8e44733" absoluteBounds="1, 19.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/CinemaDataContext/KiemDuyetPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="fde54f1e-2d25-4744-85f1-3c08680f55e3" absoluteBounds="1.0150000000000001, 19.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fc876713-d133-4f04-960f-b0d430782b12" absoluteBounds="1.0150000000000001, 19.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e16abaf3-8458-41dd-b13d-a6c16ac69775" absoluteBounds="6.5, 17, 2, 1.9631982421875023">
+    <classShape Id="dbc97b73-3015-47c1-8919-298c9e428784" absoluteBounds="6.5, 17, 2, 1.9631982421875023">
       <DataClassMoniker Name="/CinemaDataContext/LichChieu" />
       <nestedChildShapes>
-        <elementListCompartment Id="710ec8ac-c082-406e-b490-291864773497" absoluteBounds="6.515, 17.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a4116d73-7cbd-49c9-94f3-07dc970c5d6c" absoluteBounds="6.515, 17.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fea3b307-920d-4cfc-b584-b40bbaf7132f" absoluteBounds="1, 14.375, 2, 1.1939925130208344">
+    <classShape Id="7f458999-5bc1-4385-939a-6252fe051d68" absoluteBounds="1, 14.375, 2, 1.1939925130208344">
       <DataClassMoniker Name="/CinemaDataContext/LoaiRap" />
       <nestedChildShapes>
-        <elementListCompartment Id="d3c0110d-397c-4466-883b-afa5ac498562" absoluteBounds="1.0150000000000001, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4983388a-edaa-4044-b25d-4478c2a5d377" absoluteBounds="1.0150000000000001, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="deba4d9f-cb6c-40df-8e17-9e3468bf8ab8" absoluteBounds="3.5, 23.125, 2, 1.5785953776041666">
+    <classShape Id="9e03c38c-3bdd-4940-8b24-d1e7e86d39c1" absoluteBounds="3.5, 23.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaDataContext/NhaCungCap" />
       <nestedChildShapes>
-        <elementListCompartment Id="3942ddcf-843c-4292-ad2d-8d19ac1b05e0" absoluteBounds="3.515, 23.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0055ba67-3f6d-4e28-9e63-6b6e15557807" absoluteBounds="3.515, 23.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="012bb714-74e5-4771-973b-8f10363bab6f" absoluteBounds="3.5, 4, 2, 1.9631982421875009">
+    <classShape Id="f53454be-19b5-4f4a-a93b-94ff36d551ec" absoluteBounds="3.5, 4, 2, 1.9631982421875009">
       <DataClassMoniker Name="/CinemaDataContext/NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="e2e783fe-4f82-4639-bb89-35e37f492f59" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bfb1863e-5392-4906-9179-cd735144c44a" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3d22f9c6-50f3-46f8-bdc7-4777d62aff24" absoluteBounds="6.5, 20.375, 2, 1.1939925130208309">
+    <classShape Id="07f9f3fa-c865-401e-bea8-4f5f2af95ca3" absoluteBounds="6.5, 20.375, 2, 1.1939925130208309">
       <DataClassMoniker Name="/CinemaDataContext/PhanLoaiPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="5e36f99a-da02-4c61-8329-2f336e51af49" absoluteBounds="6.515, 20.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7ea0152f-92fc-4c64-9818-6a9046cefd7e" absoluteBounds="6.515, 20.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0e76e932-24d2-4fcd-9df0-5730de2852d3" absoluteBounds="3.5, 0.75, 2, 2.3478011067708335">
+    <classShape Id="1602554c-8a73-4295-a3e2-3231d2922dc0" absoluteBounds="3.5, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/CinemaDataContext/PhatHanhVoucher" />
       <nestedChildShapes>
-        <elementListCompartment Id="7e48cb05-1e6d-40fb-abf7-340e7450a4fc" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1faad0a7-393c-4dd1-80da-3263670f80cf" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6d728926-0e87-4617-93d1-e19b90cffb3c" absoluteBounds="3.75, 18.375, 2, 3.1170068359375023">
+    <classShape Id="f1393b2c-2bc9-48c3-885d-9a17235a1805" absoluteBounds="3.75, 18.375, 2, 3.1170068359375023">
       <DataClassMoniker Name="/CinemaDataContext/Phim" />
       <nestedChildShapes>
-        <elementListCompartment Id="b2ec4d8c-faa3-403e-9934-3eb74c16c428" absoluteBounds="3.765, 18.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="851d79e7-059e-423e-b5f0-30d2a7e8a1d0" absoluteBounds="3.765, 18.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="856425ef-a207-4197-aba3-136079eb141b" absoluteBounds="3.75, 14.875, 2, 2.3478011067708326">
+    <classShape Id="9b1c66b4-0dc9-4e8d-a6ff-528ee9259fcc" absoluteBounds="3.75, 14.875, 2, 2.3478011067708326">
       <DataClassMoniker Name="/CinemaDataContext/Rap" />
       <nestedChildShapes>
-        <elementListCompartment Id="f88c9c56-5e1d-4eec-b30e-738c849f4a37" absoluteBounds="3.765, 15.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="629c6247-bf91-4677-9c14-d454a45936c1" absoluteBounds="3.765, 15.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0c895f5e-4b61-4168-a6f1-9e3295f15a87" absoluteBounds="6.25, 23, 2, 1.9631982421875023">
+    <classShape Id="4202c8a9-c5a0-4b25-8481-b289b7586843" absoluteBounds="6.25, 23, 2, 1.9631982421875023">
       <DataClassMoniker Name="/CinemaDataContext/SanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="4949249b-7a1d-4750-b043-e9553bdfe969" absoluteBounds="6.265, 23.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="79e346c2-1c0a-45b9-9a52-baf5b541f014" absoluteBounds="6.265, 23.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a7cce6ee-4646-46c4-9c4c-db810a0e677c" absoluteBounds="6.25, 5, 2, 1.7708968098958326">
+    <classShape Id="cc75b76a-445a-4b0f-a1d4-ee9c0ea6b8d6" absoluteBounds="6.25, 5, 2, 1.7708968098958326">
       <DataClassMoniker Name="/CinemaDataContext/TaiKhoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="67ae85aa-42b0-4f61-a346-a542dcc57d47" absoluteBounds="6.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="09e19916-27cc-46c1-8bb1-8f43ccb62001" absoluteBounds="6.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="09691692-82c5-4b91-9937-d5f09d967c67" absoluteBounds="3.75, 26.25, 2, 1.3862939453125023">
+    <classShape Id="0315712e-db0c-40ee-83bf-f9088b2b229e" absoluteBounds="3.75, 26.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/CinemaDataContext/TheLoai" />
       <nestedChildShapes>
-        <elementListCompartment Id="a37faa96-cd94-4cf7-a535-45010e9270dd" absoluteBounds="3.765, 26.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d733a4b3-b8c5-4bdf-9113-7e7b27503d40" absoluteBounds="3.765, 26.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="50ee9299-7d41-42f4-a79b-f82b553397a8" absoluteBounds="9.25, 7.875, 2, 2.1554996744791666">
+    <classShape Id="2a8d5ce7-346a-488c-88b5-369be5f8aeff" absoluteBounds="9.25, 7.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaDataContext/Ve" />
       <nestedChildShapes>
-        <elementListCompartment Id="2d99455c-30ca-47de-a907-4bec21852e82" absoluteBounds="9.265, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b1dad6a-8c14-49db-960a-a8f66ce27135" absoluteBounds="9.265, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 12.8982975260417); (8.32291666666667 : 12.8982975260417 : JumpStart); (8.48958333333333 : 12.8982975260417 : JumpEnd); (8.66666666666667 : 12.8982975260417 : JumpStart); (8.83333333333333 : 12.8982975260417 : JumpEnd); (11.5416666666667 : 12.8982975260417 : JumpStart); (11.7083333333333 : 12.8982975260417 : JumpEnd); (13 : 12.8982975260417); (13 : 11.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 12.8982975260417); (11.5416666666667 : 12.8982975260417 : JumpStart); (11.7083333333333 : 12.8982975260417 : JumpEnd); (13 : 12.8982975260417); (13 : 11.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/HoaDon/HoaDon_HoaDonDatVe" />
       <nodes>
-        <classShapeMoniker Id="1e193da0-df11-4a38-9911-483200fa65f0" />
-        <classShapeMoniker Id="5dcef194-ac94-4b06-842f-d15d44048547" />
+        <classShapeMoniker Id="c79dceb8-ad9a-4db1-b447-9749de947c44" />
+        <classShapeMoniker Id="cb9615e9-c15e-4710-acc9-abcea7a790bd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 11.9142976888021); (8.32291666666667 : 11.9142976888021 : JumpStart); (8.48958333333333 : 11.9142976888021 : JumpEnd); (9 : 11.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 11.9142976888021); (9 : 11.9142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/HoaDon/HoaDon_HoaDonSanPham" />
       <nodes>
-        <classShapeMoniker Id="1e193da0-df11-4a38-9911-483200fa65f0" />
-        <classShapeMoniker Id="d3e2df03-4de3-4a31-a884-64a768b26808" />
+        <classShapeMoniker Id="c79dceb8-ad9a-4db1-b447-9749de947c44" />
+        <classShapeMoniker Id="17d15c0b-f3e9-4ed5-b532-b9808d018ac6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.88544840494792); (5.79166666666667 : 8.88544840494792 : JumpStart); (5.95833333333333 : 8.88544840494792 : JumpEnd); (6.25 : 8.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 8.88544840494792); (6.25 : 8.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/KhachHang/KhachHang_Voucher" />
       <nodes>
-        <classShapeMoniker Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" />
-        <classShapeMoniker Id="3024fa00-d19f-454d-9051-798a2248f933" />
+        <classShapeMoniker Id="c2861bea-3bef-40b1-b7eb-94e68d754119" />
+        <classShapeMoniker Id="9337d0b6-3749-44c1-81a6-fc0c15adda46" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 10.1651025390625); (4.5 : 11.9527498372396); (6.25 : 11.9527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 10.1651025390625); (4.5 : 11.9527498372396); (6.25 : 11.9527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/KhachHang/KhachHang_HoaDon" />
       <nodes>
-        <classShapeMoniker Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" />
-        <classShapeMoniker Id="1e193da0-df11-4a38-9911-483200fa65f0" />
+        <classShapeMoniker Id="c2861bea-3bef-40b1-b7eb-94e68d754119" />
+        <classShapeMoniker Id="c79dceb8-ad9a-4db1-b447-9749de947c44" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.91429768880208); (3.5 : 8.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.91429768880208); (3.5 : 8.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/CapDoThanhVien/CapDoThanhVien_KhachHang" />
       <nodes>
-        <classShapeMoniker Id="684dc1d7-c3e1-4bd8-baee-1cf80cf79f7c" />
-        <classShapeMoniker Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" />
+        <classShapeMoniker Id="2844643b-691b-4124-bc85-98bf6a1630a7" />
+        <classShapeMoniker Id="c2861bea-3bef-40b1-b7eb-94e68d754119" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.59375 : 23.125); (3.59375 : 14.53125); (8.32291666666667 : 14.53125 : JumpStart); (8.48958333333333 : 14.53125 : JumpEnd); (8.66666666666667 : 14.53125 : JumpStart); (8.83333333333333 : 14.53125 : JumpEnd); (10 : 14.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.59375 : 23.125); (3.59375 : 14.53125); (10 : 14.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/NhaCungCap/NhaCungCap_HoaDonNhapHang" />
       <nodes>
-        <classShapeMoniker Id="deba4d9f-cb6c-40df-8e17-9e3468bf8ab8" />
-        <classShapeMoniker Id="baaf5f5e-3ff4-4392-a61a-b6d526614abb" />
+        <classShapeMoniker Id="9e03c38c-3bdd-4940-8b24-d1e7e86d39c1" />
+        <classShapeMoniker Id="ca4f1275-8a54-400b-83f4-90f904540aab" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.9631982421875); (5.875 : 6.3381982421875); (5.875 : 11.3826229186198); (6.25 : 11.3826229186198)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.9631982421875); (5.875 : 6.3381982421875); (5.875 : 11.3826229186198); (6.25 : 11.3826229186198)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/NhanVien/NhanVien_HoaDon" />
       <nodes>
-        <classShapeMoniker Id="012bb714-74e5-4771-973b-8f10363bab6f" />
-        <classShapeMoniker Id="1e193da0-df11-4a38-9911-483200fa65f0" />
+        <classShapeMoniker Id="f53454be-19b5-4f4a-a93b-94ff36d551ec" />
+        <classShapeMoniker Id="c79dceb8-ad9a-4db1-b447-9749de947c44" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.46875); (5.97916666666667 : 4.46875 : JumpStart); (6.14583333333333 : 4.46875 : JumpEnd); (11.625 : 4.46875); (11.625 : 14.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.46875); (11.625 : 4.46875); (11.625 : 14.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/NhanVien/NhanVien_HoaDonNhapHang" />
       <nodes>
-        <classShapeMoniker Id="012bb714-74e5-4771-973b-8f10363bab6f" />
-        <classShapeMoniker Id="baaf5f5e-3ff4-4392-a61a-b6d526614abb" />
+        <classShapeMoniker Id="f53454be-19b5-4f4a-a93b-94ff36d551ec" />
+        <classShapeMoniker Id="ca4f1275-8a54-400b-83f4-90f904540aab" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.03472318369391); (6.0625 : 3.59722318369391); (6.0625 : 8.41147220247396); (6.25 : 8.41147220247396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.03472318369391); (6.0625 : 3.59722318369391); (6.0625 : 8.41147220247396); (6.25 : 8.41147220247396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/PhatHanhVoucher/PhatHanhVoucher_Voucher" />
       <nodes>
-        <classShapeMoniker Id="0e76e932-24d2-4fcd-9df0-5730de2852d3" />
-        <classShapeMoniker Id="3024fa00-d19f-454d-9051-798a2248f933" />
+        <classShapeMoniker Id="1602554c-8a73-4295-a3e2-3231d2922dc0" />
+        <classShapeMoniker Id="9337d0b6-3749-44c1-81a6-fc0c15adda46" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 18.6690991210938); (6.26041666666667 : 18.6690991210938 : JumpStart); (6.42708333333333 : 18.6690991210938 : JumpEnd); (6.5 : 18.6690991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 18.6690991210938); (6.26041666666667 : 18.6690991210938 : JumpStart); (6.42708333333333 : 18.6690991210938 : JumpEnd); (6.5 : 18.6690991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/Phim/Phim_LichChieu" />
       <nodes>
-        <classShapeMoniker Id="6d728926-0e87-4617-93d1-e19b90cffb3c" />
-        <classShapeMoniker Id="e16abaf3-8458-41dd-b13d-a6c16ac69775" />
+        <classShapeMoniker Id="f1393b2c-2bc9-48c3-885d-9a17235a1805" />
+        <classShapeMoniker Id="dbc97b73-3015-47c1-8919-298c9e428784" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 20.9335034179688); (6.26041666666667 : 20.9335034179688 : JumpStart); (6.42708333333333 : 20.9335034179688 : JumpEnd); (6.5 : 20.9335034179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 20.9335034179688); (6.26041666666667 : 20.9335034179688 : JumpStart); (6.42708333333333 : 20.9335034179688 : JumpEnd); (6.5 : 20.9335034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/Phim/Phim_PhanLoaiPhim" />
       <nodes>
-        <classShapeMoniker Id="6d728926-0e87-4617-93d1-e19b90cffb3c" />
-        <classShapeMoniker Id="3d22f9c6-50f3-46f8-bdc7-4777d62aff24" />
+        <classShapeMoniker Id="f1393b2c-2bc9-48c3-885d-9a17235a1805" />
+        <classShapeMoniker Id="07f9f3fa-c865-401e-bea8-4f5f2af95ca3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 19.9431469726563); (3.51041666666667 : 19.9431469726563 : JumpStart); (3.67708333333333 : 19.9431469726563 : JumpEnd); (3.75 : 19.9431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 19.9431469726563); (3.51041666666667 : 19.9431469726563 : JumpStart); (3.67708333333333 : 19.9431469726563 : JumpEnd); (3.75 : 19.9431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/KiemDuyetPhim/KiemDuyetPhim_Phim" />
       <nodes>
-        <classShapeMoniker Id="b4969e28-e173-4efb-9e6b-9b303515888f" />
-        <classShapeMoniker Id="6d728926-0e87-4617-93d1-e19b90cffb3c" />
+        <classShapeMoniker Id="f39a1cd0-2980-4e5e-80fa-1be9a8e44733" />
+        <classShapeMoniker Id="f1393b2c-2bc9-48c3-885d-9a17235a1805" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 15.9374995); (6.26041666666667 : 15.9374995 : JumpStart); (6.42708333333333 : 15.9374995 : JumpEnd); (7.5 : 15.9374995); (7.5 : 17)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 15.9374995); (6.26041666666667 : 15.9374995 : JumpStart); (6.42708333333333 : 15.9374995 : JumpEnd); (7.5 : 15.9374995); (7.5 : 17)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/Rap/Rap_LichChieu" />
       <nodes>
-        <classShapeMoniker Id="856425ef-a207-4197-aba3-136079eb141b" />
-        <classShapeMoniker Id="e16abaf3-8458-41dd-b13d-a6c16ac69775" />
+        <classShapeMoniker Id="9b1c66b4-0dc9-4e8d-a6ff-528ee9259fcc" />
+        <classShapeMoniker Id="dbc97b73-3015-47c1-8919-298c9e428784" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 16.7364005533854); (3.51041666666667 : 16.7364005533854 : JumpStart); (3.67708333333333 : 16.7364005533854 : JumpEnd); (3.75 : 16.7364005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 16.7364005533854); (3.75 : 16.7364005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/CumRap/CumRap_Rap" />
       <nodes>
-        <classShapeMoniker Id="6154ed66-d7ad-4c18-828e-9cfd3e486590" />
-        <classShapeMoniker Id="856425ef-a207-4197-aba3-136079eb141b" />
+        <classShapeMoniker Id="c449c848-636a-4b6c-af92-88dca2283ce9" />
+        <classShapeMoniker Id="9b1c66b4-0dc9-4e8d-a6ff-528ee9259fcc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 15.2219962565104); (3.51041666666667 : 15.2219962565104 : JumpStart); (3.67708333333333 : 15.2219962565104 : JumpEnd); (3.75 : 15.2219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 15.2219962565104); (3.75 : 15.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/LoaiRap/LoaiRap_Rap" />
       <nodes>
-        <classShapeMoniker Id="fea3b307-920d-4cfc-b584-b40bbaf7132f" />
-        <classShapeMoniker Id="856425ef-a207-4197-aba3-136079eb141b" />
+        <classShapeMoniker Id="7f458999-5bc1-4385-939a-6252fe051d68" />
+        <classShapeMoniker Id="9b1c66b4-0dc9-4e8d-a6ff-528ee9259fcc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.34375 : 23); (6.34375 : 15.26562725); (8.32291666666667 : 15.26562725 : JumpStart); (8.48958333333333 : 15.26562725 : JumpEnd); (8.66666666666667 : 15.26562725 : JumpStart); (8.83333333333333 : 15.26562725 : JumpEnd); (10 : 15.26562725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.34375 : 23); (6.34375 : 15.26562725); (10 : 15.26562725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/SanPham/SanPham_HoaDonNhapHang" />
       <nodes>
-        <classShapeMoniker Id="0c895f5e-4b61-4168-a6f1-9e3295f15a87" />
-        <classShapeMoniker Id="baaf5f5e-3ff4-4392-a61a-b6d526614abb" />
+        <classShapeMoniker Id="4202c8a9-c5a0-4b25-8481-b289b7586843" />
+        <classShapeMoniker Id="ca4f1275-8a54-400b-83f4-90f904540aab" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.328127 : 23); (7.328127 : 21.8189925130208); (8.32291666666667 : 21.8189925130208 : JumpStart); (8.48958333333333 : 21.8189925130208 : JumpEnd); (8.75 : 21.8189925130208); (8.75 : 12.3401985332031); (9 : 12.3401985332031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.328127 : 23); (7.328127 : 21.8189925130208); (8.32291666666667 : 21.8189925130208 : JumpStart); (8.48958333333333 : 21.8189925130208 : JumpEnd); (8.75 : 21.8189925130208); (8.75 : 12.3401985332031); (9 : 12.3401985332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/SanPham/SanPham_HoaDonSanPham" />
       <nodes>
-        <classShapeMoniker Id="0c895f5e-4b61-4168-a6f1-9e3295f15a87" />
-        <classShapeMoniker Id="d3e2df03-4de3-4a31-a884-64a768b26808" />
+        <classShapeMoniker Id="4202c8a9-c5a0-4b25-8481-b289b7586843" />
+        <classShapeMoniker Id="17d15c0b-f3e9-4ed5-b532-b9808d018ac6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 23.9719962565104); (8.32291666666667 : 23.9719962565104 : JumpStart); (8.48958333333333 : 23.9719962565104 : JumpEnd); (9 : 23.9719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 23.9719962565104); (8.32291666666667 : 23.9719962565104 : JumpStart); (8.48958333333333 : 23.9719962565104 : JumpEnd); (9 : 23.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/SanPham/SanPham_Kho" />
       <nodes>
-        <classShapeMoniker Id="0c895f5e-4b61-4168-a6f1-9e3295f15a87" />
-        <classShapeMoniker Id="1afebbdc-f798-46b3-a424-cf0c979ab930" />
+        <classShapeMoniker Id="4202c8a9-c5a0-4b25-8481-b289b7586843" />
+        <classShapeMoniker Id="b67ce1c4-4de1-4f5b-9b47-f1c23d65e61a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 23.9142976888021); (6.25 : 23.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 23.9142976888021); (6.25 : 23.9142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/NhaCungCap/NhaCungCap_SanPham" />
       <nodes>
-        <classShapeMoniker Id="deba4d9f-cb6c-40df-8e17-9e3468bf8ab8" />
-        <classShapeMoniker Id="0c895f5e-4b61-4168-a6f1-9e3295f15a87" />
+        <classShapeMoniker Id="9e03c38c-3bdd-4940-8b24-d1e7e86d39c1" />
+        <classShapeMoniker Id="4202c8a9-c5a0-4b25-8481-b289b7586843" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.68653746153846); (5.81607443490112 : 7.37046302663734 : JumpStart); (5.93392556509888 : 7.25261189643958 : JumpEnd); (5.9375 : 7.24903746153846); (5.9375 : 5.88544840494792); (5.97916666666667 : 5.88544840494792 : JumpStart); (6.14583333333333 : 5.88544840494792 : JumpEnd); (6.25 : 5.88544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.68653746153846); (5.9375 : 7.24903746153846); (5.9375 : 5.88544840494792); (6.25 : 5.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/KhachHang/KhachHang_TaiKhoan" />
       <nodes>
-        <classShapeMoniker Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" />
-        <classShapeMoniker Id="a7cce6ee-4646-46c4-9c4c-db810a0e677c" />
+        <classShapeMoniker Id="c2861bea-3bef-40b1-b7eb-94e68d754119" />
+        <classShapeMoniker Id="cc75b76a-445a-4b0f-a1d4-ee9c0ea6b8d6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.38022420247396); (5.97916666666667 : 5.38022420247396 : JumpStart); (6.14583333333333 : 5.38022420247396 : JumpEnd); (6.25 : 5.38022420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.38022420247396); (5.97916666666667 : 5.38022420247396 : JumpStart); (6.14583333333333 : 5.38022420247396 : JumpEnd); (6.25 : 5.38022420247396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/NhanVien/NhanVien_TaiKhoan" />
       <nodes>
-        <classShapeMoniker Id="012bb714-74e5-4771-973b-8f10363bab6f" />
-        <classShapeMoniker Id="a7cce6ee-4646-46c4-9c4c-db810a0e677c" />
+        <classShapeMoniker Id="f53454be-19b5-4f4a-a93b-94ff36d551ec" />
+        <classShapeMoniker Id="cc75b76a-445a-4b0f-a1d4-ee9c0ea6b8d6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 26.9431469726563); (8.40625 : 26.9431469726563); (8.40625 : 21.5689925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 26.9431469726563); (8.40625 : 26.9431469726563); (8.40625 : 21.5689925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/TheLoai/TheLoai_PhanLoaiPhim" />
       <nodes>
-        <classShapeMoniker Id="09691692-82c5-4b91-9937-d5f09d967c67" />
-        <classShapeMoniker Id="3d22f9c6-50f3-46f8-bdc7-4777d62aff24" />
+        <classShapeMoniker Id="0315712e-db0c-40ee-83bf-f9088b2b229e" />
+        <classShapeMoniker Id="07f9f3fa-c865-401e-bea8-4f5f2af95ca3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 8.8124995); (11.5416666666667 : 8.8124995 : JumpStart); (11.7083333333333 : 8.8124995 : JumpEnd); (13 : 8.8124995); (13 : 9.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 8.8124995); (13 : 8.8124995); (13 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/Ve/Ve_HoaDonDatVe" />
       <nodes>
-        <classShapeMoniker Id="50ee9299-7d41-42f4-a79b-f82b553397a8" />
-        <classShapeMoniker Id="5dcef194-ac94-4b06-842f-d15d44048547" />
+        <classShapeMoniker Id="2a8d5ce7-346a-488c-88b5-369be5f8aeff" />
+        <classShapeMoniker Id="cb9615e9-c15e-4710-acc9-abcea7a790bd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.9319482421875); (5.79166666666667 : 9.9319482421875 : JumpStart); (5.95833333333333 : 9.9319482421875 : JumpEnd); (9.25 : 9.9319482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 9.9319482421875); (9.25 : 9.9319482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/KhachHang/KhachHang_Ve" />
       <nodes>
-        <classShapeMoniker Id="7ad44902-7788-4c29-a7fe-4b3c59058acf" />
-        <classShapeMoniker Id="50ee9299-7d41-42f4-a79b-f82b553397a8" />
+        <classShapeMoniker Id="c2861bea-3bef-40b1-b7eb-94e68d754119" />
+        <classShapeMoniker Id="2a8d5ce7-346a-488c-88b5-369be5f8aeff" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 17); (8.40625 : 9.9632007421875); (9.25 : 9.9632007421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 17); (8.40625 : 9.9632007421875); (9.25 : 9.9632007421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaDataContext/LichChieu/LichChieu_Ve" />
       <nodes>
-        <classShapeMoniker Id="e16abaf3-8458-41dd-b13d-a6c16ac69775" />
-        <classShapeMoniker Id="50ee9299-7d41-42f4-a79b-f82b553397a8" />
+        <classShapeMoniker Id="dbc97b73-3015-47c1-8919-298c9e428784" />
+        <classShapeMoniker Id="2a8d5ce7-346a-488c-88b5-369be5f8aeff" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

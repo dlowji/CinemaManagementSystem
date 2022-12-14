@@ -707,8 +707,7 @@ namespace CinemaManagementSystem
 
         private void cbbSearchTime_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cbbSearchTime.SelectedText);
-            receiptSearchTime = cbbSearchTime.SelectedText;
+            receiptSearchTime = cbbSearchTime.Text;
             button3.PerformClick();
         }
 

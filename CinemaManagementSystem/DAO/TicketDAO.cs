@@ -78,16 +78,15 @@ namespace GUI.DAO
                 return query.Count();
             }
         }
-        public static int BuyTicket(string ticketID, int type, decimal price)
+        public static int BuyTicket(int ticketID, decimal price)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var ve = (from v in db.Ves
-                           where v.id.Equals(ticketID)
+                           where v.id == (ticketID)
                            select v).First();
 
                 ve.TrangThai = 1;
-                ve.LoaiVe = type;
                 ve.TienBanVe = price;
 
                 //ask the datacontext to save all the changes

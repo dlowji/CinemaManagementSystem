@@ -99,6 +99,12 @@ namespace CinemaManagementSystem.View.Customer
                 //grpLoaiVe.Enabled = true;
                 //rdoAdult.Checked = true;
 
+                if (listSeatSelected.Count >= 5)
+                {
+                    MessageBox.Show("Bạn chỉ có chọn tối đa 5 ghế", "Cảnh báo");
+                    return;
+                }
+
                 btnSeat.BackColor = Color.Yellow;
                 Ve ticket = btnSeat.Tag as Ve;
 

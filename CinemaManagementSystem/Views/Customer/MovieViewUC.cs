@@ -75,17 +75,30 @@ namespace CinemaManagementSystem.View.Customer
                 lbForReleaseYear.Text = item.NamSX.ToString();
                 lbForReleaseYear.Font = new Font("Verdana", 11);
 
+                //button for order
+                Button btn = new Button();
+                btn.AutoSize = true;
+                btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
+                btn.Cursor = System.Windows.Forms.Cursors.Hand;
+                btn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+                btn.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btn.ForeColor = System.Drawing.Color.White;
+                btn.Size = new System.Drawing.Size(118, 35);
+                btn.Text = "Đặt phim";
+                btn.Tag = item;
+                btn.Click += flp_Click;
+
                 //flowlayout panel
                 FlowLayoutPanel flp = new FlowLayoutPanel();
-                flp.Size = new Size(191, 259);
+                flp.Size = new Size(191, 280);
                 flp.Cursor = Cursors.Hand;
                 flp.Tag = item;
-                flp.Click += flp_Click;
                 flp.FlowDirection = FlowDirection.LeftToRight;
                 flp.BorderStyle = BorderStyle.FixedSingle;
                 flp.Controls.Add(pb);
                 flp.Controls.Add(lbForMovieName);
                 flp.Controls.Add(lbForReleaseYear);
+                flp.Controls.Add(btn);
 
                 flpMovies.Controls.Add(flp);
             }
@@ -93,8 +106,8 @@ namespace CinemaManagementSystem.View.Customer
 
         private void flp_Click(object sender, EventArgs e)
         {
-            FlowLayoutPanel flp = sender as FlowLayoutPanel;
-            Phim movie = flp.Tag as Phim;
+            Button btn = sender as Button;
+            Phim movie = btn.Tag as Phim;
             OrderShowTimes showTimeUC = new OrderShowTimes(customerId, movie, homepage);
             homepage.Controls.Clear();
             showTimeUC.Dock = DockStyle.Fill;

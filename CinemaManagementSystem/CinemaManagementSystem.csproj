@@ -81,11 +81,23 @@
     <Compile Include="NewVoucherRelease.Designer.cs">
       <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Customer\PaymentUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\PaymentUC.Designer.cs">
+      <DependentUpon>PaymentUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Customer\Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Customer\Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\TicketUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\TicketUC.Designer.cs">
+      <DependentUpon>TicketUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\NhapMatKhauMoi.cs">
       <SubType>Form</SubType>
@@ -309,8 +321,14 @@
     <EmbeddedResource Include="NewVoucherRelease.resx">
       <DependentUpon>NewVoucherRelease.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\PaymentUC.resx">
+      <DependentUpon>PaymentUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Customer\Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\TicketUC.resx">
+      <DependentUpon>TicketUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\NhapMatKhauMoi.resx">
       <DependentUpon>NhapMatKhauMoi.cs</DependentUpon>
@@ -692,6 +710,7 @@
     <None Include="Resources\printticket.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ImpotantData\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

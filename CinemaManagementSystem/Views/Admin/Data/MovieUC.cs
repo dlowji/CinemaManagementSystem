@@ -244,7 +244,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
 
             if (!copyResult)
             {
-                MessageBox.Show("Thêm phim thất bại");
+                MessageBox.Show("Sửa phim thất bại");
                 return;
             }
 

@@ -15,7 +15,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         public CinemaTypeUC()
         {
             InitializeComponent();
-            Helper.ConfigStyle(this);
+            //Helper.ConfigStyle(this);
             LoadScreenType();
         }
 

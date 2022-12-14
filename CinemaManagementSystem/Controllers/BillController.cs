@@ -17,7 +17,7 @@ namespace CinemaManagementSystem.Controllers
 
             CapDoThanhVien memberLevel = CustomerController.GetMemberLevelById(cus.idCapDoThanhVien);
 
-            decimal point = memberLevel.DiemThuongQuayVe * ticketPrice + memberLevel.DiemThuongBapNuoc * foodPrice;
+            decimal point = (memberLevel.DiemThuongQuayVe * ticketPrice)/1000 + (memberLevel.DiemThuongBapNuoc * foodPrice)/1000;
 
             CustomerController.UpdateMemberPoint(cus.id, (int)cus.DiemTichLuy + (int)Decimal.Round(point));
             HoaDon bill = BillDAO.InsertTicketBill(customerId, staffId, discount, totalPrice, isOnline);
@@ -32,6 +32,7 @@ namespace CinemaManagementSystem.Controllers
             foreach (var item in purchaseTickets)
             {
                 bool result = BillDAO.InsertTicketBillDetail(bill, item);
+                TicketDAO.BuyTicket(item.id, (decimal)item.TienBanVe);
 
                 if (!result)
                 {

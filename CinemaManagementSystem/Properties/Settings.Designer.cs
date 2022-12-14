@@ -83,5 +83,15 @@ namespace CinemaManagementSystem.Properties {
                 return ((string)(this["CINEMAFConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi\\db_server;Initial Catalog=CINEMAC;Integrated Security=True")]
+        public string CINEMACConnectionString {
+            get {
+                return ((string)(this["CINEMACConnectionString"]));
+            }
+        }
     }
 }

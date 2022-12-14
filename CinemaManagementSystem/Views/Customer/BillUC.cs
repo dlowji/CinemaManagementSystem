@@ -1,5 +1,6 @@
 ﻿using CinemaManagementSystem.Controllers;
 using CinemaManagementSystem.Helper;
+using CinemaManagementSystem.Views.Customer;
 using GUI.frmAdminUserControls.DataUserControl;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ticketPayment;
 
 namespace CinemaManagementSystem.View.Customer
 {
@@ -19,12 +21,15 @@ namespace CinemaManagementSystem.View.Customer
         private List<Support> selectedProducts;
         private Phim movie;
         private LichChieu showTimes;
+        private Panel homepage;
         private decimal totalTicketPrice;
         private decimal totalProductPrice = 0;
         private decimal discount = 0;
 
+
+        private decimal maxPoint = 0;
         private string customerId;
-        public BillUC(List<Button> selectedSeats, List<Support> selectedProducts, LichChieu showTimes, Phim movie, decimal totalTicketPrice, string customerId)
+        public BillUC(List<Button> selectedSeats, List<Support> selectedProducts, LichChieu showTimes, Phim movie, decimal totalTicketPrice, string customerId, Panel homepage)
         {
             InitializeComponent();
             this.showTimes = showTimes;
@@ -33,6 +38,7 @@ namespace CinemaManagementSystem.View.Customer
             this.selectedProducts = selectedProducts;
             this.totalTicketPrice = totalTicketPrice;
             this.customerId = customerId;
+            this.homepage = homepage;
         }
 
         private void BillUC_Load(object sender, EventArgs e)
@@ -48,7 +54,7 @@ namespace CinemaManagementSystem.View.Customer
             lbMovieName.Text = movie.TenPhim;
             lbDate.Text = showTimes.ThoiGianChieu.ToShortDateString();
             lbTime.Text = showTimes.ThoiGianChieu.ToShortTimeString() + " - "
-                + showTimes.ThoiGianChieu.AddMinutes(movie.ThoiLuong).ToShortTimeString(); ;
+                + showTimes.ThoiGianChieu.AddMinutes(movie.ThoiLuong).ToShortTimeString();
             lbCinema.Text = cinema.TenRap;
             lbCineplex.Text = cineplex.Ten;
             lbSeats.Text = LoadSeatsInfor();
@@ -124,6 +130,9 @@ namespace CinemaManagementSystem.View.Customer
             lbFee.Text = Helper.Helper.FormatVNMoney(0);
             lbDiscount.Text = Helper.Helper.FormatVNMoney(0);
             lbAfterDiscount.Text = Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
+            maxPoint = (decimal)(Decimal.ToDouble(totalTicketPrice + totalProductPrice - discount) * 0.9 / 1000);
+
+            LoadCusInfo();
         }
 
         private string LoadSeatsInfor()
@@ -140,7 +149,7 @@ namespace CinemaManagementSystem.View.Customer
             return sb.ToString();
         }
 
-        private void LoadCusInfo(object sender, EventArgs e)
+        private void LoadCusInfo()
         {
             KhachHang cus = CustomerController.GetCustomerById(customerId);
 
@@ -149,6 +158,10 @@ namespace CinemaManagementSystem.View.Customer
                 MessageBox.Show("Lỗi hệ thống", "Lỗi xác thực");
                 return;
             }
+
+            lbPhone.Visible = true;
+            txbPhone.Visible = true;
+            txbPhone.Text = cus.SDT;
 
             lbName.Visible = true;
             txbName.Visible = true;
@@ -159,24 +172,82 @@ namespace CinemaManagementSystem.View.Customer
             txbEmail.Text = cus.Email;
 
             lbVoucher.Visible = true;
-            txbVoucher.Visible = true;
+            nud.Maximum = 10000;
+            nud.Tag = (decimal)cus.DiemTichLuy;
+            nud.Value = (decimal)cus.DiemTichLuy;
 
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            bool result = BillController.Payment(selectedSeats, customerId, null, discount,totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, true);
+            PaymentUC paymentUC = new PaymentUC(movie, showTimes, LoadSeatsInfor(), homepage, totalTicketPrice, totalProductPrice, discount, customerId, selectedSeats, selectedProducts);
+            paymentUC.Dock = DockStyle.Fill;
 
-            if (result)
+            homepage.Controls.Clear();
+            homepage.Controls.Add(paymentUC);
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
             {
-                MessageBox.Show("Thanh toán hóa đơn thành công", "Thông báo");
-                return;
+                if (nud.Value < 20)
+                {
+                    MessageBox.Show("Điểm thưởng tối thiểu được sử dụng cho mỗi giao dịch là 20 điểm trở lên", "Thông báo");
+                    return;
+                }
+                nud.Enabled = true;
+
+                if (nud.Value >= maxPoint)
+                {
+                    nud.Value = maxPoint;
+                }
+
+                nud.Tag = nud.Value;
+                discount = nud.Value * 1000;
+                lbDiscount.Text = Helper.Helper.FormatVNMoney(discount);
+                lbAfterDiscount.Text = Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
             }
             else
             {
-                MessageBox.Show("Thanh toán hóa đơn thất bại", "Thông báo");
+                nud.Enabled = false;
+                discount = 0;
+                lbDiscount.Text = Helper.Helper.FormatVNMoney(discount);
+                lbAfterDiscount.Text = Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
+            }
+        }
+
+        private void nud_ValueChanged(object sender, EventArgs e)
+        {
+            decimal oldValue = (decimal)nud.Tag;
+
+            if (nud.Value > maxPoint)
+            {
+                if (checkBox1.Checked == true)
+                {
+                    MessageBox.Show("Điểm thưởng chỉ được sử dụng thanh toán tối đa 90% giá trị đơn hàng.", "Thông báo");
+                    nud.Value = maxPoint;
+                    return;
+                }
+            }
+
+            KhachHang cus = CustomerController.GetCustomerById(customerId);
+            if (nud.Value > cus.DiemTichLuy)
+            {
+                MessageBox.Show("Khách hàng hiện tại chỉ có tối đa " + cus.DiemTichLuy + " điểm thưởng");
+                nud.Value = (decimal)cus.DiemTichLuy;
                 return;
             }
+
+            if (checkBox1.Checked == true)
+            {
+                discount = nud.Value * 1000;
+                lbDiscount.Text = Helper.Helper.FormatVNMoney(discount);
+                lbAfterDiscount.Text = Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
+                nud.Tag = nud.Value;
+            }
+
         }
     }
 }
