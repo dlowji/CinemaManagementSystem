@@ -97,6 +97,12 @@ namespace CinemaManagementSystem.View.Customer
                 //grpLoaiVe.Enabled = true;
                 //rdoAdult.Checked = true;
 
+                if (listSeatSelected.Count >= 5)
+                {
+                    MessageBox.Show("Bạn chỉ có chọn tối đa 5 ghế", "Cảnh báo");
+                    return;
+                }
+
                 btnSeat.BackColor = Color.Yellow;
                 Ve ticket = btnSeat.Tag as Ve;
 
@@ -218,6 +224,11 @@ namespace CinemaManagementSystem.View.Customer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (listSeatSelected.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ghế trước khi sang bước tiếp theo", "Cảnh báo");
+                return;
+            }
             FoodDrinkUCForStaff foodDrinkUC = new FoodDrinkUCForStaff(staffId, listSeatSelected, Times, Movie, total, homepage);
             foodDrinkUC.Dock = DockStyle.Fill;
 

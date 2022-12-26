@@ -77,6 +77,13 @@ namespace CinemaManagementSystem.View.Customer
                 Button btn = new Button();
                 btn.AutoSize = true;
                 btn.Tag = item;
+
+                int quantity = ProductController.GetQuantityOfProduct(item.id);
+                if (quantity <= 0)
+                {
+                    btn.Enabled = false;
+                }
+
                 btn.Click += AddToCart;
 
                 btn.Image = Properties.Resources.plus__1_;
@@ -208,6 +215,15 @@ namespace CinemaManagementSystem.View.Customer
 
             Decimal oldValue = sp.OldValue;
             SanPham product = sp.Product;
+
+            int quantity = ProductController.GetQuantityOfProduct(product.id);
+
+            if (nud.Value > quantity)
+            {
+                MessageBox.Show("Số lượng sản phẩm không có đủ", "Cảnh báo");
+                nud.Value = quantity;
+                return;
+            }
 
             if (nud.Value > oldValue)
             {

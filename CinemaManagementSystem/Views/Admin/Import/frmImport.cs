@@ -1,4 +1,5 @@
-﻿using GUI.DAO;
+﻿using CinemaManagementSystem.Controllers;
+using GUI.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,18 +26,20 @@ namespace CinemaManagementSystem
         {
             cbbProductList.DataSource = ProductDAO.GetListProduct();
             cbbProductList.DisplayMember = "Tên hiển thị";
-            cbbProductList.ValueMember = "id";
+            cbbProductList.ValueMember = "Mã sản phẩm";
         }
 
         private void btnCofirm_Click(object sender, EventArgs e)
         {
             string productId = cbbProductList.SelectedValue.ToString();
+            SanPham product = ProductDAO.GetProductById(productId);
             decimal importPrice = Decimal.Parse(txbImportPrice.Text);
             int quantity = Int32.Parse(txbQuantity.Text);
 
-            if (BillDAO.InsertImportReceipt(productId, importPrice, quantity, staffId))
+            if (BillDAO.InsertImportReceipt(productId, importPrice, quantity, staffId, product.idNhaCungCap))
             {
                 MessageBox.Show("Nhập sản phẩm thành công");
+                LoadProductList();
             }
             else
             {

@@ -130,7 +130,7 @@ namespace CinemaManagementSystem.View.Customer
             lbFee.Text = Helper.Helper.FormatVNMoney(0);
             lbDiscount.Text = Helper.Helper.FormatVNMoney(0);
             lbAfterDiscount.Text = Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
-            maxPoint = (decimal)(Decimal.ToDouble(totalTicketPrice + totalProductPrice - discount) * 0.9 / 1000);
+            maxPoint = Decimal.Round((decimal)(Decimal.ToDouble(totalTicketPrice + totalProductPrice - discount) * 0.9 / 1000));
 
             LoadCusInfo();
         }
@@ -180,7 +180,7 @@ namespace CinemaManagementSystem.View.Customer
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            PaymentUC paymentUC = new PaymentUC(movie, showTimes, LoadSeatsInfor(), homepage, totalTicketPrice, totalProductPrice, discount, customerId, selectedSeats, selectedProducts);
+            PaymentUC paymentUC = new PaymentUC(checkBox1.Checked, nud.Value, movie, showTimes, LoadSeatsInfor(), homepage, totalTicketPrice, totalProductPrice, discount, customerId, selectedSeats, selectedProducts);
             paymentUC.Dock = DockStyle.Fill;
 
             homepage.Controls.Clear();

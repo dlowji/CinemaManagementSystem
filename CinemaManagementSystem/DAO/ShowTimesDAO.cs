@@ -184,8 +184,9 @@ namespace GUI.DAO
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
@@ -209,8 +210,9 @@ namespace GUI.DAO
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
@@ -242,13 +244,37 @@ namespace GUI.DAO
             return dt;
         }
 
-        public static string getShowTimesIdByCinemaName(string name)
+        public static string GetShowTimesIdByCinemaName(string name)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = (from lc in db.LichChieus
                             where lc.Rap.TenRap.Equals(name)
                             select lc);
+
+                return query.FirstOrDefault().id;
+            }
+        }
+
+        public static string GetShowTimeIdNotCreateTicketByCinemaName(string name)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = (from lc in db.LichChieus
+                             where lc.Rap.TenRap.Equals(name) && lc.TrangThai == 0
+                             select lc);
+
+                return query.FirstOrDefault().id;
+            }
+        }
+
+        public static string GetShowTimeIdCreatedTicketByCinemaName(string name)
+        {
+            using (CinemaDataContext db = new CinemaDataContext())
+            {
+                var query = (from lc in db.LichChieus
+                             where lc.Rap.TenRap.Equals(name) && lc.TrangThai == 1
+                             select lc);
 
                 return query.FirstOrDefault().id;
             }

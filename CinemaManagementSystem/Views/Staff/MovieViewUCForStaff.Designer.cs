@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbbGenre = new System.Windows.Forms.ComboBox();
+            this.pbSearchMovie = new System.Windows.Forms.PictureBox();
+            this.txbSearchMovie = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.flpMovies = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchMovie)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbbGenre
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(257, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 9;
+            this.cbbGenre.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGenre.FormattingEnabled = true;
+            this.cbbGenre.Location = new System.Drawing.Point(257, 61);
+            this.cbbGenre.Name = "cbbGenre";
+            this.cbbGenre.Size = new System.Drawing.Size(121, 26);
+            this.cbbGenre.TabIndex = 9;
             // 
-            // pictureBox1
+            // pbSearchMovie
             // 
-            this.pictureBox1.Image = global::CinemaManagementSystem.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.pbSearchMovie.Image = global::CinemaManagementSystem.Properties.Resources.search;
+            this.pbSearchMovie.Location = new System.Drawing.Point(27, 57);
+            this.pbSearchMovie.Name = "pbSearchMovie";
+            this.pbSearchMovie.Size = new System.Drawing.Size(27, 26);
+            this.pbSearchMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSearchMovie.TabIndex = 8;
+            this.pbSearchMovie.TabStop = false;
             // 
-            // textBox1
+            // txbSearchMovie
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(60, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 26);
-            this.textBox1.TabIndex = 7;
+            this.txbSearchMovie.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearchMovie.Location = new System.Drawing.Point(60, 57);
+            this.txbSearchMovie.Name = "txbSearchMovie";
+            this.txbSearchMovie.Size = new System.Drawing.Size(134, 26);
+            this.txbSearchMovie.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
@@ -93,19 +93,19 @@
             this.flpMovies.Size = new System.Drawing.Size(1013, 445);
             this.flpMovies.TabIndex = 10;
             // 
-            // MovieViewUC
+            // MovieViewUCForStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flpMovies);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbbGenre);
+            this.Controls.Add(this.pbSearchMovie);
+            this.Controls.Add(this.txbSearchMovie);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
-            this.Name = "MovieViewUC";
+            this.Name = "MovieViewUCForStaff";
             this.Size = new System.Drawing.Size(1048, 578);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchMovie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,9 +113,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbbGenre;
+        private System.Windows.Forms.PictureBox pbSearchMovie;
+        private System.Windows.Forms.TextBox txbSearchMovie;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flpMovies;

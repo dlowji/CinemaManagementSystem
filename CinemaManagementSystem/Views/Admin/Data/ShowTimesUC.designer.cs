@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel54 = new System.Windows.Forms.Panel();
-            this.btnSearchShowtime = new System.Windows.Forms.Button();
-            this.txtSearchShowtime = new System.Windows.Forms.TextBox();
             this.btnShowShowtime = new System.Windows.Forms.Button();
             this.btnUpdateShowtime = new System.Windows.Forms.Button();
             this.btnDeleteShowtime = new System.Windows.Forms.Button();
@@ -66,8 +64,6 @@
             // 
             // panel54
             // 
-            this.panel54.Controls.Add(this.btnSearchShowtime);
-            this.panel54.Controls.Add(this.txtSearchShowtime);
             this.panel54.Controls.Add(this.btnShowShowtime);
             this.panel54.Controls.Add(this.btnUpdateShowtime);
             this.panel54.Controls.Add(this.btnDeleteShowtime);
@@ -77,28 +73,6 @@
             this.panel54.Name = "panel54";
             this.panel54.Size = new System.Drawing.Size(1161, 52);
             this.panel54.TabIndex = 10;
-            // 
-            // btnSearchShowtime
-            // 
-            this.btnSearchShowtime.Image = global::CinemaManagementSystem.Properties.Resources.search_icon;
-            this.btnSearchShowtime.Location = new System.Drawing.Point(725, 24);
-            this.btnSearchShowtime.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchShowtime.Name = "btnSearchShowtime";
-            this.btnSearchShowtime.Size = new System.Drawing.Size(20, 22);
-            this.btnSearchShowtime.TabIndex = 7;
-            this.btnSearchShowtime.UseVisualStyleBackColor = true;
-            this.btnSearchShowtime.Click += new System.EventHandler(this.btnSearchShowtime_Click);
-            // 
-            // txtSearchShowtime
-            // 
-            this.txtSearchShowtime.Location = new System.Drawing.Point(470, 24);
-            this.txtSearchShowtime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchShowtime.Multiline = true;
-            this.txtSearchShowtime.Name = "txtSearchShowtime";
-            this.txtSearchShowtime.Size = new System.Drawing.Size(252, 23);
-            this.txtSearchShowtime.TabIndex = 6;
-            this.txtSearchShowtime.Text = "Tìm theo tên phim...";
-            this.txtSearchShowtime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchShowtime_KeyDown);
             // 
             // btnShowShowtime
             // 
@@ -392,7 +366,6 @@
             this.Name = "ShowTimesUC";
             this.Size = new System.Drawing.Size(1161, 518);
             this.panel54.ResumeLayout(false);
-            this.panel54.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvShowtime)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -406,8 +379,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel54;
-        private System.Windows.Forms.Button btnSearchShowtime;
-        private System.Windows.Forms.TextBox txtSearchShowtime;
         private System.Windows.Forms.Button btnShowShowtime;
         private System.Windows.Forms.Button btnUpdateShowtime;
         private System.Windows.Forms.Button btnDeleteShowtime;

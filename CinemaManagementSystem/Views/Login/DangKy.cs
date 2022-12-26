@@ -117,12 +117,10 @@ namespace CinemaManagementSystem.View.Login
         {
             var requiredControls = new[]
             {
-                txbTenKhachHang,
                 txbEmail,
                 txbMatKhau,
                 txbXacNhanMK,
                 txbSoDienThoai,
-                txbAddress,
             };
 
             bool validFields = Helper.Helper.ValidateValidFields(requiredControls);
@@ -133,13 +131,25 @@ namespace CinemaManagementSystem.View.Login
                 return;
             }
 
-            string cusName = txbTenKhachHang.Text;
-            string email = txbEmail.Text;
-            string password = txbMatKhau.Text;
-            string confirm = txbXacNhanMK.Text;
-            string phone = txbSoDienThoai.Text;
-            string address = txbAddress.Text;
-            string cmnd = txbCMND.Text;
+            var allowWhiteSpaceRequiredControls = new[]
+            {
+                txbTenKhachHang,
+                txbAddress
+            };
+
+            foreach (var control in allowWhiteSpaceRequiredControls.Where(c => String.IsNullOrWhiteSpace(c.Text)))
+            {
+                MessageBox.Show("Thông tin yêu cầu không được để trống", "Cảnh báo");
+                return;
+            }
+
+            string cusName = txbTenKhachHang.Text.Trim();
+            string email = txbEmail.Text.Trim();
+            string password = txbMatKhau.Text.Trim();
+            string confirm = txbXacNhanMK.Text.Trim();
+            string phone = txbSoDienThoai.Text.Trim();
+            string address = txbAddress.Text.Trim();
+            string cmnd = txbCMND.Text.Trim().Equals("CMND") ? null : txbCMND.Text.Trim();
 
             bool validEmail = Helper.Helper.IsValidEmail(email);
 

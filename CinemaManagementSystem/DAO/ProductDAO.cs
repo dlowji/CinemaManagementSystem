@@ -207,13 +207,14 @@ namespace GUI.DAO
             dt.Columns.Add("Loại sản phẩm", typeof(string));
             dt.Columns.Add("Giá tiền", typeof(decimal));
             dt.Columns.Add("Số lượng", typeof(decimal));
+            dt.Columns.Add("Nhà cung cấp", typeof(decimal));
 
             using (CinemaDataContext db = new CinemaDataContext())
             {
                 var query = from sp in db.SanPhams
                             join storage in db.Khos
                             on sp.id equals storage.idSanPham
-                            where sp.TenHienThi.Contains(name)
+                            where sp.TenHienThi.ToUpper().Contains(name)
                             select new
                             {
                                 id = sp.id,
@@ -225,8 +226,9 @@ namespace GUI.DAO
 
                 foreach (var item in query)
                 {
+                    NhaCungCap supplier = ProductDAO.GetSupplierByProductId(item.id);
                     string type = item.LoaiSanPham == 1 ? "Đồ ăn" : "Thức uống";
-                    dt.Rows.Add(item.id, item.TenHienThi, type, item.GiaTien, item.SoLuong);
+                    dt.Rows.Add(item.id, item.TenHienThi, type, item.GiaTien, item.SoLuong, supplier.Ten);
                 }
             }
 

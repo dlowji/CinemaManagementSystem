@@ -142,7 +142,7 @@ namespace CinemaManagementSystem.View.Customer
         private void cbbGenre_SelectedIndexChanged(object sender, EventArgs e)
         {
             searchGenre = cbbGenre.SelectedValue.ToString();
-            searchMovieName = txbSearchMovie.Text;
+            searchMovieName = txbSearchMovie.Text.Trim().ToUpper();
 
             LoadMovieListByInputs(searchMovieName, searchGenre, dateTimePicker1.Value);
             LoadMovies();

@@ -69,6 +69,11 @@ namespace GUI.frmAdminUserControls.DataUserControl
         private void LoadCinemaByShowTimeId(string showTimeId)
         {
             LichChieu showTime = ShowTimeController.GetShowTimeById(showTimeId);
+
+            if (showTime == null)
+            {
+                return;
+            }
             Rap cinema = CinemaController.GetCinemaById(showTime.idRap);
 
             if (cinema == null)
@@ -170,7 +175,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
         void LoadMovieIntoComboBox()
         {
             cboMovies.DataSource = MovieController.GetMovies();
-            cboMovies.DisplayMember = "Ten";
+            cboMovies.DisplayMember = "TenPhim";
             cboMovies.ValueMember = "id";
         }
         private void cboFormatID_Showtime_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,22 +276,6 @@ namespace GUI.frmAdminUserControls.DataUserControl
             string showtimeID = txtShowtimeID.Text;
             DeleteShowtime(showtimeID);
             LoadShowtimeList();
-        }
-
-        //Search
-        private void btnSearchShowtime_Click(object sender, EventArgs e)
-        {
-            string movieName = txtSearchShowtime.Text;
-            showtimeList.DataSource = ShowTimesDAO.SearchShowtimeByMovieName(movieName);
-        }
-
-		private void txtSearchShowtime_KeyDown(object sender, KeyEventArgs e)
-		{
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSearchShowtime.PerformClick();
-                e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
-            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

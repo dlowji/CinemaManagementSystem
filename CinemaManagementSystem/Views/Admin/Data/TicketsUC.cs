@@ -104,16 +104,15 @@ namespace GUI.frmAdminUserControls.DataUserControl
             if (lsvAllListShowTimes.SelectedItems.Count > 0)
             {
                 string cinemaName = lsvAllListShowTimes.SelectedItems[0].Text;
+                string status = lsvAllListShowTimes.SelectedItems[0].SubItems[3].Text;
 
-                int trangThai = ShowTimesDAO.getShowTimesStatusByCinemaName(cinemaName);
-
-                if (trangThai == 1)
+                if (status.Equals("Đã tạo"))
                 {
                     MessageBox.Show("LỊCH CHIẾU NÀY ĐÃ ĐƯỢC TẠO VÉ!!!", "THÔNG BÁO");
                     return;
                 }
 
-                string showTimesId = ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName);
+                string showTimesId = ShowTimesDAO.GetShowTimeIdNotCreateTicketByCinemaName(cinemaName);
                 AutoCreateTicketsByShowTimesId(showTimesId);
                 LoadAllListShowTimes();
                 LoadTicketsByShowTimes(showTimesId);
@@ -130,9 +129,9 @@ namespace GUI.frmAdminUserControls.DataUserControl
             {
                 string cinemaName = lsvAllListShowTimes.SelectedItems[0].Text;
 
-                string id = ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName);
+                string id = ShowTimesDAO.GetShowTimesIdByCinemaName(cinemaName);
 
-                LoadTicketsByShowTimes(ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName));
+                LoadTicketsByShowTimes(ShowTimesDAO.GetShowTimesIdByCinemaName(cinemaName));
             }
         }
 
@@ -142,16 +141,16 @@ namespace GUI.frmAdminUserControls.DataUserControl
             {
                 string cinemaName = lsvAllListShowTimes.SelectedItems[0].Text;
 
-                int trangThai = ShowTimesDAO.getShowTimesStatusByCinemaName(cinemaName);
+                string status = lsvAllListShowTimes.SelectedItems[0].SubItems[3].Text;
 
-                if (trangThai == 0)
+                if (status.Equals("Chưa tạo"))
                 {
                     MessageBox.Show("LỊCH CHIẾU NÀY CHƯA ĐƯỢC TẠO VÉ!!!", "THÔNG BÁO");
                     return;
                 }
-                DeleteTicketsByShowTimesId(ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName));
+                DeleteTicketsByShowTimesId(ShowTimesDAO.GetShowTimeIdCreatedTicketByCinemaName(cinemaName));
                 LoadAllListShowTimes();
-                LoadTicketsByShowTimes(ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName));
+                LoadTicketsByShowTimes(ShowTimesDAO.GetShowTimesIdByCinemaName(cinemaName));
             }
             else
             {
@@ -215,7 +214,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
             {
                 string cinemaName = lsvAllListShowTimes.SelectedItems[0].Text;
 
-                LoadTicketsBoughtByShowTimes(ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName));
+                LoadTicketsBoughtByShowTimes(ShowTimesDAO.GetShowTimesIdByCinemaName(cinemaName));
             }
             else
             {
@@ -229,7 +228,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
             {
                 string cinemaName = lsvAllListShowTimes.SelectedItems[0].Text;
 
-                LoadTicketsByShowTimes(ShowTimesDAO.getShowTimesIdByCinemaName(cinemaName));
+                LoadTicketsByShowTimes(ShowTimesDAO.GetShowTimesIdByCinemaName(cinemaName));
             }
             else
             {

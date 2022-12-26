@@ -27,9 +27,11 @@ namespace CinemaManagementSystem.Views.Customer
         private decimal totalTicketPrice;
         private decimal totalProductPrice = 0;
         private decimal discount = 0;
+        private bool usePoint;
+        private decimal point;
 
         private string customerId;
-        public PaymentUC(Phim movie, LichChieu showTimes, string seats, Panel homepage, decimal totalTicketPrice, decimal totalProductPrice, decimal discount, string customerId, List<Button> selectedSeats, List<Support> selectedProducts)
+        public PaymentUC(bool usePoint, decimal point, Phim movie, LichChieu showTimes, string seats, Panel homepage, decimal totalTicketPrice, decimal totalProductPrice, decimal discount, string customerId, List<Button> selectedSeats, List<Support> selectedProducts)
         {
             InitializeComponent();
             this.movie = movie;
@@ -44,6 +46,8 @@ namespace CinemaManagementSystem.Views.Customer
             this.totalProductPrice = totalProductPrice;
             this.discount = discount;
             this.customerId = customerId;
+            this.usePoint = usePoint;
+            this.point = point;
         }
 
         private void PaymentUC_Load(object sender, EventArgs e)
@@ -63,16 +67,26 @@ namespace CinemaManagementSystem.Views.Customer
 
             KiemDuyetPhim censor = MovieController.GetMovieCensorShipByMovieId(movie.id);
             lbRated.Text = censor.Ten + " - " + censor.MoTa;
+            lbTotalPrice.Text = "Tổng cộng: " + Helper.Helper.FormatVNMoney(totalTicketPrice + totalProductPrice - discount);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            bool result = BillController.Payment(selectedSeats, customerId, null, discount, totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, true);
+            bool result = false;
+
+            if (usePoint)
+            {
+                result = BillController.Payment(point, selectedSeats, selectedProducts, customerId, null, discount, totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, true);
+            }
+            else
+            {
+                result = BillController.Payment(selectedSeats, selectedProducts, customerId, null, discount, totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, true);
+            }    
 
             if (result)
             {
                 MessageBox.Show("Thanh toán hóa đơn thành công", "Thông báo");
-                TicketUC ticketUC = new TicketUC(movie, showTimes, seats);
+                TicketUC ticketUC = new TicketUC(movie, showTimes, seats, totalTicketPrice + totalProductPrice - discount);
                 ticketUC.Dock = DockStyle.Fill;
 
                 homepage.Controls.Clear();

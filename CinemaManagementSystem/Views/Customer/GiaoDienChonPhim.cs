@@ -22,14 +22,6 @@ namespace CinemaManagementSystem.View.Customer
             pnData.Controls.Add(movieUc);
         }
 
-        private void btnFoodUC_Click(object sender, EventArgs e)
-        {
-            pnData.Controls.Clear();
-            FoodDrinkUC foodDrinkUc = new FoodDrinkUC(customerId, null, null, null, Decimal.Zero, pnData);
-            foodDrinkUc.Dock = DockStyle.Fill;
-            pnData.Controls.Add(foodDrinkUc);
-        }
-
         public void test(LichChieu showTimes, Phim movie, string staffId)
         {
             pnData.Controls.Clear();

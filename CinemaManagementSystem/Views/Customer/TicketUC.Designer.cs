@@ -39,12 +39,13 @@
             this.lbCineplex = new System.Windows.Forms.Label();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.lbMovieName = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,15 +167,15 @@
             this.lbMovieName.TabIndex = 0;
             this.lbMovieName.Text = "KHỈ CON LON TON THẾ GIỚI";
             // 
-            // label12
+            // lbPrice
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(425, 528);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 23);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "0 đ Ví Momo";
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(425, 528);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(132, 23);
+            this.lbPrice.TabIndex = 4;
+            this.lbPrice.Text = "0 đ Ví Momo";
             // 
             // label11
             // 
@@ -190,7 +191,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(217, 554);
+            this.label13.Location = new System.Drawing.Point(74, 554);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 18);
             this.label13.TabIndex = 6;
@@ -200,7 +201,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(182, 554);
+            this.label14.Location = new System.Drawing.Point(136, 554);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(718, 18);
             this.label14.TabIndex = 7;
@@ -228,11 +229,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // TicketUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
@@ -240,7 +245,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "TicketUC";
-            this.Size = new System.Drawing.Size(1048, 578);
+            this.Size = new System.Drawing.Size(938, 578);
             this.Load += new System.EventHandler(this.TicketUC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -262,11 +267,12 @@
         private System.Windows.Forms.Label lbCineplex;
         private System.Windows.Forms.Label lbDateTime;
         private System.Windows.Forms.Label lbMovieName;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

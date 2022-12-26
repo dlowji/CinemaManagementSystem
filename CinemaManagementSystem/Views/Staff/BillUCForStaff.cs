@@ -201,7 +201,7 @@ namespace CinemaManagementSystem.View.Customer
 
             if (cbStranger.Checked == true) // khach vang lai
             {
-                result = BillController.Payment(selectedSeats, "KH00", staffId, discount, totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, false);
+                result = BillController.Payment(selectedSeats, selectedProducts, "KH00", staffId, discount, totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, false);
             }
             else
             {
@@ -211,7 +211,7 @@ namespace CinemaManagementSystem.View.Customer
                     return;
                 }
 
-                result = BillController.Payment(selectedSeats, member.id, staffId, discount,totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, false);
+                result = BillController.Payment(selectedSeats, selectedProducts, member.id, staffId, discount,totalTicketPrice, totalProductPrice, totalTicketPrice + totalProductPrice, false);
             }
 
             if (result)

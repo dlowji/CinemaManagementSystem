@@ -155,13 +155,13 @@
             // dtpThoiGian
             // 
             this.dtpThoiGian.CustomFormat = "dd/MM/yyyy";
-            this.dtpThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpThoiGian.Location = new System.Drawing.Point(11, 126);
             this.dtpThoiGian.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(289, 27);
             this.dtpThoiGian.TabIndex = 6;
-            this.dtpThoiGian.Value = new System.DateTime(2022, 11, 10, 0, 0, 0, 0);
+            this.dtpThoiGian.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
             this.dtpThoiGian.ValueChanged += new System.EventHandler(this.dtpThoiGian_ValueChanged_1);
             // 
             // label4

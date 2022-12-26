@@ -12,6 +12,15 @@ namespace CinemaManagementSystem.Controllers
 {
     public class ProductController
     {
+        public static bool UpdateProductQuantity(string productId, decimal quantity)
+        {
+            int oldQuantity = ProductController.GetQuantityOfProduct(productId);
+
+            int newQuantity = oldQuantity - (int)quantity;
+
+            return StorageDAO.UpdateProductQuantity(productId, newQuantity);
+        }
+
         public static DataTable GetProductList()
         {
             DataTable products = new DataTable();
