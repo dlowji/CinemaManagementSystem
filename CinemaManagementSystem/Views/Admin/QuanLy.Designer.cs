@@ -94,6 +94,8 @@
             this.lblDenNgay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvRevenue = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnReportRevenue = new System.Windows.Forms.Button();
             this.btnShowRevenue = new System.Windows.Forms.Button();
             this.cboSelectMovie = new System.Windows.Forms.ComboBox();
@@ -122,12 +124,16 @@
             this.QuanLyLichSu = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpNhapKho = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.dtgvImportReceipt = new System.Windows.Forms.DataGridView();
             this.cbbSearchTime = new System.Windows.Forms.ComboBox();
             this.cbbSearchType = new System.Windows.Forms.ComboBox();
             this.txbSearchImportReceipt = new System.Windows.Forms.TextBox();
             this.btnExportImportReceipt = new System.Windows.Forms.Button();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
+            this.txbTicketReceipt = new System.Windows.Forms.TextBox();
+            this.pbTicketSearch = new System.Windows.Forms.PictureBox();
+            this.dtpSearchTime = new System.Windows.Forms.DateTimePicker();
             this.dtgvTicketReceipt = new System.Windows.Forms.DataGridView();
             this.btnExportTicketReceipt = new System.Windows.Forms.Button();
             this.cbbTicketReceiptTimeSearch = new System.Windows.Forms.ComboBox();
@@ -136,12 +142,6 @@
             this.btnAddVoucherRelease = new System.Windows.Forms.Button();
             this.dtgvVoucherRelease = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dtpSearchTime = new System.Windows.Forms.DateTimePicker();
-            this.pbTicketSearch = new System.Windows.Forms.PictureBox();
-            this.txbTicketReceipt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -164,11 +164,11 @@
             this.tpNhapKho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvImportReceipt)).BeginInit();
             this.tpHoaDon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTicketSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).BeginInit();
             this.QuanLyVoucher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTicketSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -455,6 +455,7 @@
             this.btnDeleteStaff.TabIndex = 10;
             this.btnDeleteStaff.Text = "Xóa";
             this.btnDeleteStaff.UseVisualStyleBackColor = true;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
             // 
             // btnUpdateStaff
             // 
@@ -560,6 +561,7 @@
             this.txtStaffPhone.Name = "txtStaffPhone";
             this.txtStaffPhone.Size = new System.Drawing.Size(176, 26);
             this.txtStaffPhone.TabIndex = 5;
+            this.txtStaffPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffPhone_KeyPress);
             // 
             // lblStaffPhone
             // 
@@ -600,6 +602,7 @@
             this.txtStaffINumber.Name = "txtStaffINumber";
             this.txtStaffINumber.Size = new System.Drawing.Size(176, 26);
             this.txtStaffINumber.TabIndex = 6;
+            this.txtStaffINumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffINumber_KeyPress);
             // 
             // lblStaffName
             // 
@@ -682,6 +685,7 @@
             this.btnDeleteCustomer.TabIndex = 25;
             this.btnDeleteCustomer.Text = "Xóa";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnUpdateCustomer
             // 
@@ -692,6 +696,7 @@
             this.btnUpdateCustomer.TabIndex = 26;
             this.btnUpdateCustomer.Text = "Sửa";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -702,6 +707,7 @@
             this.btnAddCustomer.TabIndex = 27;
             this.btnAddCustomer.Text = "Thêm";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // grpCustomer
             // 
@@ -835,6 +841,7 @@
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(144, 26);
             this.txtCusPhone.TabIndex = 5;
+            this.txtCusPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCusPhone_KeyPress);
             // 
             // lblCusPhone
             // 
@@ -886,6 +893,7 @@
             this.txtCusINumber.Name = "txtCusINumber";
             this.txtCusINumber.Size = new System.Drawing.Size(144, 26);
             this.txtCusINumber.TabIndex = 6;
+            this.txtCusINumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCusINumber_KeyPress);
             // 
             // lblCusName
             // 
@@ -1010,6 +1018,30 @@
             this.dtgvRevenue.ReadOnly = true;
             this.dtgvRevenue.Size = new System.Drawing.Size(775, 342);
             this.dtgvRevenue.TabIndex = 45;
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.Location = new System.Drawing.Point(653, 71);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 26);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Doanh thu theo năm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(653, 41);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 26);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Doanh thu theo quý";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnReportRevenue
             // 
@@ -1244,6 +1276,7 @@
             this.txbProductPrice.Name = "txbProductPrice";
             this.txbProductPrice.Size = new System.Drawing.Size(144, 26);
             this.txbProductPrice.TabIndex = 2;
+            this.txbProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbProductPrice_KeyPress);
             // 
             // label6
             // 
@@ -1339,6 +1372,19 @@
             this.tpNhapKho.TabIndex = 0;
             this.tpNhapKho.Text = "Nhập kho";
             // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(291, 14);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(66, 28);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Tìm kiếm";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // dtgvImportReceipt
             // 
             this.dtgvImportReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1349,6 +1395,7 @@
             // 
             // cbbSearchTime
             // 
+            this.cbbSearchTime.Enabled = false;
             this.cbbSearchTime.FormattingEnabled = true;
             this.cbbSearchTime.Items.AddRange(new object[] {
             "Toàn bộ",
@@ -1372,6 +1419,7 @@
             // 
             // cbbSearchType
             // 
+            this.cbbSearchType.Enabled = false;
             this.cbbSearchType.FormattingEnabled = true;
             this.cbbSearchType.Items.AddRange(new object[] {
             "Mã đơn",
@@ -1385,6 +1433,7 @@
             // 
             // txbSearchImportReceipt
             // 
+            this.txbSearchImportReceipt.Enabled = false;
             this.txbSearchImportReceipt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSearchImportReceipt.Location = new System.Drawing.Point(21, 13);
             this.txbSearchImportReceipt.Name = "txbSearchImportReceipt";
@@ -1421,6 +1470,38 @@
             this.tpHoaDon.TabIndex = 1;
             this.tpHoaDon.Text = "Hóa đơn";
             // 
+            // txbTicketReceipt
+            // 
+            this.txbTicketReceipt.Enabled = false;
+            this.txbTicketReceipt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTicketReceipt.Location = new System.Drawing.Point(19, 14);
+            this.txbTicketReceipt.Name = "txbTicketReceipt";
+            this.txbTicketReceipt.Size = new System.Drawing.Size(264, 29);
+            this.txbTicketReceipt.TabIndex = 20;
+            this.txbTicketReceipt.Text = "Tìm kiếm";
+            // 
+            // pbTicketSearch
+            // 
+            this.pbTicketSearch.Enabled = false;
+            this.pbTicketSearch.Image = global::CinemaManagementSystem.Properties.Resources.search;
+            this.pbTicketSearch.Location = new System.Drawing.Point(289, 14);
+            this.pbTicketSearch.Name = "pbTicketSearch";
+            this.pbTicketSearch.Size = new System.Drawing.Size(27, 26);
+            this.pbTicketSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTicketSearch.TabIndex = 19;
+            this.pbTicketSearch.TabStop = false;
+            this.pbTicketSearch.Click += new System.EventHandler(this.pbTicketSearch_Click);
+            // 
+            // dtpSearchTime
+            // 
+            this.dtpSearchTime.Enabled = false;
+            this.dtpSearchTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSearchTime.Location = new System.Drawing.Point(604, 17);
+            this.dtpSearchTime.Name = "dtpSearchTime";
+            this.dtpSearchTime.Size = new System.Drawing.Size(114, 20);
+            this.dtpSearchTime.TabIndex = 18;
+            this.dtpSearchTime.ValueChanged += new System.EventHandler(this.dtpSearchTime_ValueChanged);
+            // 
             // dtgvTicketReceipt
             // 
             this.dtgvTicketReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1441,6 +1522,7 @@
             // 
             // cbbTicketReceiptTimeSearch
             // 
+            this.cbbTicketReceiptTimeSearch.Enabled = false;
             this.cbbTicketReceiptTimeSearch.FormattingEnabled = true;
             this.cbbTicketReceiptTimeSearch.Items.AddRange(new object[] {
             "Toàn bộ",
@@ -1453,6 +1535,7 @@
             // 
             // cbbTicketReceiptSearch
             // 
+            this.cbbTicketReceiptSearch.Enabled = false;
             this.cbbTicketReceiptSearch.FormattingEnabled = true;
             this.cbbTicketReceiptSearch.Items.AddRange(new object[] {
             "Mã đơn",
@@ -1510,72 +1593,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(653, 41);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 26);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Doanh thu theo quý";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(653, 71);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 26);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Doanh thu theo năm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(291, 14);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 28);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Tìm kiếm";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // dtpSearchTime
-            // 
-            this.dtpSearchTime.Enabled = false;
-            this.dtpSearchTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpSearchTime.Location = new System.Drawing.Point(604, 17);
-            this.dtpSearchTime.Name = "dtpSearchTime";
-            this.dtpSearchTime.Size = new System.Drawing.Size(114, 20);
-            this.dtpSearchTime.TabIndex = 18;
-            this.dtpSearchTime.ValueChanged += new System.EventHandler(this.dtpSearchTime_ValueChanged);
-            // 
-            // pbTicketSearch
-            // 
-            this.pbTicketSearch.Image = global::CinemaManagementSystem.Properties.Resources.search;
-            this.pbTicketSearch.Location = new System.Drawing.Point(289, 14);
-            this.pbTicketSearch.Name = "pbTicketSearch";
-            this.pbTicketSearch.Size = new System.Drawing.Size(27, 26);
-            this.pbTicketSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTicketSearch.TabIndex = 19;
-            this.pbTicketSearch.TabStop = false;
-            this.pbTicketSearch.Click += new System.EventHandler(this.pbTicketSearch_Click);
-            // 
-            // txbTicketReceipt
-            // 
-            this.txbTicketReceipt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTicketReceipt.Location = new System.Drawing.Point(19, 14);
-            this.txbTicketReceipt.Name = "txbTicketReceipt";
-            this.txbTicketReceipt.Size = new System.Drawing.Size(264, 29);
-            this.txbTicketReceipt.TabIndex = 20;
-            this.txbTicketReceipt.Text = "Tìm kiếm";
-            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1623,11 +1640,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvImportReceipt)).EndInit();
             this.tpHoaDon.ResumeLayout(false);
             this.tpHoaDon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTicketSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTicketReceipt)).EndInit();
             this.QuanLyVoucher.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVoucherRelease)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTicketSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

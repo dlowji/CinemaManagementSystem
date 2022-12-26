@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.flpCart = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAll = new System.Windows.Forms.TabPage();
@@ -66,18 +65,6 @@
             this.flpCart.Name = "flpCart";
             this.flpCart.Size = new System.Drawing.Size(290, 393);
             this.flpCart.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(978, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Xóa";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -190,9 +177,9 @@
             this.lbProductsPrice.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProductsPrice.Location = new System.Drawing.Point(906, 482);
             this.lbProductsPrice.Name = "lbProductsPrice";
-            this.lbProductsPrice.Size = new System.Drawing.Size(101, 18);
+            this.lbProductsPrice.Size = new System.Drawing.Size(34, 18);
             this.lbProductsPrice.TabIndex = 13;
-            this.lbProductsPrice.Text = "Thanh toán";
+            this.lbProductsPrice.Text = "0 đ";
             // 
             // FoodDrinkUC
             // 
@@ -203,7 +190,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.flpCart);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FoodDrinkUC";
@@ -221,7 +207,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flpCart;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpAll;

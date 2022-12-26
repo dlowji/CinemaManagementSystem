@@ -20,7 +20,8 @@ namespace CinemaManagementSystem.Views.Customer
         private string seats;
         private string workingDirectory;
         private string projectDirectory;
-        public TicketUC(Phim movie, LichChieu showTimes, string seats)
+        private decimal totalPrice;
+        public TicketUC(Phim movie, LichChieu showTimes, string seats, decimal totalPrice)
         {
             InitializeComponent();
             this.movie = movie;
@@ -28,6 +29,7 @@ namespace CinemaManagementSystem.Views.Customer
             this.seats = seats;
             workingDirectory = Environment.CurrentDirectory;
             projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            this.totalPrice = totalPrice;
         }
 
         private void TicketUC_Load(object sender, EventArgs e)
@@ -44,32 +46,39 @@ namespace CinemaManagementSystem.Views.Customer
             lbCineplex.Text = cineplex.Ten;
 
             lbSeats.Text = seats;
+            lbPrice.Text = Helper.Helper.FormatVNMoney(totalPrice);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CaptureScreen();
+            printDocument1.Print();
         }
+
+        Bitmap memoryImage;
 
         private void CaptureScreen()
         {
             try
             {
-                Bitmap captureBitmap = new Bitmap(1048, 578, PixelFormat.Format32bppArgb);
+                memoryImage = new Bitmap(1048, 578, PixelFormat.Format32bppArgb);
 
                 Rectangle captureRectangle = Screen.AllScreens[0].Bounds;
 
-                Graphics captureGraphics = Graphics.FromImage(captureBitmap);
+                Graphics captureGraphics = Graphics.FromImage(memoryImage);
 
-                captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, -245, -83, captureRectangle.Size);
-
-                captureBitmap.Save(@"D:\ticket.png", ImageFormat.Png);
+                captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, -295, -83, captureRectangle.Size);
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
     }
 }

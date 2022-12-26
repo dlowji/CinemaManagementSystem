@@ -161,7 +161,7 @@
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(289, 27);
             this.dtpThoiGian.TabIndex = 6;
-            this.dtpThoiGian.Value = new System.DateTime(2022, 11, 10, 0, 0, 0, 0);
+            this.dtpThoiGian.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
             this.dtpThoiGian.ValueChanged += new System.EventHandler(this.dtpThoiGian_ValueChanged_1);
             // 
             // label4
@@ -268,14 +268,14 @@
             this.columnHeader2.Text = "Tình Trạng";
             this.columnHeader2.Width = 150;
             // 
-            // OrderShowTimes
+            // OrderShowTimesUCForStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "OrderShowTimes";
+            this.Name = "OrderShowTimesUCForStaff";
             this.Size = new System.Drawing.Size(1043, 617);
             this.Load += new System.EventHandler(this.OrderShowTimes_Load);
             this.panel1.ResumeLayout(false);

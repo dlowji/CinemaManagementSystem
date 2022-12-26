@@ -39,6 +39,11 @@ namespace CinemaManagementSystem.Controllers
         public static Phim GetMovieByShowTime(string showTimeId)
         {
             LichChieu showTime = ShowTimeController.GetShowTimeById(showTimeId);
+            if (showTime == null)
+            {
+                return null;
+            }
+
             Phim movie = MovieDAO.GetMovieByID(showTime.idPhim);
 
             return movie;
@@ -88,7 +93,7 @@ namespace CinemaManagementSystem.Controllers
                 foreach (var item in MovieController.FindAll(dateTime))
                 {
 
-                    if (item.TenPhim.Contains(movieName.Trim().ToUpper()))
+                    if (item.TenPhim.Contains(movieName))
                     {
                         searchMovies.Add(item);
                     }
@@ -109,7 +114,7 @@ namespace CinemaManagementSystem.Controllers
                     break;
                 }
             }
-            MessageBox.Show(movieName);
+
             foreach (var item in movies_genres)
             {
                 if (item.idTheLoai.Equals(genre.id))

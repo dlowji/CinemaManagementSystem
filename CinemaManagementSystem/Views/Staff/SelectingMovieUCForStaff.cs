@@ -17,17 +17,9 @@ namespace CinemaManagementSystem.View.Customer
         private void btnMovieUC_Click(object sender, EventArgs e)
         {
             pnData.Controls.Clear();
-            MovieViewUCForStaff movieUc = new MovieViewUCForStaff(pnData, "");
+            MovieViewUCForStaff movieUc = new MovieViewUCForStaff(pnData, staffId);
             movieUc.Dock = DockStyle.Fill;
             pnData.Controls.Add(movieUc);
-        }
-
-        private void btnFoodUC_Click(object sender, EventArgs e)
-        {
-            pnData.Controls.Clear();
-            FoodDrinkUCForStaff foodDrinkUc = new FoodDrinkUCForStaff("", null, null, null, Decimal.Zero, pnData);
-            foodDrinkUc.Dock = DockStyle.Fill;
-            pnData.Controls.Add(foodDrinkUc);
         }
     }
 }

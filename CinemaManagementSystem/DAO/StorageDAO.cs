@@ -19,7 +19,7 @@ namespace GUI.DAO
                             where kho.idSanPham.Equals(productId)
                             select kho).First();
 
-                query.SoLuong += quantity;
+                query.SoLuong = quantity;
 
                 try
                 {

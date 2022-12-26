@@ -1,4 +1,5 @@
 ﻿using CinemaManagementSystem;
+using CinemaManagementSystem.Controllers;
 using System;
 using System.Data;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace GUI.DAO
     {
         private BillDAO() { }
         
-        public static Boolean InsertImportReceipt(string productId, decimal importPrice, int quantity, string staffId)
+        public static Boolean InsertImportReceipt(string productId, decimal importPrice, int quantity, string staffId, string supplierId)
         {
             using (CinemaDataContext db = new CinemaDataContext())
             {
@@ -39,18 +40,23 @@ namespace GUI.DAO
                     SoLuong = quantity,
                     idNhanVien = staffId,
                     CreatedAt = DateTime.Now,
+                    TongTien = quantity * importPrice,
+                    idNhaCungCap = supplierId,
                 };
 
                 db.HoaDonNhapHangs.InsertOnSubmit(receipt);
-                StorageDAO.UpdateProductQuantity(productId, quantity);
+                int addedQuantity = ProductController.GetQuantityOfProduct(productId);
+
+                StorageDAO.UpdateProductQuantity(productId, addedQuantity + quantity);
 
                 try
                 {
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return false;
                 }
             }

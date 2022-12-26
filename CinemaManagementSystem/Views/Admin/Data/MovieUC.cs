@@ -105,7 +105,7 @@ namespace GUI.frmAdminUserControls.DataUserControl
            
             }
 
-            if (movie.ApPhich != null)
+           if (movie.ApPhich != null)
             {
                 picFilm.Image = Image.FromFile(projectDirectory + movie.ApPhich);
                 picFilm.ImageLocation = projectDirectory + movie.ApPhich;

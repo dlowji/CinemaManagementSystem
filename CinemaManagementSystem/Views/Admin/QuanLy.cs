@@ -37,6 +37,10 @@ namespace CinemaManagementSystem
         public QuanLy(string staffId)
         {
             InitializeComponent();
+            tcQuanLy.Appearance = TabAppearance.FlatButtons;
+            tcQuanLy.ItemSize = new Size(0, 1);
+            tcQuanLy.SizeMode = TabSizeMode.Fixed;
+            btnVoucherUC.Enabled = false;
             this.staffId = staffId;
             LoadStaff();
             LoadCustomer();
@@ -89,10 +93,10 @@ namespace CinemaManagementSystem
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            string productId = txbProductId.Text;
-            string productName = txbProductName.Text;
-            int productType = txbProductType.Text.Equals("Đồ ăn") ? 1 : 2;
-            decimal productPrice = Decimal.Parse(txbProductPrice.Text);
+            string productId = txbProductId.Text.Trim();
+            string productName = txbProductName.Text.Trim();
+            int productType = txbProductType.Text.Trim().Equals("Đồ ăn") ? 1 : 2;
+            decimal productPrice = Decimal.Parse(txbProductPrice.Text.Trim());
             InsertProduct(productId, productName, productType, productPrice);
             LoadProductList();
         }
@@ -112,10 +116,10 @@ namespace CinemaManagementSystem
         }
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
-            string productId = txbProductId.Text;
-            string productName = txbProductName.Text;
-            int productType = txbProductType.Text.Equals("Đồ ăn") ? 1 : 2;
-            decimal productPrice = Decimal.Parse(txbProductPrice.Text);
+            string productId = txbProductId.Text.Trim();
+            string productName = txbProductName.Text.Trim();
+            int productType = txbProductType.Text.Trim().Equals("Đồ ăn") ? 1 : 2;
+            decimal productPrice = Decimal.Parse(txbProductPrice.Text.Trim());
             UpdateProduct(productId, productName, productType, productPrice);
             LoadProductList();
         }
@@ -135,14 +139,21 @@ namespace CinemaManagementSystem
         }
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            string productId = txbProductId.Text;
+            string productId = txbProductId.Text.Trim();
+
+            if (String.IsNullOrWhiteSpace(productId))
+            {
+                MessageBox.Show("Mã sản phẩm cần xóa không được để trống", "Cảnh báo");
+                return;
+            }
+
             DeleteProduct(productId);
             LoadProductList();
         }
 
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
-            string productName = txbSearchProduct.Text;
+            string productName = txbSearchProduct.Text.Trim().ToUpper();
             DataTable searchProdList = ProductController.SearchProductByName(productName);
             productList.DataSource = searchProdList;
         }
@@ -371,12 +382,21 @@ namespace CinemaManagementSystem
         {
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
-            DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
             string staffAddress = txtStaffAddress.Text;
             string staffPhone = txtStaffPhone.Text;
             int staffINumber = Int32.Parse(txtStaffINumber.Text);
-            AddStaff(staffId, staffName, staffBirth, staffAddress, staffPhone, staffINumber);
-            LoadStaffList();
+            try
+            {
+                DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
+                AddStaff(staffId, staffName, staffBirth, staffAddress, staffPhone, staffINumber);
+                LoadStaffList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thông tin không hợp lệ", "Cảnh báo");
+                return;
+            }
+            
         }
 
         //Sửa Staff
@@ -397,12 +417,20 @@ namespace CinemaManagementSystem
         {
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
-            DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
             string staffAddress = txtStaffAddress.Text;
             string staffPhone = txtStaffPhone.Text;
             int staffINumber = Int32.Parse(txtStaffINumber.Text);
-            UpdateStaff(staffId, staffName, staffBirth, staffAddress, staffPhone, staffINumber);
-            LoadStaffList();
+            try
+            {
+                DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
+                UpdateStaff(staffId, staffName, staffBirth, staffAddress, staffPhone, staffINumber);
+                LoadStaffList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thông tin không hợp lệ", "Cảnh báo");
+                return;
+            }
         }
 
         //Xóa Staff
@@ -421,7 +449,14 @@ namespace CinemaManagementSystem
         }
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
-            string staffId = txtStaffId.Text;
+            string staffId = txtStaffId.Text.Trim();
+
+            if (String.IsNullOrWhiteSpace(staffId))
+            {
+                MessageBox.Show("Mã nhân viên cần xóa không được để trống", "Cảnh báo");
+                return;
+            }
+
             DeleteStaff(staffId);
             LoadStaffList();
         }
@@ -794,6 +829,46 @@ namespace CinemaManagementSystem
         private void dtpSearchTime_ValueChanged(object sender, EventArgs e)
         {
             pbTicketSearch_Click(pbTicketSearch, e);
+        }
+
+        private void txtStaffPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtStaffINumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCusPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCusINumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 
